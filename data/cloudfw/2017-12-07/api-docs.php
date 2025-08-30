@@ -8734,6 +8734,51 @@
                 ],
             ],
         ],
+        'ModifyThreatIntelligenceSwitch' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'CategoryList',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'CategoryId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Action' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EnableStatus' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'DescribeCfwRiskLevelSummary' => [
             'methods' => [
                 'post',

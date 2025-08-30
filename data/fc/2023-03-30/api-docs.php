@@ -879,6 +879,40 @@
                     ],
                 ],
             ],
+            'ElasticConfigStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'residentPoolId' => [
+                        'type' => 'string',
+                    ],
+                    'functionArn' => [
+                        'type' => 'string',
+                    ],
+                    'currentInstances' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'currentError' => [
+                        'type' => 'string',
+                    ],
+                    'minInstances' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'scheduledPolicies' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScheduledPolicy',
+                        ],
+                    ],
+                    'scalingPolicies' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScalingPolicy',
+                        ],
+                    ],
+                ],
+            ],
             'EqualRule' => [
                 'type' => 'object',
                 'properties' => [
@@ -1605,6 +1639,20 @@
                     ],
                 ],
             ],
+            'ListElasticConfigsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'nextToken' => [
+                        'type' => 'string',
+                    ],
+                    'elasticConfigs' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ElasticConfigStatus',
+                        ],
+                    ],
+                ],
+            ],
             'ListFunctionsOutput' => [
                 'type' => 'object',
                 'properties' => [
@@ -2119,6 +2167,30 @@
                     ],
                 ],
             ],
+            'PutElasticConfigInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'minInstances' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'residentPoolId' => [
+                        'type' => 'string',
+                    ],
+                    'scheduledPolicies' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScheduledPolicy',
+                        ],
+                    ],
+                    'scalingPolicies' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScalingPolicy',
+                        ],
+                    ],
+                ],
+            ],
             'PutProvisionConfigInput' => [
                 'type' => 'object',
                 'properties' => [
@@ -2561,6 +2633,38 @@
                     ],
                 ],
             ],
+            'ScalingPolicy' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'startTime' => [
+                        'type' => 'string',
+                    ],
+                    'endTime' => [
+                        'type' => 'string',
+                    ],
+                    'metricType' => [
+                        'type' => 'string',
+                    ],
+                    'metricTarget' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'minInstances' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'maxInstances' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'timeZone' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ScalingStatus' => [
                 'type' => 'object',
                 'properties' => [
@@ -2596,6 +2700,30 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
+                    ],
+                    'timeZone' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ScheduledPolicy' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'startTime' => [
+                        'type' => 'string',
+                    ],
+                    'endTime' => [
+                        'type' => 'string',
+                    ],
+                    'target' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'scheduleExpression' => [
+                        'type' => 'string',
                     ],
                     'timeZone' => [
                         'type' => 'string',

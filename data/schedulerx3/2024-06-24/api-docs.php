@@ -351,6 +351,21 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AppType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                            '2',
+                            '3',
+                            '4',
+                        ],
+                    ],
+                ],
             ],
         ],
         'UpdateApp' => [
@@ -743,6 +758,7 @@
                             'script_php',
                             'script_nodejs',
                             'script_powershell',
+                            'http',
                         ],
                     ],
                 ],
@@ -754,7 +770,7 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '1',
-                        'maximum' => '8',
+                        'maximum' => '9',
                     ],
                 ],
                 [
@@ -979,6 +995,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Weight',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateJob' => [
@@ -1046,7 +1071,7 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '1',
-                        'maximum' => '8',
+                        'maximum' => '9',
                     ],
                 ],
                 [
@@ -1256,6 +1281,15 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Weight',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],

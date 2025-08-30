@@ -703,9 +703,18 @@
             'MachineGroup' => [
                 'type' => 'object',
                 'properties' => [
+                    'Status' => [
+                        'type' => 'string',
+                    ],
                     'EcsCount' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'GmtStartedTime' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceGroupID' => [
+                        'type' => 'string',
                     ],
                     'GmtCreatedTime' => [
                         'type' => 'string',
@@ -713,37 +722,7 @@
                     'CreatorID' => [
                         'type' => 'string',
                     ],
-                    'Memory' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
                     'ReasonMessage' => [
-                        'type' => 'string',
-                    ],
-                    'Cpu' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'PaymentDuration' => [
-                        'type' => 'string',
-                    ],
-                    'Gpu' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'DefaultDriver' => [
-                        'type' => 'string',
-                    ],
-                    'PaymentType' => [
-                        'type' => 'string',
-                    ],
-                    'Status' => [
-                        'type' => 'string',
-                    ],
-                    'GmtStartedTime' => [
-                        'type' => 'string',
-                    ],
-                    'ResourceGroupID' => [
                         'type' => 'string',
                     ],
                     'PaymentDurationUnit' => [
@@ -758,7 +737,7 @@
                             'type' => 'string',
                         ],
                     ],
-                    'ResourceType' => [
+                    'PaymentDuration' => [
                         'type' => 'string',
                     ],
                     'ReasonCode' => [
@@ -766,10 +745,6 @@
                     ],
                     'GmtModifiedTime' => [
                         'type' => 'string',
-                    ],
-                    'GpuMemory' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
                     ],
                     'DiskCapacity' => [
                         'type' => 'integer',
@@ -781,14 +756,55 @@
                     'OrderInstanceId' => [
                         'type' => 'string',
                     ],
-                    'GpuType' => [
+                    'DefaultDriver' => [
                         'type' => 'string',
                     ],
                     'MachineGroupID' => [
                         'type' => 'string',
                     ],
+                    'PaymentType' => [
+                        'type' => 'string',
+                    ],
                     'DiskPL' => [
                         'type' => 'string',
+                    ],
+                    'Cpu' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Gpu' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'GpuMemory' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'GpuType' => [
+                        'type' => 'string',
+                    ],
+                    'Memory' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ResourceType' => [
+                        'type' => 'string',
+                    ],
+                    'AllocatableCpu' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'AllocatableMemory' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SystemReservedCpu' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SystemReservedMemory' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -823,54 +839,65 @@
             'Node' => [
                 'type' => 'object',
                 'properties' => [
-                    'LimitMemory' => [
-                        'type' => 'string',
-                    ],
-                    'ResourceGroupId' => [
+                    'CreatorId' => [
                         'type' => 'string',
                     ],
                     'NodeName' => [
                         'type' => 'string',
                     ],
-                    'Memory' => [
+                    'NodeType' => [
                         'type' => 'string',
                     ],
-                    'ReasonMessage' => [
-                        'type' => 'string',
-                    ],
-                    'LimitCPU' => [
+                    'AcceleratorType' => [
                         'type' => 'string',
                     ],
                     'CPU' => [
                         'type' => 'string',
                     ],
-                    'Users' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/UserInfo',
-                        ],
-                    ],
-                    'AcceleratorType' => [
+                    'Memory' => [
                         'type' => 'string',
                     ],
                     'GPU' => [
                         'type' => 'string',
                     ],
-                    'OrderStatus' => [
-                        'type' => 'string',
-                    ],
-                    'LimitGPU' => [
-                        'type' => 'string',
-                    ],
                     'GPUType' => [
                         'type' => 'string',
                     ],
-                    'WorkloadNum' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
+                    'GPUMemory' => [
+                        'type' => 'string',
+                    ],
+                    'NodeStatus' => [
+                        'type' => 'string',
+                    ],
+                    'ReasonCode' => [
+                        'type' => 'string',
+                    ],
+                    'ReasonMessage' => [
+                        'type' => 'string',
+                    ],
+                    'OrderStatus' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceGroupName' => [
+                        'type' => 'string',
                     ],
                     'MachineGroupId' => [
                         'type' => 'string',
+                    ],
+                    'GmtCreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'GmtModifiedTime' => [
+                        'type' => 'string',
+                    ],
+                    'GmtExpiredTime' => [
+                        'type' => 'string',
+                    ],
+                    'IsBound' => [
+                        'type' => 'boolean',
                     ],
                     'BoundQuotas' => [
                         'type' => 'array',
@@ -878,14 +905,37 @@
                             '$ref' => '#/components/schemas/QuotaIdName',
                         ],
                     ],
-                    'GPUMemory' => [
+                    'RequestCPU' => [
                         'type' => 'string',
                     ],
                     'RequestMemory' => [
                         'type' => 'string',
                     ],
-                    'CreatorId' => [
+                    'RequestGPU' => [
                         'type' => 'string',
+                    ],
+                    'LimitCPU' => [
+                        'type' => 'string',
+                    ],
+                    'LimitMemory' => [
+                        'type' => 'string',
+                    ],
+                    'LimitGPU' => [
+                        'type' => 'string',
+                    ],
+                    'PodNum' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'WorkloadNum' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Users' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/UserInfo',
+                        ],
                     ],
                     'HyperZone' => [
                         'type' => 'string',
@@ -893,38 +943,16 @@
                     'AvailabilityZone' => [
                         'type' => 'string',
                     ],
-                    'ReasonCode' => [
+                    'AllocatableCPU' => [
                         'type' => 'string',
                     ],
-                    'GmtModifiedTime' => [
+                    'AllocatableMemory' => [
                         'type' => 'string',
                     ],
-                    'IsBound' => [
-                        'type' => 'boolean',
-                    ],
-                    'PodNum' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'GmtExpiredTime' => [
+                    'SystemReservedCPU' => [
                         'type' => 'string',
                     ],
-                    'NodeType' => [
-                        'type' => 'string',
-                    ],
-                    'RequestGPU' => [
-                        'type' => 'string',
-                    ],
-                    'NodeStatus' => [
-                        'type' => 'string',
-                    ],
-                    'GmtCreateTime' => [
-                        'type' => 'string',
-                    ],
-                    'RequestCPU' => [
-                        'type' => 'string',
-                    ],
-                    'ResourceGroupName' => [
+                    'SystemReservedMemory' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1115,6 +1143,18 @@
                         'type' => 'string',
                     ],
                     'GPUMemory' => [
+                        'type' => 'string',
+                    ],
+                    'AllocatableCPU' => [
+                        'type' => 'string',
+                    ],
+                    'AllocatableMemory' => [
+                        'type' => 'string',
+                    ],
+                    'SystemReservedCPU' => [
+                        'type' => 'string',
+                    ],
+                    'SystemReservedMemory' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1456,18 +1496,6 @@
             'QuotaDetails' => [
                 'type' => 'object',
                 'properties' => [
-                    'SelfAllocatedQuota' => [
-                        '$ref' => '#/components/schemas/ResourceAmount',
-                    ],
-                    'DescendantsAllocatedQuota' => [
-                        '$ref' => '#/components/schemas/ResourceAmount',
-                    ],
-                    'AllocatedQuota' => [
-                        '$ref' => '#/components/schemas/ResourceAmount',
-                    ],
-                    'AncestorsAllocatedQuota' => [
-                        '$ref' => '#/components/schemas/ResourceAmount',
-                    ],
                     'DesiredMinQuota' => [
                         '$ref' => '#/components/schemas/ResourceAmount',
                     ],
@@ -1477,10 +1505,28 @@
                     'RequestedQuota' => [
                         '$ref' => '#/components/schemas/ResourceAmount',
                     ],
+                    'UsedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
+                    'AllocatedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
+                    'SelfAllocatedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
+                    'AncestorsAllocatedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
+                    'DescendantsAllocatedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
                     'SelfSubmittedQuota' => [
                         '$ref' => '#/components/schemas/ResourceAmount',
                     ],
-                    'UsedQuota' => [
+                    'AllocatableQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
+                    'SystemReservedQuota' => [
                         '$ref' => '#/components/schemas/ResourceAmount',
                     ],
                 ],

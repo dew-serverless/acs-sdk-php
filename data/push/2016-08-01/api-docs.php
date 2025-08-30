@@ -6,7 +6,510 @@
         'version' => '2016-08-01',
     ],
     'components' => [
-        'schemas' => [],
+        'schemas' => [
+            'PushTask' => [
+                'type' => 'object',
+                'properties' => [
+                    'Action' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'PUSH_IMMEDIATELY',
+                            'SCHEDULED_PUSH',
+                            'CREATE_CONTINUOUS_PUSH',
+                            'CONTINUOUS_PUSH',
+                        ],
+                    ],
+                    'Target' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'DEVICE',
+                                    'TAG',
+                                    'ALIAS',
+                                    'ACCOUNT',
+                                    'ALL',
+                                    'FILE',
+                                ],
+                            ],
+                            'Platform' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'ANDROID',
+                                    'IOS',
+                                    'HMOS',
+                                    'ALL',
+                                ],
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'Message' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Title' => [
+                                'type' => 'string',
+                            ],
+                            'Body' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                    'Notification' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Title' => [
+                                'type' => 'string',
+                            ],
+                            'Hmos' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'InboxContent' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                    'Action' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Category' => [
+                                        'type' => 'string',
+                                        'enum' => [
+                                            'IM',
+                                            'VOIP',
+                                            'SUBSCRIPTION',
+                                            'TRAVEL',
+                                            'HEALTH',
+                                            'WORK',
+                                            'ACCOUNT',
+                                            'EXPRESS',
+                                            'FINANCE',
+                                            'DEVICE_REMINDER',
+                                            'MAIL',
+                                            'CUSTOMER_SERVICE',
+                                            'MARKETING',
+                                        ],
+                                    ],
+                                    'RenderStyle' => [
+                                        'type' => 'string',
+                                        'enum' => [
+                                            'NORMAL',
+                                            'MULTI_LINE',
+                                        ],
+                                    ],
+                                    'BadgeAddNum' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'ImageUrl' => [
+                                        'type' => 'string',
+                                    ],
+                                    'ExtParameters' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Uri' => [
+                                        'type' => 'string',
+                                    ],
+                                    'SlotType' => [
+                                        'type' => 'string',
+                                        'enum' => [
+                                            'SOCIAL_COMMUNICATION',
+                                            'SERVICE_INFORMATION',
+                                            'CONTENT_INFORMATION',
+                                            'CUSTOMER_SERVICE',
+                                            'OTHER_TYPES',
+                                            'UNKNOWN_TYPE',
+                                            'LIVE_VIEW',
+                                        ],
+                                    ],
+                                    'ExtensionExtraData' => [
+                                        'type' => 'string',
+                                    ],
+                                    'ReceiptId' => [
+                                        'type' => 'string',
+                                    ],
+                                    'ExtensionPush' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'TestMessage' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'BadgeSetNum' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'NotifyId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                ],
+                            ],
+                            'Ios' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'CollapseId' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Category' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Silent' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'ExtParameters' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Badge' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'RelevanceScore' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                    ],
+                                    'ApnsEnv' => [
+                                        'type' => 'string',
+                                        'enum' => [
+                                            'DEV',
+                                            'PRODUCT',
+                                        ],
+                                    ],
+                                    'Subtitle' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Mutable' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'LiveActivity' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'AttributesType' => [
+                                                'type' => 'string',
+                                            ],
+                                            'Attributes' => [
+                                                'type' => 'string',
+                                            ],
+                                            'StaleDate' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                            ],
+                                            'Event' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                                'enum' => [
+                                                    'start',
+                                                    'update',
+                                                    'end',
+                                                ],
+                                            ],
+                                            'DismissalDate' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                            ],
+                                            'Id' => [
+                                                'type' => 'string',
+                                            ],
+                                            'ContentState' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                    ],
+                                    'InterruptionLevel' => [
+                                        'type' => 'string',
+                                        'enum' => [
+                                            'passive',
+                                            'active',
+                                            'time-sensitive',
+                                            'critical',
+                                        ],
+                                    ],
+                                    'ThreadId' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Music' => [
+                                        'type' => 'string',
+                                    ],
+                                    'BadgeAutoIncrement' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                            'Body' => [
+                                'type' => 'string',
+                            ],
+                            'Android' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'InboxContent' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                    'Options' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'Honor' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'Importance' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'enum' => [
+                                                            '0',
+                                                            '1',
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                            'Xiaomi' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'Channel' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                ],
+                                            ],
+                                            'Vivo' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'Importance' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'enum' => [
+                                                            '0',
+                                                            '1',
+                                                        ],
+                                                    ],
+                                                    'Category' => [
+                                                        'type' => 'string',
+                                                        'enum' => [
+                                                            'IM',
+                                                            'ACCOUNT',
+                                                            'DEVICE_REMINDER',
+                                                            'ORDER',
+                                                            'TODO',
+                                                            'SUBSCRIPTION',
+                                                            'NEWS',
+                                                            'CONTENT',
+                                                            'MARKETING',
+                                                            'SOCIAL',
+                                                        ],
+                                                    ],
+                                                    'ReceiptId' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                ],
+                                            ],
+                                            'Oppo' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'Category' => [
+                                                        'type' => 'string',
+                                                        'enum' => [
+                                                            'IM',
+                                                            'ACCOUNT',
+                                                            'DEVICE_REMINDER',
+                                                            'ORDER',
+                                                            'TODO',
+                                                            'SUBSCRIPTION',
+                                                            'NEWS',
+                                                            'CONTENT',
+                                                            'MARKETING',
+                                                            'SOCIAL',
+                                                        ],
+                                                    ],
+                                                    'NotifyLevel' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int64',
+                                                        'enum' => [
+                                                            '1',
+                                                            '2',
+                                                            '16',
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                            'Huawei' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'Importance' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'enum' => [
+                                                            '0',
+                                                            '1',
+                                                        ],
+                                                    ],
+                                                    'ReceiptId' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'Category' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'Urgency' => [
+                                                        'type' => 'string',
+                                                        'enum' => [
+                                                            'HIGH',
+                                                            'NORMAL',
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                            'Accs' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'NotifyType' => [
+                                                        'type' => 'string',
+                                                        'enum' => [
+                                                            'VIBRATE',
+                                                            'SOUND',
+                                                            'BOTH',
+                                                            'NONE',
+                                                        ],
+                                                    ],
+                                                    'OpenType' => [
+                                                        'type' => 'string',
+                                                        'enum' => [
+                                                            'APPLICATION',
+                                                            'ACTIVITY',
+                                                            'URL',
+                                                            'NONE',
+                                                        ],
+                                                    ],
+                                                    'ThreadId' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'Priority' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                    ],
+                                                    'OpenUrl' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'CustomStyle' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                    ],
+                                                    'OpenActivity' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'VendorChannelActivity' => [
+                                        'type' => 'string',
+                                    ],
+                                    'RenderStyle' => [
+                                        'type' => 'string',
+                                        'enum' => [
+                                            'NORMAL',
+                                            'BIG_TEXT',
+                                            'BIG_PICTURE',
+                                            'MULTI_LINE',
+                                        ],
+                                    ],
+                                    'BadgeAddNum' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'ImageUrl' => [
+                                        'type' => 'string',
+                                    ],
+                                    'ExtParameters' => [
+                                        'type' => 'string',
+                                    ],
+                                    'ChannelId' => [
+                                        'type' => 'string',
+                                    ],
+                                    'BadgeActivity' => [
+                                        'type' => 'string',
+                                    ],
+                                    'GroupId' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Music' => [
+                                        'type' => 'string',
+                                    ],
+                                    'PictureUrl' => [
+                                        'type' => 'string',
+                                    ],
+                                    'TestMessage' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'BadgeSetNum' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'NotifyId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Options' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'PushTime' => [
+                                'type' => 'string',
+                            ],
+                            'JobKey' => [
+                                'type' => 'string',
+                            ],
+                            'Trim' => [
+                                'type' => 'boolean',
+                            ],
+                            'Sms' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'SendPolicy' => [
+                                        'type' => 'string',
+                                        'enum' => [
+                                            'PUSH_NOT_RECEIVED',
+                                            'USER_NOT_OPENED',
+                                        ],
+                                    ],
+                                    'TemplateName' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Params' => [
+                                        'type' => 'string',
+                                    ],
+                                    'SignName' => [
+                                        'type' => 'string',
+                                    ],
+                                    'DelaySecs' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                    ],
+                                ],
+                            ],
+                            'UseChannels' => [
+                                'type' => 'string',
+                            ],
+                            'ExpireTime' => [
+                                'type' => 'string',
+                            ],
+                            'MessageId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
     'apis' => [
         'Push' => [

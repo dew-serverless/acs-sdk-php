@@ -558,6 +558,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EditOcrResult',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CheckResult' => [

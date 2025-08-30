@@ -806,6 +806,9 @@
                     'comment' => [
                         'type' => 'string',
                     ],
+                    'enableWrite' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'Receiver' => [
@@ -941,6 +944,30 @@
                     ],
                     'updatedBy' => [
                         'type' => 'string',
+                    ],
+                    'enableWrite' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'ShareOptions' => [
+                'type' => 'object',
+                'properties' => [
+                    'receiverSizeLimit' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'shareSizeLimit' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'shareResourceSizeLimit' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'catalogSizeLimit' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                 ],
             ],
@@ -2480,6 +2507,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'enableWrite' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -2559,6 +2590,10 @@
                             ],
                             'comment' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'enableWrite' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],

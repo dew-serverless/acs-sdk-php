@@ -8332,6 +8332,131 @@
                 ],
             ],
         ],
+        'TransformToEcs' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceClass',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChargeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'PrePaid',
+                            'PostPaid',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Period',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ShardCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EngineVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            '5.0',
+                            '6.0',
+                            '7.0',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'EffectiveTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Immediately',
+                            'MaintainTime',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AutoRenew',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'true',
+                            'false',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AutoRenewPeriod',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                            '2',
+                            '3',
+                            '6',
+                            '12',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [
@@ -8452,7 +8577,7 @@
         ],
         [
             'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'r-kvstore.aliyuncs.com',
+            'endpoint' => 'r-kvstore.cn-shanghai-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-central-1',

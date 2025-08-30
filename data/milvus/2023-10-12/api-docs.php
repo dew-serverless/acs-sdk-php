@@ -380,5 +380,9 @@
             'regionId' => 'cn-zhangjiakou',
             'endpoint' => 'milvus.cn-zhangjiakou.aliyuncs.com',
         ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'milvus.eu-central-1.aliyuncs.com',
+        ],
     ],
 ];

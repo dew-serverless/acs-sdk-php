@@ -6577,6 +6577,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'LastRetryTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SetDesktopGroupScaleTimer' => [
@@ -18075,7 +18084,7 @@
                                             ],
                                         ],
                                     ],
-                                    'maxItems' => 5,
+                                    'maxItems' => 10,
                                 ],
                             ],
                         ],
@@ -18556,7 +18565,7 @@
                                             ],
                                         ],
                                     ],
-                                    'maxItems' => 5,
+                                    'maxItems' => 10,
                                 ],
                             ],
                         ],
@@ -18708,6 +18717,14 @@
                             'required' => false,
                         ],
                         'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'Filter',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

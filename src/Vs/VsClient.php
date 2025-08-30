@@ -11,6 +11,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createRenderingInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result listRenderingInstances(array $arguments = [])
  * @method \Http\Promise\Promise listRenderingInstancesAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyRenderingInstanceAttribute(array $arguments = [])
+ * @method \Http\Promise\Promise modifyRenderingInstanceAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result describeRenderingInstance(array $arguments = [])
  * @method \Http\Promise\Promise describeRenderingInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result getRenderingInstanceStreamingInfo(array $arguments = [])

@@ -331,6 +331,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise checkServiceLinkedRoleAsync($arguments = [])
  * @method \Dew\Acs\Result deleteApplication(array $arguments = [])
  * @method \Http\Promise\Promise deleteApplicationAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyDBNodeDescription(array $arguments = [])
+ * @method \Http\Promise\Promise modifyDBNodeDescriptionAsync($arguments = [])
  */
 final class PolardbClient extends AcsClient
 {

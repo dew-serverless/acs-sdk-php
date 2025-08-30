@@ -459,6 +459,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listFlashSmsTemplatesAsync($arguments = [])
  * @method \Dew\Acs\Result listFlashSmsApplications(array $arguments = [])
  * @method \Http\Promise\Promise listFlashSmsApplicationsAsync($arguments = [])
+ * @method \Dew\Acs\Result listFlashSmsSettings(array $arguments = [])
+ * @method \Http\Promise\Promise listFlashSmsSettingsAsync($arguments = [])
  * @method \Dew\Acs\Result listWaitingChats(array $arguments = [])
  * @method \Http\Promise\Promise listWaitingChatsAsync($arguments = [])
  * @method \Dew\Acs\Result getChatMediaUrl(array $arguments = [])

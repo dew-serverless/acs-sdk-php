@@ -241,6 +241,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createDownloadTaskAsync($arguments = [])
  * @method \Dew\Acs\Result deleteDownloadTask(array $arguments = [])
  * @method \Http\Promise\Promise deleteDownloadTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyThreatIntelligenceSwitch(array $arguments = [])
+ * @method \Http\Promise\Promise modifyThreatIntelligenceSwitchAsync($arguments = [])
  * @method \Dew\Acs\Result describeCfwRiskLevelSummary(array $arguments = [])
  * @method \Http\Promise\Promise describeCfwRiskLevelSummaryAsync($arguments = [])
  * @method \Dew\Acs\Result describePrefixLists(array $arguments = [])

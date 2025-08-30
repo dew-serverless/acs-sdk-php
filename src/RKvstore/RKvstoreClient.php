@@ -265,6 +265,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteBackupAsync($arguments = [])
  * @method \Dew\Acs\Result createTairKVCacheVNode(array $arguments = [])
  * @method \Http\Promise\Promise createTairKVCacheVNodeAsync($arguments = [])
+ * @method \Dew\Acs\Result transformToEcs(array $arguments = [])
+ * @method \Http\Promise\Promise transformToEcsAsync($arguments = [])
  */
 final class RKvstoreClient extends AcsClient
 {

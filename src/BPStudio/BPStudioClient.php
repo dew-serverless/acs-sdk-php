@@ -71,6 +71,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise executeOperationASyncAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
  * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result createTask(array $arguments = [])
+ * @method \Http\Promise\Promise createTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result executeTask(array $arguments = [])
+ * @method \Http\Promise\Promise executeTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getTask(array $arguments = [])
+ * @method \Http\Promise\Promise getTaskAsync($arguments = [])
  */
 final class BPStudioClient extends AcsClient
 {

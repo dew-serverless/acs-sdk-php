@@ -1568,6 +1568,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Remark',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteAccount' => [

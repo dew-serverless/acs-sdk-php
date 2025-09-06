@@ -892,6 +892,9 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'task' => [
+                        'type' => 'object',
+                    ],
                 ],
             ],
             'MLDataParam' => [
@@ -6015,6 +6018,10 @@
                                 ],
                                 'minItems' => 1,
                             ],
+                            'task' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -6235,6 +6242,10 @@
                                 ],
                                 'minItems' => 1,
                             ],
+                            'task' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -6446,6 +6457,14 @@
                 ],
                 [
                     'name' => 'configName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'configType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

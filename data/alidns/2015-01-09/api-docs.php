@@ -8260,6 +8260,72 @@
                 ],
             ],
         ],
+        'ValidateDnsGtmCnameRrCanUse' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CnameRr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CnameType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CnameMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CnameZone',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'AddGtmAddressPool' => [
             'methods' => [
                 'post',
@@ -12386,10 +12452,10 @@
                 ],
             ],
         ],
-        'ValidateDnsGtmCnameRrCanUse' => [
+        'UpdateAppKeyState' => [
             'methods' => [
-                'post',
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -12411,43 +12477,17 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
+                    'name' => 'AppKeyId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
                     ],
                 ],
                 [
-                    'name' => 'CnameRr',
+                    'name' => 'State',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CnameType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CnameMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CnameZone',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],
@@ -12477,6 +12517,46 @@
                 ],
                 [
                     'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IpToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+        ],
+        'ValidatePdnsUdpIpSegment' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Ip',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -12778,46 +12858,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ValidatePdnsUdpIpSegment' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Ip',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IpToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
                     ],
                 ],
             ],
@@ -13217,46 +13257,6 @@
                 ],
                 [
                     'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
-        'UpdateAppKeyState' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AppKeyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'State',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -13900,90 +13900,6 @@
         ],
     ],
     'endpoints' => [
-        [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'alidns.cn-beijing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'alidns.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'alidns.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'alidns.cn-hangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'alidns.cn-shanghai.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'alidns.cn-shenzhen.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'alidns.cn-chengdu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'alidns.cn-hongkong.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-1',
-            'endpoint' => 'alidns.ap-northeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'alidns.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'alidns.ap-southeast-2.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-3',
-            'endpoint' => 'alidns.ap-southeast-3.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'alidns.ap-southeast-5.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'alidns.us-east-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'alidns.us-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'alidns.eu-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'alidns.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'alidns.ap-south-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'me-east-1',
-            'endpoint' => 'alidns.me-east-1.aliyuncs.com',
-        ],
         [
             'regionId' => 'public',
             'endpoint' => 'alidns.aliyuncs.com',

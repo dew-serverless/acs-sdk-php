@@ -437,6 +437,50 @@
         ],
     ],
     'apis' => [
+        'GetServiceIdentityRole' => [
+            'path' => '/api/automl/v1/serviceidentityrole',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'CreateServiceIdentityRole' => [
+            'path' => '/api/automl/v1/serviceidentityrole',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
         'CreateHpoExperiment' => [
             'path' => '/api/automl/v1/hpo/experiment',
             'methods' => [
@@ -1350,50 +1394,6 @@
                 ],
             ],
         ],
-        'GetServiceIdentityRole' => [
-            'path' => '/api/automl/v1/serviceidentityrole',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
-        'CreateServiceIdentityRole' => [
-            'path' => '/api/automl/v1/serviceidentityrole',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
     ],
     'endpoints' => [
         [
@@ -1415,6 +1415,10 @@
         [
             'regionId' => 'cn-hongkong',
             'endpoint' => 'paiautoml.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'paiautoml.cn-wulanchabu.aliyuncs.com',
         ],
     ],
 ];

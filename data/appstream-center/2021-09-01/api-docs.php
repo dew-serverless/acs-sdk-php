@@ -3210,6 +3210,14 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'VirtualNodePoolId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListWuyingServer' => [
@@ -3306,6 +3314,27 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VirtualNodePoolId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AddVirtualNodePoolStatusList',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
                     ],
                 ],
                 [

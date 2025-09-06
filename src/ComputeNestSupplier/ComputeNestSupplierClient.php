@@ -161,6 +161,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listServiceTestCasesAsync($arguments = [])
  * @method \Dew\Acs\Result createServiceTestCase(array $arguments = [])
  * @method \Http\Promise\Promise createServiceTestCaseAsync($arguments = [])
+ * @method \Dew\Acs\Result getNetworkAvailableZones(array $arguments = [])
+ * @method \Http\Promise\Promise getNetworkAvailableZonesAsync($arguments = [])
  * @method \Dew\Acs\Result getServiceTemplateCriterionIssues(array $arguments = [])
  * @method \Http\Promise\Promise getServiceTemplateCriterionIssuesAsync($arguments = [])
  * @method \Dew\Acs\Result listArtifactBuildLogs(array $arguments = [])

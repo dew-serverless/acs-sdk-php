@@ -685,6 +685,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getNetworkAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result listNetworks(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise listNetworksAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result createComponent(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise createComponentAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result deleteComponent(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise deleteComponentAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result getComponent(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise getComponentAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result updateComponent(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise updateComponentAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result listComponents(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise listComponentsAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result createNode(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise createNodeAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result deleteNode(array $arguments = []) {@since 2024-05-18}

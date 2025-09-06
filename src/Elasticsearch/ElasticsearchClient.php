@@ -7,18 +7,6 @@ namespace Dew\Acs\Elasticsearch;
 use Dew\Acs\AcsClient;
 
 /**
- * @method \Dew\Acs\Result describeApm(array $arguments = [])
- * @method \Http\Promise\Promise describeApmAsync($arguments = [])
- * @method \Dew\Acs\Result removeApm(array $arguments = [])
- * @method \Http\Promise\Promise removeApmAsync($arguments = [])
- * @method \Dew\Acs\Result startApm(array $arguments = [])
- * @method \Http\Promise\Promise startApmAsync($arguments = [])
- * @method \Dew\Acs\Result stopApm(array $arguments = [])
- * @method \Http\Promise\Promise stopApmAsync($arguments = [])
- * @method \Dew\Acs\Result updateApm(array $arguments = [])
- * @method \Http\Promise\Promise updateApmAsync($arguments = [])
- * @method \Dew\Acs\Result listApm(array $arguments = [])
- * @method \Http\Promise\Promise listApmAsync($arguments = [])
  * @method \Dew\Acs\Result closeManagedIndex(array $arguments = [])
  * @method \Http\Promise\Promise closeManagedIndexAsync($arguments = [])
  * @method \Dew\Acs\Result createDataStream(array $arguments = [])

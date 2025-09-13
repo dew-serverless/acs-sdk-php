@@ -61,10 +61,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result untagResources(array $arguments = [])
  * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
- * @method \Dew\Acs\Result getLindormFsUsedDetail(array $arguments = [])
- * @method \Http\Promise\Promise getLindormFsUsedDetailAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result getLindormFsUsedDetail(array $arguments = [])
+ * @method \Http\Promise\Promise getLindormFsUsedDetailAsync($arguments = [])
  */
 final class HitsdbClient extends AcsClient
 {

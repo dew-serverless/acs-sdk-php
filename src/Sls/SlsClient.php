@@ -383,6 +383,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise stopMaxComputeExportAsync($arguments = [])
  * @method \Dew\Acs\Result updateMaxComputeExport(array $arguments = [])
  * @method \Http\Promise\Promise updateMaxComputeExportAsync($arguments = [])
+ * @method \Dew\Acs\Result createS3Ingestion(array $arguments = [])
+ * @method \Http\Promise\Promise createS3IngestionAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteS3Ingestion(array $arguments = [])
+ * @method \Http\Promise\Promise deleteS3IngestionAsync($arguments = [])
+ * @method \Dew\Acs\Result getS3Ingestion(array $arguments = [])
+ * @method \Http\Promise\Promise getS3IngestionAsync($arguments = [])
+ * @method \Dew\Acs\Result listS3Ingestions(array $arguments = [])
+ * @method \Http\Promise\Promise listS3IngestionsAsync($arguments = [])
  */
 final class SlsClient extends AcsClient
 {

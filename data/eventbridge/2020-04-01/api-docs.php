@@ -94,6 +94,14 @@
                     ],
                 ],
             ],
+            'SinkDataWorksTriggerParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'Enable' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'SourceMySQLParameters' => [
                 'type' => 'object',
                 'properties' => [
@@ -916,6 +924,59 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'SourceOSSEventParameters',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'EventTypes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'StsRoleArn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'MatchRules' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Prefix' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Suffix' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Name' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'MatchState' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteEventSource' => [
@@ -1282,6 +1343,59 @@
                             'VSwitchIds' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SourceOSSEventParameters',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'EventTypes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'StsRoleArn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'MatchRules' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Suffix' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'MatchState' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'Prefix' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Name' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -2500,6 +2614,64 @@
                                     ],
                                 ],
                             ],
+                            'SourceApacheKafkaParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Bootstraps' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Topic' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ConsumerGroup' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'OffsetReset' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ValueDataType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VSwitchIds' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityProtocol' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SaslMechanism' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SaslUser' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SaslPassword' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                             'SourceOSSParameters' => [
                                 'type' => 'object',
                                 'required' => false,
@@ -3080,6 +3252,166 @@
                                                 'required' => false,
                                             ],
                                         ],
+                                    ],
+                                ],
+                            ],
+                            'SinkApacheKafkaParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Bootstraps' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Topic' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Acks' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Key' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Value' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'SecurityProtocol' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SaslMechanism' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SaslUser' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'VSwitchIds' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Headers' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'SaslPassword' => [
+                                        'type' => 'string',
+                                        'required' => false,
                                     ],
                                 ],
                             ],
@@ -4565,6 +4897,10 @@
                             ],
                             'SinkBaiLianParameters' => [
                                 '$ref' => '#/components/schemas/SinkBaiLianParameters',
+                                'required' => false,
+                            ],
+                            'SinkDataWorksTriggerParameters' => [
+                                '$ref' => '#/components/schemas/SinkDataWorksTriggerParameters',
                                 'required' => false,
                             ],
                         ],
@@ -5155,6 +5491,64 @@
                                     ],
                                 ],
                             ],
+                            'SourceApacheKafkaParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Bootstraps' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Topic' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ConsumerGroup' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'OffsetReset' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ValueDataType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VSwitchIds' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityProtocol' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SaslMechanism' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SaslUser' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SaslPassword' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                             'SourceOSSParameters' => [
                                 'type' => 'object',
                                 'required' => false,
@@ -5603,6 +5997,166 @@
                                                 'required' => false,
                                             ],
                                         ],
+                                    ],
+                                ],
+                            ],
+                            'SinkApacheKafkaParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Bootstraps' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Topic' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Acks' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Key' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Value' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Headers' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'SecurityProtocol' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SaslMechanism' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SaslUser' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'VSwitchIds' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'SaslPassword' => [
+                                        'type' => 'string',
+                                        'required' => false,
                                     ],
                                 ],
                             ],
@@ -7186,6 +7740,10 @@
                                 '$ref' => '#/components/schemas/SinkBaiLianParameters',
                                 'required' => false,
                             ],
+                            'SinkDataWorksTriggerParameters' => [
+                                '$ref' => '#/components/schemas/SinkDataWorksTriggerParameters',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -7326,11 +7884,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],

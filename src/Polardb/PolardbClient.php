@@ -333,6 +333,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteApplicationAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDBNodeDescription(array $arguments = [])
  * @method \Http\Promise\Promise modifyDBNodeDescriptionAsync($arguments = [])
+ * @method \Dew\Acs\Result describeBackupRegions(array $arguments = [])
+ * @method \Http\Promise\Promise describeBackupRegionsAsync($arguments = [])
  */
 final class PolardbClient extends AcsClient
 {

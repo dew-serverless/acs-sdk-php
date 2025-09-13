@@ -569,6 +569,9 @@
                     'WorkspaceId' => [
                         'type' => 'string',
                     ],
+                    'DatasetVersion' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'DatasetLabel' => [
@@ -4340,6 +4343,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDatasetJobConfig' => [
@@ -4613,6 +4640,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DatasetVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListDatasetFileMetas' => [
@@ -4684,7 +4719,7 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '1',
-                        'maximum' => '1000',
+                        'maximum' => '5000',
                     ],
                 ],
                 [
@@ -4856,6 +4891,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'QueryExpression',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -5066,6 +5109,10 @@
                             'Config' => [
                                 'type' => 'string',
                                 'required' => true,
+                            ],
+                            'DatasetVersion' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -5548,6 +5595,22 @@
                 ],
                 [
                     'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Edition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Accessibility',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

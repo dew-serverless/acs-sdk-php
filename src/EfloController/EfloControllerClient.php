@@ -29,6 +29,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteNodeGroupAsync($arguments = [])
  * @method \Dew\Acs\Result listNodeGroups(array $arguments = [])
  * @method \Http\Promise\Promise listNodeGroupsAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteNode(array $arguments = [])
+ * @method \Http\Promise\Promise deleteNodeAsync($arguments = [])
  * @method \Dew\Acs\Result describeNode(array $arguments = [])
  * @method \Http\Promise\Promise describeNodeAsync($arguments = [])
  * @method \Dew\Acs\Result listFreeNodes(array $arguments = [])

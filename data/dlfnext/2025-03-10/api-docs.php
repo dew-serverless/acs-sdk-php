@@ -102,6 +102,9 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'totalMetaSizeInBytes' => [
+                        '$ref' => '#/components/schemas/MoMValues',
+                    ],
                 ],
             ],
             'CatalogSummaryTrend' => [
@@ -245,6 +248,10 @@
                         'format' => 'int64',
                     ],
                     'objTypeColdArchiveSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'totalMetaSizeInBytes' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
@@ -1139,14 +1146,66 @@
                     'tableId' => [
                         'type' => 'string',
                     ],
-                    'maxLevel0FileCount' => [
-                        'type' => 'string',
+                    'lastCompactedFileTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => true,
                     ],
                     'cuUsage' => [
                         'type' => 'number',
                         'format' => 'double',
                     ],
-                    'lastCompactedFileTime' => [
+                    'maxLevel0FileCount' => [
+                        'type' => 'string',
+                        'deprecated' => true,
+                    ],
+                    'latencyFileEarliestTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'TableCompactionHistory' => [
+                'type' => 'object',
+                'properties' => [
+                    'catalogId' => [
+                        'type' => 'string',
+                    ],
+                    'tableId' => [
+                        'type' => 'string',
+                    ],
+                    'snapshotId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updatedBy' => [
+                        'type' => 'string',
+                    ],
+                    'updatedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'commitTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'beforeFilesLastCreationTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'beforeFilesCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'afterFilesCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'beforeFilesSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'afterFilesSize' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
@@ -1235,6 +1294,10 @@
                         'format' => 'int64',
                     ],
                     'updatedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'totalMetaSizeInBytes' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
@@ -2466,6 +2529,61 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetTableToken' => [
+            'path' => '/dlf/v1/{catalogId}/databases/{database}/tables/{table}/token',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'isInternal',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'catalogId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'database',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'table',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

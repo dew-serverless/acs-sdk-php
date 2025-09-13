@@ -871,6 +871,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Edition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DisableBackupPlan' => [
@@ -913,6 +921,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Edition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'EnableBackupPlan' => [
@@ -949,6 +965,14 @@
                 ],
                 [
                     'name' => 'SourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Edition',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1171,6 +1195,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Edition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeBackupPlans' => [
@@ -1247,6 +1279,14 @@
                         'maxItems' => 5,
                     ],
                 ],
+                [
+                    'name' => 'Edition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ExecuteBackupPlan' => [
@@ -1291,6 +1331,14 @@
                 ],
                 [
                     'name' => 'RuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Edition',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3156,6 +3204,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Edition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeUdmSnapshots' => [
@@ -3480,6 +3536,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Edition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CancelRestoreJob' => [
@@ -3511,7 +3575,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Edition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -3594,6 +3666,14 @@
                         'maxItems' => 5,
                     ],
                 ],
+                [
+                    'name' => 'Edition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CancelBackupJob' => [
@@ -3622,6 +3702,14 @@
                 ],
                 [
                     'name' => 'VaultId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Edition',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3883,6 +3971,14 @@
                             ],
                         ],
                         'maxItems' => 5,
+                    ],
+                ],
+                [
+                    'name' => 'Edition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

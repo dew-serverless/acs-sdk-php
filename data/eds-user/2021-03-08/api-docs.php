@@ -1605,6 +1605,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'LoginPolicyId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExcludeAttachedLoginPolicyGroups',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UserBatchQuitGroup' => [

@@ -1112,6 +1112,209 @@
                     ],
                 ],
             ],
+            'DRPlanConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'RegionId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'ClusterType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'ReleaseVersion' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'DeployMode' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'LogCollectStrategy' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'ClusterName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'DeletionProtection' => [
+                        'type' => 'boolean',
+                    ],
+                    'SecurityMode' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'PaymentType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'NodeAttributes' => [
+                        '$ref' => '#/components/schemas/NodeAttributes',
+                        'required' => true,
+                    ],
+                    'ManagedScalingPolicy' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Constraints' => [
+                                '$ref' => '#/components/schemas/ManagedScalingConstraints',
+                            ],
+                        ],
+                    ],
+                    'BootstrapScripts' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Script',
+                        ],
+                    ],
+                    'Tags' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Value' => [
+                                    'type' => 'string',
+                                ],
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                        ],
+                    ],
+                    'NodeGroups' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/NodeGroupConfig',
+                        ],
+                    ],
+                    'Applications' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Application',
+                        ],
+                    ],
+                    'ApplicationConfigs' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ApplicationConfig',
+                        ],
+                    ],
+                    'ResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'SubscriptionConfig' => [
+                        '$ref' => '#/components/schemas/SubscriptionConfig',
+                    ],
+                ],
+            ],
+            'DRPlanConfigurationDetail' => [
+                'type' => 'object',
+                'properties' => [
+                    'RegionId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'ClusterType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'ReleaseVersion' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'DeployMode' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'LogCollectStrategy' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'ClusterName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'DeletionProtection' => [
+                        'type' => 'boolean',
+                    ],
+                    'MetaStoreType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'SecurityMode' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'PaymentType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'NodeAttributes' => [
+                        '$ref' => '#/components/schemas/NodeAttributes',
+                        'required' => true,
+                    ],
+                    'ManagedScalingPolicy' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Constraints' => [
+                                '$ref' => '#/components/schemas/ManagedScalingConstraints',
+                            ],
+                        ],
+                    ],
+                    'BootstrapScripts' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Script',
+                        ],
+                    ],
+                    'Tags' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Tag',
+                        ],
+                    ],
+                    'NodeGroups' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/NodeGroupConfig',
+                        ],
+                    ],
+                    'Applications' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Application',
+                        ],
+                    ],
+                    'ApplicationConfigs' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ApplicationConfig',
+                        ],
+                    ],
+                    'ScalingPolicies' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScalingPolicy',
+                        ],
+                    ],
+                    'ResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'SubscriptionConfig' => [
+                        '$ref' => '#/components/schemas/SubscriptionConfig',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'DataDisk' => [
                 'type' => 'object',
                 'properties' => [

@@ -321,19 +321,15 @@
             'ScorePageItem' => [
                 'type' => 'object',
                 'properties' => [
-                    'snippet' => [
-                        'type' => 'string',
-                    ],
-                    'summary' => [
-                        'type' => 'string',
-                    ],
                     'publishTime' => [
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
                     ],
-                    'hostLogo' => [
-                        'type' => 'string',
+                    'score' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'required' => false,
                     ],
                     'images' => [
                         'type' => 'array',
@@ -343,43 +339,17 @@
                             'required' => false,
                         ],
                     ],
-                    'mime' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'cardType' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'link' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'title' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'siteLabel' => [
-                        'type' => 'string',
-                    ],
-                    'score' => [
-                        'type' => 'number',
-                        'format' => 'double',
-                        'required' => false,
-                    ],
-                    'hostname' => [
-                        'type' => 'string',
-                    ],
                     'htmlTitle' => [
                         'type' => 'string',
                         'required' => true,
                     ],
-                    'markdownText' => [
-                        'type' => 'string',
-                    ],
                     'displayLink' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                    'mime' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                     'pageMap' => [
                         'type' => 'object',
@@ -389,6 +359,14 @@
                             'required' => false,
                         ],
                     ],
+                    'cardType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'link' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
                     'mainText' => [
                         'type' => 'string',
                         'required' => false,
@@ -396,6 +374,32 @@
                     'htmlSnippet' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                    'title' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'hostname' => [
+                        'type' => 'string',
+                    ],
+                    'hostLogo' => [
+                        'type' => 'string',
+                    ],
+                    'siteLabel' => [
+                        'type' => 'string',
+                    ],
+                    'markdownText' => [
+                        'type' => 'string',
+                    ],
+                    'snippet' => [
+                        'type' => 'string',
+                    ],
+                    'summary' => [
+                        'type' => 'string',
+                    ],
+                    'hostAuthorityScore' => [
+                        'type' => 'number',
+                        'format' => 'double',
                     ],
                 ],
             ],

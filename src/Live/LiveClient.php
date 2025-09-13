@@ -711,6 +711,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createRoomRealTimeStreamAddressAsync($arguments = [])
  * @method \Dew\Acs\Result deleteChannel(array $arguments = [])
  * @method \Http\Promise\Promise deleteChannelAsync($arguments = [])
+ * @method \Dew\Acs\Result listRTCLiveRooms(array $arguments = [])
+ * @method \Http\Promise\Promise listRTCLiveRoomsAsync($arguments = [])
  * @method \Dew\Acs\Result startLiveMPUTask(array $arguments = [])
  * @method \Http\Promise\Promise startLiveMPUTaskAsync($arguments = [])
  * @method \Dew\Acs\Result updateLiveMPUTask(array $arguments = [])

@@ -5428,6 +5428,14 @@
                         'maximum' => '100',
                     ],
                 ],
+                [
+                    'name' => 'WithReports',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDataFlowSubTasks' => [

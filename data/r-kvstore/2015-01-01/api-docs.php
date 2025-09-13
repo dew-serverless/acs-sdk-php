@@ -1492,7 +1492,7 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '1',
-                        'maximum' => '64',
+                        'maximum' => '128',
                     ],
                 ],
                 [

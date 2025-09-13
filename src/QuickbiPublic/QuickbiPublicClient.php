@@ -7,6 +7,10 @@ namespace Dew\Acs\QuickbiPublic;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result checkOrganizationMember(array $arguments = [])
+ * @method \Http\Promise\Promise checkOrganizationMemberAsync($arguments = [])
+ * @method \Dew\Acs\Result createCubeBySql(array $arguments = [])
+ * @method \Http\Promise\Promise createCubeBySqlAsync($arguments = [])
  * @method \Dew\Acs\Result addUser(array $arguments = [])
  * @method \Http\Promise\Promise addUserAsync($arguments = [])
  * @method \Dew\Acs\Result batchAddFeishuUsers(array $arguments = []) {@deprecated 2022-01-01}
@@ -59,6 +63,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryUserTagValueListAsync($arguments = [])
  * @method \Dew\Acs\Result updateUserTagMeta(array $arguments = [])
  * @method \Http\Promise\Promise updateUserTagMetaAsync($arguments = [])
+ * @method \Dew\Acs\Result listWorkspaceUserRolesByUserId(array $arguments = [])
+ * @method \Http\Promise\Promise listWorkspaceUserRolesByUserIdAsync($arguments = [])
  * @method \Dew\Acs\Result listWorkspaceRoleUsers(array $arguments = [])
  * @method \Http\Promise\Promise listWorkspaceRoleUsersAsync($arguments = [])
  * @method \Dew\Acs\Result queryWorkspaceRoleConfig(array $arguments = [])
@@ -141,6 +147,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryReportPerformanceAsync($arguments = [])
  * @method \Dew\Acs\Result getWorksEmbedList(array $arguments = [])
  * @method \Http\Promise\Promise getWorksEmbedListAsync($arguments = [])
+ * @method \Dew\Acs\Result checkDatasetExisted(array $arguments = [])
+ * @method \Http\Promise\Promise checkDatasetExistedAsync($arguments = [])
+ * @method \Dew\Acs\Result createDataset(array $arguments = [])
+ * @method \Http\Promise\Promise createDatasetAsync($arguments = [])
+ * @method \Dew\Acs\Result addDataSource(array $arguments = [])
+ * @method \Http\Promise\Promise addDataSourceAsync($arguments = [])
+ * @method \Dew\Acs\Result updateDataSource(array $arguments = [])
+ * @method \Http\Promise\Promise updateDataSourceAsync($arguments = [])
+ * @method \Dew\Acs\Result updateCubeBySql(array $arguments = [])
+ * @method \Http\Promise\Promise updateCubeBySqlAsync($arguments = [])
  * @method \Dew\Acs\Result queryLastAccelerationEngineJob(array $arguments = [])
  * @method \Http\Promise\Promise queryLastAccelerationEngineJobAsync($arguments = [])
  * @method \Dew\Acs\Result listDataSource(array $arguments = [])

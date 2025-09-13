@@ -448,6 +448,24 @@
                                             ],
                                         ],
                                     ],
+                                    'AutoChapters' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'ChapterGranularity' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Model' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'LlmOutputLanguage' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                         ],

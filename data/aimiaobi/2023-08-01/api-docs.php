@@ -367,6 +367,7 @@
                             'temp',
                             'imageGenerate',
                             'datasetUpload',
+                            'deepWrite',
                         ],
                     ],
                 ],

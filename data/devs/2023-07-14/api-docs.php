@@ -233,6 +233,253 @@
                     ],
                 ],
             ],
+            'ComfyUIWorkflowTemplate' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'kind' => [
+                        'type' => 'string',
+                    ],
+                    'uid' => [
+                        'type' => 'string',
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'spec' => [
+                        '$ref' => '#/components/schemas/ComfyUIWorkflowTemplateSpec',
+                    ],
+                    'labels' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'installCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
+            'ComfyUIWorkflowTemplateSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'displayName' => [
+                        'type' => 'string',
+                    ],
+                    'author' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'name' => [
+                                'type' => 'string',
+                            ],
+                            'type' => [
+                                'type' => 'string',
+                            ],
+                            'avatarUrl' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'coverUrls' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'versions' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'snapshotName' => [
+                                    'type' => 'string',
+                                ],
+                                'flows' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'name' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'models' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'path' => [
+                                                'type' => 'string',
+                                            ],
+                                            'name' => [
+                                                'type' => 'string',
+                                            ],
+                                            'size' => [
+                                                'type' => 'string',
+                                            ],
+                                            'source' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'type' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'webUrl' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                ],
+                                            ],
+                                            'downloadUrls' => [
+                                                'type' => 'object',
+                                                'additionalProperties' => [
+                                                    'type' => 'string',
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'nodes' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'name' => [
+                                                'type' => 'string',
+                                            ],
+                                            'version' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'type' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'value' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                ],
+                                            ],
+                                            'source' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'type' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'webUrl' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'cloneUrl' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'publishedVersions' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'ComfyUIWorkflowTemplateTask' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'kind' => [
+                        'type' => 'string',
+                    ],
+                    'uid' => [
+                        'type' => 'string',
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'spec' => [
+                        '$ref' => '#/components/schemas/ComfyUIWorkflowTemplateTaskSpec',
+                    ],
+                    'status' => [
+                        '$ref' => '#/components/schemas/ComfyUIWorkflowTemplateTaskStatus',
+                    ],
+                    'labels' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'ComfyUIWorkflowTemplateTaskSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'templateName' => [
+                        'type' => 'string',
+                    ],
+                    'region' => [
+                        'type' => 'string',
+                    ],
+                    'projectName' => [
+                        'type' => 'string',
+                    ],
+                    'devFunctionName' => [
+                        'type' => 'string',
+                    ],
+                    'installConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'version' => [
+                                'type' => 'string',
+                            ],
+                            'autoInstall' => [
+                                'type' => 'boolean',
+                            ],
+                            'template' => [
+                                '$ref' => '#/components/schemas/ComfyUIWorkflowTemplateSpec',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'ComfyUIWorkflowTemplateTaskStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'install' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'phase' => [
+                                'type' => 'string',
+                            ],
+                            'invocationID' => [
+                                'type' => 'string',
+                            ],
+                            'message' => [
+                                'type' => 'string',
+                            ],
+                            'startTime' => [
+                                'type' => 'string',
+                            ],
+                            'finishedTime' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'Condition' => [
                 'type' => 'object',
                 'properties' => [

@@ -57,6 +57,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getTableSnapshotAsync($arguments = [])
  * @method \Dew\Acs\Result listSnapshots(array $arguments = [])
  * @method \Http\Promise\Promise listSnapshotsAsync($arguments = [])
+ * @method \Dew\Acs\Result getTableToken(array $arguments = [])
+ * @method \Http\Promise\Promise getTableTokenAsync($arguments = [])
  * @method \Dew\Acs\Result createShare(array $arguments = [])
  * @method \Http\Promise\Promise createShareAsync($arguments = [])
  * @method \Dew\Acs\Result getShare(array $arguments = [])

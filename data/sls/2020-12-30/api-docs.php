@@ -375,6 +375,116 @@
                     ],
                 ],
             ],
+            'ESIngestion' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'displayName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'schedule' => [
+                        '$ref' => '#/components/schemas/Schedule',
+                        'required' => true,
+                    ],
+                    'configuration' => [
+                        '$ref' => '#/components/schemas/ESIngestionConfiguration',
+                        'required' => true,
+                    ],
+                    'createTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'scheduleId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ESIngestionConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'logstore' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'source' => [
+                        '$ref' => '#/components/schemas/ESIngestionConfigurationSource',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'ESIngestionConfigurationSource' => [
+                'type' => 'object',
+                'properties' => [
+                    'BootstrapServers' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'Index' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'username' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'password' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'timeFieldName' => [
+                        'type' => 'string',
+                    ],
+                    'timeFormat' => [
+                        'type' => 'string',
+                    ],
+                    'timeZone' => [
+                        'type' => 'string',
+                    ],
+                    'query' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'connectorMode' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'startTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'endTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'maxDataDelaySec' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                    'MinFragRangeSec' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                    'vpcId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ETL' => [
                 'type' => 'object',
                 'properties' => [
@@ -689,6 +799,123 @@
                     ],
                 ],
             ],
+            'KafkaIngestion' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'displayName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'schedule' => [
+                        '$ref' => '#/components/schemas/Schedule',
+                        'required' => true,
+                    ],
+                    'configuration' => [
+                        '$ref' => '#/components/schemas/KafkaIngestionConfiguration',
+                        'required' => true,
+                    ],
+                    'createTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'scheduleId' => [
+                        'type' => 'string',
+                    ],
+                    'processorId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'KafkaIngestionConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'logstore' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'source' => [
+                        '$ref' => '#/components/schemas/KafkaIngestionConfigurationSource',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'KafkaIngestionConfigurationSource' => [
+                'type' => 'object',
+                'properties' => [
+                    'bootstrapServers' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'topics' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'fromPosition' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'consumerGroup' => [
+                        'type' => 'string',
+                    ],
+                    'valueType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'encoding' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'parseArray' => [
+                        'type' => 'boolean',
+                        'required' => true,
+                    ],
+                    'vpcId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'timeField' => [
+                        'type' => 'string',
+                    ],
+                    'timePattern' => [
+                        'type' => 'string',
+                    ],
+                    'timeFormat' => [
+                        'type' => 'string',
+                    ],
+                    'timeZone' => [
+                        'type' => 'string',
+                    ],
+                    'defaultTimeSource' => [
+                        'type' => 'string',
+                    ],
+                    'enableSlsContext' => [
+                        'type' => 'boolean',
+                    ],
+                    'nameResolutions' => [
+                        'type' => 'string',
+                    ],
+                    'communication' => [
+                        'type' => 'string',
+                    ],
+                    'processorId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ListAgentInstanceConfigs' => [
                 'type' => 'array',
                 'items' => [
@@ -891,6 +1118,9 @@
                     'lastModifyTime' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'task' => [
+                        'type' => 'object',
                     ],
                 ],
             ],
@@ -1431,6 +1661,9 @@
                     'scheduleId' => [
                         'type' => 'string',
                     ],
+                    'processorId' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'OSSIngestionConfiguration' => [
@@ -1514,6 +1747,9 @@
                     ],
                     'tagPackId' => [
                         'type' => 'boolean',
+                    ],
+                    'processorId' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1607,6 +1843,9 @@
                     'scheduleId' => [
                         'type' => 'string',
                     ],
+                    'processorId' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'S3IngestionConfiguration' => [
@@ -1694,6 +1933,9 @@
                         'type' => 'string',
                     ],
                     'timeZone' => [
+                        'type' => 'string',
+                    ],
+                    'processorId' => [
                         'type' => 'string',
                     ],
                 ],
@@ -6015,6 +6257,10 @@
                                 ],
                                 'minItems' => 1,
                             ],
+                            'task' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -6235,6 +6481,10 @@
                                 ],
                                 'minItems' => 1,
                             ],
+                            'task' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -6446,6 +6696,14 @@
                 ],
                 [
                     'name' => 'configName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'configType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -12082,6 +12340,194 @@
                                 'required' => true,
                             ],
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateS3Ingestion' => [
+            'path' => '/s3ingestions',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'description' => [
+                                'type' => 'string',
+                            ],
+                            'displayName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'schedule' => [
+                                '$ref' => '#/components/schemas/Schedule',
+                            ],
+                            'configuration' => [
+                                '$ref' => '#/components/schemas/S3IngestionConfiguration',
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteS3Ingestion' => [
+            'path' => '/s3ingestions/{s3IngestionName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 's3IngestionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetS3Ingestion' => [
+            'path' => '/s3ingestions/{s3IngestionName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 's3IngestionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListS3Ingestions' => [
+            'path' => '/s3ingestions',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'logstore',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

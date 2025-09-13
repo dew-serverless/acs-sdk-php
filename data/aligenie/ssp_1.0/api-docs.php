@@ -6631,6 +6631,14 @@
                     ],
                 ],
                 [
+                    'name' => 'Source',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'BizType',
                     'in' => 'query',
                     'schema' => [

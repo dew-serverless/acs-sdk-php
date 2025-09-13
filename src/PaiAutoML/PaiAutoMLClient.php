@@ -7,6 +7,10 @@ namespace Dew\Acs\PaiAutoML;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result getServiceIdentityRole(array $arguments = [])
+ * @method \Http\Promise\Promise getServiceIdentityRoleAsync($arguments = [])
+ * @method \Dew\Acs\Result createServiceIdentityRole(array $arguments = [])
+ * @method \Http\Promise\Promise createServiceIdentityRoleAsync($arguments = [])
  * @method \Dew\Acs\Result createHpoExperiment(array $arguments = [])
  * @method \Http\Promise\Promise createHpoExperimentAsync($arguments = [])
  * @method \Dew\Acs\Result listHpoExperiments(array $arguments = [])
@@ -39,10 +43,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createAutofeExperimentAsync($arguments = [])
  * @method \Dew\Acs\Result getAutofeExperiment(array $arguments = [])
  * @method \Http\Promise\Promise getAutofeExperimentAsync($arguments = [])
- * @method \Dew\Acs\Result getServiceIdentityRole(array $arguments = [])
- * @method \Http\Promise\Promise getServiceIdentityRoleAsync($arguments = [])
- * @method \Dew\Acs\Result createServiceIdentityRole(array $arguments = [])
- * @method \Http\Promise\Promise createServiceIdentityRoleAsync($arguments = [])
  */
 final class PaiAutoMLClient extends AcsClient
 {

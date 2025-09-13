@@ -171,6 +171,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyDefenseResourceXffAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describePauseProtectionStatus(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describePauseProtectionStatusAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeDefenseGroupValidResources(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeDefenseGroupValidResourcesAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result createDefenseTemplate(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise createDefenseTemplateAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyDefenseTemplate(array $arguments = []) {@since 2021-10-01}
@@ -191,6 +193,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeTemplateResourcesAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeTemplateResourceCount(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeTemplateResourceCountAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeDefenseTemplateValidResources(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeDefenseTemplateValidResourcesAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeDefenseTemplateValidGroups(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeDefenseTemplateValidGroupsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeDefenseResourceTemplates(array $arguments = []) {@since 2021-10-01}
@@ -217,6 +221,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyDefenseSceneConfigAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeDefenseSceneConfig(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeDefenseSceneConfigAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeDefenseRuleStatistics(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeDefenseRuleStatisticsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeBaseSystemRules(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeBaseSystemRulesAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result createMajorProtectionBlackIp(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise createMajorProtectionBlackIpAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyMajorProtectionBlackIp(array $arguments = []) {@since 2021-10-01}
@@ -347,10 +355,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeRuleHitsTopUaAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeFlowTopUrl(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeFlowTopUrlAsync($arguments = []) {@since 2021-10-01}
- * @method \Dew\Acs\Result describeUserSlsLogRegions(array $arguments = []) {@since 2021-10-01}
- * @method \Http\Promise\Promise describeUserSlsLogRegionsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeUserLogFieldConfig(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeUserLogFieldConfigAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result modifyUserLogFieldConfig(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise modifyUserLogFieldConfigAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeCommonLogFields(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeCommonLogFieldsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result modifyUserWafLogStatus(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise modifyUserWafLogStatusAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeUserWafLogStatus(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeUserWafLogStatusAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeUserSlsLogRegions(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeUserSlsLogRegionsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeSlsAuthStatus(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeSlsAuthStatusAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeSlsLogStoreStatus(array $arguments = []) {@since 2021-10-01}
@@ -427,6 +443,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyApisecLogDeliveryAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyPauseProtectionStatus(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise modifyPauseProtectionStatusAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeCustomBaseRuleCompileResult(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeCustomBaseRuleCompileResultAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result createHybridCloudCluster(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise createHybridCloudClusterAsync($arguments = []) {@since 2021-10-01}
  */
 final class WafOpenapiClient extends AcsClient
 {

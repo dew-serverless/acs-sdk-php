@@ -688,6 +688,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetAIQueryResult' => [

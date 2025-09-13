@@ -442,6 +442,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'OverWriteFileByOssKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ApplyFileUploadLease' => [
@@ -657,6 +665,207 @@
                         ],
                         'minItems' => 1,
                         'maxItems' => 10,
+                    ],
+                ],
+            ],
+        ],
+        'GetParseSettings' => [
+            'path' => '/{WorkspaceId}/datacenter/parser/settings',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CategoryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetAvailableParserTypes' => [
+            'path' => '/{WorkspaceId}/datacenter/parser/parsertype',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FileType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'doc',
+                            'docx',
+                            'ppt',
+                            'pptx',
+                            'xls',
+                            'xlsx',
+                            'md',
+                            'txt',
+                            'pdf',
+                            'png',
+                            'jpg',
+                            'jpeg',
+                            'bmp',
+                            'gif',
+                            'html',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ChangeParseSetting' => [
+            'path' => '/{WorkspaceId}/datacenter/parser/settings',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CategoryId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'FileType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'doc',
+                            'docx',
+                            'ppt',
+                            'pptx',
+                            'xls',
+                            'xlsx',
+                            'md',
+                            'txt',
+                            'pdf',
+                            'png',
+                            'jpg',
+                            'jpeg',
+                            'bmp',
+                            'gif',
+                            'html',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Parser',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'DOCMIND',
+                            'DOCMIND_DIGITAL',
+                            'DOCMIND_LLM_VERSION',
+                            'DASH_SENSEVOICE',
+                            'RAG_VIDEO_PARSER',
+                            'DASH_QWEN_VL_PARSER',
+                            'BAILIAN_TXT_PARSER',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ParserConfig',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'modelName' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'qwen-vl-max',
+                                    'qwen-vl-plus',
+                                ],
+                            ],
+                            'modelPrompt' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],

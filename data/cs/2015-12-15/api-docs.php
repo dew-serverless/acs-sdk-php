@@ -882,9 +882,13 @@
                             ],
                             'cluster_type' => [
                                 'type' => 'string',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'cluster_spec' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'profile' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -892,16 +896,63 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'runtime' => [
-                                '$ref' => '#/components/schemas/runtime',
+                            'auto_mode' => [
+                                'type' => 'object',
                                 'required' => false,
+                                'properties' => [
+                                    'enable' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'tags' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    '$ref' => '#/components/schemas/tag',
+                                    'required' => false,
+                                ],
+                            ],
+                            'resource_group_id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'deletion_protection' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'zone_ids' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                             'vpcid' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'vswitch_ids' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'ip_stack' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'ipv4',
+                                    'dual',
+                                ],
+                            ],
                             'pod_vswitch_ids' => [
                                 'type' => 'array',
+                                'deprecated' => true,
                                 'required' => false,
                                 'items' => [
                                     'type' => 'string',
@@ -914,7 +965,7 @@
                             ],
                             'service_cidr' => [
                                 'type' => 'string',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'security_group_id' => [
                                 'type' => 'string',
@@ -932,6 +983,10 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'load_balancer_id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                             'ssh_flags' => [
                                 'type' => 'boolean',
                                 'required' => false,
@@ -944,26 +999,52 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'user_ca' => [
+                            'proxy_mode' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'user_data' => [
+                            'controlplane_log_ttl' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'controlplane_log_project' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'controlplane_log_components' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'audit_log_config' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'sls_project_name' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'rrsa_config' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
                             ],
                             'cluster_domain' => [
                                 'type' => 'string',
-                                'required' => false,
-                            ],
-                            'node_name_mode' => [
-                                'type' => 'string',
-                                'deprecated' => true,
-                                'required' => false,
-                            ],
-                            'custom_san' => [
-                                'type' => 'string',
-                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'encryption_provider_key' => [
@@ -978,6 +1059,193 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'extra_sans' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'maintenance_window' => [
+                                '$ref' => '#/components/schemas/maintenance_window',
+                                'required' => false,
+                            ],
+                            'operation_policy' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'cluster_auto_upgrade' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'enabled' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'channel' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'addons' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    '$ref' => '#/components/schemas/addon',
+                                    'required' => false,
+                                ],
+                            ],
+                            'nodepools' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    '$ref' => '#/components/schemas/nodepool',
+                                    'required' => false,
+                                ],
+                            ],
+                            'user_ca' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'control_plane_config' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'charge_type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'period' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'period_unit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'auto_renew' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'auto_renew_period' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'instance_types' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'image_type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'image_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'key_pair' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'login_password' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_category' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_size' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_snapshot_policy_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_performance_level' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_provisioned_iops' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_bursting_enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'deploymentset_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'cloud_monitor_flags' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'instance_metadata_options' => [
+                                        '$ref' => '#/components/schemas/InstanceMetadataOptions',
+                                        'required' => false,
+                                    ],
+                                    'soc_enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'security_hardening_os' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'cpu_policy' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'runtime' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'node_port_range' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'size' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'custom_san' => [
+                                'type' => 'string',
+                                'deprecated' => true,
+                                'required' => false,
+                            ],
+                            'runtime' => [
+                                '$ref' => '#/components/schemas/runtime',
+                                'deprecated' => true,
+                                'required' => false,
+                            ],
+                            'node_name_mode' => [
+                                'type' => 'string',
+                                'deprecated' => true,
+                                'required' => false,
+                            ],
+                            'user_data' => [
+                                'type' => 'string',
+                                'deprecated' => true,
+                                'required' => false,
+                            ],
                             'image_id' => [
                                 'type' => 'string',
                                 'deprecated' => true,
@@ -989,22 +1257,6 @@
                                 'required' => false,
                                 'items' => [
                                     'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'tags' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    '$ref' => '#/components/schemas/tag',
-                                    'required' => false,
-                                ],
-                            ],
-                            'addons' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    '$ref' => '#/components/schemas/addon',
                                     'required' => false,
                                 ],
                             ],
@@ -1052,12 +1304,9 @@
                                 'deprecated' => true,
                                 'required' => false,
                             ],
-                            'proxy_mode' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                             'node_port_range' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'master_vswitch_ids' => [
@@ -1147,14 +1396,6 @@
                                 'format' => 'int64',
                                 'deprecated' => true,
                                 'required' => false,
-                            ],
-                            'vswitch_ids' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                             ],
                             'worker_vswitch_ids' => [
                                 'type' => 'array',
@@ -1270,6 +1511,7 @@
                             ],
                             'service_discovery_types' => [
                                 'type' => 'array',
+                                'deprecated' => true,
                                 'required' => false,
                                 'items' => [
                                     'type' => 'string',
@@ -1278,6 +1520,7 @@
                             ],
                             'nat_gateway' => [
                                 'type' => 'boolean',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'zone_id' => [
@@ -1285,32 +1528,9 @@
                                 'deprecated' => true,
                                 'required' => false,
                             ],
-                            'profile' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                             'logging_type' => [
                                 'type' => 'string',
-                                'required' => false,
-                            ],
-                            'controlplane_log_ttl' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'controlplane_log_project' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'controlplane_log_components' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'deletion_protection' => [
-                                'type' => 'boolean',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'disable_rollback' => [
@@ -1337,10 +1557,6 @@
                             'enable_rrsa' => [
                                 'type' => 'boolean',
                                 'deprecated' => true,
-                                'required' => false,
-                            ],
-                            'resource_group_id' => [
-                                'type' => 'string',
                                 'required' => false,
                             ],
                             'charge_type' => [
@@ -1370,217 +1586,9 @@
                                 'deprecated' => true,
                                 'required' => false,
                             ],
-                            'ip_stack' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'enum' => [
-                                    'ipv4',
-                                    'dual',
-                                ],
-                            ],
                             'access_control_list' => [
                                 'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'nodepools' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    '$ref' => '#/components/schemas/nodepool',
-                                    'required' => false,
-                                ],
-                            ],
-                            'zone_ids' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'load_balancer_id' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'maintenance_window' => [
-                                '$ref' => '#/components/schemas/maintenance_window',
-                                'required' => false,
-                            ],
-                            'operation_policy' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'cluster_auto_upgrade' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'enabled' => [
-                                                'type' => 'boolean',
-                                                'required' => false,
-                                            ],
-                                            'channel' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'control_plane_config' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'charge_type' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'period' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
-                                        'required' => false,
-                                    ],
-                                    'period_unit' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'auto_renew' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'auto_renew_period' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
-                                        'required' => false,
-                                    ],
-                                    'instance_types' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                    'image_type' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'image_id' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'key_pair' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'login_password' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'system_disk_category' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'system_disk_size' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
-                                        'required' => false,
-                                    ],
-                                    'system_disk_snapshot_policy_id' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'system_disk_performance_level' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'system_disk_provisioned_iops' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
-                                        'required' => false,
-                                    ],
-                                    'system_disk_bursting_enabled' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'deploymentset_id' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'cloud_monitor_flags' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'soc_enabled' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'security_hardening_os' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'cpu_policy' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'runtime' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'node_port_range' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'size' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
-                                        'required' => false,
-                                    ],
-                                    'instance_metadata_options' => [
-                                        '$ref' => '#/components/schemas/InstanceMetadataOptions',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                            'audit_log_config' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'enabled' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'sls_project_name' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                            'auto_mode' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'enable' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                            'rrsa_config' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'enabled' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                            'extra_sans' => [
-                                'type' => 'array',
+                                'deprecated' => true,
                                 'required' => false,
                                 'items' => [
                                     'type' => 'string',
@@ -1727,18 +1735,6 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
-                            'instance_deletion_protection' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'ingress_domain_rebinding' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'ingress_loadbalancer_id' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                             'resource_group_id' => [
                                 'type' => 'string',
                                 'required' => false,
@@ -1753,6 +1749,7 @@
                             ],
                             'access_control_list' => [
                                 'type' => 'array',
+                                'deprecated' => true,
                                 'required' => false,
                                 'items' => [
                                     'type' => 'string',
@@ -1946,6 +1943,21 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'instance_deletion_protection' => [
+                                'type' => 'boolean',
+                                'deprecated' => true,
+                                'required' => false,
+                            ],
+                            'ingress_domain_rebinding' => [
+                                'type' => 'boolean',
+                                'deprecated' => true,
+                                'required' => false,
+                            ],
+                            'ingress_loadbalancer_id' => [
+                                'type' => 'string',
+                                'deprecated' => true,
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -2009,11 +2021,13 @@
                             ],
                             'rolling_policy' => [
                                 'type' => 'object',
+                                'deprecated' => true,
                                 'required' => false,
                                 'properties' => [
                                     'max_parallelism' => [
                                         'type' => 'integer',
                                         'format' => 'int32',
+                                        'deprecated' => true,
                                         'required' => false,
                                     ],
                                 ],

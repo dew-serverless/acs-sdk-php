@@ -7,6 +7,8 @@ namespace Dew\Acs\PaiRecService;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result splitTrafficControlTarget(array $arguments = [])
+ * @method \Http\Promise\Promise splitTrafficControlTargetAsync($arguments = [])
  * @method \Dew\Acs\Result generateAlgorithmCustomizationScript(array $arguments = [])
  * @method \Http\Promise\Promise generateAlgorithmCustomizationScriptAsync($arguments = [])
  * @method \Dew\Acs\Result deleteEngineConfig(array $arguments = [])

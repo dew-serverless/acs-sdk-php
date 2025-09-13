@@ -130,6 +130,33 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'Attributes',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Zone' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'OutAccess' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'InAccess' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'EdgeMediaService' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'ListRenderingInstances' => [

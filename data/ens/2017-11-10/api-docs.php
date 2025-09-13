@@ -8723,7 +8723,7 @@
                                     'format' => 'int32',
                                     'required' => false,
                                     'minimum' => '0',
-                                    'maximum' => '65535',
+                                    'maximum' => '0',
                                 ],
                             ],
                         ],
@@ -11734,6 +11734,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PerformanceLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeploySDG' => [
@@ -12610,6 +12619,30 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
                     ],
                 ],
                 [
@@ -16381,6 +16414,22 @@
                     ],
                 ],
             ],
+        ],
+        'DescribeNASAvailableResourceInfo' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
         ],
     ],
     'endpoints' => [

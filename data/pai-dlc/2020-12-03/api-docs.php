@@ -491,10 +491,23 @@
             'ExtraPodSpec' => [
                 'type' => 'object',
                 'properties' => [
+                    'SideCarContainers' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ContainerSpec',
+                        ],
+                    ],
                     'InitContainers' => [
                         'type' => 'array',
                         'items' => [
                             '$ref' => '#/components/schemas/ContainerSpec',
+                        ],
+                    ],
+                    'PodLabels' => [
+                        'type' => 'object',
+                        'deprecated' => true,
+                        'additionalProperties' => [
+                            'type' => 'string',
                         ],
                     ],
                     'PodAnnotations' => [
@@ -504,27 +517,14 @@
                             'type' => 'string',
                         ],
                     ],
-                    'SideCarContainers' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/ContainerSpec',
-                        ],
-                    ],
-                    'Lifecycle' => [
-                        '$ref' => '#/components/schemas/Lifecycle',
-                    ],
                     'SharedVolumeMountPaths' => [
                         'type' => 'array',
                         'items' => [
                             'type' => 'string',
                         ],
                     ],
-                    'PodLabels' => [
-                        'type' => 'object',
-                        'deprecated' => true,
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
+                    'Lifecycle' => [
+                        '$ref' => '#/components/schemas/Lifecycle',
                     ],
                 ],
             ],
@@ -2216,7 +2216,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'maxLength' => 32,
+                        'maxLength' => 200,
                     ],
                 ],
                 [

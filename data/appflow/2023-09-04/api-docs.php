@@ -73,6 +73,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ExtraInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
     ],

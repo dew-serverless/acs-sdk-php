@@ -2498,4 +2498,12 @@
         ],
         'defaultVersion' => '2025-07-07',
     ],
+    [
+        'code' => 'AnyTrans',
+        'style' => 'RPC',
+        'versions' => [
+            '2025-07-07',
+        ],
+        'defaultVersion' => '2025-07-07',
+    ],
 ];

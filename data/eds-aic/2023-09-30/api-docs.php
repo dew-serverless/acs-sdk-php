@@ -334,6 +334,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PromotionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeCloudPhoneNodes' => [
@@ -539,6 +547,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PromotionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ChangeCloudPhoneNode' => [
@@ -617,6 +633,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PromotionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ExpandDataVolume' => [
@@ -680,6 +704,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -1234,6 +1266,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PromotionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeAndroidInstanceGroups' => [
@@ -1450,6 +1490,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PromotionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DowngradeAndroidInstanceGroup' => [
@@ -1550,6 +1598,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -2233,6 +2289,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

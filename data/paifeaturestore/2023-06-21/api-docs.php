@@ -4071,12 +4071,16 @@
             'endpoint' => 'paifeaturestore.cn-shenzhen.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'paifeaturestore.cn-hongkong.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'paifeaturestore.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'paifeaturestore.cn-hongkong.aliyuncs.com',
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'paifeaturestore.ap-southeast-5.aliyuncs.com',
         ],
         [
             'regionId' => 'us-east-1',
@@ -4087,8 +4091,8 @@
             'endpoint' => 'paifeaturestore.us-west-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'paifeaturestore.ap-southeast-5.aliyuncs.com',
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'paifeaturestore.eu-central-1.aliyuncs.com',
         ],
     ],
 ];

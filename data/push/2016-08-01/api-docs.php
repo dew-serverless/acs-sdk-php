@@ -1517,6 +1517,38 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'androidOppoPrivateMsgTemplateId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'androidOppoPrivateTitleParameters',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'androidOppoPrivateContentParameters',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
             ],
         ],
         'MassPush' => [
@@ -2033,6 +2065,24 @@
                                     'enum' => [
                                         '0',
                                         '1',
+                                    ],
+                                ],
+                                'androidOppoPrivateMsgTemplateId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'androidOppoPrivateTitleParameters' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'additionalProperties' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                                'androidOppoPrivateContentParameters' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'additionalProperties' => [
+                                        'type' => 'string',
                                     ],
                                 ],
                             ],

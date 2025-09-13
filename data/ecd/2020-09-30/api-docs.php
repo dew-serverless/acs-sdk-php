@@ -356,6 +356,22 @@
                     ],
                 ],
                 [
+                    'name' => 'RootDiskPerformanceLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserDiskPerformanceLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'GroupDesktopCount',
                     'in' => 'query',
                     'schema' => [
@@ -549,6 +565,22 @@
                         'required' => false,
                         'minimum' => '0',
                         'maximum' => '32768',
+                    ],
+                ],
+                [
+                    'name' => 'RootDiskPerformanceLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserDiskPerformanceLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -13104,6 +13136,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StopDesktop',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

@@ -16929,6 +16929,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'deprecated' => true,
                         'required' => false,
                         'enum' => [
                             '1',
@@ -16940,6 +16941,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                         'enum' => [
                             'odps',
@@ -16970,7 +16972,7 @@
                                         'properties' => [
                                             'Name' => [
                                                 'type' => 'string',
-                                                'required' => true,
+                                                'required' => false,
                                             ],
                                             'Actions' => [
                                                 'type' => 'string',
@@ -16982,7 +16984,7 @@
                                 ],
                                 'Name' => [
                                     'type' => 'string',
-                                    'required' => true,
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -17000,6 +17002,7 @@
                             'DLFSchema',
                             'DLFTable',
                             'DLFColumn',
+                            'DsApiDeploy',
                         ],
                     ],
                 ],
@@ -17086,6 +17089,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'deprecated' => true,
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '1',
@@ -17133,6 +17137,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                         'enum' => [
                             'odps',
@@ -17169,6 +17174,7 @@
                         'enum' => [
                             '0',
                             '1',
+                            '2',
                         ],
                     ],
                 ],
@@ -17177,6 +17183,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                         'enum' => [
                             'MaxComputeTable',
                             'MaxComputeFunction',
@@ -17197,6 +17204,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

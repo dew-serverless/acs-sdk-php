@@ -24717,6 +24717,29 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EncryptionOptions',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'KMSKeyId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Mode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'EndTerminalSession' => [

@@ -854,6 +854,10 @@
                                             'type' => 'string',
                                             'required' => false,
                                         ],
+                                        'TimeZone' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
                                     ],
                                 ],
                             ],
@@ -1864,6 +1868,10 @@
                                             'required' => true,
                                         ],
                                         'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'TimeZone' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
@@ -3360,6 +3368,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TrafficState',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListGroups' => [
@@ -3593,6 +3609,22 @@
                 ],
                 [
                     'name' => 'VirtualResourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Sort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4846,6 +4878,46 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Sort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Ready',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

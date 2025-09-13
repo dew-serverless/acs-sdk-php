@@ -92,6 +92,14 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'TopicType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SetTopicAttributes' => [
@@ -279,6 +287,14 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'TopicType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateQueue' => [
@@ -407,6 +423,14 @@
                                 'required' => false,
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'QueueType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -698,6 +722,14 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'QueueType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'Subscribe' => [
@@ -951,6 +983,14 @@
                                 'required' => false,
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'StsRoleArn',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

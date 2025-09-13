@@ -1050,6 +1050,8 @@
                             'pl1',
                             'pl2',
                             'pl3',
+                            'eed_standard',
+                            'eed_advanced',
                         ],
                     ],
                 ],

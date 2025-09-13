@@ -112,6 +112,43 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RAGEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DBInstanceConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'DBInstanceClass' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DBInstanceStorage' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '10',
+                                'maximum' => '64000',
+                            ],
+                            'PayType' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'Postpaid',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteAppInstance' => [

@@ -273,6 +273,14 @@
                                     ],
                                 ],
                             ],
+                            'LookAway' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Enabled' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
                             'InvalidFrameMotion' => [
                                 'type' => 'object',
                                 'properties' => [
@@ -284,6 +292,18 @@
                                         'format' => 'int32',
                                     ],
                                 ],
+                            ],
+                        ],
+                    ],
+                    'AmbientSoundConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'ResourceId' => [
+                                'type' => 'string',
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                             ],
                         ],
                     ],
@@ -462,6 +482,18 @@
                     'GreetingDelay' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                    ],
+                    'AmbientSoundConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'ResourceId' => [
+                                'type' => 'string',
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -13029,6 +13061,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

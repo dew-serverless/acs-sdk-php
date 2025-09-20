@@ -4820,6 +4820,24 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribePerformanceViews' => [
@@ -13933,7 +13951,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Module',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -14182,7 +14208,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [

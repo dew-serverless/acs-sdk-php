@@ -319,6 +319,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Channel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RefreshLoginToken' => [

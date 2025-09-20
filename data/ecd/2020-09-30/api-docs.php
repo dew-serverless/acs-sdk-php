@@ -356,6 +356,22 @@
                     ],
                 ],
                 [
+                    'name' => 'RootDiskPerformanceLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserDiskPerformanceLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'GroupDesktopCount',
                     'in' => 'query',
                     'schema' => [
@@ -549,6 +565,22 @@
                         'required' => false,
                         'minimum' => '0',
                         'maximum' => '32768',
+                    ],
+                ],
+                [
+                    'name' => 'RootDiskPerformanceLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserDiskPerformanceLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -8048,7 +8080,7 @@
                         'format' => 'int32',
                         'required' => true,
                         'minimum' => '2',
-                        'maximum' => '1000',
+                        'maximum' => '20000',
                     ],
                 ],
                 [
@@ -13106,6 +13138,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'StopDesktop',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeSnapshots' => [
@@ -14669,6 +14709,59 @@
                     ],
                 ],
                 [
+                    'name' => 'ClipboardScope',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'global',
+                            'grained',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ClipboardGraineds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'GrainedType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'text',
+                                        'richtext',
+                                        'file',
+                                        'picture',
+                                    ],
+                                ],
+                                'ClipboardType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'read',
+                                        'write',
+                                        'off',
+                                        'readwrite',
+                                    ],
+                                ],
+                                'ClipboardSize' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 4,
+                    ],
+                ],
+                [
                     'name' => 'StatusMonitor',
                     'in' => 'query',
                     'schema' => [
@@ -14913,6 +15006,74 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoReconnect',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MobileWuyingKeeper',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MobileSafeMenu',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MobileWyAssistant',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RecordEventLevels',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'EventType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EventLevel' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'RecordEventFileExts',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
                     ],
                 ],
             ],
@@ -15935,6 +16096,59 @@
                     ],
                 ],
                 [
+                    'name' => 'ClipboardScope',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'global',
+                            'grained',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ClipboardGraineds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'GrainedType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'text',
+                                        'richtext',
+                                        'file',
+                                        'picture',
+                                    ],
+                                ],
+                                'ClipboardType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'off',
+                                        'read',
+                                        'readwrite',
+                                        'write',
+                                    ],
+                                ],
+                                'ClipboardSize' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 4,
+                    ],
+                ],
+                [
                     'name' => 'StatusMonitor',
                     'in' => 'query',
                     'schema' => [
@@ -16179,6 +16393,75 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoReconnect',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MobileWuyingKeeper',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MobileSafeMenu',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MobileWyAssistant',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RecordEventLevels',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'EventType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EventLevel' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'RecordEventFileExts',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 6,
                     ],
                 ],
             ],
@@ -20580,6 +20863,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'FillHardwareInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Language',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDesktopGroupSessions' => [
@@ -20658,6 +20957,43 @@
                 ],
                 [
                     'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FillTerminalInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Language',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DesktopGroupIds',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DesktopGroupName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

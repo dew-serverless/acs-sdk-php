@@ -1123,6 +1123,10 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'tableFormat' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                         ],
                                     ],
                                     'saroConfig' => [
@@ -1518,6 +1522,10 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'tableFormat' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                         ],
                                     ],
                                     'saroConfig' => [
@@ -1639,6 +1647,10 @@
                                 'required' => false,
                             ],
                             'tag' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'path' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -3187,6 +3199,10 @@
                                         'required' => false,
                                     ],
                                     'tag' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'tableFormat' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],
@@ -5585,6 +5601,10 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'tableFormat' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                         ],
                                     ],
                                 ],
@@ -5842,6 +5862,10 @@
                                                 'required' => false,
                                             ],
                                             'tag' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'tableFormat' => [
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],

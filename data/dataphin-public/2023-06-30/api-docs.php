@@ -6,7 +6,37 @@
         'version' => '2023-06-30',
     ],
     'components' => [
-        'schemas' => [],
+        'schemas' => [
+            'PrivilegeTransferResultEntrie' => [
+                'type' => 'object',
+                'properties' => [
+                    'Privilege' => [
+                        'type' => 'string',
+                    ],
+                    'PrivilegeDisplayName' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'ErrMsg' => [
+                        'type' => 'string',
+                    ],
+                    'IsLeaf' => [
+                        'type' => 'boolean',
+                    ],
+                    'Children' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/PrivilegeTransferResultEntrie',
+                        ],
+                    ],
+                    'Test' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+        ],
     ],
     'apis' => [
         'CheckProjectHasDependency' => [
@@ -1477,6 +1507,140 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'TransferOwnershipForAllObject' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PrivilegeTransferRecord',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'OldOwner' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'NewOwner' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'TransferComment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'RetryTransferOwnership' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PrivilegeTransferRecord',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Id' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'NewOwner' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'TransferComment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetTransferInfo' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProposalId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],

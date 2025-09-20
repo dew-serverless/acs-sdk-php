@@ -309,7 +309,7 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                        'minimum' => '1',
+                        'minimum' => '0',
                         'maximum' => '5',
                     ],
                 ],
@@ -1492,7 +1492,7 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '1',
-                        'maximum' => '64',
+                        'maximum' => '128',
                     ],
                 ],
                 [
@@ -2139,6 +2139,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -2910,6 +2911,18 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NetType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Private',
+                            'Public',
+                        ],
                     ],
                 ],
             ],
@@ -5048,6 +5061,31 @@
                 ],
             ],
         ],
+        'DescribeDBInstanceMonitor' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'DescribeMonitorItems' => [
             'methods' => [
                 'post',
@@ -6718,6 +6756,32 @@
                 ],
             ],
         ],
+        'DescribeActiveOperationTaskCount' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DescribeHistoryTasks' => [
             'methods' => [
                 'post',
@@ -7956,7 +8020,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -8452,6 +8516,89 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyDBInstanceMonitor' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Interval',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            '5',
+                            '60',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DescribeTags' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'INSTANCE',
+                            'instance',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

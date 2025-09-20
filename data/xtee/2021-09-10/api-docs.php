@@ -7509,6 +7509,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'userNameSearch',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'operationSummary',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeTemplatePageList' => [
@@ -10327,6 +10343,14 @@
                 ],
                 [
                     'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

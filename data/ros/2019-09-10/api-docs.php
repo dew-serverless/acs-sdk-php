@@ -4220,7 +4220,7 @@
                         'properties' => [
                             'Enabled' => [
                                 'type' => 'boolean',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'RetainStacksOnAccountRemoval' => [
                                 'type' => 'boolean',

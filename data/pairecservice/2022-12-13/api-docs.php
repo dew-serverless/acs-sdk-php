@@ -9,6 +9,84 @@
         'schemas' => [],
     ],
     'apis' => [
+        'SplitTrafficControlTarget' => [
+            'path' => '/api/v1/trafficcontroltargets/{TrafficControlTargetId}/action/split',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'TrafficControlTargetId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Environment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'InstanceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TimePoints' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                            'SetValues' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                            'SetPoints' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'GenerateAlgorithmCustomizationScript' => [
             'path' => '/api/v1/algorithmcustomizations/{AlgorithmCustomizationId}/action/generatescript',
             'methods' => [

@@ -1432,6 +1432,15 @@
                     'QueueStrategy' => [
                         'type' => 'string',
                     ],
+                    'Version' => [
+                        'type' => 'string',
+                    ],
+                    'HyperZones' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
                 ],
             ],
             'QuotaConfig' => [
@@ -1935,6 +1944,9 @@
                     'NodeCount' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                    ],
+                    'Version' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2725,6 +2737,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Versions',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetResourceGroupRequest' => [
@@ -3335,6 +3355,10 @@
                                         ],
                                     ],
                                 ],
+                            ],
+                            'Version' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -5344,6 +5368,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Versions',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetQuota' => [
@@ -5911,6 +5943,14 @@
                 ],
                 [
                     'name' => 'PaymentType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OrderInstanceIds',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

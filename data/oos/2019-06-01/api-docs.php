@@ -5245,6 +5245,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'RevisionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ContinueDeployApplicationGroup' => [
@@ -5766,6 +5774,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ConfigurationInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListInstancePackageStates' => [
@@ -6009,6 +6025,10 @@
             'endpoint' => 'oos.cn-chengdu.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'oos.cn-wuhan-lr.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hongkong',
             'endpoint' => 'oos.cn-hongkong.aliyuncs.com',
         ],
@@ -6089,12 +6109,20 @@
             'endpoint' => 'oos.me-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wuhan-lr',
-            'endpoint' => 'oos.cn-wuhan-lr.aliyuncs.com',
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'oos.cn-heyuan-acdr-1.aliyuncs.com',
         ],
         [
             'regionId' => 'na-south-1',
             'endpoint' => 'oos.na-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-southeast-1',
+            'endpoint' => 'oos.us-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu-gic-1',
+            'endpoint' => 'oos.cn-wulanchabu-gic-1.aliyuncs.com',
         ],
     ],
 ];

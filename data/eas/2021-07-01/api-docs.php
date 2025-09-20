@@ -854,6 +854,10 @@
                                             'type' => 'string',
                                             'required' => false,
                                         ],
+                                        'TimeZone' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
                                     ],
                                 ],
                             ],
@@ -1504,6 +1508,14 @@
                     ],
                 ],
                 [
+                    'name' => 'MemberToUpdate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'body',
                     'in' => 'body',
                     'schema' => [
@@ -1864,6 +1876,10 @@
                                             'required' => true,
                                         ],
                                         'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'TimeZone' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
@@ -3034,6 +3050,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'MemberType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListServiceVersions' => [
@@ -3360,6 +3384,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TrafficState',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListGroups' => [
@@ -3593,6 +3625,22 @@
                 ],
                 [
                     'name' => 'VirtualResourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Sort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4849,6 +4897,46 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Sort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Ready',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListResources' => [
@@ -5490,6 +5578,54 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'InternetEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ChargeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Sort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'GatewayType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListAclPolicy' => [
@@ -5718,7 +5854,7 @@
                         'properties' => [
                             'InstanceType' => [
                                 'type' => 'string',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'EnableIntranet' => [
                                 'type' => 'boolean',
@@ -5743,6 +5879,10 @@
                             ],
                             'AutoRenewal' => [
                                 'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'GatewayType' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -5846,6 +5986,18 @@
                             'EnableSSLRedirection' => [
                                 'type' => 'boolean',
                                 'required' => false,
+                            ],
+                            'VpcId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'VSwitchIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],

@@ -572,6 +572,42 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'AssignNodeSpec' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'NodeNames' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'AntiAffinityNodeNames' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'SpotSpec' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SpotStrategy' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SpotPriceLimit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SpotDuration' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SpotDiscountLimit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -885,6 +921,50 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'DisassociateSpot' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'SpotSpec' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SpotStrategy' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SpotPriceLimit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SpotDuration' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SpotDiscountLimit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'DisassociateAssignNode' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'AssignNodeSpec' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'NodeNames' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'AntiAffinityNodeNames' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -982,6 +1062,14 @@
                 ],
                 [
                     'name' => 'Token',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Fields',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1293,6 +1381,14 @@
                 ],
                 [
                     'name' => 'Token',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EventLevel',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

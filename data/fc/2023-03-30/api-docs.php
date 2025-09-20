@@ -911,6 +911,10 @@
                             '$ref' => '#/components/schemas/ScalingPolicy',
                         ],
                     ],
+                    'targetInstances' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                 ],
             ],
             'EqualRule' => [
@@ -1304,11 +1308,7 @@
             ],
             'GetScalingConfigStatusOutput' => [
                 'type' => 'object',
-                'properties' => [
-                    'scalingConfigStatus' => [
-                        '$ref' => '#/components/schemas/ScalingConfigStatus',
-                    ],
-                ],
+                'properties' => [],
             ],
             'HTTPTrigger' => [
                 'type' => 'object',
@@ -1749,15 +1749,19 @@
             ],
             'ListScalingConfigStatusOutput' => [
                 'type' => 'object',
+                'properties' => [],
+            ],
+            'ListScalingConfigsOutput' => [
+                'type' => 'object',
                 'properties' => [
-                    'result' => [
+                    'nextToken' => [
+                        'type' => 'string',
+                    ],
+                    'scalingConfigs' => [
                         'type' => 'array',
                         'items' => [
                             '$ref' => '#/components/schemas/ScalingConfigStatus',
                         ],
-                    ],
-                    'nextToken' => [
-                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2231,30 +2235,30 @@
             'PutScalingConfigInput' => [
                 'type' => 'object',
                 'properties' => [
-                    'residentConfig' => [
-                        '$ref' => '#/components/schemas/ResidentConfig',
-                    ],
-                    'resourceType' => [
+                    'residentPoolId' => [
                         'type' => 'string',
+                    ],
+                    'minInstances' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'scheduledPolicies' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScheduledPolicy',
+                        ],
+                    ],
+                    'horizontalScalingPolicies' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScalingPolicy',
+                        ],
                     ],
                 ],
             ],
             'PutScalingConfigOutput' => [
                 'type' => 'object',
-                'properties' => [
-                    'functionName' => [
-                        'type' => 'string',
-                    ],
-                    'qualifier' => [
-                        'type' => 'string',
-                    ],
-                    'residentConfig' => [
-                        '$ref' => '#/components/schemas/ResidentConfig',
-                    ],
-                    'resourceType' => [
-                        'type' => 'string',
-                    ],
-                ],
+                'properties' => [],
             ],
             'RegexRule' => [
                 'type' => 'object',
@@ -2395,7 +2399,10 @@
                         'type' => 'string',
                     ],
                     'lastAllocation' => [
-                        '$ref' => '#/components/schemas/ResidentResourceAllocation',
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ResidentResourceAllocation',
+                        ],
                     ],
                 ],
             ],
@@ -2616,20 +2623,38 @@
             'ScalingConfigStatus' => [
                 'type' => 'object',
                 'properties' => [
-                    'scalingStatus' => [
-                        '$ref' => '#/components/schemas/ScalingStatus',
-                    ],
-                    'functionName' => [
+                    'functionArn' => [
                         'type' => 'string',
                     ],
-                    'qualifier' => [
+                    'residentPoolId' => [
                         'type' => 'string',
                     ],
-                    'residentConfig' => [
-                        '$ref' => '#/components/schemas/ResidentConfig',
+                    'minInstances' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
-                    'resourceType' => [
+                    'currentInstances' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'currentError' => [
                         'type' => 'string',
+                    ],
+                    'scheduledPolicies' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScheduledPolicy',
+                        ],
+                    ],
+                    'horizontalScalingPolicies' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScalingPolicy',
+                        ],
+                    ],
+                    'targetInstances' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -3366,6 +3391,9 @@
                 'properties' => [
                     'name' => [
                         'type' => 'string',
+                    ],
+                    'useScaling' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],
@@ -6168,6 +6196,39 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'qualifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteScalingConfig' => [
+            'path' => '/2023-03-30/functions/{functionName}/scaling-config',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'functionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [

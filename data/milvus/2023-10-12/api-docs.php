@@ -373,12 +373,36 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'milvus.cn-shenzhen.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'milvus.cn-beijing.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-zhangjiakou',
             'endpoint' => 'milvus.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'milvus.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'milvus.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'milvus.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'milvus.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'milvus.ap-southeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',

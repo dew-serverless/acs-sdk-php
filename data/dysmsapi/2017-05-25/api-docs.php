@@ -1433,6 +1433,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TrafficDriving',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetSmsTemplate' => [
@@ -1607,6 +1615,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TrafficDriving',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

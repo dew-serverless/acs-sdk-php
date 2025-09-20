@@ -5934,6 +5934,7 @@
                             'cn-wuhan-lr',
                             'cn-shanghai-cloudspe',
                             'na-south-1',
+                            'us-southeast-1',
                         ],
                     ],
                 ],

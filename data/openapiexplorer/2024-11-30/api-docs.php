@@ -131,15 +131,15 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'openapiexplorer.aliyuncs.com',
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'openapi-mcp.cn-hangzhou.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'openapiexplorer.aliyuncs.com',
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'openapi-mcp.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-qingdao',
+            'regionId' => 'public',
             'endpoint' => 'openapiexplorer.aliyuncs.com',
         ],
     ],

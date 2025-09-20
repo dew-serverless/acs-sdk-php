@@ -514,6 +514,14 @@
                     ],
                 ],
                 [
+                    'name' => 'CreateAsync',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Instances',
                     'in' => 'formData',
                     'style' => 'json',
@@ -524,11 +532,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'NodeName' => [
+                                'NodeType' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'NodeType' => [
+                                'NodeName' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],

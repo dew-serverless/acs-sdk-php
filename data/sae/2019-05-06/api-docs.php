@@ -2142,6 +2142,9 @@
                     'ConfigMapMountDesc' => [
                         'type' => 'string',
                     ],
+                    'EmptyDirDesc' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'InputCodeLocation' => [
@@ -6914,6 +6917,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EmptyDirDesc',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteApplication' => [
@@ -7921,6 +7932,14 @@
                 [
                     'name' => 'Html',
                     'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EmptyDirDesc',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -12915,6 +12934,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'NasConfigs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BestEffortType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteHistoryJob' => [
@@ -13657,6 +13692,20 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'NasConfigs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'BestEffortType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
             ],
         ],
         'DescribeJobHistory' => [
@@ -13769,6 +13818,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'BestEffortType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetWebshellToken' => [
@@ -13858,6 +13915,32 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'QueryArmsEnable' => [
+            'path' => '/pop/v1/arms/queryArms',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

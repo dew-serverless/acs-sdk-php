@@ -637,9 +637,9 @@
                     ],
                 ],
                 [
-                    'name' => 'AdvanceDataPolicies',
+                    'name' => 'AdvanceLogPolicies',
                     'in' => 'query',
-                    'style' => 'flat',
+                    'style' => 'json',
                     'schema' => [
                         'type' => 'array',
                         'required' => false,
@@ -647,11 +647,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'ActionType' => [
+                                'LogRetentionType' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'PolicyId' => [
+                                'DestType' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -659,7 +659,95 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'ActionType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SrcRegion' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EnableLogBackup' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'SrcType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'LogRetentionValue' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'PolicyId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'FilterKey' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DestRegion' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FilterValue' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AdvanceDataPolicies',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'DestType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FilterType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ActionType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SrcRegion' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SrcType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OnlyPreserveOneEachDay' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'RetentionValue' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'PolicyId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FilterKey' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DestRegion' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -671,11 +759,34 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'RetentionValue' => [
+                                'StorageClass' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'SrcType' => [
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AdvanceIncPolicies',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'DestType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FilterType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ActionType' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -683,11 +794,7 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'DestType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'DestRegion' => [
+                                'SrcType' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -695,8 +802,65 @@
                                     'type' => 'boolean',
                                     'required' => false,
                                 ],
+                                'RetentionValue' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'PolicyId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FilterKey' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DestRegion' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FilterValue' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RetentionType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'BackupRetentionPolicyOnClusterDeletion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BackupMethod',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BackupPriority',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableIncBackup',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

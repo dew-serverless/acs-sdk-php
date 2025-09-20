@@ -7660,6 +7660,7 @@
                                                     'RemoveHeader',
                                                     'Rewrite',
                                                     'Drop',
+                                                    'ForwardGroupMirror',
                                                 ],
                                             ],
                                             'RuleActionValue' => [

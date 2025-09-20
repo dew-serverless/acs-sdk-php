@@ -1517,6 +1517,54 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'AndroidOppoPrivateMsgTemplateId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AndroidOppoPrivateTitleParameters',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AndroidOppoPrivateContentParameters',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HarmonyLiveViewPayload',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AndroidHuaweiLiveNotificationPayload',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'MassPush' => [
@@ -2034,6 +2082,32 @@
                                         '0',
                                         '1',
                                     ],
+                                ],
+                                'AndroidOppoPrivateMsgTemplateId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidOppoPrivateTitleParameters' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'additionalProperties' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                                'AndroidOppoPrivateContentParameters' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'additionalProperties' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                                'HarmonyLiveViewPayload' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidHuaweiLiveNotificationPayload' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],

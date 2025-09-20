@@ -161,12 +161,20 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listServiceTestCasesAsync($arguments = [])
  * @method \Dew\Acs\Result createServiceTestCase(array $arguments = [])
  * @method \Http\Promise\Promise createServiceTestCaseAsync($arguments = [])
+ * @method \Dew\Acs\Result createOpsNotice(array $arguments = [])
+ * @method \Http\Promise\Promise createOpsNoticeAsync($arguments = [])
+ * @method \Dew\Acs\Result getNetworkAvailableZones(array $arguments = [])
+ * @method \Http\Promise\Promise getNetworkAvailableZonesAsync($arguments = [])
  * @method \Dew\Acs\Result getServiceTemplateCriterionIssues(array $arguments = [])
  * @method \Http\Promise\Promise getServiceTemplateCriterionIssuesAsync($arguments = [])
  * @method \Dew\Acs\Result listArtifactBuildLogs(array $arguments = [])
  * @method \Http\Promise\Promise listArtifactBuildLogsAsync($arguments = [])
  * @method \Dew\Acs\Result listServiceBuildLogs(array $arguments = [])
  * @method \Http\Promise\Promise listServiceBuildLogsAsync($arguments = [])
+ * @method \Dew\Acs\Result listOpsNotices(array $arguments = [])
+ * @method \Http\Promise\Promise listOpsNoticesAsync($arguments = [])
+ * @method \Dew\Acs\Result getOpsNotice(array $arguments = [])
+ * @method \Http\Promise\Promise getOpsNoticeAsync($arguments = [])
  */
 final class ComputeNestSupplierClient extends AcsClient
 {

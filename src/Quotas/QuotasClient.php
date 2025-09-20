@@ -39,6 +39,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getQuotaApplicationAsync($arguments = [])
  * @method \Dew\Acs\Result listQuotaApplications(array $arguments = [])
  * @method \Http\Promise\Promise listQuotaApplicationsAsync($arguments = [])
+ * @method \Dew\Acs\Result getQuotaApplicationApproval(array $arguments = [])
+ * @method \Http\Promise\Promise getQuotaApplicationApprovalAsync($arguments = [])
+ * @method \Dew\Acs\Result remindQuotaApplicationApproval(array $arguments = [])
+ * @method \Http\Promise\Promise remindQuotaApplicationApprovalAsync($arguments = [])
  * @method \Dew\Acs\Result getQuotaTemplateServiceStatus(array $arguments = [])
  * @method \Http\Promise\Promise getQuotaTemplateServiceStatusAsync($arguments = [])
  * @method \Dew\Acs\Result modifyQuotaTemplateServiceStatus(array $arguments = [])
@@ -57,10 +61,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listQuotaApplicationsDetailForTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result listQuotaApplicationsForTemplate(array $arguments = [])
  * @method \Http\Promise\Promise listQuotaApplicationsForTemplateAsync($arguments = [])
- * @method \Dew\Acs\Result getQuotaApplicationApproval(array $arguments = [])
- * @method \Http\Promise\Promise getQuotaApplicationApprovalAsync($arguments = [])
- * @method \Dew\Acs\Result remindQuotaApplicationApproval(array $arguments = [])
- * @method \Http\Promise\Promise remindQuotaApplicationApprovalAsync($arguments = [])
  */
 final class QuotasClient extends AcsClient
 {

@@ -103,6 +103,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createBackupAsync($arguments = [])
  * @method \Dew\Acs\Result deleteBackup(array $arguments = [])
  * @method \Http\Promise\Promise deleteBackupAsync($arguments = [])
+ * @method \Dew\Acs\Result getNetworkAvailableZones(array $arguments = [])
+ * @method \Http\Promise\Promise getNetworkAvailableZonesAsync($arguments = [])
  */
 final class ComputeNestClient extends AcsClient
 {

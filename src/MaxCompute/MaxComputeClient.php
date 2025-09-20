@@ -99,6 +99,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result listUsers(array $arguments = [])
  * @method \Http\Promise\Promise listUsersAsync($arguments = [])
+ * @method \Dew\Acs\Result queryQuotaMetric(array $arguments = [])
+ * @method \Http\Promise\Promise queryQuotaMetricAsync($arguments = [])
  * @method \Dew\Acs\Result queryTunnelMetricDetail(array $arguments = [])
  * @method \Http\Promise\Promise queryTunnelMetricDetailAsync($arguments = [])
  * @method \Dew\Acs\Result queryTunnelMetric(array $arguments = [])

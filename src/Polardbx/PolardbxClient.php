@@ -103,6 +103,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDistributeTableListAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDatabaseDescription(array $arguments = [])
  * @method \Http\Promise\Promise modifyDatabaseDescriptionAsync($arguments = [])
+ * @method \Dew\Acs\Result describeCdcInfo(array $arguments = [])
+ * @method \Http\Promise\Promise describeCdcInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result confirmNoConnection(array $arguments = [])
+ * @method \Http\Promise\Promise confirmNoConnectionAsync($arguments = [])
  * @method \Dew\Acs\Result describeTags(array $arguments = [])
  * @method \Http\Promise\Promise describeTagsAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
@@ -157,6 +161,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise switchGdnMemberRoleAsync($arguments = [])
  * @method \Dew\Acs\Result describeGdnInstances(array $arguments = [])
  * @method \Http\Promise\Promise describeGdnInstancesAsync($arguments = [])
+ * @method \Dew\Acs\Result checkSqlAuditSlsStatus(array $arguments = [])
+ * @method \Http\Promise\Promise checkSqlAuditSlsStatusAsync($arguments = [])
  */
 final class PolardbxClient extends AcsClient
 {

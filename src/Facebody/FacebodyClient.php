@@ -45,8 +45,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise detectLivingFaceAsync($arguments = [])
  * @method \Dew\Acs\Result faceBeauty(array $arguments = [])
  * @method \Http\Promise\Promise faceBeautyAsync($arguments = [])
- * @method \Dew\Acs\Result faceMakeup(array $arguments = [])
- * @method \Http\Promise\Promise faceMakeupAsync($arguments = [])
  * @method \Dew\Acs\Result faceTidyup(array $arguments = [])
  * @method \Http\Promise\Promise faceTidyupAsync($arguments = [])
  * @method \Dew\Acs\Result enhanceFace(array $arguments = [])

@@ -1517,6 +1517,9 @@
                     'store_redundancy_type' => [
                         'type' => 'string',
                     ],
+                    'system_drive_config' => [
+                        '$ref' => '#/components/schemas/SystemDriveConfig',
+                    ],
                 ],
             ],
             'DomainAppConfig' => [
@@ -2046,7 +2049,10 @@
                         'type' => 'string',
                     ],
                     'part_info_list' => [
-                        '$ref' => '#/components/schemas/UploadPartInfo',
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/UploadPartInfo',
+                        ],
                     ],
                 ],
             ],
@@ -3414,6 +3420,20 @@
                         'additionalProperties' => [
                             'type' => 'any',
                         ],
+                    ],
+                ],
+            ],
+            'SystemDriveConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'enable' => [
+                        'type' => 'boolean',
+                    ],
+                    'drive_id' => [
+                        'type' => 'string',
+                    ],
+                    'resource_parent_file_id_map' => [
+                        'type' => 'object',
                     ],
                 ],
             ],

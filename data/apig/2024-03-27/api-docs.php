@@ -4202,6 +4202,10 @@
                                     ],
                                 ],
                             ],
+                            'gatewayEdition' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -6219,6 +6223,71 @@
             'parameters' => [
                 [
                     'name' => 'pluginAttachmentId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'InstallPlugin' => [
+            'path' => '/v1/plugins/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'pluginClassId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'gatewayIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UninstallPlugin' => [
+            'path' => '/v1/plugins/{pluginId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'pluginId',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',

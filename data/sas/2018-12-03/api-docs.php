@@ -11859,6 +11859,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ExposureComponentBizType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeExposedStatistics' => [
@@ -29205,6 +29213,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ExecAction',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteBaselineCheckWhiteRecord' => [
@@ -42092,6 +42108,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CpuArch',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListClusterPluginInfo' => [
@@ -48062,6 +48086,10 @@
         ],
         [
             'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan-acdr-1',
             'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
         ],
     ],

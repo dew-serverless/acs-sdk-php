@@ -61,10 +61,20 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result untagResources(array $arguments = [])
  * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
- * @method \Dew\Acs\Result getLindormFsUsedDetail(array $arguments = [])
- * @method \Http\Promise\Promise getLindormFsUsedDetailAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result createLindormV2Instance(array $arguments = [])
+ * @method \Http\Promise\Promise createLindormV2InstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result getLindormFsUsedDetail(array $arguments = [])
+ * @method \Http\Promise\Promise getLindormFsUsedDetailAsync($arguments = [])
+ * @method \Dew\Acs\Result releaseLindormV2Instance(array $arguments = [])
+ * @method \Http\Promise\Promise releaseLindormV2InstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result updateLindormV2Instance(array $arguments = [])
+ * @method \Http\Promise\Promise updateLindormV2InstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result updateLindormInstanceAttribute(array $arguments = [])
+ * @method \Http\Promise\Promise updateLindormInstanceAttributeAsync($arguments = [])
+ * @method \Dew\Acs\Result getLindormV2InstanceDetails(array $arguments = [])
+ * @method \Http\Promise\Promise getLindormV2InstanceDetailsAsync($arguments = [])
  */
 final class HitsdbClient extends AcsClient
 {

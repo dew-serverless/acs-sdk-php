@@ -551,6 +551,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceBootConfigurationAsync($arguments = [])
  * @method \Dew\Acs\Result importImage(array $arguments = [])
  * @method \Http\Promise\Promise importImageAsync($arguments = [])
+ * @method \Dew\Acs\Result describeNASAvailableResourceInfo(array $arguments = [])
+ * @method \Http\Promise\Promise describeNASAvailableResourceInfoAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

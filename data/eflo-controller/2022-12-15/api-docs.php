@@ -171,6 +171,63 @@
                                         ],
                                     ],
                                 ],
+                                'HyperNodes' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'DataDisk' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'DeleteWithNode' => [
+                                                            'type' => 'boolean',
+                                                            'required' => false,
+                                                        ],
+                                                        'Category' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Size' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int32',
+                                                            'required' => false,
+                                                        ],
+                                                        'PerformanceLevel' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                            'VpcId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'VSwitchId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'HyperNodeId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Hostname' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'LoginPassword' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
                                 'LoginPassword' => [
                                     'type' => 'string',
                                     'required' => false,
@@ -631,6 +688,63 @@
                                         ],
                                     ],
                                 ],
+                                'HyperNodes' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Hostname' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'LoginPassword' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'HyperNodeId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'VpcId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'VSwitchId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'DataDisk' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'DeleteWithNode' => [
+                                                            'type' => 'boolean',
+                                                            'required' => false,
+                                                        ],
+                                                        'Category' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Size' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int32',
+                                                            'required' => false,
+                                                        ],
+                                                        'PerformanceLevel' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
                                 'NodeGroupId' => [
                                     'type' => 'string',
                                     'required' => false,
@@ -995,6 +1109,20 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'OperatingStates',
+                    'in' => 'formData',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'ShrinkCluster' => [
@@ -1043,6 +1171,20 @@
                                         'required' => false,
                                         'properties' => [
                                             'NodeId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'HyperNodes' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'HyperNodeId' => [
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
@@ -1322,6 +1464,31 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteNode' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NodeId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -3300,6 +3467,7 @@
                 'post',
             ],
             'schemes' => [
+                'http',
                 'https',
             ],
             'security' => [

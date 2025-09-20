@@ -4408,6 +4408,8 @@
                                         'icmp',
                                         'all',
                                         'gre',
+                                        'icmpv6',
+                                        'ICMPV6',
                                     ],
                                 ],
                                 'PortRange' => [
@@ -4432,10 +4434,6 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'SourceCidrIp' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                                 'Description' => [
                                     'type' => 'string',
                                     'required' => false,
@@ -4447,6 +4445,18 @@
                                     'required' => true,
                                     'minimum' => '1',
                                     'maximum' => '100',
+                                ],
+                                'SourceCidrIp' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Ipv6SourceCidrIp' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Ipv6DestCidrIp' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -8723,7 +8733,7 @@
                                     'format' => 'int32',
                                     'required' => false,
                                     'minimum' => '0',
-                                    'maximum' => '65535',
+                                    'maximum' => '0',
                                 ],
                             ],
                         ],
@@ -10814,6 +10824,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'pattern' => '^\\d+$',
                     ],
                 ],
                 [
@@ -10822,6 +10833,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'pattern' => '^\\d+$',
                     ],
                 ],
             ],
@@ -11734,6 +11746,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PerformanceLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeploySDG' => [
@@ -12610,6 +12631,30 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
                     ],
                 ],
                 [
@@ -16381,6 +16426,22 @@
                     ],
                 ],
             ],
+        ],
+        'DescribeNASAvailableResourceInfo' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
         ],
     ],
     'endpoints' => [

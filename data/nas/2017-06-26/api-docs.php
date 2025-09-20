@@ -5428,6 +5428,14 @@
                         'maximum' => '100',
                     ],
                 ],
+                [
+                    'name' => 'WithReports',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDataFlowSubTasks' => [
@@ -6912,12 +6920,20 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'nas.cn-qingdao.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'nas.cn-beijing.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-zhangjiakou',
             'endpoint' => 'nas.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhengzhou-jva',
+            'endpoint' => 'nas.cn-zhengzhou-jva.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-huhehaote',
@@ -6994,6 +7010,10 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'nas.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'nas.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-east-1',

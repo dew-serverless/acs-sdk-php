@@ -277,7 +277,7 @@
                     ],
                     'ConfigFileName' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1030,6 +1030,111 @@
                     ],
                 ],
             ],
+            'CreateNodeGroupConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'NodeGroupType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'NodeGroupName' => [
+                        'type' => 'string',
+                    ],
+                    'PaymentType' => [
+                        'type' => 'string',
+                    ],
+                    'SubscriptionConfig' => [
+                        '$ref' => '#/components/schemas/SubscriptionConfig',
+                    ],
+                    'SpotStrategy' => [
+                        'type' => 'string',
+                    ],
+                    'WithPublicIp' => [
+                        'type' => 'boolean',
+                    ],
+                    'NodeCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'SystemDisk' => [
+                        '$ref' => '#/components/schemas/SystemDisk',
+                    ],
+                    'GracefulShutdown' => [
+                        'type' => 'boolean',
+                    ],
+                    'SpotInstanceRemedy' => [
+                        'type' => 'boolean',
+                    ],
+                    'CompensateWithOnDemand' => [
+                        'type' => 'boolean',
+                    ],
+                    'NodeResizeStrategy' => [
+                        'type' => 'string',
+                    ],
+                    'CostOptimizedConfig' => [
+                        '$ref' => '#/components/schemas/CostOptimizedConfig',
+                    ],
+                    'DeploymentSetStrategy' => [
+                        'type' => 'string',
+                    ],
+                    'AutoScalingPolicy' => [
+                        '$ref' => '#/components/schemas/AutoScalingPolicy',
+                    ],
+                    'PrivatePoolOptions' => [
+                        '$ref' => '#/components/schemas/PrivatePoolOptions',
+                    ],
+                    'SpotBidPrices' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'InstanceType' => [
+                                    'type' => 'string',
+                                ],
+                                'BidPrice' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                    'VSwitchIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                        'maxItems' => 20,
+                    ],
+                    'AdditionalSecurityGroupIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                        'maxItems' => 5,
+                    ],
+                    'InstanceTypes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                        'maxItems' => 100,
+                    ],
+                    'DataDisks' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DataDisk',
+                        ],
+                        'maxItems' => 1,
+                    ],
+                    'ComponentTags' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
             'CreateNodeGroupParam' => [
                 'type' => 'object',
                 'properties' => [
@@ -1108,6 +1213,209 @@
                         'format' => 'int32',
                     ],
                     'AutoRenewDurationUnit' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DRPlanConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'RegionId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'ClusterType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'ReleaseVersion' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'DeployMode' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'LogCollectStrategy' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'ClusterName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'DeletionProtection' => [
+                        'type' => 'boolean',
+                    ],
+                    'SecurityMode' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'PaymentType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'NodeAttributes' => [
+                        '$ref' => '#/components/schemas/NodeAttributes',
+                        'required' => true,
+                    ],
+                    'ManagedScalingPolicy' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Constraints' => [
+                                '$ref' => '#/components/schemas/ManagedScalingConstraints',
+                            ],
+                        ],
+                    ],
+                    'BootstrapScripts' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Script',
+                        ],
+                    ],
+                    'Tags' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Value' => [
+                                    'type' => 'string',
+                                ],
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                        ],
+                    ],
+                    'NodeGroups' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/NodeGroupConfig',
+                        ],
+                    ],
+                    'Applications' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Application',
+                        ],
+                    ],
+                    'ApplicationConfigs' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ApplicationConfig',
+                        ],
+                    ],
+                    'ResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'SubscriptionConfig' => [
+                        '$ref' => '#/components/schemas/SubscriptionConfig',
+                    ],
+                ],
+            ],
+            'DRPlanConfigurationDetail' => [
+                'type' => 'object',
+                'properties' => [
+                    'RegionId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'ClusterType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'ReleaseVersion' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'DeployMode' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'LogCollectStrategy' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'ClusterName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'DeletionProtection' => [
+                        'type' => 'boolean',
+                    ],
+                    'MetaStoreType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'SecurityMode' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'PaymentType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'NodeAttributes' => [
+                        '$ref' => '#/components/schemas/NodeAttributes',
+                        'required' => true,
+                    ],
+                    'ManagedScalingPolicy' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Constraints' => [
+                                '$ref' => '#/components/schemas/ManagedScalingConstraints',
+                            ],
+                        ],
+                    ],
+                    'BootstrapScripts' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Script',
+                        ],
+                    ],
+                    'Tags' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Tag',
+                        ],
+                    ],
+                    'NodeGroups' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/NodeGroupConfig',
+                        ],
+                    ],
+                    'Applications' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Application',
+                        ],
+                    ],
+                    'ApplicationConfigs' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ApplicationConfig',
+                        ],
+                    ],
+                    'ScalingPolicies' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScalingPolicy',
+                        ],
+                    ],
+                    'ResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'SubscriptionConfig' => [
+                        '$ref' => '#/components/schemas/SubscriptionConfig',
+                    ],
+                    'Description' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1409,6 +1717,9 @@
                     'LocalStorageAmount' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                    ],
+                    'ModifyType' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1766,70 +2077,21 @@
             'NodeGroupConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'WithPublicIp' => [
-                        'type' => 'boolean',
-                    ],
-                    'SpotInstanceRemedy' => [
-                        'type' => 'boolean',
-                    ],
-                    'ComponentTags' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'DataDisks' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/DataDisk',
-                        ],
-                        'maxItems' => 1,
-                    ],
-                    'CompensateWithOnDemand' => [
-                        'type' => 'boolean',
-                    ],
-                    'SystemDisk' => [
-                        '$ref' => '#/components/schemas/SystemDisk',
-                    ],
-                    'PrivatePoolOptions' => [
-                        '$ref' => '#/components/schemas/PrivatePoolOptions',
-                    ],
                     'NodeGroupType' => [
                         'type' => 'string',
                         'required' => true,
                     ],
-                    'PaymentType' => [
-                        'type' => 'string',
-                    ],
-                    'InstanceTypes' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                        'maxItems' => 100,
-                    ],
-                    'CostOptimizedConfig' => [
-                        '$ref' => '#/components/schemas/CostOptimizedConfig',
-                    ],
-                    'GracefulShutdown' => [
-                        'type' => 'boolean',
-                    ],
-                    'SpotStrategy' => [
-                        'type' => 'string',
-                    ],
                     'NodeGroupName' => [
                         'type' => 'string',
                     ],
-                    'NodeCount' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
+                    'PaymentType' => [
+                        'type' => 'string',
                     ],
-                    'VSwitchIds' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                        'maxItems' => 20,
+                    'SubscriptionConfig' => [
+                        '$ref' => '#/components/schemas/SubscriptionConfig',
+                    ],
+                    'SpotStrategy' => [
+                        'type' => 'string',
                     ],
                     'SpotBidPrices' => [
                         'type' => 'array',
@@ -1838,14 +2100,15 @@
                         ],
                         'maxItems' => 100,
                     ],
-                    'NodeResizeStrategy' => [
-                        'type' => 'string',
+                    'VSwitchIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                        'maxItems' => 20,
                     ],
-                    'AutoScalingPolicy' => [
-                        '$ref' => '#/components/schemas/AutoScalingPolicy',
-                    ],
-                    'SubscriptionConfig' => [
-                        '$ref' => '#/components/schemas/SubscriptionConfig',
+                    'WithPublicIp' => [
+                        'type' => 'boolean',
                     ],
                     'AdditionalSecurityGroupIds' => [
                         'type' => 'array',
@@ -1854,8 +2117,56 @@
                         ],
                         'maxItems' => 5,
                     ],
+                    'InstanceTypes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                        'maxItems' => 100,
+                    ],
+                    'NodeCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'SystemDisk' => [
+                        '$ref' => '#/components/schemas/SystemDisk',
+                    ],
+                    'DataDisks' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DataDisk',
+                        ],
+                        'maxItems' => 1,
+                    ],
+                    'GracefulShutdown' => [
+                        'type' => 'boolean',
+                    ],
+                    'SpotInstanceRemedy' => [
+                        'type' => 'boolean',
+                    ],
+                    'CompensateWithOnDemand' => [
+                        'type' => 'boolean',
+                    ],
+                    'NodeResizeStrategy' => [
+                        'type' => 'string',
+                    ],
+                    'CostOptimizedConfig' => [
+                        '$ref' => '#/components/schemas/CostOptimizedConfig',
+                    ],
                     'DeploymentSetStrategy' => [
                         'type' => 'string',
+                    ],
+                    'ComponentTags' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'AutoScalingPolicy' => [
+                        '$ref' => '#/components/schemas/AutoScalingPolicy',
+                    ],
+                    'PrivatePoolOptions' => [
+                        '$ref' => '#/components/schemas/PrivatePoolOptions',
                     ],
                 ],
             ],
@@ -3071,6 +3382,9 @@
                     'NewInstanceType' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                    'ModifyType' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -4384,7 +4698,7 @@
                     'style' => 'flat',
                     'schema' => [
                         '$ref' => '#/components/schemas/NodeGroupConfig',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
             ],
@@ -5220,6 +5534,20 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceChargeTypes',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'enum' => [],
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
                     ],
                 ],
             ],

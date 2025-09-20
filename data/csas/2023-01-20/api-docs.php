@@ -641,42 +641,23 @@
             'OpenStructSaseUser' => [
                 'type' => 'object',
                 'properties' => [
+                    'SaseUserId' => [
+                        'type' => 'string',
+                    ],
+                    'Username' => [
+                        'type' => 'string',
+                    ],
+                    'Telephone' => [
+                        'type' => 'string',
+                    ],
+                    'Email' => [
+                        'type' => 'string',
+                    ],
                     'Departments' => [
                         'type' => 'array',
                         'items' => [
                             '$ref' => '#/components/schemas/OpenStructSaseDepartment',
                         ],
-                    ],
-                    'Email' => [
-                        'type' => 'string',
-                    ],
-                    'CreateTimeUnix' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'Telephone' => [
-                        'type' => 'string',
-                    ],
-                    'Title' => [
-                        'type' => 'string',
-                    ],
-                    'LeaveTimeUnix' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'SaseUserId' => [
-                        'type' => 'string',
-                    ],
-                    'UpdateTimeUnix' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'SyncTimeUnix' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'IdpConfigId' => [
-                        'type' => 'string',
                     ],
                     'CustomFields' => [
                         'type' => 'array',
@@ -684,24 +665,61 @@
                             '$ref' => '#/components/schemas/IdpCustomField',
                         ],
                     ],
-                    'Username' => [
+                    'CreateTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'UpdateTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SaseUserStatus' => [
+                        'type' => 'string',
+                    ],
+                    'Title' => [
                         'type' => 'string',
                     ],
                     'WorkStatus' => [
                         'type' => 'string',
                     ],
-                    'SaseUserStatus' => [
-                        'type' => 'string',
+                    'LeaveTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SyncTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                     'LoginTimeUnix' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'IdpConfigId' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
             'OpenStructSaseUserSimple' => [
                 'type' => 'object',
                 'properties' => [
+                    'SaseUserId' => [
+                        'type' => 'string',
+                    ],
+                    'Username' => [
+                        'type' => 'string',
+                    ],
+                    'Telephone' => [
+                        'type' => 'string',
+                    ],
+                    'Email' => [
+                        'type' => 'string',
+                    ],
+                    'IdpConfigId' => [
+                        'type' => 'string',
+                    ],
                     'Departments' => [
                         'type' => 'array',
                         'items' => [
@@ -713,23 +731,17 @@
                                 'Name' => [
                                     'type' => 'string',
                                 ],
+                                'ParentDepartmentId' => [
+                                    'type' => 'string',
+                                ],
+                                'FullDepartmentIdPath' => [
+                                    'type' => 'string',
+                                ],
+                                'FullDn' => [
+                                    'type' => 'string',
+                                ],
                             ],
                         ],
-                    ],
-                    'Email' => [
-                        'type' => 'string',
-                    ],
-                    'Telephone' => [
-                        'type' => 'string',
-                    ],
-                    'Username' => [
-                        'type' => 'string',
-                    ],
-                    'SaseUserId' => [
-                        'type' => 'string',
-                    ],
-                    'IdpConfigId' => [
-                        'type' => 'string',
                     ],
                 ],
             ],
@@ -4250,6 +4262,19 @@
                 ],
                 [
                     'name' => 'NacStatuses',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AutoLoginStatuses',
                     'in' => 'query',
                     'style' => 'flat',
                     'schema' => [
@@ -8365,6 +8390,14 @@
                     ],
                 ],
                 [
+                    'name' => 'InvisibleEnable',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DocumentControl',
                     'in' => 'formData',
                     'style' => 'json',
@@ -8478,7 +8511,7 @@
                 ],
                 [
                     'name' => 'CsvControl',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
@@ -8636,6 +8669,10 @@
                                 'type' => 'object',
                                 'required' => false,
                                 'properties' => [
+                                    'Enhance' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
                                     'LogoBase64' => [
                                         'type' => 'string',
                                         'required' => false,
@@ -8716,6 +8753,118 @@
                                     ],
                                 ],
                             ],
+                            'MetadataControl' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'XmpKvBase64' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Enable' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'VideoControl',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'TextVisibleControl' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'VisibleText' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Mode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                        'enum' => [
+                                            'pos',
+                                            'bottom-right',
+                                        ],
+                                    ],
+                                    'Opacity' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'FontSize' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'FontColor' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'PosX' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'PosY' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'Visible' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'Margin' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Bottom' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'Right' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'MetadataControl' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'XmpKvBase64' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Enable' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AudioControl',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
                             'MetadataControl' => [
                                 'type' => 'object',
                                 'required' => false,

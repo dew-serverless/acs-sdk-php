@@ -358,6 +358,7 @@
                     'Anonymous' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'ClientId',
@@ -588,6 +589,23 @@
                 ],
                 [
                     'name' => 'DualCenterForward',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'deprecated' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'QueryDesktopTimers',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'QueryDesktopDurationList',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',

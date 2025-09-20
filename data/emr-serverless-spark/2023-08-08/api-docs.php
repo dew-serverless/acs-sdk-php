@@ -2764,6 +2764,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'taskBizId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

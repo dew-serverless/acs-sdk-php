@@ -37,6 +37,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise id2MetaVerifyIntlAsync($arguments = [])
  * @method \Dew\Acs\Result credentialVerifyIntl(array $arguments = [])
  * @method \Http\Promise\Promise credentialVerifyIntlAsync($arguments = [])
+ * @method \Dew\Acs\Result credentialRecognitionIntl(array $arguments = [])
+ * @method \Http\Promise\Promise credentialRecognitionIntlAsync($arguments = [])
  * @method \Dew\Acs\Result addressVerifyV2Intl(array $arguments = [])
  * @method \Http\Promise\Promise addressVerifyV2IntlAsync($arguments = [])
  * @method \Dew\Acs\Result addressCompareIntl(array $arguments = [])

@@ -7,18 +7,10 @@ namespace Dew\Acs\Videoenhan;
 use Dew\Acs\AcsClient;
 
 /**
- * @method \Dew\Acs\Result abstractEcommerceVideo(array $arguments = [])
- * @method \Http\Promise\Promise abstractEcommerceVideoAsync($arguments = [])
- * @method \Dew\Acs\Result abstractFilmVideo(array $arguments = [])
- * @method \Http\Promise\Promise abstractFilmVideoAsync($arguments = [])
  * @method \Dew\Acs\Result adjustVideoColor(array $arguments = [])
  * @method \Http\Promise\Promise adjustVideoColorAsync($arguments = [])
- * @method \Dew\Acs\Result toneSdrVideo(array $arguments = [])
- * @method \Http\Promise\Promise toneSdrVideoAsync($arguments = [])
  * @method \Dew\Acs\Result changeVideoSize(array $arguments = [])
  * @method \Http\Promise\Promise changeVideoSizeAsync($arguments = [])
- * @method \Dew\Acs\Result convertHdrVideo(array $arguments = [])
- * @method \Http\Promise\Promise convertHdrVideoAsync($arguments = [])
  * @method \Dew\Acs\Result enhanceVideoQuality(array $arguments = [])
  * @method \Http\Promise\Promise enhanceVideoQualityAsync($arguments = [])
  * @method \Dew\Acs\Result generateVideo(array $arguments = [])
@@ -43,12 +35,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise mergeVideoModelFaceAsync($arguments = [])
  * @method \Dew\Acs\Result queryFaceVideoTemplate(array $arguments = [])
  * @method \Http\Promise\Promise queryFaceVideoTemplateAsync($arguments = [])
- * @method \Dew\Acs\Result enhancePortraitVideo(array $arguments = [])
- * @method \Http\Promise\Promise enhancePortraitVideoAsync($arguments = [])
  * @method \Dew\Acs\Result generateHumanAnimeStyleVideo(array $arguments = [])
  * @method \Http\Promise\Promise generateHumanAnimeStyleVideoAsync($arguments = [])
  * @method \Dew\Acs\Result reduceVideoNoise(array $arguments = [])
  * @method \Http\Promise\Promise reduceVideoNoiseAsync($arguments = [])
+ * @method \Dew\Acs\Result enhancePortraitVideo(array $arguments = [])
+ * @method \Http\Promise\Promise enhancePortraitVideoAsync($arguments = [])
  */
 final class VideoenhanClient extends AcsClient
 {

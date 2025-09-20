@@ -7,29 +7,49 @@
     ],
     'components' => [
         'schemas' => [
+            'ClusterStage' => [
+                'type' => 'object',
+                'properties' => [
+                    'Message' => [
+                        'type' => 'string',
+                    ],
+                    'CurrentStage' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'TotalStageWithWeight' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/StageWithWeight',
+                        ],
+                    ],
+                ],
+            ],
+            'ClusterState' => [
+                'type' => 'object',
+                'properties' => [
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'SubStatus' => [
+                        'type' => 'string',
+                    ],
+                    'ClusterStage' => [
+                        '$ref' => '#/components/schemas/ClusterStage',
+                    ],
+                ],
+            ],
             'FlussInstance' => [
                 'type' => 'object',
                 'properties' => [
-                    'TabletServerType' => [
+                    'RegionId' => [
                         'type' => 'string',
                     ],
                     'InstanceId' => [
                         'type' => 'string',
-                    ],
-                    'ConsoleUrl' => [
-                        'type' => 'string',
-                    ],
-                    'ResourceExpiredTime' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'TabletServerNum' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'ResourceCreateTime' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
                     ],
                     'InstanceName' => [
                         'type' => 'string',
@@ -40,12 +60,36 @@
                     'VpcId' => [
                         'type' => 'string',
                     ],
+                    'OrderState' => [
+                        'type' => 'string',
+                    ],
+                    'ConsoleUrl' => [
+                        'type' => 'string',
+                    ],
                     'TabletServerModel' => [
+                        'type' => 'string',
+                    ],
+                    'TabletServerNum' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'TabletServerType' => [
                         'type' => 'string',
                     ],
                     'DiskSize' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'ResourceCreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ResourceExpiredTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ClusterStatus' => [
+                        'type' => 'string',
                     ],
                     'VSwitches' => [
                         'type' => 'array',
@@ -53,14 +97,8 @@
                             '$ref' => '#/components/schemas/FlussVswitch',
                         ],
                     ],
-                    'RegionId' => [
-                        'type' => 'string',
-                    ],
-                    'OrderState' => [
-                        'type' => 'string',
-                    ],
-                    'ClusterStatus' => [
-                        'type' => 'string',
+                    'ClusterState' => [
+                        '$ref' => '#/components/schemas/ClusterState',
                     ],
                 ],
             ],
@@ -75,6 +113,22 @@
                         'items' => [
                             'type' => 'string',
                         ],
+                    ],
+                ],
+            ],
+            'StageWithWeight' => [
+                'type' => 'object',
+                'properties' => [
+                    'StepIndex' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'StepName' => [
+                        'type' => 'string',
+                    ],
+                    'Weight' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                 ],
             ],
@@ -412,6 +466,22 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'UsePromotionCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -782,6 +852,22 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'UsePromotionCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeSupportedZones' => [
@@ -1143,6 +1229,22 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'UsePromotionCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeInstances' => [
@@ -1369,6 +1471,22 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'UsePromotionCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2032,48 +2150,40 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'foasconsole.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'foasconsole.aliyuncs.com',
+            'endpoint' => 'foasconsole.cn-zhangjiakou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
-            'endpoint' => 'foasconsole.aliyuncs.com',
+            'endpoint' => 'foasconsole.cn-hangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',
-            'endpoint' => 'foasconsole.aliyuncs.com',
+            'endpoint' => 'foasconsole.cn-shanghai.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shenzhen',
-            'endpoint' => 'foasconsole.aliyuncs.com',
+            'endpoint' => 'foasconsole.cn-shenzhen.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong',
-            'endpoint' => 'foasconsole.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'foasconsole.aliyuncs.com',
+            'endpoint' => 'foasconsole.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-3',
-            'endpoint' => 'foasconsole.aliyuncs.com',
+            'endpoint' => 'foasconsole.ap-southeast-3.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',
-            'endpoint' => 'foasconsole.aliyuncs.com',
+            'endpoint' => 'foasconsole.ap-northeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',
-            'endpoint' => 'foasconsole.aliyuncs.com',
+            'endpoint' => 'foasconsole.eu-central-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'foasconsole.aliyuncs.com',
+            'endpoint' => 'foasconsole.cn-shanghai-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-north-2-gov-1',
@@ -2085,7 +2195,7 @@
         ],
         [
             'regionId' => 'ap-southeast-5',
-            'endpoint' => 'foasconsole.aliyuncs.com',
+            'endpoint' => 'foasconsole.ap-southeast-5.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing-finance-pop',
@@ -2201,7 +2311,7 @@
         ],
         [
             'regionId' => 'eu-west-1',
-            'endpoint' => 'foasconsole.aliyuncs.com',
+            'endpoint' => 'foasconsole.eu-west-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1-oxs',
@@ -2213,11 +2323,31 @@
         ],
         [
             'regionId' => 'us-east-1',
-            'endpoint' => 'foasconsole.aliyuncs.com',
+            'endpoint' => 'foasconsole.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',
-            'endpoint' => 'foasconsole.aliyuncs.com',
+            'endpoint' => 'foasconsole.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'foasconsole.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'foasconsole.cn-shenzhen-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'foasconsole.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'foasconsole.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'foasconsole.ap-southeast-1.aliyuncs.com',
         ],
     ],
 ];

@@ -95,32 +95,34 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteCsrAsync($arguments = []) {@since 2020-04-07}
  * @method \Dew\Acs\Result deleteUserCertificate(array $arguments = []) {@since 2020-04-07}
  * @method \Http\Promise\Promise deleteUserCertificateAsync($arguments = []) {@since 2020-04-07}
- * @method \Dew\Acs\Result updateCACertificateStatus(array $arguments = []) {@since 2020-06-30}
- * @method \Http\Promise\Promise updateCACertificateStatusAsync($arguments = []) {@since 2020-06-30}
- * @method \Dew\Acs\Result describeCACertificateCount(array $arguments = []) {@since 2020-06-30}
- * @method \Http\Promise\Promise describeCACertificateCountAsync($arguments = []) {@since 2020-06-30}
- * @method \Dew\Acs\Result describeCACertificate(array $arguments = []) {@since 2020-06-30}
- * @method \Http\Promise\Promise describeCACertificateAsync($arguments = []) {@since 2020-06-30}
- * @method \Dew\Acs\Result describeCACertificateList(array $arguments = []) {@since 2020-06-30}
- * @method \Http\Promise\Promise describeCACertificateListAsync($arguments = []) {@since 2020-06-30}
- * @method \Dew\Acs\Result createSubCACertificate(array $arguments = []) {@since 2020-06-30}
- * @method \Http\Promise\Promise createSubCACertificateAsync($arguments = []) {@since 2020-06-30}
  * @method \Dew\Acs\Result createRootCACertificate(array $arguments = []) {@since 2020-06-30}
  * @method \Http\Promise\Promise createRootCACertificateAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result createSubCACertificate(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise createSubCACertificateAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result createExternalCACertificate(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise createExternalCACertificateAsync($arguments = []) {@since 2020-06-30}
  * @method \Dew\Acs\Result getCAInstanceStatus(array $arguments = []) {@since 2020-06-30}
  * @method \Http\Promise\Promise getCAInstanceStatusAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result describeCACertificateCount(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise describeCACertificateCountAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result describeCACertificateList(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise describeCACertificateListAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result describeCACertificate(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise describeCACertificateAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result updateCACertificateStatus(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise updateCACertificateStatusAsync($arguments = []) {@since 2020-06-30}
  * @method \Dew\Acs\Result createCustomCertificate(array $arguments = []) {@since 2020-06-30}
  * @method \Http\Promise\Promise createCustomCertificateAsync($arguments = []) {@since 2020-06-30}
  * @method \Dew\Acs\Result createClientCertificate(array $arguments = []) {@since 2020-06-30}
  * @method \Http\Promise\Promise createClientCertificateAsync($arguments = []) {@since 2020-06-30}
  * @method \Dew\Acs\Result createClientCertificateWithCsr(array $arguments = []) {@since 2020-06-30}
  * @method \Http\Promise\Promise createClientCertificateWithCsrAsync($arguments = []) {@since 2020-06-30}
- * @method \Dew\Acs\Result createRevokeClientCertificate(array $arguments = []) {@since 2020-06-30}
- * @method \Http\Promise\Promise createRevokeClientCertificateAsync($arguments = []) {@since 2020-06-30}
  * @method \Dew\Acs\Result createServerCertificate(array $arguments = []) {@since 2020-06-30}
  * @method \Http\Promise\Promise createServerCertificateAsync($arguments = []) {@since 2020-06-30}
  * @method \Dew\Acs\Result createServerCertificateWithCsr(array $arguments = []) {@since 2020-06-30}
  * @method \Http\Promise\Promise createServerCertificateWithCsrAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result createRevokeClientCertificate(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise createRevokeClientCertificateAsync($arguments = []) {@since 2020-06-30}
  * @method \Dew\Acs\Result deleteClientCertificate(array $arguments = []) {@since 2020-06-30}
  * @method \Http\Promise\Promise deleteClientCertificateAsync($arguments = []) {@since 2020-06-30}
  * @method \Dew\Acs\Result describeCertificatePrivateKey(array $arguments = []) {@since 2020-06-30}
@@ -135,6 +137,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listRevokeCertificateAsync($arguments = []) {@since 2020-06-30}
  * @method \Dew\Acs\Result uploadPcaCertToCas(array $arguments = []) {@since 2020-06-30}
  * @method \Http\Promise\Promise uploadPcaCertToCasAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result listPcaCaCertificate(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise listPcaCaCertificateAsync($arguments = []) {@since 2020-06-30}
  */
 final class CasClient extends AcsClient
 {

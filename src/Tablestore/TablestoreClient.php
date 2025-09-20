@@ -9,8 +9,12 @@ use Dew\Acs\AcsClient;
 /**
  * @method \Dew\Acs\Result createInstance(array $arguments = [])
  * @method \Http\Promise\Promise createInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result createVCUInstance(array $arguments = [])
+ * @method \Http\Promise\Promise createVCUInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteInstance(array $arguments = [])
  * @method \Http\Promise\Promise deleteInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteVCUInstance(array $arguments = [])
+ * @method \Http\Promise\Promise deleteVCUInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result getInstance(array $arguments = [])
  * @method \Http\Promise\Promise getInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result updateInstance(array $arguments = [])
@@ -33,10 +37,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise checkInstancePolicyAsync($arguments = [])
  * @method \Dew\Acs\Result describeRegions(array $arguments = [])
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
+ * @method \Dew\Acs\Result listClusterType(array $arguments = [])
+ * @method \Http\Promise\Promise listClusterTypeAsync($arguments = [])
  * @method \Dew\Acs\Result updateInstanceElasticVCUUpperLimit(array $arguments = [])
  * @method \Http\Promise\Promise updateInstanceElasticVCUUpperLimitAsync($arguments = [])
- * @method \Dew\Acs\Result createVCUInstance(array $arguments = [])
- * @method \Http\Promise\Promise createVCUInstanceAsync($arguments = [])
  */
 final class TablestoreClient extends AcsClient
 {

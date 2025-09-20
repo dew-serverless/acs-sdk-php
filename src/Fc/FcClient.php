@@ -123,6 +123,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listAsyncTasksAsync($arguments = [])
  * @method \Dew\Acs\Result stopAsyncTask(array $arguments = [])
  * @method \Http\Promise\Promise stopAsyncTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteScalingConfig(array $arguments = [])
+ * @method \Http\Promise\Promise deleteScalingConfigAsync($arguments = [])
  */
 final class FcClient extends AcsClient
 {

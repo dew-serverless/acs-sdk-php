@@ -287,6 +287,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetResources' => [

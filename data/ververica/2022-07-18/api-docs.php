@@ -7,6 +7,32 @@
     ],
     'components' => [
         'schemas' => [
+            'AiModel' => [
+                'type' => 'object',
+                'properties' => [
+                    'outputSchema' => [
+                        '$ref' => '#/components/schemas/Schema',
+                    ],
+                    'inputSchema' => [
+                        '$ref' => '#/components/schemas/Schema',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'comment' => [
+                        'type' => 'string',
+                    ],
+                    'options' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                            'required' => true,
+                        ],
+                    ],
+                ],
+            ],
             'Artifact' => [
                 'type' => 'object',
                 'properties' => [
@@ -141,9 +167,17 @@
                 'properties' => [
                     'name' => [
                         'type' => 'string',
+                        'required' => true,
                     ],
                     'properties' => [
                         'type' => 'object',
+                        'required' => true,
+                    ],
+                    'extensionConf' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -647,6 +681,35 @@
                     'modifiedAt' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                ],
+            ],
+            'Function' => [
+                'type' => 'object',
+                'properties' => [
+                    'gmtModified' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'functionLanguage' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'className' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'functionType' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -1360,15 +1423,26 @@
             ],
             'PrimaryKey' => [
                 'type' => 'object',
+                'required' => false,
                 'properties' => [
                     'constraintName' => [
                         'type' => 'string',
+                        'required' => true,
                     ],
                     'columns' => [
                         'type' => 'array',
+                        'required' => true,
                         'items' => [
                             'type' => 'string',
                         ],
+                    ],
+                    'constraintType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'enforced' => [
+                        'type' => 'boolean',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -1979,9 +2053,11 @@
                 'properties' => [
                     'name' => [
                         'type' => 'string',
+                        'required' => true,
                     ],
                     'schema' => [
                         '$ref' => '#/components/schemas/Schema',
+                        'required' => false,
                     ],
                     'properties' => [
                         'type' => 'object',
@@ -1995,6 +2071,16 @@
                             'type' => 'string',
                         ],
                     ],
+                    'tableType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'metadata' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
                 ],
             ],
             'TableColumn' => [
@@ -2002,6 +2088,7 @@
                 'properties' => [
                     'name' => [
                         'type' => 'string',
+                        'required' => true,
                     ],
                     'metadataInfo' => [
                         '$ref' => '#/components/schemas/MetadataInfo',
@@ -2014,6 +2101,9 @@
                     ],
                     'nullable' => [
                         'type' => 'boolean',
+                    ],
+                    'logicalType' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2214,6 +2304,9 @@
                         'type' => 'string',
                     ],
                     'watermarkExpression' => [
+                        'type' => 'string',
+                    ],
+                    'watermarkType' => [
                         'type' => 'string',
                     ],
                 ],

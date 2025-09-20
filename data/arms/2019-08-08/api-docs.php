@@ -4223,6 +4223,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WebSDKConfigJson',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetRumExceptionStack' => [

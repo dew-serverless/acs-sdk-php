@@ -147,6 +147,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise restoreInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result describeClusterBackupList(array $arguments = [])
  * @method \Http\Promise\Promise describeClusterBackupListAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDBInstanceMonitor(array $arguments = [])
+ * @method \Http\Promise\Promise describeDBInstanceMonitorAsync($arguments = [])
  * @method \Dew\Acs\Result describeMonitorItems(array $arguments = [])
  * @method \Http\Promise\Promise describeMonitorItemsAsync($arguments = [])
  * @method \Dew\Acs\Result describeHistoryMonitorValues(array $arguments = [])
@@ -209,6 +211,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeEncryptionKeyAsync($arguments = [])
  * @method \Dew\Acs\Result checkCloudResourceAuthorized(array $arguments = [])
  * @method \Http\Promise\Promise checkCloudResourceAuthorizedAsync($arguments = [])
+ * @method \Dew\Acs\Result describeActiveOperationTaskCount(array $arguments = [])
+ * @method \Http\Promise\Promise describeActiveOperationTaskCountAsync($arguments = [])
  * @method \Dew\Acs\Result describeHistoryTasks(array $arguments = [])
  * @method \Http\Promise\Promise describeHistoryTasksAsync($arguments = [])
  * @method \Dew\Acs\Result modifyActiveOperationTask(array $arguments = [])
@@ -267,6 +271,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createTairKVCacheVNodeAsync($arguments = [])
  * @method \Dew\Acs\Result transformToEcs(array $arguments = [])
  * @method \Http\Promise\Promise transformToEcsAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyDBInstanceMonitor(array $arguments = [])
+ * @method \Http\Promise\Promise modifyDBInstanceMonitorAsync($arguments = [])
+ * @method \Dew\Acs\Result describeTags(array $arguments = [])
+ * @method \Http\Promise\Promise describeTagsAsync($arguments = [])
  */
 final class RKvstoreClient extends AcsClient
 {

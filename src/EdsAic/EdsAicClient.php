@@ -61,6 +61,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyInstanceChargeTypeAsync($arguments = [])
  * @method \Dew\Acs\Result updateInstanceImage(array $arguments = [])
  * @method \Http\Promise\Promise updateInstanceImageAsync($arguments = [])
+ * @method \Dew\Acs\Result expandPhoneDataVolume(array $arguments = [])
+ * @method \Http\Promise\Promise expandPhoneDataVolumeAsync($arguments = [])
  * @method \Dew\Acs\Result batchGetAcpConnectionTicket(array $arguments = [])
  * @method \Http\Promise\Promise batchGetAcpConnectionTicketAsync($arguments = [])
  * @method \Dew\Acs\Result disconnectAndroidInstance(array $arguments = [])

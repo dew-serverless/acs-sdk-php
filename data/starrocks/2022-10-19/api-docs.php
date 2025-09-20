@@ -363,6 +363,25 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'GatewayType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AgentNodeGroup' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'cu' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'AutoPay' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -1050,6 +1069,8 @@
                             'pl1',
                             'pl2',
                             'pl3',
+                            'eed_standard',
+                            'eed_advanced',
                         ],
                     ],
                 ],
@@ -1118,6 +1139,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FastMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

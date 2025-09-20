@@ -170,7 +170,7 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'UserName' => [
+                                'Username' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -386,6 +386,18 @@
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'acc.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'acc.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'acc.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'acc.cn-wulanchabu.aliyuncs.com',
         ],
     ],
 ];

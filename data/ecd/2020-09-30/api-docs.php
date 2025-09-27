@@ -2954,6 +2954,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ChannelCookie',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateDiskEncryptionService' => [
@@ -7527,6 +7535,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelCookie',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -13362,6 +13378,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'DiskType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeAutoSnapshotPolicy' => [
@@ -13523,6 +13547,14 @@
                 ],
                 [
                     'name' => 'CronExpression',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DiskType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -15061,6 +15093,7 @@
                                 ],
                             ],
                         ],
+                        'maxItems' => 20,
                     ],
                 ],
                 [
@@ -15074,6 +15107,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
+                        'maxItems' => 6,
                     ],
                 ],
             ],
@@ -16448,6 +16482,7 @@
                                 ],
                             ],
                         ],
+                        'maxItems' => 20,
                     ],
                 ],
                 [

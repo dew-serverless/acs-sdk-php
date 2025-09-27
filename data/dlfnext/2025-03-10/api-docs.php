@@ -395,6 +395,137 @@
                     ],
                 ],
             ],
+            'Function' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'deterministic' => [
+                        'type' => 'boolean',
+                    ],
+                    'comment' => [
+                        'type' => 'string',
+                    ],
+                    'owner' => [
+                        'type' => 'string',
+                    ],
+                    'createdBy' => [
+                        'type' => 'string',
+                    ],
+                    'createdAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updatedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updatedBy' => [
+                        'type' => 'string',
+                    ],
+                    'inputParams' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DataField',
+                        ],
+                    ],
+                    'returnParams' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DataField',
+                        ],
+                    ],
+                    'definitions' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/FunctionDefinition',
+                        ],
+                    ],
+                    'options' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'id' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'FunctionChange' => [
+                'type' => 'object',
+                'properties' => [
+                    'action' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'setOption',
+                            'removeOption',
+                            'updateComment',
+                            'addDefinition',
+                            'updateDefinition',
+                            'dropDefinition',
+                        ],
+                    ],
+                    'key' => [
+                        'type' => 'string',
+                    ],
+                    'value' => [
+                        'type' => 'string',
+                    ],
+                    'comment' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'definition' => [
+                        '$ref' => '#/components/schemas/FunctionDefinition',
+                    ],
+                ],
+            ],
+            'FunctionDefinition' => [
+                'type' => 'object',
+                'properties' => [
+                    'type' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'sql',
+                            'file',
+                            'lambda',
+                        ],
+                    ],
+                    'definition' => [
+                        'type' => 'string',
+                    ],
+                    'language' => [
+                        'type' => 'string',
+                    ],
+                    'className' => [
+                        'type' => 'string',
+                    ],
+                    'functionName' => [
+                        'type' => 'string',
+                    ],
+                    'fileResources' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/FunctionFileResource',
+                        ],
+                    ],
+                ],
+            ],
+            'FunctionFileResource' => [
+                'type' => 'object',
+                'properties' => [
+                    'resourceType' => [
+                        'type' => 'string',
+                    ],
+                    'uri' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'IcebergNestedField' => [
                 'type' => 'object',
                 'properties' => [
@@ -1351,6 +1482,128 @@
                     'updatedAt' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                ],
+            ],
+            'View' => [
+                'type' => 'object',
+                'properties' => [
+                    'schema' => [
+                        '$ref' => '#/components/schemas/ViewSchema',
+                    ],
+                    'owner' => [
+                        'type' => 'string',
+                    ],
+                    'createdAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updatedBy' => [
+                        'type' => 'string',
+                    ],
+                    'createdBy' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'id' => [
+                        'type' => 'string',
+                    ],
+                    'updatedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'ViewChange' => [
+                'type' => 'object',
+                'properties' => [
+                    'action' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'addDialect',
+                            'updateDialect',
+                            'dropDialect',
+                            'setOption',
+                            'removeOption',
+                            'updateComment',
+                        ],
+                    ],
+                    'dialect' => [
+                        'type' => 'string',
+                    ],
+                    'query' => [
+                        'type' => 'string',
+                    ],
+                    'comment' => [
+                        'type' => 'string',
+                    ],
+                    'value' => [
+                        'type' => 'string',
+                    ],
+                    'key' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ViewSchema' => [
+                'type' => 'object',
+                'properties' => [
+                    'fields' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DataField',
+                        ],
+                    ],
+                    'query' => [
+                        'type' => 'string',
+                    ],
+                    'dialects' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'comment' => [
+                        'type' => 'string',
+                    ],
+                    'options' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'ViewSchemaChange' => [
+                'type' => 'object',
+                'properties' => [
+                    'action' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'addDialect',
+                            'updateDialect',
+                            'dropDialect',
+                            'setOption',
+                            'removeOption',
+                            'updateComment',
+                        ],
+                    ],
+                    'dialect' => [
+                        'type' => 'string',
+                    ],
+                    'query' => [
+                        'type' => 'string',
+                    ],
+                    'comment' => [
+                        'type' => 'string',
+                    ],
+                    'value' => [
+                        'type' => 'string',
+                    ],
+                    'key' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

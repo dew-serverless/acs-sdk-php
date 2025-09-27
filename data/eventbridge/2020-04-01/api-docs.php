@@ -9287,60 +9287,52 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'eventbridge-console.cn-qingdao.aliyuncs.com',
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'eventbridge-console.cn-wulanchabu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'eventbridge-console.cn-beijing.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'eventbridge-console.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'eventbridge-console.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'eventbridge-console.cn-wulanchabu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'eventbridge-console.cn-hangzhou.aliyuncs.com',
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'eventbridge-console.cn-qingdao.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',
             'endpoint' => 'eventbridge-console.cn-shanghai.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'eventbridge-console.cn-shenzhen.aliyuncs.com',
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'eventbridge-console.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-heyuan',
             'endpoint' => 'eventbridge-console.cn-heyuan.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'eventbridge-console.cn-guangzhou.aliyuncs.com',
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'eventbridge-console.cn-zhangjiakou.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'eventbridge-console.cn-chengdu.aliyuncs.com',
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'eventbridge-console.cn-shenzhen.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'eventbridge-console.cn-hongkong.aliyuncs.com',
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'eventbridge-console.ap-northeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'eventbridge-console.ap-northeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-northeast-2',
-            'endpoint' => 'eventbridge-console.ap-northeast-2.aliyuncs.com',
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'eventbridge-console.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'eventbridge-console.cn-guangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',
@@ -9351,6 +9343,10 @@
             'endpoint' => 'eventbridge-console.ap-southeast-3.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'eventbridge-console.cn-huhehaote.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-5',
             'endpoint' => 'eventbridge-console.ap-southeast-5.aliyuncs.com',
         ],
@@ -9359,28 +9355,40 @@
             'endpoint' => 'eventbridge-console.ap-southeast-6.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'eventbridge-console.us-east-1.aliyuncs.com',
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'eventbridge-console.ap-southeast-7.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'eventbridge-console.us-west-1.aliyuncs.com',
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'eventbridge-console.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'eventbridge-console.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1',
             'endpoint' => 'eventbridge-console.eu-west-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'eventbridge-console.us-west-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'eu-central-1',
             'endpoint' => 'eventbridge-console.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'eventbridge-console.ap-south-1.aliyuncs.com',
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'eventbridge-console.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'eventbridge-console.ap-southeast-7.aliyuncs.com',
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'eventbridge-console.cn-beijing-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'eventbridge-console.cn-shanghai-finance-1.aliyuncs.com',
         ],
     ],
 ];

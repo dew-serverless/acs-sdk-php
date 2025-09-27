@@ -46,6 +46,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 64,
                     ],
                 ],
                 [
@@ -62,6 +63,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'maxLength' => 128,
                     ],
                 ],
                 [
@@ -105,6 +107,7 @@
                                 'Value' => [
                                     'type' => 'string',
                                     'required' => false,
+                                    'maxLength' => 256,
                                 ],
                             ],
                         ],
@@ -287,6 +290,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 128,
                     ],
                 ],
                 [
@@ -319,6 +323,7 @@
                                 'Key' => [
                                     'type' => 'string',
                                     'required' => false,
+                                    'maxLength' => 128,
                                 ],
                                 'Value' => [
                                     'type' => 'string',

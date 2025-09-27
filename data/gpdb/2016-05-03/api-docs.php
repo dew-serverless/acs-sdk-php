@@ -365,6 +365,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EnablePublicConnection',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteAINode' => [

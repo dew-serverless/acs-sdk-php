@@ -503,6 +503,7 @@
                     ],
                     'disableOndemand' => [
                         'type' => 'boolean',
+                        'deprecated' => true,
                     ],
                     'sessionAffinity' => [
                         'type' => 'string',
@@ -524,6 +525,22 @@
                     ],
                     'sessionAffinityConfig' => [
                         'type' => 'string',
+                    ],
+                    'idleTimeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'disableInjectCredentials' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'None',
+                            'Env',
+                            'Request',
+                            'All',
+                        ],
+                    ],
+                    'polarFsConfig' => [
+                        '$ref' => '#/components/schemas/PolarFsConfig',
                     ],
                 ],
             ],
@@ -549,6 +566,19 @@
                     'license' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+            'CreateSessionInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'sessionTTLInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'sessionIdleTimeoutInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -1201,17 +1231,18 @@
                     ],
                     'disableOndemand' => [
                         'type' => 'boolean',
+                        'deprecated' => true,
                     ],
                     'invocationRestriction' => [
                         '$ref' => '#/components/schemas/FunctionRestriction',
                     ],
-                    'enableLongLiving' => [
-                        'type' => 'boolean',
-                        'deprecated' => true,
-                    ],
                     'sessionAffinity' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                    'enableLongLiving' => [
+                        'type' => 'boolean',
+                        'deprecated' => true,
                     ],
                     'resourceGroupId' => [
                         'type' => 'string',
@@ -1226,6 +1257,22 @@
                     ],
                     'sessionAffinityConfig' => [
                         'type' => 'string',
+                    ],
+                    'idleTimeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'disableInjectCredentials' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'None',
+                            'Env',
+                            'Request',
+                            'All',
+                        ],
+                    ],
+                    'polarFsConfig' => [
+                        '$ref' => '#/components/schemas/PolarFsConfig',
                     ],
                 ],
             ],
@@ -1765,6 +1812,20 @@
                     ],
                 ],
             ],
+            'ListSessionsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'nextToken' => [
+                        'type' => 'string',
+                    ],
+                    'sessions' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Session',
+                        ],
+                    ],
+                ],
+            ],
             'ListTagResourcesOutput' => [
                 'type' => 'object',
                 'properties' => [
@@ -2076,6 +2137,39 @@
                     'rewriteConfig' => [
                         '$ref' => '#/components/schemas/RewriteConfig',
                         'required' => false,
+                    ],
+                ],
+            ],
+            'PolarFsConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'groupId' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'userId' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'mountPoints' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/PolarFsMountConfig',
+                        ],
+                    ],
+                ],
+            ],
+            'PolarFsMountConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'instanceId' => [
+                        'type' => 'string',
+                    ],
+                    'mountDir' => [
+                        'type' => 'string',
+                    ],
+                    'remoteDir' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2755,6 +2849,43 @@
                     ],
                 ],
             ],
+            'Session' => [
+                'type' => 'object',
+                'properties' => [
+                    'sessionId' => [
+                        'type' => 'string',
+                    ],
+                    'functionName' => [
+                        'type' => 'string',
+                    ],
+                    'sessionAffinityType' => [
+                        'type' => 'string',
+                    ],
+                    'sessionTTLInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'sessionIdleTimeoutInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'string',
+                    ],
+                    'sessionStatus' => [
+                        'type' => 'string',
+                    ],
+                    'containerId' => [
+                        'type' => 'string',
+                    ],
+                    'qualifier' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'SourceConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -3365,6 +3496,7 @@
                     ],
                     'disableOndemand' => [
                         'type' => 'boolean',
+                        'deprecated' => true,
                     ],
                     'sessionAffinity' => [
                         'type' => 'string',
@@ -3384,6 +3516,22 @@
                     'sessionAffinityConfig' => [
                         'type' => 'string',
                     ],
+                    'idleTimeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'disableInjectCredentials' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'None',
+                            'Env',
+                            'Request',
+                            'All',
+                        ],
+                    ],
+                    'polarFsConfig' => [
+                        '$ref' => '#/components/schemas/PolarFsConfig',
+                    ],
                 ],
             ],
             'UpdateResidentResourcePoolInput' => [
@@ -3394,6 +3542,19 @@
                     ],
                     'useScaling' => [
                         'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'UpdateSessionInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'sessionTTLInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'sessionIdleTimeoutInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -6208,6 +6369,318 @@
                 ],
             ],
         ],
+        'CreateSession' => [
+            'path' => '/2023-03-30/functions/{functionName}/sessions',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'functionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'qualifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/CreateSessionInput',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetSession' => [
+            'path' => '/2023-03-30/functions/{functionName}/sessions/{sessionId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'functionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sessionId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'qualifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateSession' => [
+            'path' => '/2023-03-30/functions/{functionName}/sessions/{sessionId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'functionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sessionId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'qualifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/UpdateSessionInput',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListSessions' => [
+            'path' => '/2023-03-30/functions/{functionName}/sessions',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'functionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'qualifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'nextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sessionStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sessionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSession' => [
+            'path' => '/2023-03-30/functions/{functionName}/sessions/{sessionId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'functionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sessionId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'qualifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'PutScalingConfig' => [
+            'path' => '/2023-03-30/functions/{functionName}/scaling-config',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'functionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'qualifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/PutScalingConfigInput',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DeleteScalingConfig' => [
             'path' => '/2023-03-30/functions/{functionName}/scaling-config',
             'methods' => [
@@ -6236,6 +6709,81 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetScalingConfig' => [
+            'path' => '/2023-03-30/functions/{functionName}/scaling-config',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'functionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'qualifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListScalingConfigs' => [
+            'path' => '/2023-03-30/scaling-configs',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'functionName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'nextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],

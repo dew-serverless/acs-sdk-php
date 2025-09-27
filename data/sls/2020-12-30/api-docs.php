@@ -2591,9 +2591,6 @@
                     'recycleBinEnabled' => [
                         'type' => 'boolean',
                     ],
-                    'location' => [
-                        'type' => 'string',
-                    ],
                 ],
             ],
             'serviceStatus' => [
@@ -3169,6 +3166,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

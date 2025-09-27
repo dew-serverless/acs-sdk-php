@@ -493,6 +493,14 @@
                     ],
                 ],
             ],
+            'CustomPrompt' => [
+                'type' => 'object',
+                'properties' => [
+                    'RoleDefinition' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'DataIngestion' => [
                 'type' => 'object',
                 'properties' => [
@@ -1365,6 +1373,17 @@
                     ],
                 ],
             ],
+            'ImageURL' => [
+                'type' => 'object',
+                'properties' => [
+                    'URL' => [
+                        'type' => 'string',
+                    ],
+                    'Thumbnail' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Input' => [
                 'type' => 'object',
                 'properties' => [
@@ -2198,6 +2217,9 @@
                 'type' => 'object',
                 'properties' => [
                     'IncrementalOutput' => [
+                        'type' => 'boolean',
+                    ],
+                    'NeedReturnFinalResult' => [
                         'type' => 'boolean',
                     ],
                 ],
@@ -4350,7 +4372,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [

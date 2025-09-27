@@ -15036,6 +15036,22 @@
                 ],
             ],
         ],
+        'DescribeNASAvailableResourceInfo' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
         'CreateEpnInstance' => [
             'methods' => [
                 'post',
@@ -16426,22 +16442,6 @@
                     ],
                 ],
             ],
-        ],
-        'DescribeNASAvailableResourceInfo' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
         ],
     ],
     'endpoints' => [

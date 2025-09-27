@@ -142,6 +142,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AutoRetry',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CheckSmsVerifyCode' => [

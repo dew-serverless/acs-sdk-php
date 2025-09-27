@@ -174,6 +174,8 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                        'minimum' => '4',
+                        'maximum' => '128',
                     ],
                 ],
                 [
@@ -183,6 +185,8 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                        'minimum' => '4',
+                        'maximum' => '128',
                     ],
                 ],
                 [
@@ -192,14 +196,18 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                        'minimum' => '2',
+                        'maximum' => '64',
                     ],
                 ],
                 [
                     'name' => 'StorageQuota',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
+                        'minimum' => '0',
                     ],
                 ],
                 [
@@ -208,6 +216,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'oss',
+                            'ESSD_L1',
+                            'ESSD_L2',
+                            'ESSD_L3',
+                            'SSD',
+                            'ESSD_L0',
+                        ],
                     ],
                 ],
             ],
@@ -400,6 +416,8 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                        'minimum' => '4',
+                        'maximum' => '128',
                     ],
                 ],
                 [
@@ -409,6 +427,8 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                        'minimum' => '4',
+                        'maximum' => '128',
                     ],
                 ],
                 [
@@ -418,14 +438,18 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                        'minimum' => '2',
+                        'maximum' => '64',
                     ],
                 ],
                 [
                     'name' => 'StorageQuota',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
+                        'minimum' => '0',
                     ],
                 ],
                 [
@@ -434,6 +458,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'oss',
+                            'ESSD_L1',
+                            'ESSD_L2',
+                            'ESSD_L3',
+                            'SSD',
+                            'ESSD_L0',
+                        ],
                     ],
                 ],
             ],

@@ -83,6 +83,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Reason',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UploadSampleApi' => [

@@ -112,6 +112,41 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'ChargeType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'PREPAY',
+                            'POSTPAY',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PricingCycle',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Year',
+                            'Month',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Duration',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '9',
+                    ],
+                ],
             ],
         ],
         'UpdateCluster' => [

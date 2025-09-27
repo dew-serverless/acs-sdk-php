@@ -3912,6 +3912,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'FormatSqlId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeSQLSamples' => [
@@ -4438,6 +4446,22 @@
                 ],
                 [
                     'name' => 'InstanceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DynamicSql',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FormatSqlId',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

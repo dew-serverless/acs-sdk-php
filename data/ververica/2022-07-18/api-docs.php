@@ -181,6 +181,14 @@
                     ],
                 ],
             ],
+            'Cell' => [
+                'type' => 'object',
+                'properties' => [
+                    'value' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Connector' => [
                 'type' => 'object',
                 'properties' => [
@@ -644,6 +652,23 @@
                     ],
                     'resourcePlan' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'FetchResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'resultType' => [
+                        'type' => 'string',
+                    ],
+                    'resultMessage' => [
+                        'type' => 'string',
+                    ],
+                    'tableResults' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/TableResult',
+                        ],
                     ],
                 ],
             ],
@@ -1524,6 +1549,19 @@
                     ],
                 ],
             ],
+            'Resource' => [
+                'type' => 'object',
+                'required' => true,
+                'properties' => [
+                    'fixedResource' => [
+                        '$ref' => '#/components/schemas/ResourceSpec',
+                        'required' => true,
+                    ],
+                    'elasticResource' => [
+                        '$ref' => '#/components/schemas/ResourceSpec',
+                    ],
+                ],
+            ],
             'ResourceQuota' => [
                 'type' => 'object',
                 'properties' => [
@@ -1531,6 +1569,9 @@
                         '$ref' => '#/components/schemas/ResourceSpec',
                     ],
                     'used' => [
+                        '$ref' => '#/components/schemas/ResourceSpec',
+                    ],
+                    'request' => [
                         '$ref' => '#/components/schemas/ResourceSpec',
                     ],
                 ],
@@ -1544,6 +1585,28 @@
                     ],
                     'memory' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'Row' => [
+                'type' => 'object',
+                'properties' => [
+                    'cells' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Cell',
+                        ],
+                    ],
+                ],
+            ],
+            'RowUpdate' => [
+                'type' => 'object',
+                'properties' => [
+                    'rowKind' => [
+                        'type' => 'string',
+                    ],
+                    'row' => [
+                        '$ref' => '#/components/schemas/Row',
                     ],
                 ],
             ],
@@ -2048,6 +2111,40 @@
                     ],
                 ],
             ],
+            'SubmitPreview' => [
+                'type' => 'object',
+                'properties' => [
+                    'queryName' => [
+                        'type' => 'string',
+                    ],
+                    'sessionId' => [
+                        'type' => 'string',
+                    ],
+                    'tableSchemas' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/TableSchema',
+                        ],
+                    ],
+                ],
+            ],
+            'SubmitPreviewResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'queryId' => [
+                        'type' => 'string',
+                    ],
+                    'sessionId' => [
+                        'type' => 'string',
+                    ],
+                    'tableSchemas' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/TableSchema',
+                        ],
+                    ],
+                ],
+            ],
             'Table' => [
                 'type' => 'object',
                 'properties' => [
@@ -2118,6 +2215,31 @@
                     ],
                     'tableName' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'TableResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'tableName' => [
+                        'type' => 'string',
+                    ],
+                    'rowUpdates' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/RowUpdate',
+                        ],
+                    ],
+                ],
+            ],
+            'TableSchema' => [
+                'type' => 'object',
+                'properties' => [
+                    'tableName' => [
+                        'type' => 'string',
+                    ],
+                    'schema' => [
+                        '$ref' => '#/components/schemas/Schema',
                     ],
                 ],
             ],
@@ -6447,32 +6569,32 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'ververica.cn-beijing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'ververica.cn-zhangjiakou.aliyuncs.com',
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'ververica.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'ververica.cn-hangzhou.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'ververica.ap-southeast-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-shanghai',
             'endpoint' => 'ververica.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'ververica.cn-beijing.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'ververica.cn-shenzhen.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'ververica.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'ververica.cn-hongkong.aliyuncs.com',
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'ververica.cn-zhangjiakou.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',
@@ -6505,6 +6627,14 @@
         [
             'regionId' => 'cn-wulanchabu',
             'endpoint' => 'ververica.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'ververica.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'ververica.ap-northeast-1.aliyuncs.com',
         ],
     ],
 ];

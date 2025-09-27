@@ -4135,64 +4135,52 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'alikafka.ap-southeast-7.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'alikafka.cn-qingdao.aliyuncs.com',
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'alikafka.cn-wulanchabu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'alikafka.cn-beijing.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'alikafka.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'alikafka.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'alikafka.cn-wulanchabu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'alikafka.cn-hangzhou.aliyuncs.com',
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'alikafka.cn-qingdao.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',
             'endpoint' => 'alikafka.cn-shanghai.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'alikafka.cn-shenzhen.aliyuncs.com',
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'alikafka.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-heyuan',
             'endpoint' => 'alikafka.cn-heyuan.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'alikafka.cn-guangzhou.aliyuncs.com',
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'alikafka.cn-zhangjiakou.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'alikafka.cn-chengdu.aliyuncs.com',
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'alikafka.cn-shenzhen.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'alikafka.cn-hongkong.aliyuncs.com',
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'alikafka.ap-northeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'alikafka.ap-northeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-northeast-2',
-            'endpoint' => 'alikafka.ap-northeast-2.aliyuncs.com',
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'alikafka.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'alikafka.cn-guangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',
@@ -4207,20 +4195,32 @@
             'endpoint' => 'alikafka.ap-southeast-3.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'alikafka.cn-huhehaote.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-5',
             'endpoint' => 'alikafka.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'alikafka.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'alikafka.cn-hangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'us-east-1',
             'endpoint' => 'alikafka.us-east-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'alikafka.us-west-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'eu-west-1',
             'endpoint' => 'alikafka.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'alikafka.us-west-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',
@@ -4231,12 +4231,12 @@
             'endpoint' => 'alikafka.me-east-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'alikafka.cn-hangzhou-finance.aliyuncs.com',
+            'regionId' => 'me-central-1',
+            'endpoint' => 'alikafka.me-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'alikafka.cn-shanghai-finance-1.aliyuncs.com',
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'alikafka.cn-hangzhou-finance.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shenzhen-finance-1',
@@ -4247,12 +4247,12 @@
             'endpoint' => 'alikafka.cn-beijing-finance-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'me-central-1',
-            'endpoint' => 'alikafka.me-central-1.aliyuncs.com',
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'alikafka.cn-shanghai-finance-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-heyuan-acdr-1',
-            'endpoint' => 'alikafka.cn-heyuan-acdr-1.aliyuncs.com',
+            'regionId' => 'na-south-1',
+            'endpoint' => 'alikafka.na-south-1.aliyuncs.com',
         ],
     ],
 ];

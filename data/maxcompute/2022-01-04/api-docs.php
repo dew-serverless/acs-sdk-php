@@ -4832,6 +4832,14 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'enableSchemaMigration' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'enableDataMigration' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                             'enableVerification' => [
                                 'type' => 'boolean',
                                 'required' => false,

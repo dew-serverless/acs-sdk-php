@@ -407,6 +407,70 @@
                     ],
                 ],
             ],
+            'FolderItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'folderId' => [
+                        'type' => 'string',
+                    ],
+                    'folderNum' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'docCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'folderName' => [
+                        'type' => 'string',
+                    ],
+                    'parentFolderId' => [
+                        'type' => 'string',
+                    ],
+                    'folderDefault' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'currentLevel' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'syncStatus' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'syncParsingStatus' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ossDomain' => [
+                        'type' => 'string',
+                    ],
+                    'ossUpdateBy' => [
+                        'type' => 'string',
+                    ],
+                    'taskId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'resourcePath' => [
+                        'type' => 'string',
+                    ],
+                    'storageType' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ossPath' => [
+                        'type' => 'string',
+                    ],
+                    'subFolderList' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/FolderItem',
+                        ],
+                    ],
+                ],
+            ],
             'GwpInventoryConstitute' => [
                 'type' => 'object',
                 'properties' => [
@@ -2821,6 +2885,110 @@
                                 'required' => true,
                             ],
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'AddFolder' => [
+            'path' => '/api/v1/aidoc/folder/add',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'folderName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'parentFolderId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteFolder' => [
+            'path' => '/api/v1/aidoc/folder/delete',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'folderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteDocument' => [
+            'path' => '/api/v1/aidoc/document/delete',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

@@ -145,6 +145,15 @@
                                                             'type' => 'string',
                                                             'required' => false,
                                                         ],
+                                                        'BurstingEnabled' => [
+                                                            'type' => 'boolean',
+                                                            'required' => false,
+                                                        ],
+                                                        'ProvisionedIops' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => false,
+                                                        ],
                                                     ],
                                                 ],
                                             ],
@@ -680,6 +689,15 @@
                                                         ],
                                                         'PerformanceLevel' => [
                                                             'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'BurstingEnabled' => [
+                                                            'type' => 'boolean',
+                                                            'required' => false,
+                                                        ],
+                                                        'ProvisionedIops' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
                                                             'required' => false,
                                                         ],
                                                     ],

@@ -7057,6 +7057,10 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'searchengine.ap-southeast-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'searchengine.cn-beijing.aliyuncs.com',
         ],
@@ -7073,8 +7077,16 @@
             'endpoint' => 'searchengine.cn-shenzhen.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'searchengine.ap-southeast-1.aliyuncs.com',
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'searchengine.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'searchengine.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'searchengine.eu-central-1.aliyuncs.com',
         ],
     ],
 ];

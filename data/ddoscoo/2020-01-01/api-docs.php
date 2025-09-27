@@ -1444,6 +1444,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'DownstreamKeepalive',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeL7UsKeepalive' => [

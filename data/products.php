@@ -1364,6 +1364,7 @@
         'style' => 'RPC',
         'versions' => [
             '2022-01-12',
+            '2021-02-02',
         ],
         'defaultVersion' => '2022-01-12',
     ],
@@ -2505,5 +2506,21 @@
             '2025-07-07',
         ],
         'defaultVersion' => '2025-07-07',
+    ],
+    [
+        'code' => 'MultimodalDialog',
+        'style' => 'RPC',
+        'versions' => [
+            '2025-09-03',
+        ],
+        'defaultVersion' => '2025-09-03',
+    ],
+    [
+        'code' => 'AgentRun',
+        'style' => 'RPC',
+        'versions' => [
+            '2025-09-10',
+        ],
+        'defaultVersion' => '2025-09-10',
     ],
 ];

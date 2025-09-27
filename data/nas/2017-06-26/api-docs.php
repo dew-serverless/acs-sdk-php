@@ -5126,6 +5126,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TransferFileListPath',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateDataFlowSubTask' => [

@@ -212,6 +212,24 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'EncryptionOptions' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'Mode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'KMSKeyId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],

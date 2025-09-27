@@ -2485,16 +2485,24 @@
             'endpoint' => 'pai-dsw.ap-southeast-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'pai-dsw.ap-southeast-3.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'pai-dsw.ap-southeast-5.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'pai-dsw.cn-beijing.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'pai-dsw.cn-wulanchabu.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'pai-dsw.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'pai-dsw.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',
@@ -2505,24 +2513,36 @@
             'endpoint' => 'pai-dsw.cn-shenzhen.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'pai-dsw.cn-hongkong.aliyuncs.com',
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'pai-dsw.cn-wulanchabu.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-3',
-            'endpoint' => 'pai-dsw.ap-southeast-3.aliyuncs.com',
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'pai-dsw.ap-northeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'pai-dsw.ap-southeast-5.aliyuncs.com',
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'pai-dsw.ap-northeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'pai-dsw.cn-guangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'pai-dsw.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'pai-dsw.ap-south-1.aliyuncs.com',
+            'regionId' => 'us-east-1',
+            'endpoint' => 'pai-dsw.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'pai-dsw.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'pai-dsw.me-central-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai-finance-1',

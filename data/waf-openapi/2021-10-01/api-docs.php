@@ -4645,6 +4645,11 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'single',
+                            'group',
+                            'asset',
+                        ],
                     ],
                 ],
                 [
@@ -4795,6 +4800,34 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'BindAssets',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 200,
+                    ],
+                ],
+                [
+                    'name' => 'UnbindAssets',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 200,
+                    ],
+                ],
             ],
         ],
         'DescribeTemplateResources' => [
@@ -4835,6 +4868,11 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'enum' => [
+                            'single',
+                            'group',
+                            'asset',
+                        ],
                     ],
                 ],
                 [
@@ -4874,6 +4912,14 @@
                 ],
                 [
                     'name' => 'Resource',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AssetApi',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5136,6 +5182,11 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'single',
+                            'group',
+                            'asset',
+                        ],
                     ],
                 ],
                 [

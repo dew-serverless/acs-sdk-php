@@ -127,6 +127,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise configSetRelationFromAddressAsync($arguments = [])
  * @method \Dew\Acs\Result configSetCancelRelationFromAddress(array $arguments = [])
  * @method \Http\Promise\Promise configSetCancelRelationFromAddressAsync($arguments = [])
+ * @method \Dew\Acs\Result descTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise descTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result queryTemplateByParam(array $arguments = [])
+ * @method \Http\Promise\Promise queryTemplateByParamAsync($arguments = [])
  */
 final class DmClient extends AcsClient
 {

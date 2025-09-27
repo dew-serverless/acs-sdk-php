@@ -33,10 +33,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceStorageConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceStorageConfig(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceStorageConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyInstanceRAGConfig(array $arguments = [])
+ * @method \Http\Promise\Promise modifyInstanceRAGConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result describeInstanceRAGConfig(array $arguments = [])
+ * @method \Http\Promise\Promise describeInstanceRAGConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceIpWhitelist(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceIpWhitelistAsync($arguments = [])
  * @method \Dew\Acs\Result describeInstanceIpWhitelist(array $arguments = [])
  * @method \Http\Promise\Promise describeInstanceIpWhitelistAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyInstanceSSL(array $arguments = [])
+ * @method \Http\Promise\Promise modifyInstanceSSLAsync($arguments = [])
+ * @method \Dew\Acs\Result describeInstanceSSL(array $arguments = [])
+ * @method \Http\Promise\Promise describeInstanceSSLAsync($arguments = [])
  */
 final class RdsAiClient extends AcsClient
 {

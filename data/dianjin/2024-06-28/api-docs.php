@@ -2295,6 +2295,122 @@
                 ],
             ],
         ],
+        'GetDialogLog' => [
+            'path' => '/{workspaceId}/api/dialog/log',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'sessionId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetDialogAnalysisResult' => [
+            'path' => '/{workspaceId}/api/virtualHuman/dialog/analysis',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'sessionIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'useUrl' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'startTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'endTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'asc' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'CreateDialogAnalysisTask' => [
             'path' => '/{workspaceId}/api/virtualHuman/dialog/analysis/submit',
             'methods' => [
@@ -2379,72 +2495,6 @@
                                         ],
                                     ],
                                 ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetDialogAnalysisResult' => [
-            'path' => '/{workspaceId}/api/virtualHuman/dialog/analysis',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'sessionIds' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'useUrl' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'startTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'endTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'asc' => [
-                                'type' => 'boolean',
-                                'required' => false,
                             ],
                         ],
                     ],

@@ -2562,7 +2562,7 @@
                             'required' => false,
                         ],
                         'minItems' => 1,
-                        'maxItems' => 500,
+                        'maxItems' => 1000,
                     ],
                 ],
                 [
@@ -3538,7 +3538,7 @@
                             'required' => false,
                         ],
                         'minItems' => 0,
-                        'maxItems' => 100,
+                        'maxItems' => 1000,
                     ],
                 ],
             ],
@@ -3600,7 +3600,7 @@
                             'required' => false,
                         ],
                         'minItems' => 0,
-                        'maxItems' => 100,
+                        'maxItems' => 1000,
                     ],
                 ],
             ],
@@ -3609,6 +3609,7 @@
             'path' => '',
             'methods' => [
                 'post',
+                'get',
             ],
             'schemes' => [
                 'https',
@@ -3631,7 +3632,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 100,
+                        'maxItems' => 1000,
                     ],
                 ],
                 [

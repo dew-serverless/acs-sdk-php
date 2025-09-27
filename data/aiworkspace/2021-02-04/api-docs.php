@@ -167,12 +167,6 @@
                     'Name' => [
                         'type' => 'string',
                     ],
-                    'Labels' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/Label',
-                        ],
-                    ],
                     'DataSourceType' => [
                         'type' => 'string',
                     ],
@@ -227,17 +221,40 @@
                     'MountAccess' => [
                         'type' => 'string',
                     ],
+                    'ImportInfo' => [
+                        'type' => 'string',
+                    ],
+                    'Edition' => [
+                        'type' => 'string',
+                    ],
+                    'Labels' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Label',
+                        ],
+                    ],
                     'MountAccessReadWriteRoleIdList' => [
                         'type' => 'array',
                         'items' => [
                             'type' => 'string',
                         ],
                     ],
-                    'ImportInfo' => [
-                        'type' => 'string',
+                    'IsShared' => [
+                        'type' => 'boolean',
                     ],
-                    'Edition' => [
-                        'type' => 'string',
+                    'SharedFrom' => [
+                        '$ref' => '#/components/schemas/DatasetShareRelationship',
+                    ],
+                    'SharingConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'SharedTo' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/DatasetShareRelationship',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -581,6 +598,45 @@
                         'type' => 'string',
                     ],
                     'Value' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DatasetShareRelationship' => [
+                'type' => 'object',
+                'properties' => [
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'SourceTenantId' => [
+                        'type' => 'string',
+                    ],
+                    'SourceWorkspaceId' => [
+                        'type' => 'string',
+                    ],
+                    'TenantId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'WorkspaceId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'AllowedMountAccessLevels' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'IsSecureMode' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'SharedAt' => [
+                        'type' => 'string',
+                    ],
+                    'ExpiresAt' => [
                         'type' => 'string',
                     ],
                 ],
@@ -4868,6 +4924,19 @@
                     ],
                 ],
                 [
+                    'name' => 'QueryContentTypeIncludeAny',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'StartTagUpdateTime',
                     'in' => 'query',
                     'schema' => [
@@ -5428,6 +5497,20 @@
                                     'required' => false,
                                 ],
                             ],
+                            'SharingConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SharedTo' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            '$ref' => '#/components/schemas/DatasetShareRelationship',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -5595,6 +5678,14 @@
                 ],
                 [
                     'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ShareScope',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

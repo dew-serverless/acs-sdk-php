@@ -2724,6 +2724,20 @@
                     ],
                 ],
             ],
+            'MediaPlayInfoTemplate' => [
+                'type' => 'object',
+                'properties' => [
+                    'template_id' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'url' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Membership' => [
                 'type' => 'object',
                 'properties' => [

@@ -553,6 +553,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listVariableDefineAsync($arguments = [])
  * @method \Dew\Acs\Result deleteEventField(array $arguments = [])
  * @method \Http\Promise\Promise deleteEventFieldAsync($arguments = [])
+ * @method \Dew\Acs\Result describeOperationLogMonitoring(array $arguments = [])
+ * @method \Http\Promise\Promise describeOperationLogMonitoringAsync($arguments = [])
+ * @method \Dew\Acs\Result describeVersionPageList(array $arguments = [])
+ * @method \Http\Promise\Promise describeVersionPageListAsync($arguments = [])
  */
 final class XteeClient extends AcsClient
 {

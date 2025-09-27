@@ -7,6 +7,8 @@ namespace Dew\Acs\Searchplat;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result getTableFields(array $arguments = [])
+ * @method \Http\Promise\Promise getTableFieldsAsync($arguments = [])
  * @method \Dew\Acs\Result deleteWorkspace(array $arguments = [])
  * @method \Http\Promise\Promise deleteWorkspaceAsync($arguments = [])
  * @method \Dew\Acs\Result createWorkspace(array $arguments = [])
@@ -67,12 +69,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getRagEvaluatorTaskAsync($arguments = [])
  * @method \Dew\Acs\Result listRagEvaluatorTasks(array $arguments = [])
  * @method \Http\Promise\Promise listRagEvaluatorTasksAsync($arguments = [])
+ * @method \Dew\Acs\Result createOfflineTask(array $arguments = [])
+ * @method \Http\Promise\Promise createOfflineTaskAsync($arguments = [])
  * @method \Dew\Acs\Result describeRegions(array $arguments = [])
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
- * @method \Dew\Acs\Result getTableFields(array $arguments = [])
- * @method \Http\Promise\Promise getTableFieldsAsync($arguments = [])
  * @method \Dew\Acs\Result listServices(array $arguments = [])
  * @method \Http\Promise\Promise listServicesAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyOfflineTask(array $arguments = [])
+ * @method \Http\Promise\Promise modifyOfflineTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getTables(array $arguments = [])
+ * @method \Http\Promise\Promise getTablesAsync($arguments = [])
+ * @method \Dew\Acs\Result getTableColumns(array $arguments = [])
+ * @method \Http\Promise\Promise getTableColumnsAsync($arguments = [])
  */
 final class SearchplatClient extends AcsClient
 {

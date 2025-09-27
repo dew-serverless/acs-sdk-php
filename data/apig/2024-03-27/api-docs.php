@@ -3335,6 +3335,509 @@
                 ],
             ],
         ],
+        'CreateMcpServer' => [
+            'path' => '/v1/mcp-servers',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'gatewayId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'type' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'RealMCP',
+                                    'AssemblyMCP',
+                                ],
+                            ],
+                            'domainIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'match' => [
+                                '$ref' => '#/components/schemas/HttpRouteMatch',
+                                'required' => false,
+                            ],
+                            'backendConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'scene' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'services' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'protocol' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'port' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'weight' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'serviceId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'version' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'protocol' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'exposedUriPath' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'assembledSources' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'mcpServerName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'mcpServerId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'tools' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'mcpStatisticsEnable' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateMcpServer' => [
+            'path' => '/v1/mcp-servers/{mcpServerId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'domainIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'match' => [
+                                '$ref' => '#/components/schemas/HttpRouteMatch',
+                                'required' => false,
+                            ],
+                            'backendConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'scene' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'services' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'protocol' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'port' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'weight' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'serviceId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'version' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'exposedUriPath' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'assembledSources' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'mcpServerName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'mcpServerId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'tools' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'mcpStatisticsEnable' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'type' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'RealMCP',
+                                    'AssemblyMCP',
+                                ],
+                            ],
+                            'protocol' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'HTTP',
+                                    'HTTPS',
+                                    'SSE',
+                                    'StreamableHTTP',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'mcpServerId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetMcpServer' => [
+            'path' => '/v1/mcp-servers/{mcpServerId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'mcpServerId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListMcpServers' => [
+            'path' => '/v1/mcp-servers',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'gatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'nameLike',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'createFromTypes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'deployStatuses',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteMcpServer' => [
+            'path' => '/v1/mcp-servers/{mcpServerId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'mcpServerId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeployMcpServer' => [
+            'path' => '/v1/mcp-servers/{mcpServerId}/deploy',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'mcpServerId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UnDeployMcpServer' => [
+            'path' => '/v1/mcp-servers/{mcpServerId}/undeploy',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'mcpServerId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'CreateHttpApiRoute' => [
             'path' => '/v1/http-apis/{httpApiId}/routes',
             'methods' => [

@@ -2074,6 +2074,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AuthnSignAlgo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetUserSsoSettings' => [
@@ -2127,6 +2135,14 @@
                 ],
                 [
                     'name' => 'EncodedSAMLMetadataDocument',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AuthnSignAlgo',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2195,6 +2211,14 @@
                 ],
                 [
                     'name' => 'NewEncodedSAMLMetadataDocument',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AuthnSignAlgo',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

@@ -87,6 +87,20 @@
                     ],
                 ],
                 [
+                    'name' => 'ResourceArns',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
+                [
                     'name' => 'PermissionNames',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -405,6 +419,20 @@
                     ],
                 ],
                 [
+                    'name' => 'ResourceArns',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
+                [
                     'name' => 'PermissionNames',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -505,6 +533,20 @@
                     ],
                 ],
                 [
+                    'name' => 'ResourceArns',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
+                [
                     'name' => 'ResourceOwner',
                     'in' => 'query',
                     'schema' => [
@@ -532,6 +574,14 @@
             'parameters' => [
                 [
                     'name' => 'ResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceArn',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -679,6 +729,20 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'ResourceArns',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
             ],
         ],
         'ListSharedTargets' => [
@@ -714,6 +778,14 @@
                 ],
                 [
                     'name' => 'ResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceArn',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

@@ -9,6 +9,63 @@
         'schemas' => [],
     ],
     'apis' => [
+        'GetTableFields' => [
+            'path' => '/openapi/platform/workspaces/{workspaceName}/data-sources/{dataSourceType}/fields',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dataSourceType',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'params',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'rawType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DeleteWorkspace' => [
             'path' => '/openapi/platform/workspaces/{workspaceName}',
             'methods' => [
@@ -1624,6 +1681,240 @@
                 ],
             ],
         ],
+        'CreateOfflineTask' => [
+            'path' => '/openapi/platform/workspaces/{workspaceName}/offline-tasks/{type}',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'draft',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'dryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'meta' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'apiKey' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'regionId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'taskName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'computeResource' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'labels' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'source' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'parameters' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'additionalProperties' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                        'schema' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'additionalProperties' => [
+                                                    'type' => 'string',
+                                                ],
+                                            ],
+                                        ],
+                                        'primaryKey' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'sink' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'parameters' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'additionalProperties' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                        'schema' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'additionalProperties' => [
+                                                    'type' => 'string',
+                                                ],
+                                            ],
+                                        ],
+                                        'primaryKey' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'processors' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'input' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                        ],
+                                        'parameters' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                        ],
+                                        'output' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'parameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'status' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'status' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'errorMessage' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'createTime' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'deleteTime' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'DescribeRegions' => [
             'path' => '/openapi/platform/regions',
             'methods' => [
@@ -1640,63 +1931,6 @@
             ],
             'deprecated' => false,
             'parameters' => [],
-        ],
-        'GetTableFields' => [
-            'path' => '/openapi/platform/workspaces/{workspaceName}/data-sources/{dataSourceType}/fields',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'dataSourceType',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'params',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'rawType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'regionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
         ],
         'ListServices' => [
             'path' => '/openapi/platform/workspaces/{workspaceName}/services',
@@ -1757,6 +1991,334 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyOfflineTask' => [
+            'path' => '/openapi/platform/workspaces/{workspaceName}/offline-tasks/{type}/{taskName}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'taskName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'dryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'meta' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'apiKey' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'regionId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'taskName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'computeResource' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'labels' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'source' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'parameters' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'additionalProperties' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                        'schema' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'additionalProperties' => [
+                                                    'type' => 'string',
+                                                ],
+                                            ],
+                                        ],
+                                        'primaryKey' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'sink' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'parameters' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'additionalProperties' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                        'schema' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'additionalProperties' => [
+                                                    'type' => 'string',
+                                                ],
+                                            ],
+                                        ],
+                                        'primaryKey' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'processors' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'input' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                        ],
+                                        'parameters' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                        ],
+                                        'output' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'parameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'status' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'status' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'errorMessage' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'createTime' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'deleteTime' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetTables' => [
+            'path' => '/openapi/platform/workspaces/{workspaceName}/data-sources/{dataSourceType}/tables',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dataSourceType',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'params',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetTableColumns' => [
+            'path' => '/openapi/platform/workspaces/{workspaceName}/data-sources/{dataSourceType}/columns',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dataSourceType',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'params',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

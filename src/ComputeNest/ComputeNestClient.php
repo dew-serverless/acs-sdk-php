@@ -81,6 +81,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result listPolicies(array $arguments = [])
  * @method \Http\Promise\Promise listPoliciesAsync($arguments = [])
+ * @method \Dew\Acs\Result getNetworkAvailableZones(array $arguments = [])
+ * @method \Http\Promise\Promise getNetworkAvailableZonesAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
  * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result getServiceInstanceSubscriptionEstimateCost(array $arguments = [])
@@ -103,8 +105,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createBackupAsync($arguments = [])
  * @method \Dew\Acs\Result deleteBackup(array $arguments = [])
  * @method \Http\Promise\Promise deleteBackupAsync($arguments = [])
- * @method \Dew\Acs\Result getNetworkAvailableZones(array $arguments = [])
- * @method \Http\Promise\Promise getNetworkAvailableZonesAsync($arguments = [])
  */
 final class ComputeNestClient extends AcsClient
 {

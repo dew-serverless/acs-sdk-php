@@ -103,6 +103,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyWuyingServerAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result renewWuyingServer(array $arguments = [])
  * @method \Http\Promise\Promise renewWuyingServerAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteWuyingServer(array $arguments = [])
+ * @method \Http\Promise\Promise deleteWuyingServerAsync($arguments = [])
  * @method \Dew\Acs\Result listPublishedAppInfo(array $arguments = []) {@since 2021-09-03}
  * @method \Http\Promise\Promise listPublishedAppInfoAsync($arguments = []) {@since 2021-09-03}
  * @method \Dew\Acs\Result listRunningApps(array $arguments = []) {@since 2021-09-03}

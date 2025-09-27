@@ -497,6 +497,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise releaseInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result createEnsService(array $arguments = [])
  * @method \Http\Promise\Promise createEnsServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result describeNASAvailableResourceInfo(array $arguments = [])
+ * @method \Http\Promise\Promise describeNASAvailableResourceInfoAsync($arguments = [])
  * @method \Dew\Acs\Result createEpnInstance(array $arguments = [])
  * @method \Http\Promise\Promise createEpnInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteEpnInstance(array $arguments = [])
@@ -551,8 +553,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceBootConfigurationAsync($arguments = [])
  * @method \Dew\Acs\Result importImage(array $arguments = [])
  * @method \Http\Promise\Promise importImageAsync($arguments = [])
- * @method \Dew\Acs\Result describeNASAvailableResourceInfo(array $arguments = [])
- * @method \Http\Promise\Promise describeNASAvailableResourceInfoAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

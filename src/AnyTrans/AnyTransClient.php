@@ -19,10 +19,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise submitHtmlTranslateTaskAsync($arguments = [])
  * @method \Dew\Acs\Result getHtmlTranslateTask(array $arguments = [])
  * @method \Http\Promise\Promise getHtmlTranslateTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result termEdit(array $arguments = [])
+ * @method \Http\Promise\Promise termEditAsync($arguments = [])
+ * @method \Dew\Acs\Result termQuery(array $arguments = [])
+ * @method \Http\Promise\Promise termQueryAsync($arguments = [])
  * @method \Dew\Acs\Result getImageTranslateTask(array $arguments = [])
  * @method \Http\Promise\Promise getImageTranslateTaskAsync($arguments = [])
  * @method \Dew\Acs\Result submitImageTranslateTask(array $arguments = [])
  * @method \Http\Promise\Promise submitImageTranslateTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result submitDocTranslateTask(array $arguments = [])
+ * @method \Http\Promise\Promise submitDocTranslateTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getDocTranslateTask(array $arguments = [])
+ * @method \Http\Promise\Promise getDocTranslateTaskAsync($arguments = [])
  */
 final class AnyTransClient extends AcsClient
 {

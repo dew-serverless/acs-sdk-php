@@ -79,6 +79,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise initCardVerifyAsync($arguments = [])
  * @method \Dew\Acs\Result describeCardVerify(array $arguments = [])
  * @method \Http\Promise\Promise describeCardVerifyAsync($arguments = [])
+ * @method \Dew\Acs\Result id3MetaVerify(array $arguments = [])
+ * @method \Http\Promise\Promise id3MetaVerifyAsync($arguments = [])
  * @method \Dew\Acs\Result createAuthKey(array $arguments = [])
  * @method \Http\Promise\Promise createAuthKeyAsync($arguments = [])
  * @method \Dew\Acs\Result describeOssUploadToken(array $arguments = [])

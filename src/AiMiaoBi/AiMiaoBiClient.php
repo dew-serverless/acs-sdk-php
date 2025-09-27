@@ -365,6 +365,20 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise cancelDeepWriteTaskAsync($arguments = [])
  * @method \Dew\Acs\Result runDeepWriting(array $arguments = [])
  * @method \Http\Promise\Promise runDeepWritingAsync($arguments = [])
+ * @method \Dew\Acs\Result asyncUploadTenderDoc(array $arguments = [])
+ * @method \Http\Promise\Promise asyncUploadTenderDocAsync($arguments = [])
+ * @method \Dew\Acs\Result getBiddingRemainLimitNum(array $arguments = [])
+ * @method \Http\Promise\Promise getBiddingRemainLimitNumAsync($arguments = [])
+ * @method \Dew\Acs\Result editBiddingDoc(array $arguments = [])
+ * @method \Http\Promise\Promise editBiddingDocAsync($arguments = [])
+ * @method \Dew\Acs\Result listBiddingDoc(array $arguments = [])
+ * @method \Http\Promise\Promise listBiddingDocAsync($arguments = [])
+ * @method \Dew\Acs\Result getBiddingDocInfo(array $arguments = [])
+ * @method \Http\Promise\Promise getBiddingDocInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result asyncWritingBiddingDoc(array $arguments = [])
+ * @method \Http\Promise\Promise asyncWritingBiddingDocAsync($arguments = [])
+ * @method \Dew\Acs\Result downloadBiddingDoc(array $arguments = [])
+ * @method \Http\Promise\Promise downloadBiddingDocAsync($arguments = [])
  */
 final class AiMiaoBiClient extends AcsClient
 {

@@ -335,6 +335,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeAccountAllPrivilegesAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeAccountPrivilegeObjects(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise describeAccountPrivilegeObjectsAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result createBackup(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise createBackupAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeClusterResourceUsage(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise describeClusterResourceUsageAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeClusterResourceDetail(array $arguments = []) {@since 2021-12-01}
@@ -567,12 +569,20 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSQLWebSocketDomainAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result createApsKafkaHudiJob(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise createApsKafkaHudiJobAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result configureResultExport(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise configureResultExportAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeResultExportConfig(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeResultExportConfigAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeHistoryTasksStat(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise describeHistoryTasksStatAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeHistoryTasks(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise describeHistoryTasksAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result getADBSparkNecessaryRAMPermissions(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise getADBSparkNecessaryRAMPermissionsAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result modifySqlTemplatePosition(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise modifySqlTemplatePositionAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeSparkAuditLogRecords(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeSparkAuditLogRecordsAsync($arguments = []) {@since 2021-12-01}
  */
 final class AdbClient extends AcsClient
 {

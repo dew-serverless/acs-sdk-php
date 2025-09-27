@@ -591,6 +591,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listWorkspacesAsync($arguments = [])
  * @method \Dew\Acs\Result updateWorkspace(array $arguments = [])
  * @method \Http\Promise\Promise updateWorkspaceAsync($arguments = [])
+ * @method \Dew\Acs\Result optimizeSqlByMetaAgent(array $arguments = [])
+ * @method \Http\Promise\Promise optimizeSqlByMetaAgentAsync($arguments = [])
+ * @method \Dew\Acs\Result fixSqlByMetaAgent(array $arguments = [])
+ * @method \Http\Promise\Promise fixSqlByMetaAgentAsync($arguments = [])
+ * @method \Dew\Acs\Result answerSqlSyntaxByMetaAgent(array $arguments = [])
+ * @method \Http\Promise\Promise answerSqlSyntaxByMetaAgentAsync($arguments = [])
  */
 final class DmsEnterpriseClient extends AcsClient
 {

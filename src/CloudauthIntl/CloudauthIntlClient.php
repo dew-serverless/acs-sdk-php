@@ -55,6 +55,22 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise fraudResultCallBackAsync($arguments = [])
  * @method \Dew\Acs\Result cardOcr(array $arguments = []) {@deprecated 2022-08-09}
  * @method \Http\Promise\Promise cardOcrAsync($arguments = []) {@deprecated 2022-08-09}
+ * @method \Dew\Acs\Result faceDuplicationCheckIntl(array $arguments = [])
+ * @method \Http\Promise\Promise faceDuplicationCheckIntlAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyFaceRecord(array $arguments = [])
+ * @method \Http\Promise\Promise modifyFaceRecordAsync($arguments = [])
+ * @method \Dew\Acs\Result queryFaceRecord(array $arguments = [])
+ * @method \Http\Promise\Promise queryFaceRecordAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteFaceRecord(array $arguments = [])
+ * @method \Http\Promise\Promise deleteFaceRecordAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyFaceGroup(array $arguments = [])
+ * @method \Http\Promise\Promise modifyFaceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result tempAccessTokenIntl(array $arguments = [])
+ * @method \Http\Promise\Promise tempAccessTokenIntlAsync($arguments = [])
+ * @method \Dew\Acs\Result queryFaceGroup(array $arguments = [])
+ * @method \Http\Promise\Promise queryFaceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteFaceGroup(array $arguments = [])
+ * @method \Http\Promise\Promise deleteFaceGroupAsync($arguments = [])
  */
 final class CloudauthIntlClient extends AcsClient
 {

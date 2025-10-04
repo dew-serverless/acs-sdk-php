@@ -583,6 +583,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifySqlTemplatePositionAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeSparkAuditLogRecords(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise describeSparkAuditLogRecordsAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result listApsWebhook(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise listApsWebhookAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result updateApsWebhook(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise updateApsWebhookAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result deleteApsWebhook(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise deleteApsWebhookAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result createApsWebhook(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise createApsWebhookAsync($arguments = []) {@since 2021-12-01}
  */
 final class AdbClient extends AcsClient
 {

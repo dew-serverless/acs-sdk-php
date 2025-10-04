@@ -447,6 +447,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyRemoteADBDataSourceAsync($arguments = [])
  * @method \Dew\Acs\Result getStatementResult(array $arguments = [])
  * @method \Http\Promise\Promise getStatementResultAsync($arguments = [])
+ * @method \Dew\Acs\Result chatWithKnowledgeBase(array $arguments = [])
+ * @method \Http\Promise\Promise chatWithKnowledgeBaseAsync($arguments = [])
+ * @method \Dew\Acs\Result chatWithKnowledgeBaseStream(array $arguments = [])
+ * @method \Http\Promise\Promise chatWithKnowledgeBaseStreamAsync($arguments = [])
  */
 final class GpdbClient extends AcsClient
 {

@@ -107,6 +107,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise countOralEvaluationStatisticsCallsAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result countOralEvaluationStatisticsError(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise countOralEvaluationStatisticsErrorAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result aliyunConsoleOpenApiQueryPaidResource(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise aliyunConsoleOpenApiQueryPaidResourceAsync($arguments = []) {@since 20240611}
  */
 final class AiContentClient extends AcsClient
 {

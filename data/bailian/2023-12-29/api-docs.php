@@ -311,6 +311,8 @@
                             'type' => 'string',
                             'required' => false,
                         ],
+                        'minItems' => 1,
+                        'maxItems' => 32,
                     ],
                 ],
                 [
@@ -664,7 +666,7 @@
                             'required' => false,
                         ],
                         'minItems' => 1,
-                        'maxItems' => 10,
+                        'maxItems' => 32,
                     ],
                 ],
             ],

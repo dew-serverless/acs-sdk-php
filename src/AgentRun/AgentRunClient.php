@@ -15,6 +15,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateAgentRuntimeAsync($arguments = [])
  * @method \Dew\Acs\Result deleteAgentRuntime(array $arguments = [])
  * @method \Http\Promise\Promise deleteAgentRuntimeAsync($arguments = [])
+ * @method \Dew\Acs\Result listAgentRuntimes(array $arguments = [])
+ * @method \Http\Promise\Promise listAgentRuntimesAsync($arguments = [])
  * @method \Dew\Acs\Result createAgentRuntimeEndpoint(array $arguments = [])
  * @method \Http\Promise\Promise createAgentRuntimeEndpointAsync($arguments = [])
  * @method \Dew\Acs\Result listAgentRuntimeEndpoints(array $arguments = [])
@@ -45,6 +47,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getBrowserAsync($arguments = [])
  * @method \Dew\Acs\Result deleteBrowser(array $arguments = [])
  * @method \Http\Promise\Promise deleteBrowserAsync($arguments = [])
+ * @method \Dew\Acs\Result createMemory(array $arguments = [])
+ * @method \Http\Promise\Promise createMemoryAsync($arguments = [])
  */
 final class AgentRunClient extends AcsClient
 {

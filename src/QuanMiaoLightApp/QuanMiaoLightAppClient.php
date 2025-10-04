@@ -75,6 +75,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise hotNewsRecommendAsync($arguments = [])
  * @method \Dew\Acs\Result getFileContent(array $arguments = [])
  * @method \Http\Promise\Promise getFileContentAsync($arguments = [])
+ * @method \Dew\Acs\Result updateVideoAnalysisTasks(array $arguments = [])
+ * @method \Http\Promise\Promise updateVideoAnalysisTasksAsync($arguments = [])
  */
 final class QuanMiaoLightAppClient extends AcsClient
 {

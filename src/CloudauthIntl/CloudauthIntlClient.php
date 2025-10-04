@@ -35,6 +35,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise mobile3MetaVerifyIntlAsync($arguments = [])
  * @method \Dew\Acs\Result id2MetaVerifyIntl(array $arguments = [])
  * @method \Http\Promise\Promise id2MetaVerifyIntlAsync($arguments = [])
+ * @method \Dew\Acs\Result credentialGetResultIntl(array $arguments = [])
+ * @method \Http\Promise\Promise credentialGetResultIntlAsync($arguments = [])
+ * @method \Dew\Acs\Result credentialSubmitIntl(array $arguments = [])
+ * @method \Http\Promise\Promise credentialSubmitIntlAsync($arguments = [])
  * @method \Dew\Acs\Result credentialVerifyIntl(array $arguments = [])
  * @method \Http\Promise\Promise credentialVerifyIntlAsync($arguments = [])
  * @method \Dew\Acs\Result credentialRecognitionIntl(array $arguments = [])
@@ -57,6 +61,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise cardOcrAsync($arguments = []) {@deprecated 2022-08-09}
  * @method \Dew\Acs\Result faceDuplicationCheckIntl(array $arguments = [])
  * @method \Http\Promise\Promise faceDuplicationCheckIntlAsync($arguments = [])
+ * @method \Dew\Acs\Result faceCrossCompareIntl(array $arguments = [])
+ * @method \Http\Promise\Promise faceCrossCompareIntlAsync($arguments = [])
  * @method \Dew\Acs\Result modifyFaceRecord(array $arguments = [])
  * @method \Http\Promise\Promise modifyFaceRecordAsync($arguments = [])
  * @method \Dew\Acs\Result queryFaceRecord(array $arguments = [])
@@ -69,6 +75,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise tempAccessTokenIntlAsync($arguments = [])
  * @method \Dew\Acs\Result queryFaceGroup(array $arguments = [])
  * @method \Http\Promise\Promise queryFaceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result tempOssUrlIntl(array $arguments = [])
+ * @method \Http\Promise\Promise tempOssUrlIntlAsync($arguments = [])
  * @method \Dew\Acs\Result deleteFaceGroup(array $arguments = [])
  * @method \Http\Promise\Promise deleteFaceGroupAsync($arguments = [])
  */

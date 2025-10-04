@@ -14204,6 +14204,570 @@
                 ],
             ],
         ],
+        'ChatWithKnowledgeBase' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'KnowledgeParams',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'MergeMethod' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'MergeMethodArgs' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Rrf' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'K' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Weight' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Weights' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'number',
+                                                    'format' => 'double',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'RerankFactor' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'SourceCollection' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Collection' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Namespace' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'NamespacePassword' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'QueryParams' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Filter' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'GraphEnhance' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'GraphSearchArgs' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'GraphTopK' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                                'HybridSearch' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'HybridSearchArgs' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'additionalProperties' => [
+                                                        'type' => 'any',
+                                                    ],
+                                                ],
+                                                'Metrics' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'RecallWindow' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int64',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                                'RerankFactor' => [
+                                                    'type' => 'number',
+                                                    'format' => 'double',
+                                                    'required' => false,
+                                                ],
+                                                'TopK' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'UseFullTextRetrieval' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'TopK' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PromptParams',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ModelParams',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'MaxTokens' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'Messages' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Content' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Role' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Model' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'N' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'PresencePenalty' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'Seed' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'Stop' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'Temperature' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'Tools' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Function' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Description' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Parameters' => [
+                                                    'type' => 'any',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'TopP' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'IncludeKnowledgeBaseResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ChatWithKnowledgeBaseStream' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'KnowledgeParams',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'MergeMethod' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'MergeMethodArgs' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Rrf' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'K' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Weight' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Weights' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'number',
+                                                    'format' => 'double',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'RerankFactor' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'SourceCollection' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Collection' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Namespace' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'NamespacePassword' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'QueryParams' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Filter' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'GraphEnhance' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'GraphSearchArgs' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'GraphTopK' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                                'HybridSearch' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'HybridSearchArgs' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'additionalProperties' => [
+                                                        'type' => 'any',
+                                                    ],
+                                                ],
+                                                'Metrics' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'RecallWindow' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int64',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                                'RerankFactor' => [
+                                                    'type' => 'number',
+                                                    'format' => 'double',
+                                                    'required' => false,
+                                                ],
+                                                'TopK' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'UseFullTextRetrieval' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'TopK' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PromptParams',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ModelParams',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'MaxTokens' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'Messages' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Content' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Role' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Model' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'N' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'PresencePenalty' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'Seed' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'Stop' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'Temperature' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'Tools' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Function' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Description' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Parameters' => [
+                                                    'type' => 'any',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'TopP' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'IncludeKnowledgeBaseResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [

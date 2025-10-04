@@ -2019,7 +2019,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 51,
+                        'maxItems' => 50,
                     ],
                 ],
                 [
@@ -2089,7 +2089,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 51,
+                        'maxItems' => 50,
                     ],
                 ],
                 [
@@ -2114,14 +2114,16 @@
                                 'Key' => [
                                     'type' => 'string',
                                     'required' => false,
+                                    'maxLength' => 128,
                                 ],
                                 'Value' => [
                                     'type' => 'string',
                                     'required' => false,
+                                    'maxLength' => 256,
                                 ],
                             ],
                         ],
-                        'maxItems' => 21,
+                        'maxItems' => 20,
                     ],
                 ],
             ],

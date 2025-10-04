@@ -5581,6 +5581,10 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'path' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                             'ossPath' => [
                                                 'type' => 'string',
                                                 'required' => false,
@@ -5602,6 +5606,10 @@
                                                 'required' => false,
                                             ],
                                             'tableFormat' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'format' => [
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
@@ -5866,6 +5874,14 @@
                                                 'required' => false,
                                             ],
                                             'tableFormat' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'path' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'format' => [
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],

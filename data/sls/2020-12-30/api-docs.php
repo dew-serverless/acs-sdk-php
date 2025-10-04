@@ -437,40 +437,40 @@
                         'type' => 'string',
                         'required' => true,
                     ],
-                    'username' => [
+                    'Username' => [
                         'type' => 'string',
                         'required' => false,
                     ],
-                    'password' => [
+                    'Password' => [
                         'type' => 'string',
                         'required' => false,
                     ],
-                    'timeFieldName' => [
+                    'TimeFieldName' => [
                         'type' => 'string',
                     ],
-                    'timeFormat' => [
+                    'TimeFormat' => [
                         'type' => 'string',
                     ],
-                    'timeZone' => [
+                    'TimeZone' => [
                         'type' => 'string',
                     ],
-                    'query' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'connectorMode' => [
+                    'Query' => [
                         'type' => 'string',
                         'required' => true,
                     ],
-                    'startTime' => [
+                    'ConnectorMode' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'StartTime' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'endTime' => [
+                    'EndTime' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'maxDataDelaySec' => [
+                    'MaxDataDelaySec' => [
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
@@ -480,7 +480,7 @@
                         'format' => 'int64',
                         'required' => true,
                     ],
-                    'vpcId' => [
+                    'VpcId' => [
                         'type' => 'string',
                     ],
                 ],
@@ -12515,6 +12515,7 @@
                     'in' => 'host',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -12522,6 +12523,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -12529,6 +12531,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -12536,6 +12539,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

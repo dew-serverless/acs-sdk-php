@@ -1928,11 +1928,15 @@
                                             'type' => 'object',
                                             'required' => false,
                                             'properties' => [
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
                                                 'DisplayField' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
-                                                'SystemField' => [
+                                                'DisplayFieldValue' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
@@ -1960,11 +1964,15 @@
                                             'type' => 'object',
                                             'required' => false,
                                             'properties' => [
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
                                                 'DisplayField' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
-                                                'SystemField' => [
+                                                'DisplayFieldValue' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
@@ -1992,11 +2000,15 @@
                                             'type' => 'object',
                                             'required' => false,
                                             'properties' => [
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
                                                 'DisplayField' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
-                                                'SystemField' => [
+                                                'DisplayFieldValue' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
@@ -2024,11 +2036,15 @@
                                             'type' => 'object',
                                             'required' => false,
                                             'properties' => [
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
                                                 'DisplayField' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
-                                                'SystemField' => [
+                                                'DisplayFieldValue' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
@@ -2056,11 +2072,15 @@
                                             'type' => 'object',
                                             'required' => false,
                                             'properties' => [
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
                                                 'DisplayField' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
-                                                'SystemField' => [
+                                                'DisplayFieldValue' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
@@ -2088,11 +2108,15 @@
                                             'type' => 'object',
                                             'required' => false,
                                             'properties' => [
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
                                                 'DisplayField' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
-                                                'SystemField' => [
+                                                'DisplayFieldValue' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
@@ -2120,11 +2144,15 @@
                                             'type' => 'object',
                                             'required' => false,
                                             'properties' => [
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
                                                 'DisplayField' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
-                                                'SystemField' => [
+                                                'DisplayFieldValue' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
@@ -2152,11 +2180,15 @@
                                             'type' => 'object',
                                             'required' => false,
                                             'properties' => [
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
                                                 'DisplayField' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
-                                                'SystemField' => [
+                                                'DisplayFieldValue' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
@@ -2184,11 +2216,15 @@
                                             'type' => 'object',
                                             'required' => false,
                                             'properties' => [
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
                                                 'DisplayField' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
-                                                'SystemField' => [
+                                                'DisplayFieldValue' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],

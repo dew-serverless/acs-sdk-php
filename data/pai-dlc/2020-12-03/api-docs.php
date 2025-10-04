@@ -1229,7 +1229,25 @@
             'PodItem' => [
                 'type' => 'object',
                 'properties' => [
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'PodId' => [
+                        'type' => 'string',
+                    ],
+                    'PodUid' => [
+                        'type' => 'string',
+                    ],
                     'Status' => [
+                        'type' => 'string',
+                    ],
+                    'Ip' => [
+                        'type' => 'string',
+                    ],
+                    'GmtCreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'GmtStartTime' => [
                         'type' => 'string',
                     ],
                     'GmtFinishTime' => [
@@ -1241,28 +1259,13 @@
                             '$ref' => '#/components/schemas/PodItem',
                         ],
                     ],
-                    'Type' => [
-                        'type' => 'string',
-                    ],
-                    'GmtStartTime' => [
-                        'type' => 'string',
-                    ],
-                    'PodUid' => [
+                    'SubStatus' => [
                         'type' => 'string',
                     ],
                     'NodeName' => [
                         'type' => 'string',
                     ],
-                    'Ip' => [
-                        'type' => 'string',
-                    ],
-                    'PodId' => [
-                        'type' => 'string',
-                    ],
-                    'SubStatus' => [
-                        'type' => 'string',
-                    ],
-                    'GmtCreateTime' => [
+                    'PodIp' => [
                         'type' => 'string',
                     ],
                 ],

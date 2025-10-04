@@ -14973,6 +14973,471 @@
                 ],
             ],
         ],
+        'DescribeHistoryEvents' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EventTypes',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'enum' => [
+                                'Instance:SystemFailure.Redeploy',
+                                'Instance:SystemFailure.Reboot',
+                                'Disk:Stalled',
+                                'EnsRegion:NetworkMigration',
+                                'IP:SafeRisk',
+                                'IP:SafeBan',
+                                'Instance:RegionNetworkDown',
+                                'Instance:SystemUpgrade.Migrate',
+                                'Instance:SystemMaintenance.Redeploy',
+                                'Instance:SystemMaintenance.Reboot',
+                            ],
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'EventLevels',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'enum' => [
+                                'CRITICAL',
+                                'WARN',
+                                'INFO',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ResourceIds',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'EventStatus',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'enum' => [
+                                'Inquiring',
+                                'Scheduled',
+                                'Executing',
+                                'Executed',
+                                'Avoided',
+                                'Failed',
+                                'Canceled',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'BatchEventRebootInstance' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EventInfos',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'EventId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ResourceId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'PlanTime' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'OpsType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'EventRebootInstance' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EventId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'OpsType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'immediate',
+                            'scheduled',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PlanTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'EventMigrateInstance' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EventId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'OpsType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'immediate',
+                            'scheduled',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PlanTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DataPolicy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'abandon',
+                            'force_transfer',
+                            'try_transfer',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Password',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 8,
+                        'maxLength' => 30,
+                    ],
+                ],
+            ],
+        ],
+        'BatchEventMigrateInstance' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EventInfos',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'EventId' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'ResourceId' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'PlanTime' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'OpsType' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'immediate',
+                                        'scheduled',
+                                    ],
+                                ],
+                                'DataPolicy' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'abandon',
+                                        'force_transfer',
+                                        'try_transfer',
+                                    ],
+                                ],
+                                'Password' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'minLength' => 8,
+                                    'maxLength' => 30,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'EventRedeployInstance' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EventId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'OpsType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'immediate',
+                            'scheduled',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PlanTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'BatchEventRedeployInstance' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EventInfos',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'EventId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ResourceId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'PlanTime' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'OpsType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'ReleaseInstance' => [
             'methods' => [
                 'get',
@@ -15175,6 +15640,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NetDistrictCodeNode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

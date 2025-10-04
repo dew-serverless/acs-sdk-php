@@ -6,7 +6,78 @@
         'version' => '2023-09-30',
     ],
     'components' => [
-        'schemas' => [],
+        'schemas' => [
+            'DimItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'PageInfo' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'CurrentPage' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'Total' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'Values' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ItemValues',
+                        ],
+                    ],
+                    'Code' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'EcIdAccountId' => [
+                'type' => 'object',
+                'properties' => [
+                    'AccountIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int64',
+                        ],
+                    ],
+                    'EcId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'FieldOption' => [
+                'type' => 'object',
+                'properties' => [
+                    'IsDefault' => [
+                        'type' => 'boolean',
+                    ],
+                    'Value' => [
+                        'type' => 'string',
+                    ],
+                    'FunctionCode' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ItemValues' => [
+                'type' => 'object',
+                'properties' => [],
+            ],
+        ],
     ],
     'apis' => [
         'GetOrders' => [

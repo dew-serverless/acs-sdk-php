@@ -4276,6 +4276,20 @@
                     ],
                 ],
             ],
+            'NasMountConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'enableTLS' => [
+                        'type' => 'boolean',
+                    ],
+                    'mountDir' => [
+                        'type' => 'string',
+                    ],
+                    'serverAddr' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'OAuthCredential' => [
                 'type' => 'object',
                 'properties' => [
@@ -4301,6 +4315,26 @@
                     ],
                     'refreshToken' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'OSSMountPoint' => [
+                'type' => 'object',
+                'properties' => [
+                    'bucketName' => [
+                        'type' => 'string',
+                    ],
+                    'bucketPath' => [
+                        'type' => 'string',
+                    ],
+                    'endpoint' => [
+                        'type' => 'string',
+                    ],
+                    'mountDir' => [
+                        'type' => 'string',
+                    ],
+                    'readOnly' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],

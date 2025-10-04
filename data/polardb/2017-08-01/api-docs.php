@@ -10671,15 +10671,6 @@
                     ],
                 ],
                 [
-                    'name' => 'ExpireTime',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'PageNumber',
                     'in' => 'query',
                     'schema' => [

@@ -399,6 +399,58 @@
                     ],
                 ],
             ],
+            'PaidResourceDTO' => [
+                'type' => 'object',
+                'properties' => [
+                    'instanceId' => [
+                        'type' => 'string',
+                    ],
+                    'resourcePackageCode' => [
+                        'type' => 'string',
+                    ],
+                    'resourcePackageName' => [
+                        'type' => 'string',
+                    ],
+                    'resourceCatalogCode' => [
+                        'type' => 'string',
+                    ],
+                    'resourceCatalogName' => [
+                        'type' => 'string',
+                    ],
+                    'resourceStatus' => [
+                        'type' => 'string',
+                    ],
+                    'quantity' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'remainQuantity' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'effectiveTime' => [
+                        'type' => 'string',
+                    ],
+                    'expireTime' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'PaidResourceQry' => [
+                'type' => 'object',
+                'properties' => [
+                    'resourceStatus' => [
+                        'type' => 'string',
+                    ],
+                    'nextToken' => [
+                        'type' => 'string',
+                    ],
+                    'maxResults' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
             'Personalizedtxt2imgAddInferenceJobCmd' => [
                 'type' => 'object',
                 'properties' => [
@@ -3024,6 +3076,104 @@
                     'style' => 'json',
                     'schema' => [
                         '$ref' => '#/components/schemas/OralEvaluationStatisticsErrorCountRequest',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'AliyunConsoleOpenApiQueryPaidResource' => [
+            'path' => '/api/v1/aliyunConsole/queryPaidResource',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'resourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageIndex',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'orderBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'orderDirection',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'groupBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'needTotalCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

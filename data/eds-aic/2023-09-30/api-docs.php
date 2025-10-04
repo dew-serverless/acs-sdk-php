@@ -1401,11 +1401,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -4025,6 +4025,20 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ExcludeSourceFilePathList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'RecoveryFile' => [
@@ -5858,6 +5872,35 @@
                             'required' => false,
                         ],
                         'maxItems' => 100,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeBuckets' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'FileType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'FILE',
+                            'DIR',
+                        ],
                     ],
                 ],
             ],

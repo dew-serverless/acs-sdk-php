@@ -958,8 +958,8 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'rdsai.us-west-1.aliyuncs.com',
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'rdsai.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
@@ -988,6 +988,10 @@
         [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'rdsai.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'rdsai.us-west-1.aliyuncs.com',
         ],
     ],
 ];

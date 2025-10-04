@@ -3528,9 +3528,6 @@
                     'is_first_login' => [
                         'type' => 'boolean',
                     ],
-                    'device_id' => [
-                        'type' => 'string',
-                    ],
                     'device_name' => [
                         'type' => 'string',
                     ],

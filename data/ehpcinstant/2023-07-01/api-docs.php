@@ -902,6 +902,10 @@
                                                     'format' => 'float',
                                                     'required' => false,
                                                 ],
+                                                'EnableHT' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
                                                 'Memory' => [
                                                     'type' => 'number',
                                                     'format' => 'float',
@@ -925,6 +929,10 @@
                                                             ],
                                                         ],
                                                     ],
+                                                ],
+                                                'HostNamePrefix' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
                                                 ],
                                                 'InstanceTypes' => [
                                                     'type' => 'array',
@@ -1075,14 +1083,6 @@
                     ],
                 ],
                 [
-                    'name' => 'JobScheduler',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'SecurityPolicy',
                     'in' => 'query',
                     'style' => 'json',
@@ -1122,6 +1122,10 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
+                                        'JobId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
                                         'Type' => [
                                             'type' => 'string',
                                             'required' => false,
@@ -1131,10 +1135,6 @@
                                                 'AfterAny',
                                                 'AfterCorresponding',
                                             ],
-                                        ],
-                                        'JobId' => [
-                                            'type' => 'string',
-                                            'required' => true,
                                         ],
                                     ],
                                 ],

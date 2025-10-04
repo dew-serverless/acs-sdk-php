@@ -3404,23 +3404,6 @@
                     ],
                 ],
                 [
-                    'name' => 'AutoRenew',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AutoRenewDuration',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'Tag',
                     'in' => 'query',
                     'style' => 'repeatList',

@@ -22038,6 +22038,20 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SupportOperateCodeList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'DescribeAlarmEventStackInfo' => [
@@ -22784,6 +22798,20 @@
                             'format' => 'int64',
                             'required' => false,
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'SupportOperateCodeList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
             ],

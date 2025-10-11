@@ -141,6 +141,15 @@
                     ],
                 ],
                 [
+                    'name' => 'AccountId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'AccountName',
                     'in' => 'query',
                     'schema' => [

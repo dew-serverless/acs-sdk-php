@@ -9,38 +9,6 @@
         'schemas' => [],
     ],
     'apis' => [
-        'GetOwnRequestLog' => [
-            'path' => '/getOwnRequestLog',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-                'application/x-www-form-urlencoded',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'logRequestId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'GetErrorCodeSolutions' => [
             'path' => '/getErrorCodeSolutions',
             'methods' => [
@@ -96,6 +64,38 @@
                 ],
             ],
         ],
+        'GetOwnRequestLog' => [
+            'path' => '/getOwnRequestLog',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+                'application/x-www-form-urlencoded',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'logRequestId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'GetRequestLog' => [
             'path' => '/getRequestLog',
             'methods' => [
@@ -131,16 +131,31 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'openapi-mcp.cn-hangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'openapi-mcp.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'public',
+            'regionId' => 'cn-qingdao',
+            'regionName' => '华北1（青岛）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'openapiexplorer.aliyuncs.com',
             'endpoint' => 'openapiexplorer.aliyuncs.com',
+            'vpc' => '',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'regionName' => '华北5（呼和浩特）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'openapiexplorer.aliyuncs.com',
+            'endpoint' => 'openapiexplorer.aliyuncs.com',
+            'vpc' => '',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'regionName' => '华北2（北京）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'openapiexplorer.aliyuncs.com',
+            'endpoint' => 'openapiexplorer.aliyuncs.com',
+            'vpc' => '',
         ],
     ],
 ];

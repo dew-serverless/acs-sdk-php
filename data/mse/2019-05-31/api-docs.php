@@ -19141,6 +19141,14 @@
                     ],
                 ],
                 [
+                    'name' => 'EncryptToolSpec',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'AcceptLanguage',
                     'in' => 'query',
                     'schema' => [

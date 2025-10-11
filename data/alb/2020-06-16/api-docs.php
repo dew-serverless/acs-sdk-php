@@ -2212,7 +2212,7 @@
                                 ],
                                 'ServerId' => [
                                     'type' => 'string',
-                                    'required' => true,
+                                    'required' => false,
                                 ],
                                 'ServerIp' => [
                                     'type' => 'string',
@@ -2896,7 +2896,7 @@
                                 ],
                                 'ServerId' => [
                                     'type' => 'string',
-                                    'required' => true,
+                                    'required' => false,
                                 ],
                                 'ServerIp' => [
                                     'type' => 'string',

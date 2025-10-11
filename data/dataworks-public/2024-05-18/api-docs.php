@@ -11517,6 +11517,14 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'CycleType' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'Daily',
+                                    'NotDaily',
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -13643,6 +13651,7 @@
                         'enum' => [
                             'Scheduler',
                             'Manual',
+                            'TriggerWorkflow',
                         ],
                     ],
                 ],
@@ -14295,6 +14304,7 @@
                             'Manual',
                             'SupplementData',
                             'SmokeTest',
+                            'TriggerWorkflow',
                         ],
                     ],
                 ],

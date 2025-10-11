@@ -3218,6 +3218,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'IdempotenceToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListWuyingServer' => [

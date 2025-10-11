@@ -1047,6 +1047,9 @@
                     'DataJuicerConfig' => [
                         '$ref' => '#/components/schemas/DataJuicerConfig',
                     ],
+                    'ModelConfig' => [
+                        '$ref' => '#/components/schemas/ModelConfig',
+                    ],
                 ],
             ],
             'JobSpec' => [
@@ -1209,6 +1212,14 @@
                     'Value' => [
                         'type' => 'number',
                         'format' => 'float',
+                    ],
+                ],
+            ],
+            'ModelConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'ModelName' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

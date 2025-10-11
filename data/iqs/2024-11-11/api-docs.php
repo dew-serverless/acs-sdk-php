@@ -290,19 +290,95 @@
                     ],
                 ],
             ],
+            'ReadPageBody' => [
+                'type' => 'object',
+                'properties' => [
+                    'url' => [
+                        'type' => 'string',
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'pageTimeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'location' => [
+                        'type' => 'string',
+                    ],
+                    'maxAge' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'readability' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'readabilityMode' => [
+                                'type' => 'string',
+                            ],
+                            'excludeAllImages' => [
+                                'type' => 'boolean',
+                            ],
+                            'excludeAllLinks' => [
+                                'type' => 'boolean',
+                            ],
+                            'excludedTags' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'formats' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'ReadPageItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'statusCode' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'errorMessage' => [
+                        'type' => 'string',
+                    ],
+                    'rawHtml' => [
+                        'type' => 'string',
+                    ],
+                    'html' => [
+                        'type' => 'string',
+                    ],
+                    'text' => [
+                        'type' => 'string',
+                    ],
+                    'markdown' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'RequestContents' => [
                 'type' => 'object',
                 'properties' => [
+                    'mainText' => [
+                        'type' => 'boolean',
+                    ],
+                    'markdownText' => [
+                        'type' => 'boolean',
+                    ],
                     'summary' => [
                         'type' => 'boolean',
                     ],
                     'rerankScore' => [
                         'type' => 'boolean',
                     ],
-                    'markdownText' => [
-                        'type' => 'boolean',
-                    ],
-                    'mainText' => [
+                    'richMainBody' => [
                         'type' => 'boolean',
                     ],
                 ],
@@ -781,6 +857,14 @@
                 ],
                 [
                     'name' => 'enableRerank',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'returnRichMainBody',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',

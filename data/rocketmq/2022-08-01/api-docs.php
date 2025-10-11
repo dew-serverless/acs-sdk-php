@@ -121,6 +121,19 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'capacityType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                        'enum' => [
+                                            'provisioned',
+                                            'ondemand',
+                                        ],
+                                    ],
+                                    'provisionedCapacity' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'networkInfo' => [

@@ -2468,6 +2468,14 @@
         'defaultVersion' => '2024-07-27',
     ],
     [
+        'code' => 'Notifications',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-12-25',
+        ],
+        'defaultVersion' => '2024-12-25',
+    ],
+    [
         'code' => 'AIPodcast',
         'style' => 'RPC',
         'versions' => [

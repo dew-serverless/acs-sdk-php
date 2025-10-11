@@ -10486,6 +10486,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
+                        'required' => false,
                         'properties' => [
                             'toolName' => [
                                 'type' => 'string',
@@ -10493,12 +10494,14 @@
                             ],
                             'params' => [
                                 'type' => 'object',
+                                'required' => false,
                                 'additionalProperties' => [
                                     'type' => 'string',
                                 ],
                             ],
                             'regionId' => [
                                 'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -12390,6 +12393,7 @@
                         'properties' => [
                             'description' => [
                                 'type' => 'string',
+                                'required' => false,
                             ],
                             'displayName' => [
                                 'type' => 'string',
@@ -12397,9 +12401,11 @@
                             ],
                             'schedule' => [
                                 '$ref' => '#/components/schemas/Schedule',
+                                'required' => false,
                             ],
                             'configuration' => [
                                 '$ref' => '#/components/schemas/S3IngestionConfiguration',
+                                'required' => false,
                             ],
                             'name' => [
                                 'type' => 'string',

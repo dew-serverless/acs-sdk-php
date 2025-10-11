@@ -1927,6 +1927,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'OutputParams',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InputParams',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeComponentsJs' => [

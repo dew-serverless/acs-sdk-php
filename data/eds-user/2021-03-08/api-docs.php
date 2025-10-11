@@ -549,22 +549,6 @@
                     ],
                 ],
                 [
-                    'name' => 'BizType',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SolutionId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'ShowExtras',
                     'in' => 'formData',
                     'style' => 'json',

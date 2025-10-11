@@ -591,6 +591,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteApsWebhookAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result createApsWebhook(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise createApsWebhookAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result modifyMaterializedViewRecommend(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise modifyMaterializedViewRecommendAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result modifyMaterializedView(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise modifyMaterializedViewAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result createMaterializedViewRecommend(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise createMaterializedViewRecommendAsync($arguments = []) {@since 2021-12-01}
  */
 final class AdbClient extends AcsClient
 {

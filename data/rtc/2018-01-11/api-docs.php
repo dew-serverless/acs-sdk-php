@@ -6994,6 +6994,7 @@
                                 'required' => true,
                                 'enum' => [
                                     'aliyun',
+                                    'customized',
                                 ],
                             ],
                             'ApiKey' => [
@@ -7069,6 +7070,59 @@
                                 'type' => 'string',
                                 'required' => false,
                                 'maxLength' => 2500,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AmbientSoundConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'SoundId' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 30,
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '0',
+                                'maximum' => '100',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'InterruptConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'SemanticsInterrupt' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'BackChannelConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'UserTurnEnd' => [
+                                'type' => 'boolean',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -7391,6 +7445,7 @@
                                 'required' => false,
                                 'enum' => [
                                     'aliyun',
+                                    'customized',
                                 ],
                             ],
                             'ApiKey' => [
@@ -7466,6 +7521,59 @@
                                 'type' => 'string',
                                 'required' => false,
                                 'maxLength' => 2500,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AmbientSoundConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'SoundId' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 30,
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '0',
+                                'maximum' => '100',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'InterruptConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'SemanticsInterrupt' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'BackChannelConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'UserTurnEnd' => [
+                                'type' => 'boolean',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -7739,6 +7847,43 @@
                                     ],
                                 ],
                             ],
+                            'AmbientSoundConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SoundId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Volume' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                        'minimum' => '0',
+                                        'maximum' => '100',
+                                    ],
+                                ],
+                            ],
+                            'InterruptConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SemanticsInterrupt' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'BackChannelConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'UserTurnEnd' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -7915,6 +8060,29 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BackgroundMusic',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'format' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'wav',
+                                ],
+                            ],
+                            'url' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 1000,
+                            ],
+                        ],
                     ],
                 ],
             ],

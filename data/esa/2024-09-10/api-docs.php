@@ -85,10 +85,70 @@
                     ],
                 ],
             ],
+            'WafRatelimitCharacteristics' => [
+                'type' => 'object',
+                'properties' => [
+                    'Logic' => [
+                        'type' => 'string',
+                    ],
+                    'Criteria' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Logic' => [
+                                    'type' => 'string',
+                                ],
+                                'Criteria' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'Logic' => [
+                                                'type' => 'string',
+                                            ],
+                                            'Criteria' => [
+                                                'type' => 'array',
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'properties' => [
+                                                        'MatchType' => [
+                                                            'type' => 'string',
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                            'MatchType' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'MatchType' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'MatchType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'WafRuleConfig' => [
                 'type' => 'object',
                 'properties' => [
+                    'Id' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
                     'Status' => [
+                        'type' => 'string',
+                    ],
+                    'Type' => [
                         'type' => 'string',
                     ],
                     'Action' => [
@@ -116,6 +176,18 @@
                                     'Skip' => [
                                         'type' => 'string',
                                     ],
+                                    'Tags' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                    'RegularTypes' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
                                     'RegularRules' => [
                                         'type' => 'array',
                                         'items' => [
@@ -130,15 +202,119 @@
                                             'format' => 'int64',
                                         ],
                                     ],
-                                    'RegularTypes' => [
-                                        'type' => 'array',
-                                        'items' => [
-                                            'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'ManagedGroupId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'RateLimit' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Characteristics' => [
+                                '$ref' => '#/components/schemas/WafRatelimitCharacteristics',
+                            ],
+                            'Threshold' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Request' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'Traffic' => [
+                                        'type' => 'string',
+                                    ],
+                                    'ManagedRulesBlocked' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'DistinctManagedRules' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'ResponseStatus' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'Code' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
+                                            'Count' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
+                                            'Ratio' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
                                         ],
                                     ],
-                                    'Tags' => [
-                                        'type' => 'array',
-                                        'items' => [
+                                ],
+                            ],
+                            'Interval' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'TTL' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'OnHit' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
+                    'ManagedList' => [
+                        'type' => 'string',
+                    ],
+                    'Timer' => [
+                        '$ref' => '#/components/schemas/WafTimer',
+                    ],
+                    'Sigchl' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'AppSdk' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'FeatureAbnormal' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'CustomSignStatus' => [
+                                'type' => 'string',
+                            ],
+                            'CustomSign' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Key' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Value' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'AppPackage' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'PackageSigns' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Name' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Sign' => [
                                             'type' => 'string',
                                         ],
                                     ],
@@ -146,7 +322,7 @@
                             ],
                         ],
                     ],
-                    'ManagedList' => [
+                    'Expression' => [
                         'type' => 'string',
                     ],
                     'ManagedRulesets' => [
@@ -154,31 +330,6 @@
                         'items' => [
                             'type' => 'object',
                             'properties' => [
-                                'ProtectionLevel' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                ],
-                                'Action' => [
-                                    'type' => 'string',
-                                ],
-                                'ManagedRules' => [
-                                    'type' => 'array',
-                                    'items' => [
-                                        'type' => 'object',
-                                        'properties' => [
-                                            'Status' => [
-                                                'type' => 'string',
-                                            ],
-                                            'Action' => [
-                                                'type' => 'string',
-                                            ],
-                                            'Id' => [
-                                                'type' => 'integer',
-                                                'format' => 'int64',
-                                            ],
-                                        ],
-                                    ],
-                                ],
                                 'AttackType' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
@@ -191,129 +342,38 @@
                                     'type' => 'integer',
                                     'format' => 'int32',
                                 ],
-                            ],
-                        ],
-                    ],
-                    'Sigchl' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'Name' => [
-                        'type' => 'string',
-                    ],
-                    'AppSdk' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'CustomSign' => [
-                                'type' => 'object',
-                                'properties' => [
-                                    'Value' => [
-                                        'type' => 'string',
-                                    ],
-                                    'Key' => [
-                                        'type' => 'string',
-                                    ],
+                                'ProtectionLevel' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                 ],
-                            ],
-                            'CustomSignStatus' => [
-                                'type' => 'string',
-                            ],
-                            'FeatureAbnormal' => [
-                                'type' => 'array',
-                                'items' => [
+                                'Action' => [
                                     'type' => 'string',
                                 ],
-                            ],
-                        ],
-                    ],
-                    'RateLimit' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'Characteristics' => [
-                                '$ref' => '#/components/schemas/WafRuleMatch2',
-                            ],
-                            'OnHit' => [
-                                'type' => 'boolean',
-                            ],
-                            'TTL' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'Threshold' => [
-                                'type' => 'object',
-                                'properties' => [
-                                    'ManagedRulesBlocked' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                    ],
-                                    'DistinctManagedRules' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                    ],
-                                    'ResponseStatus' => [
+                                'ManagedRules' => [
+                                    'type' => 'array',
+                                    'items' => [
                                         'type' => 'object',
                                         'properties' => [
-                                            'Ratio' => [
+                                            'Id' => [
                                                 'type' => 'integer',
-                                                'format' => 'int32',
+                                                'format' => 'int64',
                                             ],
-                                            'Count' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
+                                            'Status' => [
+                                                'type' => 'string',
                                             ],
-                                            'Code' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
+                                            'Action' => [
+                                                'type' => 'string',
                                             ],
                                         ],
                                     ],
-                                    'Traffic' => [
-                                        'type' => 'string',
-                                    ],
-                                    'Request' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                    ],
                                 ],
-                            ],
-                            'Interval' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
                             ],
                         ],
                     ],
-                    'Type' => [
+                    'Value' => [
                         'type' => 'string',
                     ],
-                    'AppPackage' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'PackageSigns' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'Sign' => [
-                                            'type' => 'string',
-                                        ],
-                                        'Name' => [
-                                            'type' => 'string',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    'ManagedGroupId' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'Timer' => [
-                        '$ref' => '#/components/schemas/WafTimer',
-                    ],
-                    'Expression' => [
+                    'Notes' => [
                         'type' => 'string',
                     ],
                     'SecurityLevel' => [
@@ -323,16 +383,6 @@
                                 'type' => 'string',
                             ],
                         ],
-                    ],
-                    'Value' => [
-                        'type' => 'string',
-                    ],
-                    'Id' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'Notes' => [
-                        'type' => 'string',
                     ],
                 ],
             ],
@@ -3615,6 +3665,7 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
+                        'minimum' => '1',
                     ],
                 ],
                 [
@@ -3727,6 +3778,7 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
+                        'minimum' => '1',
                     ],
                 ],
                 [
@@ -3869,7 +3921,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [

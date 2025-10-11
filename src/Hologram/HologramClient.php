@@ -57,6 +57,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listWarehousesAsync($arguments = [])
  * @method \Dew\Acs\Result listBackupData(array $arguments = [])
  * @method \Http\Promise\Promise listBackupDataAsync($arguments = [])
+ * @method \Dew\Acs\Result enableSSL(array $arguments = [])
+ * @method \Http\Promise\Promise enableSSLAsync($arguments = [])
+ * @method \Dew\Acs\Result disableSSL(array $arguments = [])
+ * @method \Http\Promise\Promise disableSSLAsync($arguments = [])
+ * @method \Dew\Acs\Result getCertificateAttribute(array $arguments = [])
+ * @method \Http\Promise\Promise getCertificateAttributeAsync($arguments = [])
+ * @method \Dew\Acs\Result getRootCertificate(array $arguments = [])
+ * @method \Http\Promise\Promise getRootCertificateAsync($arguments = [])
+ * @method \Dew\Acs\Result renewSSLCertificate(array $arguments = [])
+ * @method \Http\Promise\Promise renewSSLCertificateAsync($arguments = [])
  */
 final class HologramClient extends AcsClient
 {

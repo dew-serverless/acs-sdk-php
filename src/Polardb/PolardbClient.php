@@ -473,6 +473,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyEncryptionDBSecretAsync($arguments = [])
  * @method \Dew\Acs\Result modifyEncryptionDBRolePrivilege(array $arguments = [])
  * @method \Http\Promise\Promise modifyEncryptionDBRolePrivilegeAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteAIDBCluster(array $arguments = [])
+ * @method \Http\Promise\Promise deleteAIDBClusterAsync($arguments = [])
  */
 final class PolardbClient extends AcsClient
 {

@@ -463,6 +463,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyPauseProtectionStatusAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeCustomBaseRuleCompileResult(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeCustomBaseRuleCompileResultAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeChargeResult(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeChargeResultAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeChargeModule(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeChargeModuleAsync($arguments = []) {@since 2021-10-01}
  */
 final class WafOpenapiClient extends AcsClient
 {

@@ -229,6 +229,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'LogSource',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RuleAggQuery',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateSlrRole' => [

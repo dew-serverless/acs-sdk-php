@@ -1178,6 +1178,16 @@
                                     ],
                                 ],
                             ],
+                            'config' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'skipImgTrans' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -1223,5 +1233,10 @@
             ],
         ],
     ],
-    'endpoints' => [],
+    'endpoints' => [
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'anytrans.cn-beijing.aliyuncs.com',
+        ],
+    ],
 ];

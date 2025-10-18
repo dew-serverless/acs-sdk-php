@@ -7,6 +7,150 @@
     ],
     'components' => [
         'schemas' => [
+            'GenerateTraceability' => [
+                'type' => 'object',
+                'properties' => [
+                    'News' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Url' => [
+                                    'type' => 'string',
+                                ],
+                                'Title' => [
+                                    'type' => 'string',
+                                ],
+                                'PubTime' => [
+                                    'type' => 'string',
+                                ],
+                                'SearchSourceName' => [
+                                    'type' => 'string',
+                                ],
+                                'SearchSource' => [
+                                    'type' => 'string',
+                                ],
+                                'Index' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'OutlineSearchResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'Query' => [
+                        'type' => 'string',
+                    ],
+                    'Outline' => [
+                        'type' => 'string',
+                    ],
+                    'OutlineId' => [
+                        'type' => 'string',
+                    ],
+                    'PrimaryOutline' => [
+                        'type' => 'string',
+                    ],
+                    'Articles' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/OutlineWritingArticle',
+                        ],
+                    ],
+                ],
+            ],
+            'OutlineWritingArticle' => [
+                'type' => 'object',
+                'properties' => [
+                    'Url' => [
+                        'type' => 'string',
+                    ],
+                    'Title' => [
+                        'type' => 'string',
+                    ],
+                    'Content' => [
+                        'type' => 'string',
+                    ],
+                    'SearchSource' => [
+                        'type' => 'string',
+                    ],
+                    'SearchSourceName' => [
+                        'type' => 'string',
+                    ],
+                    'PubTime' => [
+                        'type' => 'string',
+                    ],
+                    'PrimaryOutline' => [
+                        'type' => 'string',
+                    ],
+                    'Outline' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'TopicSelection' => [
+                'type' => 'object',
+                'properties' => [
+                    'Point' => [
+                        'type' => 'string',
+                    ],
+                    'Summary' => [
+                        'type' => 'string',
+                    ],
+                    'Outlines' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Outline' => [
+                                    'type' => 'string',
+                                ],
+                                'Summary' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'WritingOutline' => [
+                'type' => 'object',
+                'properties' => [
+                    'WritingTips' => [
+                        'type' => 'string',
+                    ],
+                    'OutlineId' => [
+                        'type' => 'string',
+                    ],
+                    'Outline' => [
+                        'type' => 'string',
+                    ],
+                    'SearchKeyWordList' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'WordCount' => [
+                        'type' => 'string',
+                    ],
+                    'Articles' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/OutlineWritingArticle',
+                        ],
+                    ],
+                    'Children' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/WritingOutline',
+                        ],
+                    ],
+                ],
+            ],
             'WritingStyleTemplateDefine' => [
                 'type' => 'object',
                 'properties' => [
@@ -930,6 +1074,27 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'OutlineList',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/WritingOutline',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SourceTraceMethod',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

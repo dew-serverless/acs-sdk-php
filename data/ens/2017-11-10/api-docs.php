@@ -5424,6 +5424,14 @@
                     ],
                 ],
                 [
+                    'name' => 'IcmpReplyEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'EnsRegionIds',
                     'in' => 'query',
                     'style' => 'flat',

@@ -49,8 +49,8 @@
                 'post',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [
@@ -80,11 +80,11 @@
                             'properties' => [
                                 'departure_city' => [
                                     'type' => 'string',
-                                    'required' => true,
+                                    'required' => false,
                                 ],
                                 'arrival_city' => [
                                     'type' => 'string',
-                                    'required' => true,
+                                    'required' => false,
                                 ],
                                 'departure_airport_list' => [
                                     'type' => 'array',
@@ -192,8 +192,8 @@
                 'post',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [
@@ -277,11 +277,11 @@
                                         'properties' => [
                                             'departure_city' => [
                                                 'type' => 'string',
-                                                'required' => true,
+                                                'required' => false,
                                             ],
                                             'arrival_city' => [
                                                 'type' => 'string',
-                                                'required' => true,
+                                                'required' => false,
                                             ],
                                             'departure_airport' => [
                                                 'type' => 'string',
@@ -543,7 +543,7 @@
                                         'credential_type' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
-                                            'required' => true,
+                                            'required' => false,
                                         ],
                                     ],
                                 ],
@@ -622,7 +622,7 @@
                                                     'credential_type' => [
                                                         'type' => 'integer',
                                                         'format' => 'int32',
-                                                        'required' => true,
+                                                        'required' => false,
                                                     ],
                                                 ],
                                             ],

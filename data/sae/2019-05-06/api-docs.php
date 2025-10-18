@@ -7945,6 +7945,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AlbIngressReadinessGate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RescaleApplicationVertically' => [
@@ -8015,6 +8023,22 @@
                 ],
                 [
                     'name' => 'DiskSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VSwitchId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -13979,12 +14003,41 @@
                 ],
             ],
         ],
+        'BatchRestartApplications' => [
+            'path' => '/pop/v1/sam/app/batchRestartApplications',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NamespaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AppIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
-        [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'sae.cn-heyuan.aliyuncs.com',
-        ],
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'sae.cn-beijing.aliyuncs.com',
@@ -14010,6 +14063,10 @@
             'endpoint' => 'sae.cn-shenzhen.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'sae.cn-heyuan.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-guangzhou',
             'endpoint' => 'sae.cn-guangzhou.aliyuncs.com',
         ],
@@ -14020,6 +14077,10 @@
         [
             'regionId' => 'cn-hongkong',
             'endpoint' => 'sae.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'sae.ap-northeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',
@@ -14034,8 +14095,8 @@
             'endpoint' => 'sae.us-west-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-northeast-1',
-            'endpoint' => 'sae.ap-northeast-1.aliyuncs.com',
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'sae.eu-central-1.aliyuncs.com',
         ],
     ],
 ];

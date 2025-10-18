@@ -7,6 +7,107 @@
     ],
     'components' => [
         'schemas' => [
+            'BaiLianAgentTransformParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'ApplicationId' => [
+                        'type' => 'string',
+                    ],
+                    'Prompt' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'ApiKey' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RequestPerMinute' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'TokenPerMinute' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'DashScopeTransformParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'Model' => [
+                        'type' => 'string',
+                    ],
+                    'ApiKey' => [
+                        'type' => 'string',
+                    ],
+                    'StructuredOutputJsonSchema' => [
+                        'type' => 'string',
+                    ],
+                    'RequestPerMinute' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'TokenPerMinute' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Messages' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Role' => [
+                                    'type' => 'string',
+                                ],
+                                'Form' => [
+                                    'type' => 'string',
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                ],
+                                'Template' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'EmbeddingTransformParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'EmbeddingModel' => [
+                        'type' => 'string',
+                    ],
+                    'ApiKey' => [
+                        'type' => 'string',
+                    ],
+                    'EmbeddingData' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'SinkBaiLianParameters' => [
                 'type' => 'object',
                 'properties' => [
@@ -4750,20 +4851,66 @@
                                         ],
                                     ],
                                     'DashVectorSchemaParameters' => [
-                                        'type' => 'object',
+                                        'type' => 'array',
                                         'required' => false,
-                                        'properties' => [
-                                            'Form' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Value' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Template' => [
-                                                'type' => 'string',
-                                                'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Name' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'Form' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Value' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Template' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                                'Type' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'Form' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Value' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Template' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                                'Value' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'Form' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Value' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Template' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
                                             ],
                                         ],
                                     ],
@@ -5026,6 +5173,14 @@
                             'properties' => [
                                 'Arn' => [
                                     'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DashScopeTransformParameters' => [
+                                    '$ref' => '#/components/schemas/DashScopeTransformParameters',
+                                    'required' => false,
+                                ],
+                                'BaiLianAgentTransformParameters' => [
+                                    '$ref' => '#/components/schemas/BaiLianAgentTransformParameters',
                                     'required' => false,
                                 ],
                             ],
@@ -7591,20 +7746,66 @@
                                         ],
                                     ],
                                     'DashVectorSchemaParameters' => [
-                                        'type' => 'object',
+                                        'type' => 'array',
                                         'required' => false,
-                                        'properties' => [
-                                            'Form' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Value' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Template' => [
-                                                'type' => 'string',
-                                                'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Name' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'Form' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Value' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Template' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                                'Type' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'Form' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Value' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Template' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                                'Value' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'Form' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Value' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Template' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
                                             ],
                                         ],
                                     ],
@@ -7867,6 +8068,18 @@
                             'properties' => [
                                 'Arn' => [
                                     'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DashScopeTransformParameters' => [
+                                    '$ref' => '#/components/schemas/DashScopeTransformParameters',
+                                    'required' => false,
+                                ],
+                                'BaiLianAgentTransformParameters' => [
+                                    '$ref' => '#/components/schemas/BaiLianAgentTransformParameters',
+                                    'required' => false,
+                                ],
+                                'EmbeddingTransformParameters' => [
+                                    '$ref' => '#/components/schemas/EmbeddingTransformParameters',
                                     'required' => false,
                                 ],
                             ],

@@ -440,6 +440,13 @@
                         'maxLength' => 64,
                     ],
                 ],
+                [
+                    'name' => 'BrandId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
             ],
         ],
         'DeleteDomain' => [

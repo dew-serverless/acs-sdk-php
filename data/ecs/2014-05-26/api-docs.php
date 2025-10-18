@@ -4649,6 +4649,40 @@
                 ],
             ],
         ],
+        'ModifyInstanceNetworkOptions' => [
+            'path' => '',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BandwidthWeighting',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'ModifyInstanceChargeType' => [
             'methods' => [
                 'post',
@@ -7836,11 +7870,49 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'ImdsSupport' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'RetainImportedImage' => [
                                 'type' => 'boolean',
                                 'required' => false,
+                            ],
+                            'RetentionStrategy' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ImageName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoleName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ImportImageTags' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -19757,6 +19829,22 @@
                                     ],
                                 ],
                             ],
+                            'CpuOptions' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Core' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'ThreadsPerCore' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -25390,6 +25478,14 @@
                 ],
                 [
                     'name' => 'ActivationId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MachineId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -34289,40 +34385,6 @@
                             ],
                         ],
                         'maxItems' => 20,
-                    ],
-                ],
-            ],
-        ],
-        'ModifyInstanceNetworkOptions' => [
-            'path' => '',
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'BandwidthWeighting',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],

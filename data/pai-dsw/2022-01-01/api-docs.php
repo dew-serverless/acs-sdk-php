@@ -965,6 +965,10 @@
                                     ],
                                 ],
                             ],
+                            'StartInstance' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

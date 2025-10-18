@@ -1233,16 +1233,32 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'InstanceId',
+                    'name' => 'AgentKey',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'AgentKey',
-                    'in' => 'query',
+                    'name' => 'InstanceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SandBox',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VendorParam',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

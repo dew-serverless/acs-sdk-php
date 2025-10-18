@@ -399,6 +399,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ForecastHorizon',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'DAY_AHEAD',
+                            'INTRADAY',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DataMode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'FULL',
+                            'INCREMENTAL',
+                        ],
+                    ],
+                ],
             ],
         ],
         'CreatePowerForecastJob' => [
@@ -536,6 +560,30 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ForecastHorizon',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'DAY_AHEAD',
+                            'INTRADAY',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DataMode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'FULL',
+                            'INCREMENTAL',
+                        ],
                     ],
                 ],
             ],
@@ -839,6 +887,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ForecastHorizon',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'DAY_AHEAD',
+                            'INTRADAY',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DataMode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'FULL',
+                            'INCREMENTAL',
+                        ],
+                    ],
+                ],
             ],
         ],
         'CreatePowerForecastByFileUrlJob' => [
@@ -974,6 +1046,30 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ForecastHorizon',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'DAY_AHEAD',
+                            'INTRADAY',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DataMode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'FULL',
+                            'INCREMENTAL',
+                        ],
                     ],
                 ],
             ],

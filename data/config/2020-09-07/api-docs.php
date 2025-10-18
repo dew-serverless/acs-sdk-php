@@ -3027,6 +3027,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
+                        'deprecated' => true,
                         'required' => false,
                         'items' => [
                             'type' => 'object',
@@ -3178,6 +3179,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
+                        'deprecated' => true,
                         'required' => false,
                         'items' => [
                             'type' => 'object',
@@ -3869,6 +3871,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
+                        'deprecated' => true,
                         'required' => false,
                         'items' => [
                             'type' => 'object',
@@ -3918,6 +3921,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
+                        'deprecated' => true,
                         'required' => false,
                         'items' => [
                             'type' => 'object',
@@ -4035,6 +4039,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
+                        'deprecated' => true,
                         'required' => false,
                         'items' => [
                             'type' => 'object',
@@ -7903,6 +7908,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
+                        'deprecated' => true,
                         'required' => false,
                         'items' => [
                             'type' => 'object',
@@ -8335,6 +8341,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
+                        'deprecated' => true,
                         'required' => false,
                         'items' => [
                             'type' => 'object',
@@ -8525,6 +8532,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
+                        'deprecated' => true,
                         'required' => false,
                         'items' => [
                             'type' => 'object',
@@ -8781,6 +8789,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
+                        'deprecated' => true,
                         'required' => false,
                         'items' => [
                             'type' => 'object',
@@ -9173,6 +9182,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
+                        'deprecated' => true,
                         'required' => false,
                         'items' => [
                             'type' => 'object',

@@ -1756,6 +1756,25 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'GrantedPermission',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'OperationEndTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PolicyNames' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'ValidateServiceInstanceName' => [
@@ -2257,6 +2276,14 @@
                         'maxItems' => 10,
                     ],
                 ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CancelServiceUsage' => [
@@ -2296,6 +2323,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -2345,6 +2380,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateServiceUsage' => [
@@ -2389,6 +2432,14 @@
                         'additionalProperties' => [
                             'type' => 'string',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

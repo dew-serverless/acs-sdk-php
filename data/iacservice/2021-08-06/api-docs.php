@@ -278,16 +278,24 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'tagValue' => [
+                                'tagKey' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'tagKey' => [
+                                'tagValue' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'moduleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

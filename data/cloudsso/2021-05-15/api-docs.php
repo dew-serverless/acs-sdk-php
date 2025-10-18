@@ -3674,6 +3674,10 @@
             'endpoint' => 'cloudsso.cn-hongkong.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'cloudsso.ap-northeast-2.aliyuncs.com',
+        ],
+        [
             'regionId' => 'us-west-1',
             'endpoint' => 'cloudsso.us-west-1.aliyuncs.com',
         ],

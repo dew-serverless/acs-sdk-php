@@ -141,6 +141,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listAvailableZonesAsync($arguments = [])
  * @method \Dew\Acs\Result listMetricMeta(array $arguments = [])
  * @method \Http\Promise\Promise listMetricMetaAsync($arguments = [])
+ * @method \Dew\Acs\Result getConsumeTimespan(array $arguments = [])
+ * @method \Http\Promise\Promise getConsumeTimespanAsync($arguments = [])
  */
 final class RocketMQClient extends AcsClient
 {

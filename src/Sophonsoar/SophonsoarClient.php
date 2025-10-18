@@ -19,14 +19,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise runPython3ScriptAsync($arguments = [])
  * @method \Dew\Acs\Result revertPlaybookRelease(array $arguments = [])
  * @method \Http\Promise\Promise revertPlaybookReleaseAsync($arguments = [])
- * @method \Dew\Acs\Result renamePlaybookNode(array $arguments = [])
- * @method \Http\Promise\Promise renamePlaybookNodeAsync($arguments = [])
  * @method \Dew\Acs\Result queryTreeData(array $arguments = [])
  * @method \Http\Promise\Promise queryTreeDataAsync($arguments = [])
  * @method \Dew\Acs\Result publishPlaybook(array $arguments = [])
  * @method \Http\Promise\Promise publishPlaybookAsync($arguments = [])
- * @method \Dew\Acs\Result modifyPlaybookInstanceStatus(array $arguments = [])
- * @method \Http\Promise\Promise modifyPlaybookInstanceStatusAsync($arguments = [])
  * @method \Dew\Acs\Result modifyPlaybookInputOutput(array $arguments = [])
  * @method \Http\Promise\Promise modifyPlaybookInputOutputAsync($arguments = [])
  * @method \Dew\Acs\Result modifyPlaybook(array $arguments = [])
@@ -61,8 +57,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describePlaybookInputOutputAsync($arguments = [])
  * @method \Dew\Acs\Result describePlaybook(array $arguments = [])
  * @method \Http\Promise\Promise describePlaybookAsync($arguments = [])
- * @method \Dew\Acs\Result describeNodeUsedInfos(array $arguments = [])
- * @method \Http\Promise\Promise describeNodeUsedInfosAsync($arguments = [])
  * @method \Dew\Acs\Result describeNodeParamTags(array $arguments = [])
  * @method \Http\Promise\Promise describeNodeParamTagsAsync($arguments = [])
  * @method \Dew\Acs\Result describeLatestRecordSchema(array $arguments = [])
@@ -91,8 +85,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise debugPlaybookAsync($arguments = [])
  * @method \Dew\Acs\Result comparePlaybooks(array $arguments = [])
  * @method \Http\Promise\Promise comparePlaybooksAsync($arguments = [])
- * @method \Dew\Acs\Result batchModifyInstanceStatus(array $arguments = [])
- * @method \Http\Promise\Promise batchModifyInstanceStatusAsync($arguments = [])
  * @method \Dew\Acs\Result createPlaybook(array $arguments = [])
  * @method \Http\Promise\Promise createPlaybookAsync($arguments = [])
  * @method \Dew\Acs\Result describeComponentsJs(array $arguments = [])
@@ -125,6 +117,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise runNotifyComponentWithWebhookAsync($arguments = [])
  * @method \Dew\Acs\Result describeVendorApiList(array $arguments = [])
  * @method \Http\Promise\Promise describeVendorApiListAsync($arguments = [])
+ * @method \Dew\Acs\Result listComponents(array $arguments = []) {@since 2025-09-03}
+ * @method \Http\Promise\Promise listComponentsAsync($arguments = []) {@since 2025-09-03}
+ * @method \Dew\Acs\Result createComponentAsset(array $arguments = []) {@since 2025-09-03}
+ * @method \Http\Promise\Promise createComponentAssetAsync($arguments = []) {@since 2025-09-03}
+ * @method \Dew\Acs\Result updateComponentAsset(array $arguments = []) {@since 2025-09-03}
+ * @method \Http\Promise\Promise updateComponentAssetAsync($arguments = []) {@since 2025-09-03}
+ * @method \Dew\Acs\Result listComponentAssets(array $arguments = []) {@since 2025-09-03}
+ * @method \Http\Promise\Promise listComponentAssetsAsync($arguments = []) {@since 2025-09-03}
  */
 final class SophonsoarClient extends AcsClient
 {

@@ -25,6 +25,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteClusterAsync($arguments = [])
  * @method \Dew\Acs\Result getClusterCloneMeta(array $arguments = [])
  * @method \Http\Promise\Promise getClusterCloneMetaAsync($arguments = [])
+ * @method \Dew\Acs\Result updateClusterAutoRenew(array $arguments = [])
+ * @method \Http\Promise\Promise updateClusterAutoRenewAsync($arguments = [])
  * @method \Dew\Acs\Result createApiTemplate(array $arguments = [])
  * @method \Http\Promise\Promise createApiTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result updateApiTemplate(array $arguments = [])

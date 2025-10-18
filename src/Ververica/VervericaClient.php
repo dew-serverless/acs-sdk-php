@@ -165,6 +165,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise flinkApiProxyAsync($arguments = [])
  * @method \Dew\Acs\Result getLineageInfo(array $arguments = [])
  * @method \Http\Promise\Promise getLineageInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result createDeploymentTargetV2(array $arguments = [])
+ * @method \Http\Promise\Promise createDeploymentTargetV2Async($arguments = [])
+ * @method \Dew\Acs\Result updateDeploymentTargetV2(array $arguments = [])
+ * @method \Http\Promise\Promise updateDeploymentTargetV2Async($arguments = [])
  */
 final class VervericaClient extends AcsClient
 {

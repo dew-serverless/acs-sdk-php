@@ -17,6 +17,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateInstanceNameAsync($arguments = [])
  * @method \Dew\Acs\Result describeInstances(array $arguments = [])
  * @method \Http\Promise\Promise describeInstancesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeNodeGroups(array $arguments = [])
+ * @method \Http\Promise\Promise describeNodeGroupsAsync($arguments = [])
  * @method \Dew\Acs\Result tagResources(array $arguments = [])
  * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result unTagResources(array $arguments = [])

@@ -105,6 +105,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSandboxInstancesAsync($arguments = []) {@since 2021-01-01}
  * @method \Dew\Acs\Result describeSandboxBackupSets(array $arguments = []) {@since 2021-01-01}
  * @method \Http\Promise\Promise describeSandboxBackupSetsAsync($arguments = []) {@since 2021-01-01}
+ * @method \Dew\Acs\Result describeCostInfoByDbsInstance(array $arguments = []) {@since 2021-01-01}
+ * @method \Http\Promise\Promise describeCostInfoByDbsInstanceAsync($arguments = []) {@since 2021-01-01}
  */
 final class DbsClient extends AcsClient
 {

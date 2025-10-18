@@ -7,6 +7,8 @@ namespace Dew\Acs\Notifications;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result readCategoryGroupList(array $arguments = [])
+ * @method \Http\Promise\Promise readCategoryGroupListAsync($arguments = [])
  * @method \Dew\Acs\Result readMessageLanguage(array $arguments = [])
  * @method \Http\Promise\Promise readMessageLanguageAsync($arguments = [])
  * @method \Dew\Acs\Result updateMessageLanguage(array $arguments = [])

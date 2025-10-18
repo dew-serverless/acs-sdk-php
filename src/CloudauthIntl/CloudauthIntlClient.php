@@ -79,6 +79,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise tempOssUrlIntlAsync($arguments = [])
  * @method \Dew\Acs\Result deleteFaceGroup(array $arguments = [])
  * @method \Http\Promise\Promise deleteFaceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result deepfakeDetectIntlStream(array $arguments = [])
+ * @method \Http\Promise\Promise deepfakeDetectIntlStreamAsync($arguments = [])
  */
 final class CloudauthIntlClient extends AcsClient
 {

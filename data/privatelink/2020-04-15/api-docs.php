@@ -3154,70 +3154,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'privatelink.cn-qingdao.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'privatelink.cn-beijing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'privatelink.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhengzhou-jva',
-            'endpoint' => 'privatelink.cn-zhengzhou-jva.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'privatelink.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'privatelink.cn-wulanchabu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'privatelink.cn-hangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'privatelink.cn-shanghai.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-nanjing',
-            'endpoint' => 'privatelink.cn-nanjing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-fuzhou',
-            'endpoint' => 'privatelink.cn-fuzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'privatelink.cn-shenzhen.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'privatelink.cn-heyuan.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'privatelink.cn-guangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'privatelink.cn-chengdu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wuhan-lr',
-            'endpoint' => 'privatelink.cn-wuhan-lr.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'privatelink.cn-hongkong.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'privatelink.ap-northeast-1.aliyuncs.com',
         ],
@@ -3246,6 +3182,90 @@
             'endpoint' => 'privatelink.ap-southeast-6.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'privatelink.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'privatelink.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'privatelink.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'privatelink.cn-fuzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'privatelink.cn-guangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'privatelink.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'privatelink.cn-heyuan.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'privatelink.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'privatelink.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-nanjing',
+            'endpoint' => 'privatelink.cn-nanjing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'privatelink.cn-qingdao.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'privatelink.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'privatelink.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'privatelink.cn-wuhan-lr.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'privatelink.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'privatelink.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhengzhou-jva',
+            'endpoint' => 'privatelink.cn-zhengzhou-jva.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-southeast-1',
+            'endpoint' => 'privatelink.us-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'privatelink.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'privatelink.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'privatelink.na-south-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'us-east-1',
             'endpoint' => 'privatelink.us-east-1.aliyuncs.com',
         ],
@@ -3254,16 +3274,20 @@
             'endpoint' => 'privatelink.us-west-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'privatelink.eu-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'privatelink.eu-central-1.aliyuncs.com',
+            'regionId' => 'me-east-1',
+            'endpoint' => 'privatelink.me-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-south-1',
             'endpoint' => 'privatelink.ap-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'privatelink.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'privatelink.cn-beijing-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai-finance-1',
@@ -3272,26 +3296,6 @@
         [
             'regionId' => 'cn-shenzhen-finance-1',
             'endpoint' => 'privatelink.cn-shenzhen-finance-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'privatelink.ap-southeast-7.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-finance-1',
-            'endpoint' => 'privatelink.cn-beijing-finance-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'me-central-1',
-            'endpoint' => 'privatelink.me-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-heyuan-acdr-1',
-            'endpoint' => 'privatelink.cn-heyuan-acdr-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'na-south-1',
-            'endpoint' => 'privatelink.na-south-1.aliyuncs.com',
         ],
     ],
 ];

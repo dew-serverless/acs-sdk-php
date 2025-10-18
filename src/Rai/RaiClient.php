@@ -7,6 +7,18 @@ namespace Dew\Acs\Rai;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result listModelCategory(array $arguments = [])
+ * @method \Http\Promise\Promise listModelCategoryAsync($arguments = [])
+ * @method \Dew\Acs\Result createModelInstance(array $arguments = [])
+ * @method \Http\Promise\Promise createModelInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result updateModelInstance(array $arguments = [])
+ * @method \Http\Promise\Promise updateModelInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result listModelInstance(array $arguments = [])
+ * @method \Http\Promise\Promise listModelInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result getModelInstanceInfo(array $arguments = [])
+ * @method \Http\Promise\Promise getModelInstanceInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteModelInstance(array $arguments = [])
+ * @method \Http\Promise\Promise deleteModelInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result modelInputContentSyncDetect(array $arguments = [])
  * @method \Http\Promise\Promise modelInputContentSyncDetectAsync($arguments = [])
  * @method \Dew\Acs\Result modelOutputContentSyncDetect(array $arguments = [])

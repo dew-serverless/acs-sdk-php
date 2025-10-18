@@ -141,6 +141,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyDefaultHttpsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result createCerts(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise createCertsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result verifyDomainOwner(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise verifyDomainOwnerAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeVerifyContent(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeVerifyContentAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeHybridCloudResources(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeHybridCloudResourcesAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result createDefenseResource(array $arguments = []) {@since 2021-10-01}
@@ -451,6 +455,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listTagValuesAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result tagResources(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise tagResourcesAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeChargeResult(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeChargeResultAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeChargeModule(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeChargeModuleAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeApisecLogDeliveries(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeApisecLogDeliveriesAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeApisecSlsLogStores(array $arguments = []) {@since 2021-10-01}
@@ -463,10 +471,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyPauseProtectionStatusAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeCustomBaseRuleCompileResult(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeCustomBaseRuleCompileResultAsync($arguments = []) {@since 2021-10-01}
- * @method \Dew\Acs\Result describeChargeResult(array $arguments = []) {@since 2021-10-01}
- * @method \Http\Promise\Promise describeChargeResultAsync($arguments = []) {@since 2021-10-01}
- * @method \Dew\Acs\Result describeChargeModule(array $arguments = []) {@since 2021-10-01}
- * @method \Http\Promise\Promise describeChargeModuleAsync($arguments = []) {@since 2021-10-01}
  */
 final class WafOpenapiClient extends AcsClient
 {

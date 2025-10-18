@@ -81,6 +81,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise editWorkspaceQueueAsync($arguments = [])
  * @method \Dew\Acs\Result listReleaseVersions(array $arguments = [])
  * @method \Http\Promise\Promise listReleaseVersionsAsync($arguments = [])
+ * @method \Dew\Acs\Result listJobExecutors(array $arguments = [])
+ * @method \Http\Promise\Promise listJobExecutorsAsync($arguments = [])
  * @method \Dew\Acs\Result listLogContents(array $arguments = [])
  * @method \Http\Promise\Promise listLogContentsAsync($arguments = [])
  * @method \Dew\Acs\Result getCuHours(array $arguments = [])
@@ -101,6 +103,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateProcessDefinitionWithScheduleAsync($arguments = [])
  * @method \Dew\Acs\Result createProcessDefinitionWithSchedule(array $arguments = [])
  * @method \Http\Promise\Promise createProcessDefinitionWithScheduleAsync($arguments = [])
+ * @method \Dew\Acs\Result listCatalogs(array $arguments = [])
+ * @method \Http\Promise\Promise listCatalogsAsync($arguments = [])
+ * @method \Dew\Acs\Result listTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise listTemplateAsync($arguments = [])
  */
 final class EmrServerlessSparkClient extends AcsClient
 {

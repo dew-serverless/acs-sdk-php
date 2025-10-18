@@ -295,6 +295,7 @@
                 'properties' => [
                     'url' => [
                         'type' => 'string',
+                        'required' => true,
                     ],
                     'timeout' => [
                         'type' => 'integer',
@@ -303,6 +304,12 @@
                     'pageTimeout' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                    ],
+                    'formats' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                     'location' => [
                         'type' => 'string',
@@ -329,12 +336,6 @@
                                     'type' => 'string',
                                 ],
                             ],
-                        ],
-                    ],
-                    'formats' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
                         ],
                     ],
                 ],
@@ -477,6 +478,9 @@
                         'type' => 'number',
                         'format' => 'double',
                     ],
+                    'richMainBody' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'SearchCredits' => [
@@ -570,6 +574,9 @@
                     'hostAuthorityScore' => [
                         'type' => 'number',
                         'format' => 'double',
+                    ],
+                    'richMainBody' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1084,6 +1091,37 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ReadPageBasic' => [
+            'path' => '/linked-retrieval/linked-retrieval-entry/v1/iqs/readpage/basic',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/ReadPageBody',
                         'required' => false,
                     ],
                 ],

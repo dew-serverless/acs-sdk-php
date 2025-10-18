@@ -59,6 +59,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyInstanceAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceClockOptions(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceClockOptionsAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyInstanceNetworkOptions(array $arguments = [])
+ * @method \Http\Promise\Promise modifyInstanceNetworkOptionsAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceChargeType(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceChargeTypeAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceSpec(array $arguments = [])
@@ -713,8 +715,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeTagsAsync($arguments = []) {@deprecated 2014-05-26}
  * @method \Dew\Acs\Result removeTags(array $arguments = []) {@deprecated 2014-05-26}
  * @method \Http\Promise\Promise removeTagsAsync($arguments = []) {@deprecated 2014-05-26}
- * @method \Dew\Acs\Result modifyInstanceNetworkOptions(array $arguments = [])
- * @method \Http\Promise\Promise modifyInstanceNetworkOptionsAsync($arguments = [])
  */
 final class EcsClient extends AcsClient
 {

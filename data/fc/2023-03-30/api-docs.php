@@ -580,6 +580,9 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'nasConfig' => [
+                        '$ref' => '#/components/schemas/NASConfig',
+                    ],
                 ],
             ],
             'CreateTriggerInput' => [
@@ -2883,6 +2886,9 @@
                     ],
                     'qualifier' => [
                         'type' => 'string',
+                    ],
+                    'nasConfig' => [
+                        '$ref' => '#/components/schemas/NASConfig',
                     ],
                 ],
             ],

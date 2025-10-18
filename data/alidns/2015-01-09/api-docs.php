@@ -3869,6 +3869,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ChargeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateCloudGtmInstanceName' => [
@@ -4436,6 +4444,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ChargeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SearchCloudGtmInstances' => [
@@ -4498,6 +4514,14 @@
                 ],
                 [
                     'name' => 'InstanceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ChargeType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

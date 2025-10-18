@@ -326,9 +326,6 @@
             'IdpIdaas2SubConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'SamlMetadata' => [
-                        'type' => 'string',
-                    ],
                     'EventLabel' => [
                         'type' => 'string',
                     ],
@@ -346,6 +343,8 @@
                         'enum' => [
                             'cn-hangzhou',
                             'ap-southeast-1',
+                            'cn-hongkong',
+                            'eu-central-1',
                         ],
                     ],
                     'EventAesKey' => [
@@ -355,6 +354,9 @@
                         'type' => 'string',
                     ],
                     'PublicKeyEndpoint' => [
+                        'type' => 'string',
+                    ],
+                    'SamlMetadata' => [
                         'type' => 'string',
                     ],
                 ],
@@ -4640,8 +4642,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -6344,6 +6346,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'ConnectorId',

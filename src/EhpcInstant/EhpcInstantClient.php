@@ -63,6 +63,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listPoolsAsync($arguments = [])
  * @method \Dew\Acs\Result deletePool(array $arguments = [])
  * @method \Http\Promise\Promise deletePoolAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteJobRecords(array $arguments = [])
+ * @method \Http\Promise\Promise deleteJobRecordsAsync($arguments = [])
  */
 final class EhpcInstantClient extends AcsClient
 {

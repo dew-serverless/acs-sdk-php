@@ -819,15 +819,19 @@
                                     ],
                                 ],
                             ],
-                            'videoCaptionFileUrl' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                         ],
                     ],
                 ],
                 [
                     'name' => 'autoRoleRecognitionVideoUrl',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'splitType',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -1308,15 +1312,19 @@
                                     ],
                                 ],
                             ],
-                            'videoCaptionFileUrl' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                         ],
                     ],
                 ],
                 [
                     'name' => 'autoRoleRecognitionVideoUrl',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'splitType',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

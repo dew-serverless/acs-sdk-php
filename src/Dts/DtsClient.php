@@ -249,6 +249,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeGadInstancesAsync($arguments = [])
  * @method \Dew\Acs\Result describeDocParserJobStatus(array $arguments = [])
  * @method \Http\Promise\Promise describeDocParserJobStatusAsync($arguments = [])
+ * @method \Dew\Acs\Result listJobStep(array $arguments = [])
+ * @method \Http\Promise\Promise listJobStepAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyJobStepCheckpoint(array $arguments = [])
+ * @method \Http\Promise\Promise modifyJobStepCheckpointAsync($arguments = [])
  */
 final class DtsClient extends AcsClient
 {

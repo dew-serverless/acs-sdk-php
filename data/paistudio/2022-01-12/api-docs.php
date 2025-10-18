@@ -5894,6 +5894,22 @@
                     ],
                 ],
                 [
+                    'name' => 'HyperNode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CliqueID',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'FilterByQuotaId',
                     'in' => 'query',
                     'schema' => [

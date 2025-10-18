@@ -4220,6 +4220,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ApproveServiceUsage' => [
@@ -4353,6 +4361,14 @@
                 ],
                 [
                     'name' => 'SupplierRole',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

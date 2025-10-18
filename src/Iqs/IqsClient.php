@@ -19,6 +19,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise globalSearchAsync($arguments = [])
  * @method \Dew\Acs\Result getIqsUsage(array $arguments = [])
  * @method \Http\Promise\Promise getIqsUsageAsync($arguments = [])
+ * @method \Dew\Acs\Result readPageBasic(array $arguments = [])
+ * @method \Http\Promise\Promise readPageBasicAsync($arguments = [])
  */
 final class IqsClient extends AcsClient
 {

@@ -26582,6 +26582,15 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'ResourceDirectoryAccountId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyVulWhitelistTarget' => [

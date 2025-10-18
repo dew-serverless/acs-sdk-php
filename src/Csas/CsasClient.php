@@ -169,8 +169,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listConnectorsAsync($arguments = [])
  * @method \Dew\Acs\Result attachApplication2Connector(array $arguments = [])
  * @method \Http\Promise\Promise attachApplication2ConnectorAsync($arguments = [])
- * @method \Dew\Acs\Result detachApplication2Connector(array $arguments = [])
- * @method \Http\Promise\Promise detachApplication2ConnectorAsync($arguments = [])
+ * @method \Dew\Acs\Result detachApplication2Connector(array $arguments = []) {@deprecated 2023-01-20}
+ * @method \Http\Promise\Promise detachApplication2ConnectorAsync($arguments = []) {@deprecated 2023-01-20}
  * @method \Dew\Acs\Result listPrivateAccessTags(array $arguments = [])
  * @method \Http\Promise\Promise listPrivateAccessTagsAsync($arguments = [])
  * @method \Dew\Acs\Result listApplicationsForPrivateAccessTag(array $arguments = [])

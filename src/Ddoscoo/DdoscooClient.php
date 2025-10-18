@@ -73,6 +73,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeL7UsKeepaliveAsync($arguments = [])
  * @method \Dew\Acs\Result modifyHeaders(array $arguments = [])
  * @method \Http\Promise\Promise modifyHeadersAsync($arguments = [])
+ * @method \Dew\Acs\Result describeHeaders(array $arguments = [])
+ * @method \Http\Promise\Promise describeHeadersAsync($arguments = [])
  * @method \Dew\Acs\Result describeDomainH2Fingerprint(array $arguments = [])
  * @method \Http\Promise\Promise describeDomainH2FingerprintAsync($arguments = [])
  * @method \Dew\Acs\Result describeDomainTopReferer(array $arguments = [])

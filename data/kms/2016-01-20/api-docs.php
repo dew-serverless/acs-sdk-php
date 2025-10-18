@@ -176,6 +176,7 @@
         'UpdateKmsInstanceBindVpc' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'https',

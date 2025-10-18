@@ -297,6 +297,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryArmsEnableAsync($arguments = [])
  * @method \Dew\Acs\Result describeApplicationMseService(array $arguments = [])
  * @method \Http\Promise\Promise describeApplicationMseServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result batchRestartApplications(array $arguments = [])
+ * @method \Http\Promise\Promise batchRestartApplicationsAsync($arguments = [])
  */
 final class SaeClient extends AcsClient
 {

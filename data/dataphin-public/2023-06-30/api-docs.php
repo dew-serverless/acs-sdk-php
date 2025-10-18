@@ -11400,5 +11400,9 @@
             'regionId' => 'cn-shanghai',
             'endpoint' => 'dataphin-public.cn-shanghai.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'dataphin-public.cn-chengdu.aliyuncs.com',
+        ],
     ],
 ];

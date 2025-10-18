@@ -2816,6 +2816,14 @@
                     ],
                 ],
                 [
+                    'name' => 'SubnetId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'MonthDesktopSetting',
                     'in' => 'query',
                     'style' => 'flat',
@@ -9103,7 +9111,7 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
-                        'minimum' => '1',
+                        'minimum' => '0',
                     ],
                 ],
                 [

@@ -4342,6 +4342,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'IncludeSparseValues',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateCollectionDataMetadata' => [

@@ -65,6 +65,22 @@
         'defaultVersion' => '2022-02-20',
     ],
     [
+        'code' => 'eflo',
+        'style' => 'RPC',
+        'versions' => [
+            '2022-05-30',
+        ],
+        'defaultVersion' => '2022-05-30',
+    ],
+    [
+        'code' => 'eflo-controller',
+        'style' => 'RPC',
+        'versions' => [
+            '2022-12-15',
+        ],
+        'defaultVersion' => '2022-12-15',
+    ],
+    [
         'code' => 'EHPC',
         'style' => 'RPC',
         'versions' => [
@@ -485,6 +501,7 @@
         'style' => 'RPC',
         'versions' => [
             '2022-06-16',
+            '2024-12-12',
         ],
         'defaultVersion' => '2022-06-16',
     ],
@@ -493,6 +510,7 @@
         'style' => 'RPC',
         'versions' => [
             '2022-07-28',
+            '2025-09-03',
         ],
         'defaultVersion' => '2022-07-28',
     ],
@@ -1406,28 +1424,12 @@
         'defaultVersion' => '2022-01-01',
     ],
     [
-        'code' => 'eflo',
-        'style' => 'RPC',
-        'versions' => [
-            '2022-05-30',
-        ],
-        'defaultVersion' => '2022-05-30',
-    ],
-    [
         'code' => 'OpenITag',
         'style' => 'RPC',
         'versions' => [
             '2022-06-16',
         ],
         'defaultVersion' => '2022-06-16',
-    ],
-    [
-        'code' => 'eflo-controller',
-        'style' => 'RPC',
-        'versions' => [
-            '2022-12-15',
-        ],
-        'defaultVersion' => '2022-12-15',
     ],
     [
         'code' => 'PAIElasticDatasetAccelerator',
@@ -1991,6 +1993,7 @@
         'style' => 'RPC',
         'versions' => [
             '2023-05-16',
+            '2019-10-15',
         ],
         'defaultVersion' => '2023-05-16',
     ],
@@ -2344,6 +2347,7 @@
         'style' => 'RPC',
         'versions' => [
             '2022-03-07',
+            '2022-10-14',
         ],
         'defaultVersion' => '2022-03-07',
     ],

@@ -24,8 +24,10 @@ final class QueueException extends AcsException
     public const ERROR_CODE = 'Error.Code';
 
     #[\Override]
-    public static function makeFromResult(Result $result): static
+    public static function makeFromResult(Result|array $result): static
     {
+        $result = $result instanceof Result ? $result : new Result($result);
+
         if (! $result->has('Errors.Error')) {
             return parent::makeFromResult($result);
         }

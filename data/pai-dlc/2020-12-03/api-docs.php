@@ -87,6 +87,14 @@
                     'ScalingStrategy' => [
                         'type' => 'string',
                     ],
+                    'MinReplicas' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'MaxReplicas' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
                 ],
             ],
             'CodeSourceItem' => [
@@ -969,6 +977,21 @@
                         'items' => [
                             '$ref' => '#/components/schemas/PodItem',
                         ],
+                    ],
+                    'JobReplicaStatuses' => [
+                        '$ref' => '#/components/schemas/JobReplicaStatus',
+                    ],
+                ],
+            ],
+            'JobReplicaStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'Active' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                 ],
             ],
@@ -2413,6 +2436,14 @@
                 ],
                 [
                     'name' => 'JobIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DisplayNameSearchMode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

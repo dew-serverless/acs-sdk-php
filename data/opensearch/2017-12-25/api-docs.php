@@ -7311,24 +7311,20 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'opensearch.ap-southeast-1.aliyuncs.com',
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'opensearch.cn-qingdao.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'opensearch.cn-beijing.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'opensearch.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'opensearch.cn-hangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-north-2-gov-1',
-            'endpoint' => 'opensearch.cn-north-2-gov-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'opensearch.cn-qingdao.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',
@@ -7339,8 +7335,16 @@
             'endpoint' => 'opensearch.cn-shenzhen.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'opensearch.cn-zhangjiakou.aliyuncs.com',
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'opensearch.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'opensearch.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'opensearch.ap-southeast-5.aliyuncs.com',
         ],
         [
             'regionId' => 'us-east-1',
@@ -7349,10 +7353,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'opensearch.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'opensearch.cn-hongkong.aliyuncs.com',
         ],
     ],
 ];

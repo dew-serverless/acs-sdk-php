@@ -5026,6 +5026,28 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AccessLogRecordCustomizedHeaderList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'AccessLogRecordCustomizedHeadersEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DetachLogStoreFromEndpointGroup' => [

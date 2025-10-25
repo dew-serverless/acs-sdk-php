@@ -3793,6 +3793,26 @@
                     ],
                 ],
             ],
+            'ImageEvent' => [
+                'type' => 'object',
+                'properties' => [
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'time' => [
+                        'type' => 'string',
+                    ],
+                    'message' => [
+                        'type' => 'string',
+                    ],
+                    'details' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
             'InitializeConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -4561,6 +4581,69 @@
                         'type' => 'array',
                         'items' => [
                             '$ref' => '#/components/schemas/ServiceMeta',
+                        ],
+                    ],
+                ],
+            ],
+            'PublishTask' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'kind' => [
+                        'type' => 'string',
+                    ],
+                    'uid' => [
+                        'type' => 'string',
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'spec' => [
+                        '$ref' => '#/components/schemas/PublishTaskSpec',
+                    ],
+                    'status' => [
+                        '$ref' => '#/components/schemas/PublishTaskStatus',
+                    ],
+                    'labels' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'PublishTaskSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'productType' => [
+                        'type' => 'string',
+                    ],
+                    'rawResourceConfig' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'PublishTaskStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'phase' => [
+                        'type' => 'string',
+                    ],
+                    'events' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ImageEvent',
                         ],
                     ],
                 ],

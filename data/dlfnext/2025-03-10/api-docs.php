@@ -2856,6 +2856,78 @@
                 ],
             ],
         ],
+        'ListPartitions' => [
+            'path' => '/dlf/v1/{catalogId}/databases/{database}/tables/{table}/partitions',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'catalogId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'database',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'table',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'partitionNamePattern',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'CreateShare' => [
             'path' => '/dlf/v1/share/shares',
             'methods' => [
@@ -4787,44 +4859,44 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'dlfnext.cn-hangzhou.aliyuncs.com',
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'dlfnext.ap-northeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'dlfnext.cn-shanghai.aliyuncs.com',
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'dlfnext.ap-southeast-5.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'dlfnext.cn-beijing.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'dlfnext.cn-wulanchabu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'dlfnext.cn-shenzhen.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-1',
-            'endpoint' => 'dlfnext.ap-northeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'dlfnext.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'dlfnext.eu-central-1.aliyuncs.com',
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'dlfnext.cn-hangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong',
             'endpoint' => 'dlfnext.cn-hongkong.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'dlfnext.ap-southeast-5.aliyuncs.com',
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'dlfnext.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'dlfnext.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'dlfnext.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'dlfnext.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'dlfnext.ap-southeast-1.aliyuncs.com',
         ],
     ],
 ];

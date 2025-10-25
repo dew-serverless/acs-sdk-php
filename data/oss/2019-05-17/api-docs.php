@@ -54,6 +54,9 @@
                     'Status' => [
                         '$ref' => '#/components/schemas/AccessMonitorStatus',
                     ],
+                    'AllowCopy' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'AccessMonitorStatus' => [
@@ -7412,12 +7415,7 @@
                         'type' => 'object',
                         'properties' => [
                             'BucketLoggingStatus' => [
-                                'type' => 'object',
-                                'properties' => [
-                                    'LoggingEnabled' => [
-                                        '$ref' => '#/components/schemas/LoggingEnabled',
-                                    ],
-                                ],
+                                '$ref' => '#/components/schemas/BucketLoggingStatus',
                             ],
                         ],
                     ],
@@ -8746,12 +8744,7 @@
                         'type' => 'object',
                         'properties' => [
                             'AccessMonitorConfiguration' => [
-                                'type' => 'object',
-                                'properties' => [
-                                    'Status' => [
-                                        '$ref' => '#/components/schemas/AccessMonitorStatus',
-                                    ],
-                                ],
+                                '$ref' => '#/components/schemas/AccessMonitorConfiguration',
                             ],
                         ],
                     ],

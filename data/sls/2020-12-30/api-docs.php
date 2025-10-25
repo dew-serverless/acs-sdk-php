@@ -4712,7 +4712,7 @@
             'parameters' => [
                 [
                     'name' => 'project',
-                    'in' => 'path',
+                    'in' => 'host',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -8018,6 +8018,392 @@
                 ],
             ],
         ],
+        'ListElasticsearchIngestions' => [
+            'path' => '/elasticsearchingestions',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+                [
+                    'name' => 'logstore',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+        ],
+        'GetElasticsearchIngestion' => [
+            'path' => '/elasticsearchingestions/{esIngestionName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'esIngestionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteElasticsearchIngestion' => [
+            'path' => '/elasticsearchingestions/{esIngestionName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'esIngestionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateElasticsearchIngestion' => [
+            'path' => '/elasticsearchingestions',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'description' => [
+                                'type' => 'string',
+                            ],
+                            'displayName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'schedule' => [
+                                '$ref' => '#/components/schemas/Schedule',
+                            ],
+                            'configuration' => [
+                                '$ref' => '#/components/schemas/ESIngestionConfiguration',
+                                'required' => true,
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListS3Ingestions' => [
+            'path' => '/s3ingestions',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'logstore',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetS3Ingestion' => [
+            'path' => '/s3ingestions/{s3IngestionName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 's3IngestionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteS3Ingestion' => [
+            'path' => '/s3ingestions/{s3IngestionName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 's3IngestionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateS3Ingestion' => [
+            'path' => '/s3ingestions',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'displayName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'schedule' => [
+                                '$ref' => '#/components/schemas/Schedule',
+                                'required' => false,
+                            ],
+                            'configuration' => [
+                                '$ref' => '#/components/schemas/S3IngestionConfiguration',
+                                'required' => false,
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'CreateOSSIngestion' => [
             'path' => '/ossingestions',
             'methods' => [
@@ -8079,10 +8465,146 @@
                 ],
             ],
         ],
-        'DeleteOSSIngestion' => [
+        'GetOSSIngestion' => [
             'path' => '/ossingestions/{ossIngestionName}',
             'methods' => [
-                'delete',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ossIngestionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListOSSIngestions' => [
+            'path' => '/ossingestions',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'logstore',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StopOSSIngestion' => [
+            'path' => '/ossingestions/{ossIngestionName}?action=STOP',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ossIngestionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StartOSSIngestion' => [
+            'path' => '/ossingestions/{ossIngestionName}?action=START',
+            'methods' => [
+                'put',
             ],
             'schemes' => [
                 'http',
@@ -8182,86 +8704,10 @@
                 ],
             ],
         ],
-        'StartOSSIngestion' => [
-            'path' => '/ossingestions/{ossIngestionName}?action=START',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'project',
-                    'in' => 'host',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ossIngestionName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'StopOSSIngestion' => [
-            'path' => '/ossingestions/{ossIngestionName}?action=STOP',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'project',
-                    'in' => 'host',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ossIngestionName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'GetOSSIngestion' => [
+        'DeleteOSSIngestion' => [
             'path' => '/ossingestions/{ossIngestionName}',
             'methods' => [
-                'get',
+                'delete',
             ],
             'schemes' => [
                 'http',
@@ -8275,9 +8721,7 @@
             'consumes' => [
                 'application/json',
             ],
-            'produces' => [
-                'application/json',
-            ],
+            'produces' => [],
             'deprecated' => false,
             'parameters' => [
                 [
@@ -8294,64 +8738,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ListOSSIngestions' => [
-            'path' => '/ossingestions',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'project',
-                    'in' => 'host',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'offset',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'size',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'logstore',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -12355,10 +12741,10 @@
                 ],
             ],
         ],
-        'CreateS3Ingestion' => [
-            'path' => '/s3ingestions',
+        'StartElasticsearchIngestion' => [
+            'path' => '/elasticsearchingestions/{elasticsearchIngestionName}',
             'methods' => [
-                'post',
+                'put',
             ],
             'schemes' => [
                 'http',
@@ -12378,6 +12764,91 @@
                 [
                     'name' => 'project',
                     'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'elasticsearchIngestionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StopElasticsearchIngestion' => [
+            'path' => '/elasticsearchingestion/{elasticsearchIngestionName}?action=STOP',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'elasticsearchIngestionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateElasticsearchInestion' => [
+            'path' => '/elasticsearchingestions/{elasticsearchIngestionName}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ossIngestionName',
+                    'in' => 'path',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -12389,11 +12860,9 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
-                        'required' => false,
                         'properties' => [
                             'description' => [
                                 'type' => 'string',
-                                'required' => false,
                             ],
                             'displayName' => [
                                 'type' => 'string',
@@ -12401,14 +12870,9 @@
                             ],
                             'schedule' => [
                                 '$ref' => '#/components/schemas/Schedule',
-                                'required' => false,
                             ],
                             'configuration' => [
-                                '$ref' => '#/components/schemas/S3IngestionConfiguration',
-                                'required' => false,
-                            ],
-                            'name' => [
-                                'type' => 'string',
+                                '$ref' => '#/components/schemas/ESIngestionConfiguration',
                                 'required' => true,
                             ],
                         ],
@@ -12416,10 +12880,10 @@
                 ],
             ],
         ],
-        'DeleteS3Ingestion' => [
-            'path' => '/s3ingestions/{s3IngestionName}',
+        'UpdateElasticsearchIngestion' => [
+            'path' => '/elasticsearchingestions/{elasticsearchIngestionName}',
             'methods' => [
-                'delete',
+                'put',
             ],
             'schemes' => [
                 'http',
@@ -12445,107 +12909,35 @@
                     ],
                 ],
                 [
-                    'name' => 's3IngestionName',
+                    'name' => 'elasticsearchIngestionName',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                 ],
-            ],
-        ],
-        'GetS3Ingestion' => [
-            'path' => '/s3ingestions/{s3IngestionName}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
                 [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'project',
-                    'in' => 'host',
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 's3IngestionName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ListS3Ingestions' => [
-            'path' => '/s3ingestions',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'project',
-                    'in' => 'host',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'offset',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'size',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'logstore',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
+                        'type' => 'object',
+                        'properties' => [
+                            'description' => [
+                                'type' => 'string',
+                            ],
+                            'displayName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'schedule' => [
+                                '$ref' => '#/components/schemas/Schedule',
+                            ],
+                            'configuration' => [
+                                '$ref' => '#/components/schemas/ESIngestionConfiguration',
+                                'required' => true,
+                            ],
+                        ],
                     ],
                 ],
             ],

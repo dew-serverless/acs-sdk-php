@@ -2942,6 +2942,7 @@
                         'items' => [
                             'type' => 'integer',
                             'format' => 'int64',
+                            'required' => false,
                         ],
                         'maxItems' => 20,
                     ],
@@ -2973,6 +2974,7 @@
                         'items' => [
                             'type' => 'integer',
                             'format' => 'int64',
+                            'required' => false,
                         ],
                         'maxItems' => 20,
                     ],
@@ -3004,6 +3006,7 @@
                         'items' => [
                             'type' => 'integer',
                             'format' => 'int64',
+                            'required' => false,
                         ],
                         'maxItems' => 20,
                     ],
@@ -3285,6 +3288,7 @@
                         'items' => [
                             'type' => 'integer',
                             'format' => 'int64',
+                            'required' => false,
                         ],
                         'maxItems' => 20,
                     ],
@@ -8284,6 +8288,7 @@
                         'required' => true,
                         'items' => [
                             'type' => 'string',
+                            'required' => false,
                         ],
                         'maxItems' => 100,
                     ],
@@ -8379,6 +8384,7 @@
                         'required' => true,
                         'items' => [
                             'type' => 'string',
+                            'required' => false,
                         ],
                         'maxItems' => 100,
                     ],
@@ -9446,6 +9452,7 @@
                         'required' => true,
                         'items' => [
                             'type' => 'string',
+                            'required' => false,
                         ],
                         'maxItems' => 20,
                     ],
@@ -9478,6 +9485,7 @@
                         'required' => true,
                         'items' => [
                             'type' => 'string',
+                            'required' => false,
                         ],
                         'maxItems' => 20,
                     ],
@@ -9510,6 +9518,7 @@
                         'required' => true,
                         'items' => [
                             'type' => 'string',
+                            'required' => false,
                         ],
                         'maxItems' => 20,
                     ],
@@ -10824,6 +10833,7 @@
                         'required' => false,
                         'items' => [
                             'type' => 'string',
+                            'required' => false,
                         ],
                         'maxItems' => 100,
                     ],

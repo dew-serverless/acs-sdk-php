@@ -333,6 +333,50 @@
                     ],
                 ],
             ],
+            'DocumentDetailItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'id' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'folderId' => [
+                        'type' => 'string',
+                    ],
+                    'folderName' => [
+                        'type' => 'string',
+                    ],
+                    'jobId' => [
+                        'type' => 'string',
+                    ],
+                    'jobStatus' => [
+                        'type' => 'string',
+                    ],
+                    'docName' => [
+                        'type' => 'string',
+                    ],
+                    'originDocName' => [
+                        'type' => 'string',
+                    ],
+                    'docUrl' => [
+                        'type' => 'string',
+                    ],
+                    'originDocUrl' => [
+                        'type' => 'string',
+                    ],
+                    'docHash' => [
+                        'type' => 'string',
+                    ],
+                    'createTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                    'updateTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                ],
+            ],
             'EpdInventoryConstituteItem' => [
                 'type' => 'object',
                 'properties' => [
@@ -2954,6 +2998,37 @@
             'parameters' => [
                 [
                     'name' => 'folderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DetailDocument' => [
+            'path' => '/api/v1/aidoc/document/detail',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'taskId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

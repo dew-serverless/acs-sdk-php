@@ -505,6 +505,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise startAIWorkflowAsync($arguments = [])
  * @method \Dew\Acs\Result stopAIWorkflowTask(array $arguments = [])
  * @method \Http\Promise\Promise stopAIWorkflowTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getAIWorkflowTask(array $arguments = [])
+ * @method \Http\Promise\Promise getAIWorkflowTaskAsync($arguments = [])
  * @method \Dew\Acs\Result createMediaLiveInputSecurityGroup(array $arguments = [])
  * @method \Http\Promise\Promise createMediaLiveInputSecurityGroupAsync($arguments = [])
  * @method \Dew\Acs\Result updateMediaLiveInputSecurityGroup(array $arguments = [])
@@ -737,6 +739,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeNotifyConfigAsync($arguments = [])
  * @method \Dew\Acs\Result cancelIProductionJob(array $arguments = [])
  * @method \Http\Promise\Promise cancelIProductionJobAsync($arguments = [])
+ * @method \Dew\Acs\Result submitSceneMediaSelectionJob(array $arguments = [])
+ * @method \Http\Promise\Promise submitSceneMediaSelectionJobAsync($arguments = [])
  */
 final class IceClient extends AcsClient
 {

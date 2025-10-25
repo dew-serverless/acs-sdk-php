@@ -2989,6 +2989,23 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkerAddr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ScheduleTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
     ],

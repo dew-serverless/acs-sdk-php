@@ -159,6 +159,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getDestinationCidrBlockAsync($arguments = [])
  * @method \Dew\Acs\Result refundVcc(array $arguments = [])
  * @method \Http\Promise\Promise refundVccAsync($arguments = [])
+ * @method \Dew\Acs\Result switchVccConnection(array $arguments = [])
+ * @method \Http\Promise\Promise switchVccConnectionAsync($arguments = [])
  */
 final class EfloClient extends AcsClient
 {

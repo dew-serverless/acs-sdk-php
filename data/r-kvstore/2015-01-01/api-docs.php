@@ -665,6 +665,31 @@
                 ],
             ],
         ],
+        'DestroyInstance' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'ModifyInstanceSpec' => [
             'methods' => [
                 'post',
@@ -7000,6 +7025,23 @@
                     ],
                 ],
             ],
+        ],
+        'DescribeActiveOperationMaintenanceConfig' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
         ],
         'CreateGlobalSecurityIPGroup' => [
             'methods' => [

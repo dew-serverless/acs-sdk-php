@@ -101,6 +101,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listMachineNetworkInfoAsync($arguments = [])
  * @method \Dew\Acs\Result describeNodeType(array $arguments = [])
  * @method \Http\Promise\Promise describeNodeTypeAsync($arguments = [])
+ * @method \Dew\Acs\Result reportNodesStatus(array $arguments = [])
+ * @method \Http\Promise\Promise reportNodesStatusAsync($arguments = [])
+ * @method \Dew\Acs\Result changeNodeGroup(array $arguments = [])
+ * @method \Http\Promise\Promise changeNodeGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result getHyperNode(array $arguments = [])
+ * @method \Http\Promise\Promise getHyperNodeAsync($arguments = [])
+ * @method \Dew\Acs\Result listClusterHyperNodes(array $arguments = [])
+ * @method \Http\Promise\Promise listClusterHyperNodesAsync($arguments = [])
+ * @method \Dew\Acs\Result listHyperNodes(array $arguments = [])
+ * @method \Http\Promise\Promise listHyperNodesAsync($arguments = [])
+ * @method \Dew\Acs\Result listFreeHyperNodes(array $arguments = [])
+ * @method \Http\Promise\Promise listFreeHyperNodesAsync($arguments = [])
  */
 final class EfloControllerClient extends AcsClient
 {

@@ -169,6 +169,14 @@
                     ],
                 ],
                 [
+                    'name' => 'OutId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'PageNo',
                     'in' => 'query',
                     'schema' => [

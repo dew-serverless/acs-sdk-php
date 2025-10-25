@@ -2732,6 +2732,57 @@
                                     ],
                                 ],
                             ],
+                            'AppConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'AppName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'AppType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ImageSelector' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Image' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'InferenceEngine' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'LlmModel' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'StorageMounts' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'StorageId' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'MountPath' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],

@@ -1344,7 +1344,93 @@
                 ],
             ],
         ],
-        'ExecuteOperationSync' => [
+        'ListTagResources' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => true,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteOperationASync' => [
             'methods' => [
                 'post',
                 'get',
@@ -1448,7 +1534,7 @@
                 ],
             ],
         ],
-        'ExecuteOperationASync' => [
+        'ExecuteOperationSync' => [
             'methods' => [
                 'post',
                 'get',
@@ -1518,13 +1604,12 @@
                 ],
             ],
         ],
-        'ListTagResources' => [
+        'ExecuteTask' => [
+            'path' => '',
             'methods' => [
                 'post',
-                'get',
             ],
             'schemes' => [
-                'http',
                 'https',
             ],
             'security' => [
@@ -1535,71 +1620,12 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'ClientToken',
+                    'name' => 'TaskId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RegionId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NextToken',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceType',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceId',
-                    'in' => 'formData',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => true,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Tag',
-                    'in' => 'formData',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
                     ],
                 ],
             ],
@@ -1653,32 +1679,6 @@
                         'additionalProperties' => [
                             'type' => 'any',
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'ExecuteTask' => [
-            'path' => '',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'TaskId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
                     ],
                 ],
             ],

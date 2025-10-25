@@ -149,8 +149,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInternetOpenIpAsync($arguments = [])
  * @method \Dew\Acs\Result describeInternetOpenPort(array $arguments = [])
  * @method \Http\Promise\Promise describeInternetOpenPortAsync($arguments = [])
- * @method \Dew\Acs\Result describeInternetOpenService(array $arguments = [])
- * @method \Http\Promise\Promise describeInternetOpenServiceAsync($arguments = [])
  * @method \Dew\Acs\Result describeNetworkInstanceRelationList(array $arguments = [])
  * @method \Http\Promise\Promise describeNetworkInstanceRelationListAsync($arguments = [])
  * @method \Dew\Acs\Result describeAITrafficAnalysisStatus(array $arguments = [])
@@ -393,6 +391,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyObjectGroupOperationAsync($arguments = [])
  * @method \Dew\Acs\Result deleteControlPolicyTemplate(array $arguments = [])
  * @method \Http\Promise\Promise deleteControlPolicyTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result getTlsInspectCertificateDownloadUrl(array $arguments = [])
+ * @method \Http\Promise\Promise getTlsInspectCertificateDownloadUrlAsync($arguments = [])
+ * @method \Dew\Acs\Result listTlsInspectCACertificates(array $arguments = [])
+ * @method \Http\Promise\Promise listTlsInspectCACertificatesAsync($arguments = [])
  */
 final class CloudfwClient extends AcsClient
 {

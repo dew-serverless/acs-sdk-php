@@ -31,12 +31,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getResourcePriceAsync($arguments = [])
  * @method \Dew\Acs\Result getResourceRenewPrice(array $arguments = [])
  * @method \Http\Promise\Promise getResourceRenewPriceAsync($arguments = [])
- * @method \Dew\Acs\Result startTaskForDistributeImage(array $arguments = [])
- * @method \Http\Promise\Promise startTaskForDistributeImageAsync($arguments = [])
  * @method \Dew\Acs\Result listImage(array $arguments = [])
  * @method \Http\Promise\Promise listImageAsync($arguments = [])
  * @method \Dew\Acs\Result createImageByInstance(array $arguments = [])
  * @method \Http\Promise\Promise createImageByInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result startTaskForDistributeImage(array $arguments = [])
+ * @method \Http\Promise\Promise startTaskForDistributeImageAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteImage(array $arguments = [])
+ * @method \Http\Promise\Promise deleteImageAsync($arguments = [])
  * @method \Dew\Acs\Result createAppInstanceGroup(array $arguments = [])
  * @method \Http\Promise\Promise createAppInstanceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result getAppInstanceGroup(array $arguments = [])
@@ -113,6 +115,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise renewWuyingServerAsync($arguments = [])
  * @method \Dew\Acs\Result deleteWuyingServer(array $arguments = [])
  * @method \Http\Promise\Promise deleteWuyingServerAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyBrowserInstanceGroup(array $arguments = [])
+ * @method \Http\Promise\Promise modifyBrowserInstanceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result listPublishedAppInfo(array $arguments = []) {@since 2021-09-03}
  * @method \Http\Promise\Promise listPublishedAppInfoAsync($arguments = []) {@since 2021-09-03}
  * @method \Dew\Acs\Result listRunningApps(array $arguments = []) {@since 2021-09-03}

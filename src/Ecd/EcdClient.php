@@ -447,6 +447,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeEcdReportTasksAsync($arguments = [])
  * @method \Dew\Acs\Result createEcdReportTask(array $arguments = [])
  * @method \Http\Promise\Promise createEcdReportTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result describeGlobalDesktopRecords(array $arguments = [])
+ * @method \Http\Promise\Promise describeGlobalDesktopRecordsAsync($arguments = [])
  * @method \Dew\Acs\Result describeGlobalDesktops(array $arguments = []) {@since 2020-10-02}
  * @method \Http\Promise\Promise describeGlobalDesktopsAsync($arguments = []) {@since 2020-10-02}
  * @method \Dew\Acs\Result describeUserResources(array $arguments = []) {@since 2020-10-02}

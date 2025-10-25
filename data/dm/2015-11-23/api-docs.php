@@ -2376,7 +2376,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CustomDetail',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2460,6 +2467,13 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TemplateParams',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2800,17 +2814,37 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'AttachmentUrl' => [
+                                'AttachmentName' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'AttachmentName' => [
+                                'AttachmentUrl' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
                             ],
                         ],
                         'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'Template',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'TemplateId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TemplateData' => [
+                                'type' => 'object',
+                                'additionalProperties' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

@@ -1182,6 +1182,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'OcrValueStandard',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'BankMetaVerifyIntl' => [

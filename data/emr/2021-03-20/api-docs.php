@@ -4147,6 +4147,7 @@
                             'cn-north-2-gov-1',
                             'cn-wulanchabu-acdr-1',
                             'cn-shanghai-cloudspe',
+                            'na-south-1',
                         ],
                     ],
                 ],

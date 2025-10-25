@@ -87,6 +87,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createDownloadAsync($arguments = []) {@since 2021-01-01}
  * @method \Dew\Acs\Result describeDownloadTask(array $arguments = []) {@since 2021-01-01}
  * @method \Http\Promise\Promise describeDownloadTaskAsync($arguments = []) {@since 2021-01-01}
+ * @method \Dew\Acs\Result retryDownloadTask(array $arguments = []) {@since 2021-01-01}
+ * @method \Http\Promise\Promise retryDownloadTaskAsync($arguments = []) {@since 2021-01-01}
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = []) {@since 2021-01-01}
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = []) {@since 2021-01-01}
  * @method \Dew\Acs\Result describeBackupPolicy(array $arguments = []) {@since 2021-01-01}

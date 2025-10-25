@@ -103,6 +103,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise addFolderAsync($arguments = [])
  * @method \Dew\Acs\Result deleteFolder(array $arguments = [])
  * @method \Http\Promise\Promise deleteFolderAsync($arguments = [])
+ * @method \Dew\Acs\Result detailDocument(array $arguments = [])
+ * @method \Http\Promise\Promise detailDocumentAsync($arguments = [])
  * @method \Dew\Acs\Result deleteDocument(array $arguments = [])
  * @method \Http\Promise\Promise deleteDocumentAsync($arguments = [])
  * @method \Dew\Acs\Result getDocumentAnalyzeResult(array $arguments = [])

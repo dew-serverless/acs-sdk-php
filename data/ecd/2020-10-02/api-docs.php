@@ -816,6 +816,14 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'AccessType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'StartDesktops' => [

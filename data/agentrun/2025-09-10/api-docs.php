@@ -3346,6 +3346,18 @@
                                 'format' => 'int32',
                                 'required' => true,
                             ],
+                            'permanent' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'strategy' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -3412,21 +3424,36 @@
                     ],
                 ],
                 [
-                    'name' => 'shortTtl',
-                    'in' => 'query',
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'longTtl',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'shortTtl' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'longTtl' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'permanent' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'strategy' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

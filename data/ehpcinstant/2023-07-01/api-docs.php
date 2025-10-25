@@ -1083,14 +1083,6 @@
                     ],
                 ],
                 [
-                    'name' => 'JobScheduler',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'SecurityPolicy',
                     'in' => 'query',
                     'style' => 'json',

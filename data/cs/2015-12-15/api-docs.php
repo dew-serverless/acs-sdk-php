@@ -9624,12 +9624,12 @@
             'endpoint' => 'cs.na-south-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wulanchabu-gic-1',
-            'endpoint' => 'cs.cn-wulanchabu-gic-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'us-southeast-1',
             'endpoint' => 'cs.us-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu-gic-1',
+            'endpoint' => 'cs.cn-wulanchabu-gic-1.aliyuncs.com',
         ],
     ],
 ];

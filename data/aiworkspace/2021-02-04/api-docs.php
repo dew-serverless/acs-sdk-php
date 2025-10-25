@@ -7399,11 +7399,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Operator' => [
+                                'Column' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Column' => [
+                                'Operator' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -8287,31 +8287,9 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
-                                        'OrderType' => [
-                                            'type' => 'string',
+                                        'AutoRenew' => [
+                                            'type' => 'boolean',
                                             'required' => false,
-                                        ],
-                                        'InstanceProperties' => [
-                                            'type' => 'array',
-                                            'required' => false,
-                                            'items' => [
-                                                'type' => 'object',
-                                                'required' => false,
-                                                'properties' => [
-                                                    'Value' => [
-                                                        'type' => 'string',
-                                                        'required' => false,
-                                                    ],
-                                                    'Code' => [
-                                                        'type' => 'string',
-                                                        'required' => false,
-                                                    ],
-                                                    'Name' => [
-                                                        'type' => 'string',
-                                                        'required' => false,
-                                                    ],
-                                                ],
-                                            ],
                                         ],
                                         'ProductCode' => [
                                             'type' => 'string',
@@ -8321,18 +8299,40 @@
                                             'type' => 'string',
                                             'required' => false,
                                         ],
-                                        'PricingCycle' => [
+                                        'OrderType' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
-                                        'AutoRenew' => [
-                                            'type' => 'boolean',
+                                        'PricingCycle' => [
+                                            'type' => 'string',
                                             'required' => false,
                                         ],
                                         'Duration' => [
                                             'type' => 'integer',
                                             'format' => 'int64',
                                             'required' => false,
+                                        ],
+                                        'InstanceProperties' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Code' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Value' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
                                         ],
                                     ],
                                 ],

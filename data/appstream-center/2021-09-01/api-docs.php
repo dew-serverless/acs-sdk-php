@@ -428,77 +428,6 @@
                 ],
             ],
         ],
-        'StartTaskForDistributeImage' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ImageId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'VersionId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RetryType',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DestinationRegionList',
-                    'in' => 'formData',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-                [
-                    'name' => 'ProductType',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SourceRegion',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'ListImage' => [
             'methods' => [
                 'post',
@@ -816,6 +745,102 @@
                 ],
                 [
                     'name' => 'ProductType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StartTaskForDistributeImage' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ImageId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'VersionId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RetryType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DestinationRegionList',
+                    'in' => 'formData',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'ProductType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SourceRegion',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteImage' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ImageId',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -3675,6 +3700,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ServerPortRange',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListWuyingServer' => [
@@ -4023,6 +4056,255 @@
                         'type' => 'string',
                         'required' => true,
                         'maxItems' => 100,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyBrowserInstanceGroup' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'BrowserInstanceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CloudBrowserName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Network',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AccessRestriction' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RestrictedURLs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'URL' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'RestrictedURLId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'RemoveRestrictedURLIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Policy',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ClipboardPolicy' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Clipboard' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ClipboardScope' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'TextClipboard' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'RichTextClipboard' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'FileClipboard' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ClipboardReadLimit' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'ClipboardWriteLimit' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'VideoPolicy' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'FrameRate' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'WatermarkPolicy' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'WatermarkSwitch' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'WatermarkTypes' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'PolicyId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PolicyVersion' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DisconnectKeepSession' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DisconnectKeepSessionTime' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Html5FileTransfer' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Timers',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'TimerType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Interval' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'BrowserConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Homepage' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'BrowserParam' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Bookmarks' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'BookmarkId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'BookmarkName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'BookmarkURL' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'BookmarkFolder' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'RemoveBookmarks' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

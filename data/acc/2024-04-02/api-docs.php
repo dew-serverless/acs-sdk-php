@@ -404,5 +404,9 @@
             'regionId' => 'cn-wulanchabu',
             'endpoint' => 'acc.cn-wulanchabu.aliyuncs.com',
         ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'acc.ap-southeast-1.aliyuncs.com',
+        ],
     ],
 ];

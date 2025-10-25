@@ -35,10 +35,14 @@ class AcsException extends \Exception
     }
 
     /**
-     * @param  \Dew\Acs\Result<array<mixed>>  $result
+     * Create an exception from the given result.
+     *
+     * @param  \Dew\Acs\Result<array<mixed>>|array<mixed>  $result
      */
-    public static function makeFromResult(Result $result): static
+    public static function makeFromResult(Result|array $result): static
     {
+        $result = $result instanceof Result ? $result : new Result($result);
+
         /** @var string */
         $message = $result->get(static::errorMessage(), 'Could not communicate with Alibaba Cloud.');
 

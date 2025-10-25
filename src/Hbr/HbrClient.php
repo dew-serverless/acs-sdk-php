@@ -169,6 +169,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteUdmEcsInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteUdmDisk(array $arguments = [])
  * @method \Http\Promise\Promise deleteUdmDiskAsync($arguments = [])
+ * @method \Dew\Acs\Result listProtectedResources(array $arguments = [])
+ * @method \Http\Promise\Promise listProtectedResourcesAsync($arguments = [])
  */
 final class HbrClient extends AcsClient
 {

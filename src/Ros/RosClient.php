@@ -179,6 +179,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getServiceProvisionsAsync($arguments = [])
  * @method \Dew\Acs\Result getFeatureDetails(array $arguments = [])
  * @method \Http\Promise\Promise getFeatureDetailsAsync($arguments = [])
+ * @method \Dew\Acs\Result enableServiceAccess(array $arguments = [])
+ * @method \Http\Promise\Promise enableServiceAccessAsync($arguments = [])
+ * @method \Dew\Acs\Result enableServices(array $arguments = [])
+ * @method \Http\Promise\Promise enableServicesAsync($arguments = [])
+ * @method \Dew\Acs\Result getServiceAccess(array $arguments = [])
+ * @method \Http\Promise\Promise getServiceAccessAsync($arguments = [])
+ * @method \Dew\Acs\Result listSummaries(array $arguments = [])
+ * @method \Http\Promise\Promise listSummariesAsync($arguments = [])
  */
 final class RosClient extends AcsClient
 {

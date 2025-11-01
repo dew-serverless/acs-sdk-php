@@ -2271,6 +2271,54 @@
             'deprecated' => false,
             'parameters' => [],
         ],
+        'CreateDiagnosis' => [
+            'path' => '/api/v2/diagnoses',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'InstanceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ProblemCategory' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'GmtFailureTime' => [
+                                'type' => 'string',
+                                'format' => 'iso8601_normal',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'GetToken' => [
             'path' => '/api/v2/tokens',
             'methods' => [

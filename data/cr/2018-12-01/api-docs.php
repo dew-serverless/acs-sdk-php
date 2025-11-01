@@ -66,6 +66,27 @@
                     ],
                 ],
             ],
+            'RouteItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'InstanceDomain' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'StorageDomain' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'EndpointType' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'Internet',
+                            'VPC',
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
     'apis' => [

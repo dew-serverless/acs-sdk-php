@@ -166,6 +166,15 @@
                     'CreateReport' => [
                         'type' => 'boolean',
                     ],
+                    'WithStorageClass' => [
+                        'type' => 'boolean',
+                    ],
+                    'TargetStorageClass' => [
+                        'type' => 'string',
+                    ],
+                    'WithLastModifyTime' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'CreateReportInfo' => [
@@ -296,6 +305,12 @@
                     'Status' => [
                         'type' => 'string',
                     ],
+                    'AgentVersion' => [
+                        'type' => 'string',
+                    ],
+                    'AgentIP' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'GetJobResp' => [
@@ -361,6 +376,15 @@
                     'ScheduleRule' => [
                         '$ref' => '#/components/schemas/ScheduleRule',
                     ],
+                    'WithStorageClass' => [
+                        'type' => 'boolean',
+                    ],
+                    'TargetStorageClass' => [
+                        'type' => 'string',
+                    ],
+                    'WithLastModifyTime' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'GetJobResultResp' => [
@@ -415,6 +439,14 @@
                     ],
                     'Version' => [
                         'type' => 'string',
+                    ],
+                    'SkippedObjectCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SkippedObjectSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],

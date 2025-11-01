@@ -9359,6 +9359,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'AllowedCIDRs' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

@@ -526,6 +526,7 @@
                                     'FIFO',
                                     'DELAY',
                                     'TRANSACTION',
+                                    'LITE',
                                 ],
                             ],
                             'remark' => [
@@ -533,6 +534,11 @@
                                 'required' => false,
                             ],
                             'maxSendTps' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'liteTopicExpiration' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => false,
@@ -548,8 +554,8 @@
                 'patch',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -587,6 +593,11 @@
                                 'required' => false,
                             ],
                             'maxSendTps' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'liteTopicExpiration' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => false,
@@ -705,8 +716,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -816,6 +827,18 @@
                             'maxReceiveTps' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'messageModel' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'CLUSTERING',
+                                    'LITE_SELECTIVE',
+                                ],
+                            ],
+                            'topicName' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -953,8 +976,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -1219,8 +1242,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -1243,6 +1266,22 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'topicName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'liteTopicName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1281,6 +1320,14 @@
                 ],
                 [
                     'name' => 'topicName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'liteTopicName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1486,6 +1533,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'liteTopicName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetMessageDetail' => [
@@ -1579,6 +1634,10 @@
                                 'required' => false,
                             ],
                             'messageKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'liteTopicName' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -1733,6 +1792,14 @@
                 ],
                 [
                     'name' => 'messageKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'liteTopicName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

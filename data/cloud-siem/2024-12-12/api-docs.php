@@ -5374,6 +5374,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DetectionRuleTemplateId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DetectionRuleTemplateVersion',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateDetectionRule' => [

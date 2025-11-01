@@ -408,5 +408,9 @@
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'acc.ap-southeast-1.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'acc.cn-shenzhen.aliyuncs.com',
+        ],
     ],
 ];

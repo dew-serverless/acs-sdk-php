@@ -1936,6 +1936,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EmployeeCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
     ],

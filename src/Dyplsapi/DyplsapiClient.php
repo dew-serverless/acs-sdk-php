@@ -119,6 +119,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise bindAxbFixedLineAsync($arguments = [])
  * @method \Dew\Acs\Result deleteAxbBindFixedLine(array $arguments = [])
  * @method \Http\Promise\Promise deleteAxbBindFixedLineAsync($arguments = [])
+ * @method \Dew\Acs\Result unbindSubs700(array $arguments = [])
+ * @method \Http\Promise\Promise unbindSubs700Async($arguments = [])
+ * @method \Dew\Acs\Result bindAxb700(array $arguments = [])
+ * @method \Http\Promise\Promise bindAxb700Async($arguments = [])
+ * @method \Dew\Acs\Result updateSubs700(array $arguments = [])
+ * @method \Http\Promise\Promise updateSubs700Async($arguments = [])
+ * @method \Dew\Acs\Result bindGxb700(array $arguments = [])
+ * @method \Http\Promise\Promise bindGxb700Async($arguments = [])
  */
 final class DyplsapiClient extends AcsClient
 {

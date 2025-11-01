@@ -3794,14 +3794,6 @@
                     ],
                 ],
                 [
-                    'name' => 'HealthCheckURL',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'LogicalRegionId',
                     'in' => 'query',
                     'schema' => [
@@ -6203,6 +6195,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SecurityContext',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeployK8sApplication' => [
@@ -6774,6 +6774,14 @@
                 ],
                 [
                     'name' => 'CustomAgentVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SecurityContext',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

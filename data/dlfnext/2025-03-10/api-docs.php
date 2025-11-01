@@ -569,12 +569,6 @@
             'IcebergSnapshot' => [
                 'type' => 'object',
                 'properties' => [
-                    'summary' => [
-                        'type' => 'object',
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
-                    ],
                     'sequenceNumber' => [
                         'type' => 'integer',
                         'format' => 'int64',
@@ -587,10 +581,6 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'id' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
                     'addedRows' => [
                         'type' => 'integer',
                         'format' => 'int64',
@@ -598,9 +588,25 @@
                     'operation' => [
                         'type' => 'string',
                     ],
+                    'id' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                     'parentId' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'idString' => [
+                        'type' => 'string',
+                    ],
+                    'parentIdString' => [
+                        'type' => 'string',
+                    ],
+                    'summary' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -1211,15 +1217,31 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'commitIdentifier' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
                     'timeMillis' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
                     'statistics' => [
+                        'type' => 'string',
+                    ],
+                    'commitIdentifier' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'parentIdString' => [
+                        'type' => 'string',
+                    ],
+                    'sequenceNumber' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'summary' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'idString' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1272,6 +1294,12 @@
                     'storageActionTimestamp' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'icebergTableMetadata' => [
+                        '$ref' => '#/components/schemas/IcebergTableMetadata',
+                    ],
+                    'type' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2270,6 +2298,53 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetTableCompaction' => [
+            'path' => '/dlf/v1/{catalogId}/databases/{database}/tables/{table}/compaction',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'catalogId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'database',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'table',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

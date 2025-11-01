@@ -5456,6 +5456,970 @@
                 ],
             ],
         ],
+        'UpdatePipelineByAsync' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Context',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ProjectId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'Env' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'UpdateCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ScheduleConfig' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Comment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PipelineConfig' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'Steps' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'PluginConfig' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'StepType' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'StepName' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'IsDistribute' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'Key' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'Hops' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Target' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'SendTo' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'Source' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'NodeInfo' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'NodeName' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'NodeId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'PipelineId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'FileId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'Directory' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'PipelineType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Mode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Submit' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'PipelineJson' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Settings' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'OfflinePipelineByAsync' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Context',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ProjectId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'Env' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OfflineCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Delete' => [
+                                'type' => 'boolean',
+                                'required' => true,
+                            ],
+                            'Comment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'NodeId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PipelineId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'FileId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetPipelineById' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Context',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ProjectId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'Env' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'QueryId',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'NodeId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PipelineId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'FileId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'OfflinePipeline' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Context',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ProjectId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'Env' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OfflineCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Delete' => [
+                                'type' => 'boolean',
+                                'required' => true,
+                            ],
+                            'Comment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'NodeId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PipelineId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'FileId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreatePipeline' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Context',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ProjectId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'Env' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CreateCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ScheduleConfig' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Comment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PipelineConfig' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'Steps' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'PluginConfig' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'StepType' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'StepName' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'IsDistribute' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'Key' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'Hops' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Target' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'SendTo' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'Source' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'NodeInfo' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'NodeName' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'NodeId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'PipelineId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'FileId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'Directory' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'PipelineType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Mode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Submit' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'PipelineJson' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Settings' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetPipelineAsyncResult' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Context',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ProjectId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'Env' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AsyncId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreatePipelineByAsync' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Context',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ProjectId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'Env' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CreateCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ScheduleConfig' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Comment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PipelineConfig' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'Steps' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'PluginConfig' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'StepType' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'StepName' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'IsDistribute' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'Key' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'Hops' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Target' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'SendTo' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'Source' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'NodeInfo' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'NodeName' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'NodeId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'PipelineId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'FileId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'Directory' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'PipelineType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Mode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Submit' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'PipelineJson' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Settings' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdatePipeline' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Context',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ProjectId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'Env' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'UpdateCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ScheduleConfig' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Comment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PipelineConfig' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'Steps' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'PluginConfig' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'StepType' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'StepName' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'IsDistribute' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'Key' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'Hops' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Target' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'SendTo' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'Source' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'NodeInfo' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'NodeName' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'NodeId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'PipelineId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'FileId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'Directory' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'PipelineType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Mode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Submit' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'PipelineJson' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Settings' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'CreatePipelineNode' => [
             'methods' => [
                 'post',
@@ -7714,6 +8678,472 @@
                                         'required' => true,
                                     ],
                                 ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteRegisterLineage' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DeleteRegisterLineageCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Source' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'ReferenceType' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'Guid' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'MetadataType' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'MetadataSubType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Catalog' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Schema' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Env' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Name' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExtProperties' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'Target' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'ReferenceType' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'Guid' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'MetadataType' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'MetadataSubType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Catalog' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Schema' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Env' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Name' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExtProperties' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'DetailedLineages' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'IsDirect' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'Source' => [
+                                            'type' => 'object',
+                                            'required' => true,
+                                            'properties' => [
+                                                'ReferenceType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Guid' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'ParentGuid' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MetadataType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Catalog' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Schema' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Env' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'ExtProperties' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'Target' => [
+                                            'type' => 'object',
+                                            'required' => true,
+                                            'properties' => [
+                                                'ReferenceType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Guid' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'ParentGuid' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MetadataType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Catalog' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Schema' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Env' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'ExtProperties' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'CascadeDeleteLineage' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'TenantId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'UserId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'AddRegisterLineage' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AddRegisterLineageCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Source' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'ReferenceType' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'Guid' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'MetadataType' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'MetadataSubType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Catalog' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Schema' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Env' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Name' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExtProperties' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'Target' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'ReferenceType' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'Guid' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'MetadataType' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'MetadataSubType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Catalog' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Schema' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Env' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Name' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExtProperties' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'DetailedLineages' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Source' => [
+                                            'type' => 'object',
+                                            'required' => true,
+                                            'properties' => [
+                                                'ReferenceType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Guid' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'ParentGuid' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MetadataType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Catalog' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Schema' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Env' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'ExtProperties' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'Target' => [
+                                            'type' => 'object',
+                                            'required' => true,
+                                            'properties' => [
+                                                'ReferenceType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Guid' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'ParentGuid' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MetadataType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Catalog' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Schema' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Env' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'ExtProperties' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'IsDirect' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'CheckAssetExist' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'RelationProperties' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'TenantId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'UserId' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -10362,6 +11792,14 @@
                                         ],
                                     ],
                                 ],
+                            ],
+                            'ApplyDev' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'ApplyProd' => [
+                                'type' => 'boolean',
+                                'required' => false,
                             ],
                         ],
                     ],

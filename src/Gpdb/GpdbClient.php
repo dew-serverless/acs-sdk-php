@@ -451,6 +451,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise chatWithKnowledgeBaseAsync($arguments = [])
  * @method \Dew\Acs\Result chatWithKnowledgeBaseStream(array $arguments = [])
  * @method \Http\Promise\Promise chatWithKnowledgeBaseStreamAsync($arguments = [])
+ * @method \Dew\Acs\Result queryKnowledgeBasesContent(array $arguments = [])
+ * @method \Http\Promise\Promise queryKnowledgeBasesContentAsync($arguments = [])
  */
 final class GpdbClient extends AcsClient
 {

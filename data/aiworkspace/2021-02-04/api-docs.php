@@ -3738,6 +3738,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'UserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateWorkspace' => [

@@ -597,6 +597,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise fixSqlByMetaAgentAsync($arguments = [])
  * @method \Dew\Acs\Result answerSqlSyntaxByMetaAgent(array $arguments = [])
  * @method \Http\Promise\Promise answerSqlSyntaxByMetaAgentAsync($arguments = [])
+ * @method \Dew\Acs\Result listUserOwnedResources(array $arguments = [])
+ * @method \Http\Promise\Promise listUserOwnedResourcesAsync($arguments = [])
  */
 final class DmsEnterpriseClient extends AcsClient
 {

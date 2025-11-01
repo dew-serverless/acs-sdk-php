@@ -12480,6 +12480,7 @@
                             'Manual',
                             'SupplementData',
                             'SmokeTest',
+                            'TriggerWorkflow',
                         ],
                     ],
                 ],

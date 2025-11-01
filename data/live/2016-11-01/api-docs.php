@@ -4442,6 +4442,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DeInterlaced',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'AddRtsLiveStreamTranscode' => [
@@ -4817,6 +4825,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DeInterlaced',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

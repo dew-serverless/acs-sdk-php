@@ -955,6 +955,18 @@
                     'SystemReservedMemory' => [
                         'type' => 'string',
                     ],
+                    'AncestorQuotaWorkloadNum' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SelfQuotaWorkloadNum' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DescendantQuotaWorkloadNum' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                 ],
             ],
             'NodeGPUMetric' => [

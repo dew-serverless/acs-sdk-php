@@ -125,6 +125,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateComponentAssetAsync($arguments = []) {@since 2025-09-03}
  * @method \Dew\Acs\Result listComponentAssets(array $arguments = []) {@since 2025-09-03}
  * @method \Http\Promise\Promise listComponentAssetsAsync($arguments = []) {@since 2025-09-03}
+ * @method \Dew\Acs\Result getPlaybook(array $arguments = []) {@since 2025-09-03}
+ * @method \Http\Promise\Promise getPlaybookAsync($arguments = []) {@since 2025-09-03}
+ * @method \Dew\Acs\Result listPlaybooks(array $arguments = []) {@since 2025-09-03}
+ * @method \Http\Promise\Promise listPlaybooksAsync($arguments = []) {@since 2025-09-03}
+ * @method \Dew\Acs\Result updatePlaybook(array $arguments = []) {@since 2025-09-03}
+ * @method \Http\Promise\Promise updatePlaybookAsync($arguments = []) {@since 2025-09-03}
  */
 final class SophonsoarClient extends AcsClient
 {

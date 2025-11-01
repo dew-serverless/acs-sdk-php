@@ -2449,6 +2449,54 @@
                 ],
             ],
         ],
+        'InstanceHealer' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceIdList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'Timeout',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Strategy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'BatchGetAcpConnectionTicket' => [
             'methods' => [
                 'get',
@@ -3079,17 +3127,25 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
                             ],
                         ],
                         'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'SystemType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -5466,6 +5522,20 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 50,
                     ],
                 ],
             ],

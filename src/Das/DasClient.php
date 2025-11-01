@@ -211,6 +211,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteCloudBenchTaskAsync($arguments = [])
  * @method \Dew\Acs\Result deleteStopGateway(array $arguments = [])
  * @method \Http\Promise\Promise deleteStopGatewayAsync($arguments = [])
+ * @method \Dew\Acs\Result getDasAgentSSE(array $arguments = [])
+ * @method \Http\Promise\Promise getDasAgentSSEAsync($arguments = [])
  */
 final class DasClient extends AcsClient
 {

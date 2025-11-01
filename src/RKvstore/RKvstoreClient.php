@@ -89,6 +89,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise lockDBInstanceWriteAsync($arguments = [])
  * @method \Dew\Acs\Result unlockDBInstanceWrite(array $arguments = [])
  * @method \Http\Promise\Promise unlockDBInstanceWriteAsync($arguments = [])
+ * @method \Dew\Acs\Result rebootProxy(array $arguments = [])
+ * @method \Http\Promise\Promise rebootProxyAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceNetExpireTime(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceNetExpireTimeAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDBInstanceConnectionString(array $arguments = [])
@@ -279,6 +281,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyDBInstanceMonitorAsync($arguments = [])
  * @method \Dew\Acs\Result describeTags(array $arguments = [])
  * @method \Http\Promise\Promise describeTagsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDbInstanceConnectivity(array $arguments = [])
+ * @method \Http\Promise\Promise describeDbInstanceConnectivityAsync($arguments = [])
  */
 final class RKvstoreClient extends AcsClient
 {

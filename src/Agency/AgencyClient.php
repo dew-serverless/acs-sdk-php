@@ -69,6 +69,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteCouponTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result couponApprovalStatusList(array $arguments = [])
  * @method \Http\Promise\Promise couponApprovalStatusListAsync($arguments = [])
+ * @method \Dew\Acs\Result getCommissionableProducts(array $arguments = [])
+ * @method \Http\Promise\Promise getCommissionableProductsAsync($arguments = [])
  * @method \Dew\Acs\Result getBillDetailFileList(array $arguments = []) {@since 2025-02-27}
  * @method \Http\Promise\Promise getBillDetailFileListAsync($arguments = []) {@since 2025-02-27}
  * @method \Dew\Acs\Result getSubPartnerOrderList(array $arguments = []) {@since 2025-02-27}

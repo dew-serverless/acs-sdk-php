@@ -81,6 +81,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listDataLakeFunctionNameAsync($arguments = [])
  * @method \Dew\Acs\Result getNotebookAndSubmitTask(array $arguments = [])
  * @method \Http\Promise\Promise getNotebookAndSubmitTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getNotebookTaskStatus(array $arguments = [])
+ * @method \Http\Promise\Promise getNotebookTaskStatusAsync($arguments = [])
  */
 final class DmsClient extends AcsClient
 {

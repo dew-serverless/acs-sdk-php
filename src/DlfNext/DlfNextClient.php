@@ -39,6 +39,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listDatabasesAsync($arguments = [])
  * @method \Dew\Acs\Result listDatabaseDetails(array $arguments = [])
  * @method \Http\Promise\Promise listDatabaseDetailsAsync($arguments = [])
+ * @method \Dew\Acs\Result getTableCompaction(array $arguments = [])
+ * @method \Http\Promise\Promise getTableCompactionAsync($arguments = [])
  * @method \Dew\Acs\Result getTable(array $arguments = [])
  * @method \Http\Promise\Promise getTableAsync($arguments = [])
  * @method \Dew\Acs\Result createTable(array $arguments = [])

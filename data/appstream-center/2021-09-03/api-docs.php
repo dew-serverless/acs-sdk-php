@@ -609,6 +609,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AppInstancePersistentId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'StopApp' => [

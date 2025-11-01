@@ -299,6 +299,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeApplicationMseServiceAsync($arguments = [])
  * @method \Dew\Acs\Result batchRestartApplications(array $arguments = [])
  * @method \Http\Promise\Promise batchRestartApplicationsAsync($arguments = [])
+ * @method \Dew\Acs\Result updateNamespaceSlsConfigs(array $arguments = [])
+ * @method \Http\Promise\Promise updateNamespaceSlsConfigsAsync($arguments = [])
  */
 final class SaeClient extends AcsClient
 {

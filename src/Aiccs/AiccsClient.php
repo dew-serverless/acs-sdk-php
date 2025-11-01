@@ -7,6 +7,10 @@ namespace Dew\Acs\Aiccs;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result queryAiVoiceAgentDetail(array $arguments = []) {@since 2019-10-15}
+ * @method \Http\Promise\Promise queryAiVoiceAgentDetailAsync($arguments = []) {@since 2019-10-15}
+ * @method \Dew\Acs\Result pageQueryAgentList(array $arguments = []) {@since 2019-10-15}
+ * @method \Http\Promise\Promise pageQueryAgentListAsync($arguments = []) {@since 2019-10-15}
  * @method \Dew\Acs\Result queryConversationDetailInfo(array $arguments = []) {@since 2019-10-15}
  * @method \Http\Promise\Promise queryConversationDetailInfoAsync($arguments = []) {@since 2019-10-15}
  * @method \Dew\Acs\Result queryAiCallDetailPage(array $arguments = []) {@since 2019-10-15}

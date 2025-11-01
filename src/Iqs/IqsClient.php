@@ -21,6 +21,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getIqsUsageAsync($arguments = [])
  * @method \Dew\Acs\Result readPageBasic(array $arguments = [])
  * @method \Http\Promise\Promise readPageBasicAsync($arguments = [])
+ * @method \Dew\Acs\Result readPageScrape(array $arguments = [])
+ * @method \Http\Promise\Promise readPageScrapeAsync($arguments = [])
  */
 final class IqsClient extends AcsClient
 {

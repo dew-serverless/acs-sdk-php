@@ -328,13 +328,6 @@
                             'AsrLanguageId' => [
                                 'type' => 'string',
                             ],
-                            'CustomParams' => [
-                                'type' => 'string',
-                            ],
-                            'VadDuration' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
                             'AsrHotWords' => [
                                 'type' => 'array',
                                 'items' => [
@@ -345,31 +338,21 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
+                            'CustomParams' => [
+                                'type' => 'string',
+                            ],
+                            'VadDuration' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
                         ],
                     ],
                     'LlmConfig' => [
                         'type' => 'object',
                         'properties' => [
-                            'FunctionMap' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'Function' => [
-                                            'type' => 'string',
-                                        ],
-                                        'MatchFunction' => [
-                                            'type' => 'string',
-                                        ],
-                                    ],
-                                ],
-                            ],
                             'LlmHistoryLimit' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
-                            ],
-                            'LlmCompleteReply' => [
-                                'type' => 'boolean',
                             ],
                             'LlmHistory' => [
                                 'type' => 'array',
@@ -388,40 +371,43 @@
                             'LlmSystemPrompt' => [
                                 'type' => 'string',
                             ],
+                            'BailianAppParams' => [
+                                'type' => 'string',
+                            ],
                             'OpenAIExtraQuery' => [
                                 'type' => 'string',
                             ],
-                            'OutputMaxDelay' => [
-                                'type' => 'string',
+                            'LlmCompleteReply' => [
+                                'type' => 'boolean',
                             ],
-                            'BailianAppParams' => [
-                                'type' => 'string',
+                            'FunctionMap' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Function' => [
+                                            'type' => 'string',
+                                        ],
+                                        'MatchFunction' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
                             ],
                             'OutputMinLength' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                            ],
+                            'OutputMaxDelay' => [
+                                'type' => 'string',
                             ],
                         ],
                     ],
                     'TtsConfig' => [
                         'type' => 'object',
                         'properties' => [
-                            'PronunciationRules' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'Type' => [
-                                            'type' => 'string',
-                                        ],
-                                        'Word' => [
-                                            'type' => 'string',
-                                        ],
-                                        'Pronunciation' => [
-                                            'type' => 'string',
-                                        ],
-                                    ],
-                                ],
+                            'VoiceId' => [
+                                'type' => 'string',
                             ],
                             'VoiceIdList' => [
                                 'type' => 'array',
@@ -429,16 +415,30 @@
                                     'type' => 'string',
                                 ],
                             ],
-                            'VoiceId' => [
-                                'type' => 'string',
-                            ],
-                            'Emotion' => [
-                                'type' => 'string',
+                            'PronunciationRules' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Word' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Pronunciation' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Type' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
                             ],
                             'ModelId' => [
                                 'type' => 'string',
                             ],
                             'LanguageId' => [
+                                'type' => 'string',
+                            ],
+                            'Emotion' => [
                                 'type' => 'string',
                             ],
                             'SpeechRate' => [
@@ -450,24 +450,20 @@
                     'InterruptConfig' => [
                         'type' => 'object',
                         'properties' => [
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
+                            ],
                             'InterruptWords' => [
                                 'type' => 'array',
                                 'items' => [
                                     'type' => 'string',
                                 ],
                             ],
-                            'EnableVoiceInterrupt' => [
-                                'type' => 'boolean',
-                            ],
                         ],
                     ],
                     'TurnDetectionConfig' => [
                         'type' => 'object',
                         'properties' => [
-                            'SemanticWaitDuration' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
                             'TurnEndWords' => [
                                 'type' => 'array',
                                 'items' => [
@@ -476,6 +472,10 @@
                             ],
                             'Mode' => [
                                 'type' => 'string',
+                            ],
+                            'SemanticWaitDuration' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                             ],
                         ],
                     ],
@@ -494,6 +494,9 @@
                                 'format' => 'int32',
                             ],
                         ],
+                    ],
+                    'ExperimentalConfig' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

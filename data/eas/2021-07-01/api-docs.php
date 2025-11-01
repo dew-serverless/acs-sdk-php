@@ -171,6 +171,9 @@
                     'InstanceType' => [
                         'type' => 'string',
                     ],
+                    'IsLatest' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'Resource' => [
@@ -1282,7 +1285,21 @@
                     'style' => 'simple',
                     'schema' => [
                         'type' => 'array',
-                        'required' => true,
+                        'deprecated' => true,
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LabelKeys',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
                             'required' => false,
@@ -3444,6 +3461,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TrafficMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Sort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeMachineSpec' => [
@@ -4293,6 +4334,20 @@
                     'name' => 'Keys',
                     'in' => 'query',
                     'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'deprecated' => true,
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LabelKeys',
+                    'in' => 'query',
+                    'style' => 'json',
                     'schema' => [
                         'type' => 'array',
                         'required' => false,

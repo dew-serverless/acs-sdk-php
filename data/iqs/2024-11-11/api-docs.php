@@ -362,6 +362,59 @@
                     'markdown' => [
                         'type' => 'string',
                     ],
+                    'screenshot' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ReadPageScrapeBody' => [
+                'type' => 'object',
+                'properties' => [
+                    'url' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'pageTimeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'location' => [
+                        'type' => 'string',
+                    ],
+                    'maxAge' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'readability' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'readabilityMode' => [
+                                'type' => 'string',
+                            ],
+                            'excludeAllImages' => [
+                                'type' => 'boolean',
+                            ],
+                            'excludeAllLinks' => [
+                                'type' => 'boolean',
+                            ],
+                            'excludedTags' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'formats' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
                 ],
             ],
             'RequestContents' => [
@@ -878,6 +931,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'advancedParams',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'AiSearch' => [
@@ -1122,6 +1184,37 @@
                     'in' => 'body',
                     'schema' => [
                         '$ref' => '#/components/schemas/ReadPageBody',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ReadPageScrape' => [
+            'path' => '/linked-retrieval/linked-retrieval-entry/v1/iqs/readpage/scrape',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/ReadPageScrapeBody',
                         'required' => false,
                     ],
                 ],

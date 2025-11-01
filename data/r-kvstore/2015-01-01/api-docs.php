@@ -3343,6 +3343,60 @@
                 ],
             ],
         ],
+        'RebootProxy' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProxyList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RebootMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'reboot',
+                            'rebuild',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ProxyNodeList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'ModifyInstanceNetExpireTime' => [
             'methods' => [
                 'post',
@@ -7055,6 +7109,9 @@
                 [
                     'AK' => [],
                 ],
+                [
+                    'APP' => [],
+                ],
             ],
             'deprecated' => false,
             'parameters' => [
@@ -7148,6 +7205,7 @@
         'DescribeGlobalSecurityIPGroupRelation' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -7346,6 +7404,7 @@
         'DescribeGlobalSecurityIPGroup' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -7380,6 +7439,18 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Engine',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'redis',
+                            'memcache',
+                        ],
                     ],
                 ],
             ],
@@ -7713,6 +7784,7 @@
         'DescribeParameterGroupTemplateList' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -8646,6 +8718,40 @@
                 ],
             ],
         ],
+        'DescribeDbInstanceConnectivity' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SrcIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [
@@ -8818,7 +8924,7 @@
         ],
         [
             'regionId' => 'cn-shenzhen',
-            'endpoint' => 'r-kvstore.aliyuncs.com',
+            'endpoint' => 'r-kvstore.cn-shenzhen.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-wulanchabu-acdr-1',

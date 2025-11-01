@@ -3557,6 +3557,23 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'OrderBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Offset',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListDocuments' => [
@@ -14227,6 +14244,22 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'KnowledgeParams',
                     'in' => 'query',
                     'style' => 'json',
@@ -14481,14 +14514,6 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DBInstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],
@@ -14510,6 +14535,22 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'KnowledgeParams',
                     'in' => 'query',
                     'style' => 'json',
@@ -14766,12 +14807,206 @@
                         'required' => false,
                     ],
                 ],
+            ],
+        ],
+        'QueryKnowledgeBasesContent' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
                 [
                     'name' => 'DBInstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Content',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MergeMethod',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MergeMethodArgs',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Rrf' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'K' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'Weight' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Weights' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'RerankFactor',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SourceCollection',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Collection' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Namespace' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'NamespacePassword' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'QueryParams' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Filter' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'GraphEnhance' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'GraphSearchArgs' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'GraphTopK' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'HybridSearch' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'HybridSearchArgs' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'additionalProperties' => [
+                                                'type' => 'any',
+                                            ],
+                                        ],
+                                        'Metrics' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'RecallWindow' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                        'RerankFactor' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                            'required' => false,
+                                        ],
+                                        'TopK' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'UseFullTextRetrieval' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'OrderBy' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Offset' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TopK',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],

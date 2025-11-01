@@ -56,6 +56,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Config',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'QueryMediaInfoJobList' => [

@@ -6676,6 +6676,7 @@
                         'required' => true,
                         'items' => [
                             'type' => 'string',
+                            'required' => false,
                         ],
                         'maxItems' => 20,
                     ],

@@ -6,7 +6,132 @@
         'version' => '2023-10-12',
     ],
     'components' => [
-        'schemas' => [],
+        'schemas' => [
+            'InstanceDetail' => [
+                'type' => 'object',
+                'properties' => [
+                    'instanceName' => [
+                        'type' => 'string',
+                    ],
+                    'instanceId' => [
+                        'type' => 'string',
+                    ],
+                    'regionId' => [
+                        'type' => 'string',
+                    ],
+                    'zoneId' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'paymentType' => [
+                        'type' => 'string',
+                    ],
+                    'resourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'vpcId' => [
+                        'type' => 'string',
+                    ],
+                    'createTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                    'runningTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'expireTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                    'dbVersion' => [
+                        'type' => 'string',
+                    ],
+                    'orderId' => [
+                        'type' => 'string',
+                    ],
+                    'autoBackup' => [
+                        'type' => 'boolean',
+                    ],
+                    'configuration' => [
+                        'type' => 'string',
+                    ],
+                    'ha' => [
+                        'type' => 'boolean',
+                    ],
+                    'multiZoneMode' => [
+                        'type' => 'string',
+                    ],
+                    'encrypted' => [
+                        'type' => 'boolean',
+                    ],
+                    'kmsKeyId' => [
+                        'type' => 'string',
+                    ],
+                    'vSwitchIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'zoneId' => [
+                                    'type' => 'string',
+                                ],
+                                'vswId' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'securityGroupIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'tags' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'key' => [
+                                    'type' => 'string',
+                                ],
+                                'value' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'components' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'type' => [
+                                    'type' => 'string',
+                                ],
+                                'replica' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'cuNum' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'cuType' => [
+                                    'type' => 'string',
+                                ],
+                                'diskSizeType' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
     'apis' => [
         'UpdateInstanceName' => [

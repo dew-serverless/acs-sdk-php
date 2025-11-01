@@ -63,6 +63,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listEcsSpecsAsync($arguments = [])
  * @method \Dew\Acs\Result getUserConfig(array $arguments = [])
  * @method \Http\Promise\Promise getUserConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result createDiagnosis(array $arguments = [])
+ * @method \Http\Promise\Promise createDiagnosisAsync($arguments = [])
  * @method \Dew\Acs\Result getToken(array $arguments = [])
  * @method \Http\Promise\Promise getTokenAsync($arguments = [])
  * @method \Dew\Acs\Result getMetrics(array $arguments = [])

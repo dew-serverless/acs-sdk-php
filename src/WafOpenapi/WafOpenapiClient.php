@@ -111,6 +111,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCloudResourceAccessedPortsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeCloudResourceAccessPortDetails(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeCloudResourceAccessPortDetailsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result modifyCloudResourceCert(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise modifyCloudResourceCertAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeDomainUsedPorts(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeDomainUsedPortsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeDomains(array $arguments = []) {@since 2021-10-01}
@@ -145,8 +147,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise verifyDomainOwnerAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeVerifyContent(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeVerifyContentAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result modifyDomainCert(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise modifyDomainCertAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeHybridCloudResources(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeHybridCloudResourcesAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeHybridCloudProtectableCount(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeHybridCloudProtectableCountAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result createDefenseResource(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise createDefenseResourceAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result deleteDefenseResource(array $arguments = []) {@since 2021-10-01}
@@ -381,6 +387,24 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyResourceLogStatusAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeResourceLogStatus(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeResourceLogStatusAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result createLogDeliveryConfig(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise createLogDeliveryConfigAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result modifyLogDeliveryConfig(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise modifyLogDeliveryConfigAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result deleteLogDeliveryConfig(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise deleteLogDeliveryConfigAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeLogDeliveryConfig(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeLogDeliveryConfigAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeLogDeliveryConfigs(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeLogDeliveryConfigsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result modifyResourceLogFieldConfig(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise modifyResourceLogFieldConfigAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeResourceLogFieldConfig(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeResourceLogFieldConfigAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result modifyResourceLogDeliveryStatus(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise modifyResourceLogDeliveryStatusAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeResourceLogDeliveryStatus(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeResourceLogDeliveryStatusAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeHybridCloudClusterServers(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeHybridCloudClusterServersAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeHybridCloudBasicMonitor(array $arguments = []) {@since 2021-10-01}
@@ -431,6 +455,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeHybridCloudSupportRegionsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeHybridCloudUnsupportPorts(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeHybridCloudUnsupportPortsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result deleteHybridCloudGroup(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise deleteHybridCloudGroupAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyHybridCloudCluster(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise modifyHybridCloudClusterAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result createMemberAccounts(array $arguments = []) {@since 2021-10-01}
@@ -471,6 +497,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyPauseProtectionStatusAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeCustomBaseRuleCompileResult(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeCustomBaseRuleCompileResultAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result createPocFunction(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise createPocFunctionAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describePocFunctions(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describePocFunctionsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeRoleAuthStatus(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeRoleAuthStatusAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result initializeWafOperationRole(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise initializeWafOperationRoleAsync($arguments = []) {@since 2021-10-01}
  */
 final class WafOpenapiClient extends AcsClient
 {

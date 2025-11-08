@@ -183,6 +183,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeEnabledCrossRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result alignStoragePrimaryAzone(array $arguments = [])
  * @method \Http\Promise\Promise alignStoragePrimaryAzoneAsync($arguments = [])
+ * @method \Dew\Acs\Result switchDBInstanceHA(array $arguments = [])
+ * @method \Http\Promise\Promise switchDBInstanceHAAsync($arguments = [])
  * @method \Dew\Acs\Result createDB(array $arguments = [])
  * @method \Http\Promise\Promise createDBAsync($arguments = [])
  * @method \Dew\Acs\Result deleteDB(array $arguments = [])
@@ -273,8 +275,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result untagResources(array $arguments = [])
  * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
- * @method \Dew\Acs\Result switchDBInstanceHA(array $arguments = [])
- * @method \Http\Promise\Promise switchDBInstanceHAAsync($arguments = [])
  */
 final class PolardbxClient extends AcsClient
 {

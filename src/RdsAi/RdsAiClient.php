@@ -45,6 +45,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyInstanceSSLAsync($arguments = [])
  * @method \Dew\Acs\Result describeInstanceSSL(array $arguments = [])
  * @method \Http\Promise\Promise describeInstanceSSLAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyInstanceConfig(array $arguments = [])
+ * @method \Http\Promise\Promise modifyInstanceConfigAsync($arguments = [])
  */
 final class RdsAiClient extends AcsClient
 {

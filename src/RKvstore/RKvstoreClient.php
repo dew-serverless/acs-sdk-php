@@ -89,6 +89,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise lockDBInstanceWriteAsync($arguments = [])
  * @method \Dew\Acs\Result unlockDBInstanceWrite(array $arguments = [])
  * @method \Http\Promise\Promise unlockDBInstanceWriteAsync($arguments = [])
+ * @method \Dew\Acs\Result rebootProxy(array $arguments = [])
+ * @method \Http\Promise\Promise rebootProxyAsync($arguments = [])
+ * @method \Dew\Acs\Result upgradeProxy(array $arguments = [])
+ * @method \Http\Promise\Promise upgradeProxyAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceNetExpireTime(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceNetExpireTimeAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDBInstanceConnectionString(array $arguments = [])
@@ -167,6 +171,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSlowLogRecordsAsync($arguments = [])
  * @method \Dew\Acs\Result initializeKvstorePermission(array $arguments = [])
  * @method \Http\Promise\Promise initializeKvstorePermissionAsync($arguments = [])
+ * @method \Dew\Acs\Result describeServiceLinkedRoleExists(array $arguments = [])
+ * @method \Http\Promise\Promise describeServiceLinkedRoleExistsAsync($arguments = [])
  * @method \Dew\Acs\Result modifySecurityIps(array $arguments = [])
  * @method \Http\Promise\Promise modifySecurityIpsAsync($arguments = [])
  * @method \Dew\Acs\Result modifySecurityGroupConfiguration(array $arguments = [])
@@ -279,6 +285,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyDBInstanceMonitorAsync($arguments = [])
  * @method \Dew\Acs\Result describeTags(array $arguments = [])
  * @method \Http\Promise\Promise describeTagsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDbInstanceConnectivity(array $arguments = [])
+ * @method \Http\Promise\Promise describeDbInstanceConnectivityAsync($arguments = [])
  */
 final class RKvstoreClient extends AcsClient
 {

@@ -207,6 +207,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise reinstallTenantAddonAsync($arguments = [])
  * @method \Dew\Acs\Result listTenantAddons(array $arguments = [])
  * @method \Http\Promise\Promise listTenantAddonsAsync($arguments = [])
+ * @method \Dew\Acs\Result listServiceInstanceFaultInjectionInfo(array $arguments = [])
+ * @method \Http\Promise\Promise listServiceInstanceFaultInjectionInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteFaultInjection(array $arguments = [])
+ * @method \Http\Promise\Promise deleteFaultInjectionAsync($arguments = [])
+ * @method \Dew\Acs\Result createFaultInjection(array $arguments = [])
+ * @method \Http\Promise\Promise createFaultInjectionAsync($arguments = [])
  */
 final class EasClient extends AcsClient
 {

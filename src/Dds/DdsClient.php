@@ -235,6 +235,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceRecoverTimeAsync($arguments = [])
  * @method \Dew\Acs\Result describeActiveOperationTask(array $arguments = [])
  * @method \Http\Promise\Promise describeActiveOperationTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result allocateDBInstanceSrvNetworkAddress(array $arguments = [])
+ * @method \Http\Promise\Promise allocateDBInstanceSrvNetworkAddressAsync($arguments = [])
  * @method \Dew\Acs\Result describeActiveOperationTaskRegion(array $arguments = [])
  * @method \Http\Promise\Promise describeActiveOperationTaskRegionAsync($arguments = [])
  * @method \Dew\Acs\Result describeActiveOperationMaintenanceConfig(array $arguments = [])
@@ -245,10 +247,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyDBInstanceConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDBInstanceAttribute(array $arguments = [])
  * @method \Http\Promise\Promise modifyDBInstanceAttributeAsync($arguments = [])
- * @method \Dew\Acs\Result allocateDBInstanceSrvNetworkAddress(array $arguments = [])
- * @method \Http\Promise\Promise allocateDBInstanceSrvNetworkAddressAsync($arguments = [])
  * @method \Dew\Acs\Result modifySrvNetworkAddress(array $arguments = [])
  * @method \Http\Promise\Promise modifySrvNetworkAddressAsync($arguments = [])
+ * @method \Dew\Acs\Result cancelActiveOperationTasks(array $arguments = [])
+ * @method \Http\Promise\Promise cancelActiveOperationTasksAsync($arguments = [])
  */
 final class DdsClient extends AcsClient
 {

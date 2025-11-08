@@ -221,6 +221,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise cancelTaskAsync($arguments = [])
  * @method \Dew\Acs\Result describeClusterTasks(array $arguments = [])
  * @method \Http\Promise\Promise describeClusterTasksAsync($arguments = [])
+ * @method \Dew\Acs\Result listOperationPlansForRegion(array $arguments = [])
+ * @method \Http\Promise\Promise listOperationPlansForRegionAsync($arguments = [])
  * @method \Dew\Acs\Result listOperationPlans(array $arguments = [])
  * @method \Http\Promise\Promise listOperationPlansAsync($arguments = [])
  * @method \Dew\Acs\Result cancelOperationPlan(array $arguments = [])

@@ -185,6 +185,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeHttpDDoSAttackIntelligentProtectionAsync($arguments = [])
  * @method \Dew\Acs\Result describeDDoSAllEventList(array $arguments = [])
  * @method \Http\Promise\Promise describeDDoSAllEventListAsync($arguments = [])
+ * @method \Dew\Acs\Result getApiSchemaUsage(array $arguments = [])
+ * @method \Http\Promise\Promise getApiSchemaUsageAsync($arguments = [])
  * @method \Dew\Acs\Result createOriginProtection(array $arguments = [])
  * @method \Http\Promise\Promise createOriginProtectionAsync($arguments = [])
  * @method \Dew\Acs\Result deleteOriginProtection(array $arguments = [])

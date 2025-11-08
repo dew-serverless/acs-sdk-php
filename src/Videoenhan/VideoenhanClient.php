@@ -37,8 +37,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryFaceVideoTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result generateHumanAnimeStyleVideo(array $arguments = [])
  * @method \Http\Promise\Promise generateHumanAnimeStyleVideoAsync($arguments = [])
- * @method \Dew\Acs\Result reduceVideoNoise(array $arguments = [])
- * @method \Http\Promise\Promise reduceVideoNoiseAsync($arguments = [])
  * @method \Dew\Acs\Result enhancePortraitVideo(array $arguments = [])
  * @method \Http\Promise\Promise enhancePortraitVideoAsync($arguments = [])
  */

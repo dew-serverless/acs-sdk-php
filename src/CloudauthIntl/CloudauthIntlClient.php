@@ -7,26 +7,28 @@ namespace Dew\Acs\CloudauthIntl;
 use Dew\Acs\AcsClient;
 
 /**
- * @method \Dew\Acs\Result ekycVerify(array $arguments = [])
- * @method \Http\Promise\Promise ekycVerifyAsync($arguments = [])
- * @method \Dew\Acs\Result id2MetaPeriodVerifyIntl(array $arguments = [])
- * @method \Http\Promise\Promise id2MetaPeriodVerifyIntlAsync($arguments = [])
  * @method \Dew\Acs\Result initialize(array $arguments = [])
  * @method \Http\Promise\Promise initializeAsync($arguments = [])
  * @method \Dew\Acs\Result checkResult(array $arguments = [])
  * @method \Http\Promise\Promise checkResultAsync($arguments = [])
+ * @method \Dew\Acs\Result ekycVerify(array $arguments = [])
+ * @method \Http\Promise\Promise ekycVerifyAsync($arguments = [])
  * @method \Dew\Acs\Result faceCompare(array $arguments = [])
  * @method \Http\Promise\Promise faceCompareAsync($arguments = [])
  * @method \Dew\Acs\Result faceGuardRisk(array $arguments = [])
  * @method \Http\Promise\Promise faceGuardRiskAsync($arguments = [])
  * @method \Dew\Acs\Result faceLiveness(array $arguments = [])
  * @method \Http\Promise\Promise faceLivenessAsync($arguments = [])
+ * @method \Dew\Acs\Result deepfakeDetectIntlStream(array $arguments = [])
+ * @method \Http\Promise\Promise deepfakeDetectIntlStreamAsync($arguments = [])
  * @method \Dew\Acs\Result deepfakeDetectIntl(array $arguments = [])
  * @method \Http\Promise\Promise deepfakeDetectIntlAsync($arguments = [])
  * @method \Dew\Acs\Result docOcr(array $arguments = [])
  * @method \Http\Promise\Promise docOcrAsync($arguments = [])
  * @method \Dew\Acs\Result docOcrMax(array $arguments = [])
  * @method \Http\Promise\Promise docOcrMaxAsync($arguments = [])
+ * @method \Dew\Acs\Result id2MetaPeriodVerifyIntl(array $arguments = [])
+ * @method \Http\Promise\Promise id2MetaPeriodVerifyIntlAsync($arguments = [])
  * @method \Dew\Acs\Result bankMetaVerifyIntl(array $arguments = [])
  * @method \Http\Promise\Promise bankMetaVerifyIntlAsync($arguments = [])
  * @method \Dew\Acs\Result mobile2MetaVerifyIntl(array $arguments = [])
@@ -79,8 +81,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise tempOssUrlIntlAsync($arguments = [])
  * @method \Dew\Acs\Result deleteFaceGroup(array $arguments = [])
  * @method \Http\Promise\Promise deleteFaceGroupAsync($arguments = [])
- * @method \Dew\Acs\Result deepfakeDetectIntlStream(array $arguments = [])
- * @method \Http\Promise\Promise deepfakeDetectIntlStreamAsync($arguments = [])
  */
 final class CloudauthIntlClient extends AcsClient
 {

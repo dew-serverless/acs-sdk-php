@@ -226,6 +226,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'DBTimeZone',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDBInstance' => [
@@ -438,7 +446,7 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                        'minimum' => '2',
+                        'minimum' => '1',
                         'maximum' => '64',
                     ],
                 ],
@@ -466,6 +474,14 @@
                             'SSD',
                             'ESSD_L0',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'ComputingGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1341,6 +1357,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ComputingGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteEndpoint' => [
@@ -1384,6 +1408,14 @@
                 ],
                 [
                     'name' => 'DBInstanceNetType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ComputingGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1456,6 +1488,14 @@
                         'enum' => [
                             'Public',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'ComputingGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1553,6 +1593,7 @@
         'DescribeEndpoints' => [
             'methods' => [
                 'post',
+                'get',
             ],
             'schemes' => [
                 'https',
@@ -1672,6 +1713,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ComputingGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'KillProcess' => [
@@ -1707,6 +1756,14 @@
                 ],
                 [
                     'name' => 'InitialQueryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ComputingGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1772,6 +1829,14 @@
                 ],
                 [
                     'name' => 'Product',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ComputingGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1850,6 +1915,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ComputingGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

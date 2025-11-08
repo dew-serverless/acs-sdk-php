@@ -158,6 +158,14 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'Uuid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeGlobalDesktops' => [

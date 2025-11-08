@@ -46,6 +46,17 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'PortVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '2',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeletePolicy' => [
@@ -449,13 +460,13 @@
                                         'Priority' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
-                                            'required' => true,
+                                            'required' => false,
                                             'minimum' => '1',
                                             'maximum' => '100',
                                         ],
                                         'Method' => [
                                             'type' => 'string',
-                                            'required' => true,
+                                            'required' => false,
                                             'enum' => [
                                                 'hex',
                                                 'char',
@@ -463,7 +474,7 @@
                                         ],
                                         'Match' => [
                                             'type' => 'string',
-                                            'required' => true,
+                                            'required' => false,
                                             'enum' => [
                                                 '0',
                                                 '1',
@@ -471,51 +482,81 @@
                                         ],
                                         'Action' => [
                                             'type' => 'string',
-                                            'required' => true,
+                                            'required' => false,
                                             'enum' => [
                                                 '1',
                                                 '2',
+                                                'observe',
+                                                'block',
                                             ],
                                         ],
                                         'Limited' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
-                                            'required' => true,
+                                            'required' => false,
                                             'minimum' => '0',
                                             'maximum' => '2048',
                                             'exclusiveMaximum' => true,
                                         ],
                                         'ConditionList' => [
                                             'type' => 'array',
-                                            'required' => true,
+                                            'required' => false,
                                             'items' => [
                                                 'type' => 'object',
                                                 'required' => false,
                                                 'properties' => [
                                                     'Arg' => [
                                                         'type' => 'string',
-                                                        'required' => true,
+                                                        'required' => false,
                                                         'minLength' => 1,
                                                         'maxLength' => 4096,
                                                     ],
                                                     'Position' => [
                                                         'type' => 'integer',
                                                         'format' => 'int32',
-                                                        'required' => true,
+                                                        'required' => false,
                                                         'minimum' => '0',
                                                         'maximum' => '2047',
                                                     ],
                                                     'Depth' => [
                                                         'type' => 'integer',
                                                         'format' => 'int32',
-                                                        'required' => true,
+                                                        'required' => false,
                                                         'minimum' => '1',
                                                         'maximum' => '2048',
+                                                    ],
+                                                    'Encode' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Pattern' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Content' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Offset' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'Start' => [
+                                                                'type' => 'integer',
+                                                                'format' => 'int32',
+                                                                'required' => false,
+                                                            ],
+                                                            'End' => [
+                                                                'type' => 'integer',
+                                                                'format' => 'int32',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
                                                     ],
                                                 ],
                                             ],
                                             'minItems' => 1,
-                                            'maxItems' => 5,
+                                            'maxItems' => 10,
                                         ],
                                     ],
                                 ],
@@ -540,6 +581,17 @@
                                 'minItems' => 1,
                                 'maxItems' => 2000,
                             ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PortVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '2',
                         ],
                     ],
                 ],
@@ -912,13 +964,13 @@
                                         'Priority' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
-                                            'required' => true,
+                                            'required' => false,
                                             'minimum' => '1',
                                             'maximum' => '100',
                                         ],
                                         'Method' => [
                                             'type' => 'string',
-                                            'required' => true,
+                                            'required' => false,
                                             'enum' => [
                                                 'hex',
                                                 'char',
@@ -926,7 +978,7 @@
                                         ],
                                         'Match' => [
                                             'type' => 'string',
-                                            'required' => true,
+                                            'required' => false,
                                             'enum' => [
                                                 '0',
                                                 '1',
@@ -934,46 +986,76 @@
                                         ],
                                         'Action' => [
                                             'type' => 'string',
-                                            'required' => true,
+                                            'required' => false,
                                             'enum' => [
                                                 '1',
                                                 '2',
+                                                'observe',
+                                                'block',
                                             ],
                                         ],
                                         'Limited' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
-                                            'required' => true,
+                                            'required' => false,
                                             'minimum' => '0',
                                             'maximum' => '2048',
                                             'exclusiveMaximum' => true,
                                         ],
                                         'ConditionList' => [
                                             'type' => 'array',
-                                            'required' => true,
+                                            'required' => false,
                                             'items' => [
                                                 'type' => 'object',
                                                 'required' => false,
                                                 'properties' => [
                                                     'Arg' => [
                                                         'type' => 'string',
-                                                        'required' => true,
+                                                        'required' => false,
                                                         'minLength' => 1,
                                                         'maxLength' => 4096,
                                                     ],
                                                     'Position' => [
                                                         'type' => 'integer',
                                                         'format' => 'int32',
-                                                        'required' => true,
+                                                        'required' => false,
                                                         'minimum' => '0',
                                                         'maximum' => '2047',
                                                     ],
                                                     'Depth' => [
                                                         'type' => 'integer',
                                                         'format' => 'int32',
-                                                        'required' => true,
+                                                        'required' => false,
                                                         'minimum' => '1',
                                                         'maximum' => '2048',
+                                                    ],
+                                                    'Encode' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Pattern' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Content' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Offset' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'Start' => [
+                                                                'type' => 'integer',
+                                                                'format' => 'int32',
+                                                                'required' => false,
+                                                            ],
+                                                            'End' => [
+                                                                'type' => 'integer',
+                                                                'format' => 'int32',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
                                                     ],
                                                 ],
                                             ],
@@ -983,6 +1065,17 @@
                                     ],
                                 ],
                             ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PortVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '2',
                         ],
                     ],
                 ],
@@ -1106,9 +1199,21 @@
                                         'tcp',
                                     ],
                                 ],
+                                'PortRange' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'minItems' => 1,
+                    ],
+                ],
+                [
+                    'name' => 'PortVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1171,9 +1276,24 @@
                                         'tcp',
                                     ],
                                 ],
+                                'PortRange' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'minItems' => 1,
+                    ],
+                ],
+                [
+                    'name' => 'PortVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '2',
+                        ],
                     ],
                 ],
             ],
@@ -1244,6 +1364,10 @@
                                         'tcp',
                                     ],
                                 ],
+                                'PortRange' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],
@@ -1264,6 +1388,17 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PortVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '2',
+                        ],
                     ],
                 ],
             ],

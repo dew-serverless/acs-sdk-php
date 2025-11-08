@@ -293,7 +293,11 @@
                                             ],
                                             'departure_time' => [
                                                 'type' => 'string',
-                                                'required' => true,
+                                                'required' => false,
+                                            ],
+                                            'departure_date' => [
+                                                'type' => 'string',
+                                                'required' => false,
                                             ],
                                             'marketing_flight_no' => [
                                                 'type' => 'string',
@@ -380,8 +384,8 @@
                 'post',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [

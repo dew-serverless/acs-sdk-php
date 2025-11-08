@@ -1451,6 +1451,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ZoneAffinityEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateVpcEndpointAttribute' => [
@@ -1537,6 +1545,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ZoneAffinityEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

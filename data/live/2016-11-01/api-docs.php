@@ -4442,6 +4442,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DeInterlaced',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'AddRtsLiveStreamTranscode' => [
@@ -4817,6 +4825,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DeInterlaced',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -6452,6 +6468,24 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'NotifyReqAuth',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NotifyAuthKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 16,
+                        'maxLength' => 64,
+                    ],
+                ],
             ],
         ],
         'DeleteLiveRecordNotifyConfig' => [
@@ -6549,6 +6583,24 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NotifyReqAuth',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NotifyAuthKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 16,
+                        'maxLength' => 64,
                     ],
                 ],
             ],

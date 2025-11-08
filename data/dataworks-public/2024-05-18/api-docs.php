@@ -2882,6 +2882,130 @@
                 ],
             ],
         ],
+        'ListResourceGroupAssociateProjects' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListResourceGroupMetricData' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MetricName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'CUSpec',
+                            'CUUsage',
+                            'CUUtilization',
+                            'SlotSpec',
+                            'SlotUsage',
+                            'SchedulerCUMaxSpec',
+                            'SchedulerCUUsage',
+                            'SchedulerCUMinSpec',
+                            'DataIntegrationCUMaxSpec',
+                            'DataIntegrationCUUsage',
+                            'DataIntegrationCUMinSpec',
+                            'DataServiceCUMaxSpec',
+                            'DataServiceCUUsage',
+                            'DataServiceCUMinSpec',
+                            'ServerIdeCUMaxSpec',
+                            'ServerIdeCUUsage',
+                            'ServerIdeCUMinSpec',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Period',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BeginTime',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Length',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '1440',
+                    ],
+                ],
+            ],
+        ],
         'CreateRoute' => [
             'methods' => [
                 'post',
@@ -12480,6 +12604,7 @@
                             'Manual',
                             'SupplementData',
                             'SmokeTest',
+                            'TriggerWorkflow',
                         ],
                     ],
                 ],

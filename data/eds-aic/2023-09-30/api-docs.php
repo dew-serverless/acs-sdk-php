@@ -2858,6 +2858,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ScreenshotId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GenerateCoordinationCode' => [
@@ -3079,17 +3087,25 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
                             ],
                         ],
                         'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'SystemType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -5468,6 +5484,20 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'InstanceIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 50,
+                    ],
+                ],
             ],
         ],
         'InstallMonitorAgent' => [
@@ -5764,6 +5794,35 @@
                 ],
             ],
         ],
+        'DescribeBuckets' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'FileType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'FILE',
+                            'DIR',
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'SetAdbSecure' => [
             'methods' => [
                 'post',
@@ -5903,10 +5962,10 @@
                 ],
             ],
         ],
-        'DescribeBuckets' => [
+        'InstanceHealer' => [
+            'path' => '',
             'methods' => [
                 'post',
-                'get',
             ],
             'schemes' => [
                 'https',
@@ -5919,15 +5978,34 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'FileType',
+                    'name' => 'InstanceIdList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'Timeout',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Strategy',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'enum' => [
-                            'FILE',
-                            'DIR',
-                        ],
                     ],
                 ],
             ],

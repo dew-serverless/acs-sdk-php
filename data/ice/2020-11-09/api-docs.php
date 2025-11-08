@@ -328,13 +328,6 @@
                             'AsrLanguageId' => [
                                 'type' => 'string',
                             ],
-                            'CustomParams' => [
-                                'type' => 'string',
-                            ],
-                            'VadDuration' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
                             'AsrHotWords' => [
                                 'type' => 'array',
                                 'items' => [
@@ -345,31 +338,21 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
+                            'CustomParams' => [
+                                'type' => 'string',
+                            ],
+                            'VadDuration' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
                         ],
                     ],
                     'LlmConfig' => [
                         'type' => 'object',
                         'properties' => [
-                            'FunctionMap' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'Function' => [
-                                            'type' => 'string',
-                                        ],
-                                        'MatchFunction' => [
-                                            'type' => 'string',
-                                        ],
-                                    ],
-                                ],
-                            ],
                             'LlmHistoryLimit' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
-                            ],
-                            'LlmCompleteReply' => [
-                                'type' => 'boolean',
                             ],
                             'LlmHistory' => [
                                 'type' => 'array',
@@ -388,40 +371,43 @@
                             'LlmSystemPrompt' => [
                                 'type' => 'string',
                             ],
+                            'BailianAppParams' => [
+                                'type' => 'string',
+                            ],
                             'OpenAIExtraQuery' => [
                                 'type' => 'string',
                             ],
-                            'OutputMaxDelay' => [
-                                'type' => 'string',
+                            'LlmCompleteReply' => [
+                                'type' => 'boolean',
                             ],
-                            'BailianAppParams' => [
-                                'type' => 'string',
+                            'FunctionMap' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Function' => [
+                                            'type' => 'string',
+                                        ],
+                                        'MatchFunction' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
                             ],
                             'OutputMinLength' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                            ],
+                            'OutputMaxDelay' => [
+                                'type' => 'string',
                             ],
                         ],
                     ],
                     'TtsConfig' => [
                         'type' => 'object',
                         'properties' => [
-                            'PronunciationRules' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'Type' => [
-                                            'type' => 'string',
-                                        ],
-                                        'Word' => [
-                                            'type' => 'string',
-                                        ],
-                                        'Pronunciation' => [
-                                            'type' => 'string',
-                                        ],
-                                    ],
-                                ],
+                            'VoiceId' => [
+                                'type' => 'string',
                             ],
                             'VoiceIdList' => [
                                 'type' => 'array',
@@ -429,16 +415,30 @@
                                     'type' => 'string',
                                 ],
                             ],
-                            'VoiceId' => [
-                                'type' => 'string',
-                            ],
-                            'Emotion' => [
-                                'type' => 'string',
+                            'PronunciationRules' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Word' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Pronunciation' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Type' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
                             ],
                             'ModelId' => [
                                 'type' => 'string',
                             ],
                             'LanguageId' => [
+                                'type' => 'string',
+                            ],
+                            'Emotion' => [
                                 'type' => 'string',
                             ],
                             'SpeechRate' => [
@@ -450,24 +450,20 @@
                     'InterruptConfig' => [
                         'type' => 'object',
                         'properties' => [
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
+                            ],
                             'InterruptWords' => [
                                 'type' => 'array',
                                 'items' => [
                                     'type' => 'string',
                                 ],
                             ],
-                            'EnableVoiceInterrupt' => [
-                                'type' => 'boolean',
-                            ],
                         ],
                     ],
                     'TurnDetectionConfig' => [
                         'type' => 'object',
                         'properties' => [
-                            'SemanticWaitDuration' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
                             'TurnEndWords' => [
                                 'type' => 'array',
                                 'items' => [
@@ -476,6 +472,10 @@
                             ],
                             'Mode' => [
                                 'type' => 'string',
+                            ],
+                            'SemanticWaitDuration' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                             ],
                         ],
                     ],
@@ -494,6 +494,9 @@
                                 'format' => 'int32',
                             ],
                         ],
+                    ],
+                    'ExperimentalConfig' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -891,6 +894,86 @@
                     ],
                 ],
             ],
+            'AiRtcAuthCodeDTO' => [
+                'type' => 'object',
+                'properties' => [
+                    'Status' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Type' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'AuthCode' => [
+                        'type' => 'string',
+                    ],
+                    'ActivatedTime' => [
+                        'type' => 'string',
+                    ],
+                    'DeviceId' => [
+                        'type' => 'string',
+                    ],
+                    'CreationTime' => [
+                        'type' => 'string',
+                    ],
+                    'License' => [
+                        'type' => 'string',
+                    ],
+                    'ModificationTime' => [
+                        'type' => 'string',
+                    ],
+                    'LicenseItemId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'AiRtcLicenseInfoDTO' => [
+                'type' => 'object',
+                'properties' => [
+                    'CreationTime' => [
+                        'type' => 'string',
+                    ],
+                    'ModificationTime' => [
+                        'type' => 'string',
+                    ],
+                    'Type' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'LicenseItemId' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ValidDays' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ExpiredOn' => [
+                        'type' => 'string',
+                    ],
+                    'BeginOn' => [
+                        'type' => 'string',
+                    ],
+                    'LicenseCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'AvailableCapacity' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'InstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'ContractNo' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'AppInfoDTO' => [
                 'type' => 'object',
                 'properties' => [
@@ -1257,6 +1340,35 @@
                         'type' => 'string',
                     ],
                     'Arn' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'EntityMediaBasicInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'EntityMediaId' => [
+                        'type' => 'string',
+                    ],
+                    'EntityId' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'Biz' => [
+                        'type' => 'string',
+                    ],
+                    'AppId' => [
+                        'type' => 'string',
+                    ],
+                    'UserData' => [
+                        'type' => 'string',
+                    ],
+                    'ModifiedTime' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
                         'type' => 'string',
                     ],
                 ],
@@ -3639,6 +3751,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CustomFilters',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetVideoList' => [
@@ -3794,6 +3914,22 @@
                 ],
                 [
                     'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CustomFilters',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UtcCreate',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3976,6 +4112,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CustomFilters',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UtcCreate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SearchMediaByMultimodal' => [
@@ -4038,6 +4190,22 @@
                 ],
                 [
                     'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CustomFilters',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UtcCreate',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4114,6 +4282,22 @@
                 ],
                 [
                     'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CustomFilters',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UtcCreate',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -14133,6 +14317,188 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'GetAiRtcLicenseInfoList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'LicenseItemId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NeedTotalCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetAiRtcAuthCodeList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'LicenseItemId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NeedTotalCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ActiveAiRtcLicense' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'LicenseItemId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AuthCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DeviceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

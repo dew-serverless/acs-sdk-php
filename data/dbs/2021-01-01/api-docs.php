@@ -64,6 +64,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ClusterName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDownloadSupport' => [
@@ -96,6 +104,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClusterName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -356,6 +372,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ClusterName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RetryDownloadTask' => [
@@ -391,6 +415,14 @@
                 ],
                 [
                     'name' => 'InstanceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClusterName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

@@ -3679,6 +3679,94 @@
                     ],
                 ],
             ],
+            'FileManagerMountConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'role' => [
+                        'type' => 'string',
+                    ],
+                    'region' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'vpcConfig' => [
+                        '$ref' => '#/components/schemas/VpcConfig',
+                    ],
+                    'ossMountPoints' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/OSSMountPoint',
+                        ],
+                    ],
+                    'nasMountPoints' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/NasMountConfig',
+                        ],
+                    ],
+                    'timeoutInSecond' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'mutex' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'FileManagerTask' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'id' => [
+                        'type' => 'string',
+                    ],
+                    'startTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'finishedTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'finished' => [
+                        'type' => 'boolean',
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errorMessage' => [
+                        'type' => 'string',
+                    ],
+                    'parameters' => [
+                        'type' => 'any',
+                    ],
+                    'progress' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'currentBytes' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'totalBytes' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                    'result' => [
+                        'type' => 'any',
+                    ],
+                ],
+            ],
             'FinalizeConfig' => [
                 'type' => 'object',
                 'properties' => [

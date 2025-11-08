@@ -3794,14 +3794,6 @@
                     ],
                 ],
                 [
-                    'name' => 'HealthCheckURL',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'LogicalRegionId',
                     'in' => 'query',
                     'schema' => [
@@ -6203,6 +6195,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SecurityContext',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeployK8sApplication' => [
@@ -6774,6 +6774,14 @@
                 ],
                 [
                     'name' => 'CustomAgentVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SecurityContext',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -9393,6 +9401,48 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeLocalitySetting' => [
+            'path' => '/pop/sp/applications/locality/setting',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Region',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NamespaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => true,
                     ],
                 ],

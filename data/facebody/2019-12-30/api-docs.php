@@ -843,49 +843,6 @@
                 ],
             ],
         ],
-        'FaceTidyup' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ImageURL',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ShapeType',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Strength',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'EnhanceFace' => [
             'methods' => [
                 'post',
@@ -1208,106 +1165,6 @@
                 ],
             ],
         ],
-        'DetectPedestrianIntrusion' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ImageURL',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DetectRegion',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Rect' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'Left' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                        'Top' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                        'Right' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                        'Bottom' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                                'Line' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'X1' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                        'Y1' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                        'X2' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                        'Y2' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'RegionType',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'PedestrianDetectAttribute' => [
             'methods' => [
                 'post',
@@ -1326,47 +1183,6 @@
             'parameters' => [
                 [
                     'name' => 'ImageURL',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'RecognizeHandGesture' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ImageURL',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'GestureType',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -1623,31 +1439,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'HandPosture' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ImageURL',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],

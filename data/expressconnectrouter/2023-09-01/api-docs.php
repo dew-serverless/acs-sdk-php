@@ -2252,6 +2252,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TargetSlsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteFlowlog' => [

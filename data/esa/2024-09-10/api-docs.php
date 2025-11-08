@@ -5319,6 +5319,41 @@
                 ],
             ],
         ],
+        'GetApiSchemaUsage' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SiteVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'CreateOriginProtection' => [
             'methods' => [
                 'post',
@@ -5340,6 +5375,18 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AutoConfirmIPList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'on',
+                            'off',
+                        ],
                     ],
                 ],
             ],
@@ -5398,6 +5445,18 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'enum' => [
+                            'on',
+                            'off',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AutoConfirmIPList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                         'enum' => [
                             'on',
                             'off',
@@ -14584,6 +14643,10 @@
                                         ],
                                     ],
                                 ],
+                                'IpVersionPolicy' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],
@@ -14691,6 +14754,10 @@
                                             'required' => false,
                                         ],
                                     ],
+                                ],
+                                'IpVersionPolicy' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -21306,6 +21373,14 @@
                             'advancedplan',
                             'enterpriseplan',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'PlanType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

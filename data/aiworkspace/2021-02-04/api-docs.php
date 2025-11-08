@@ -2544,6 +2544,198 @@
                 ],
             ],
         ],
+        'CreateImageBuild' => [
+            'path' => '/api/v1/imagebuilds',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Accessibility' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'WorkspaceId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Resource' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'EcsSpec' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ResourceConfig' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'CPU' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Memory' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'ResourceId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ResourceType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'UserVpc' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'VpcId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SwitchId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExtendedCidrs' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'DefaultRoute' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'TargetRegistry' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'InstanceId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Type' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                            'OverwriteImageTag' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'BuildConfig' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'Dockerfile' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'BuildType' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'RegistryAuths' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'RegionId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ImageBuildJobName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Image' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'Name' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'Description' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Uri' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'Labels' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Key' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Value' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'ListPermissions' => [
             'path' => '/api/v1/workspaces/{WorkspaceId}/permissions',
             'methods' => [
@@ -3732,6 +3924,14 @@
                 ],
                 [
                     'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

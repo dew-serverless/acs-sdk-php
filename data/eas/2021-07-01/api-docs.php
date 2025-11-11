@@ -171,6 +171,18 @@
                     'InstanceType' => [
                         'type' => 'string',
                     ],
+                    'IsLatest' => [
+                        'type' => 'boolean',
+                    ],
+                    'Detached' => [
+                        'type' => 'boolean',
+                    ],
+                    'IsReplica' => [
+                        'type' => 'boolean',
+                    ],
+                    'ReplicaName' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'Resource' => [
@@ -1282,7 +1294,21 @@
                     'style' => 'simple',
                     'schema' => [
                         'type' => 'array',
-                        'required' => true,
+                        'deprecated' => true,
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LabelKeys',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
                             'required' => false,
@@ -1406,7 +1432,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1422,6 +1448,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IsReplica',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -2206,11 +2240,27 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
+                            'Hibernate' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                             'Isolate' => [
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'Detach' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'IsReplica',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -3058,6 +3108,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ListReplica',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReplicaName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListServiceVersions' => [
@@ -3438,6 +3504,30 @@
                 ],
                 [
                     'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TrafficMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Sort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4293,6 +4383,20 @@
                     'name' => 'Keys',
                     'in' => 'query',
                     'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'deprecated' => true,
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LabelKeys',
+                    'in' => 'query',
+                    'style' => 'json',
                     'schema' => [
                         'type' => 'array',
                         'required' => false,
@@ -6555,6 +6659,171 @@
             ],
             'deprecated' => false,
             'parameters' => [],
+        ],
+        'ListServiceInstanceFaultInjectionInfo' => [
+            'path' => '/api/v2/services/{ClusterId}/{ServiceName}/instances/{InstanceName}/faults',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteFaultInjection' => [
+            'path' => '/api/v2/services/{ClusterId}/{ServiceName}/instances/{InstanceName}/faults/{FaultType}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FaultType',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateFaultInjection' => [
+            'path' => '/api/v2/services/{ClusterId}/{ServiceName}/instances/{InstanceName}/faults',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'FaultType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'FaultArgs' => [
+                                'type' => 'any',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
     'endpoints' => [

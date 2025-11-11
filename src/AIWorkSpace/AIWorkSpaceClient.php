@@ -53,6 +53,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise publishImageAsync($arguments = [])
  * @method \Dew\Acs\Result removeImageLabels(array $arguments = [])
  * @method \Http\Promise\Promise removeImageLabelsAsync($arguments = [])
+ * @method \Dew\Acs\Result createImageBuild(array $arguments = [])
+ * @method \Http\Promise\Promise createImageBuildAsync($arguments = [])
  * @method \Dew\Acs\Result listPermissions(array $arguments = [])
  * @method \Http\Promise\Promise listPermissionsAsync($arguments = [])
  * @method \Dew\Acs\Result getPermission(array $arguments = [])

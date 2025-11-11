@@ -667,6 +667,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise dissociateProjectFromResourceGroupAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result associateProjectToResourceGroup(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise associateProjectToResourceGroupAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result listResourceGroupAssociateProjects(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise listResourceGroupAssociateProjectsAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result listResourceGroupMetricData(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise listResourceGroupMetricDataAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result createRoute(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise createRouteAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result deleteRoute(array $arguments = []) {@since 2024-05-18}

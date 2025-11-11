@@ -9,6 +9,8 @@ use Dew\Acs\AcsClient;
 /**
  * @method \Dew\Acs\Result describeRegions(array $arguments = [])
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
+ * @method \Dew\Acs\Result listReplicaEdgeSupported(array $arguments = [])
+ * @method \Http\Promise\Promise listReplicaEdgeSupportedAsync($arguments = [])
  * @method \Dew\Acs\Result createDiskReplicaPair(array $arguments = [])
  * @method \Http\Promise\Promise createDiskReplicaPairAsync($arguments = [])
  * @method \Dew\Acs\Result addDiskReplicaPair(array $arguments = [])

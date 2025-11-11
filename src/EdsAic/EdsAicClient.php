@@ -161,14 +161,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
  * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeBuckets(array $arguments = [])
+ * @method \Http\Promise\Promise describeBucketsAsync($arguments = [])
  * @method \Dew\Acs\Result setAdbSecure(array $arguments = [])
  * @method \Http\Promise\Promise setAdbSecureAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDisplayConfig(array $arguments = [])
  * @method \Http\Promise\Promise modifyDisplayConfigAsync($arguments = [])
  * @method \Dew\Acs\Result describeDisplayConfig(array $arguments = [])
  * @method \Http\Promise\Promise describeDisplayConfigAsync($arguments = [])
- * @method \Dew\Acs\Result describeBuckets(array $arguments = [])
- * @method \Http\Promise\Promise describeBucketsAsync($arguments = [])
+ * @method \Dew\Acs\Result instanceHealer(array $arguments = [])
+ * @method \Http\Promise\Promise instanceHealerAsync($arguments = [])
  */
 final class EdsAicClient extends AcsClient
 {

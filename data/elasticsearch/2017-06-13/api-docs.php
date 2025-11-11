@@ -917,6 +917,28 @@
                     'vsArea' => [
                         'type' => 'string',
                     ],
+                    'loadBalanceType' => [
+                        'type' => 'string',
+                    ],
+                    'lbReplica' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'maximum' => '10',
+                    ],
+                    'loadBalanceConfig' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'vswitchId' => [
+                                    'type' => 'string',
+                                ],
+                                'vsArea' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'NodeInfo' => [

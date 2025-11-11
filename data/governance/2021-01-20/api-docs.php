@@ -736,6 +736,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TopicCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListEvaluationScoreHistory' => [
@@ -939,6 +947,14 @@
                 ],
                 [
                     'name' => 'LensCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TopicCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

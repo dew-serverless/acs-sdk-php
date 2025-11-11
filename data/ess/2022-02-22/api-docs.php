@@ -626,6 +626,22 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'BalanceMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoRebalance',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyScalingGroup' => [
@@ -958,6 +974,22 @@
                                 'required' => false,
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'BalanceMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoRebalance',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

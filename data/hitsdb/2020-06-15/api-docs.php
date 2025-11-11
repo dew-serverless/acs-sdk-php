@@ -1731,48 +1731,6 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'NodeGroupList' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'NodeDiskSize' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                            ],
-                                            'NodeCount' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => true,
-                                            ],
-                                            'NodeSpec' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                            ],
-                                            'NodeDiskType' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                                'enum' => [
-                                                    'cloud_essd',
-                                                    'cloud_efficiency',
-                                                ],
-                                            ],
-                                            'ResourceGroupName' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'GroupId' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                    ],
-                                    'minItems' => 1,
-                                    'maxItems' => 12,
-                                ],
                                 'EngineType' => [
                                     'type' => 'string',
                                     'required' => true,
@@ -1787,6 +1745,48 @@
                                         'LAI',
                                         'LCOLUMN',
                                     ],
+                                ],
+                                'NodeGroupList' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'NodeSpec' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                            ],
+                                            'NodeCount' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => true,
+                                            ],
+                                            'NodeDiskType' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                                'enum' => [
+                                                    'cloud_essd',
+                                                    'cloud_efficiency',
+                                                ],
+                                            ],
+                                            'NodeDiskSize' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'ResourceGroupName' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'GroupId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'minItems' => 1,
+                                    'maxItems' => 12,
                                 ],
                             ],
                         ],

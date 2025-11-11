@@ -66,20 +66,8 @@
                     'provider' => [
                         'type' => 'string',
                     ],
-                    'protocols' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                    ],
                     'address' => [
                         'type' => 'string',
-                    ],
-                    'apiKeys' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
                     ],
                     'enableHealthCheck' => [
                         'type' => 'boolean',
@@ -114,6 +102,21 @@
                                 'type' => 'string',
                             ],
                         ],
+                    ],
+                    'protocols' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'apiKeys' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'ApiKeyGenerateMode' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -527,12 +530,6 @@
                     'name' => [
                         'type' => 'string',
                     ],
-                    'protocols' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                    ],
                     'basePath' => [
                         'type' => 'string',
                     ],
@@ -541,6 +538,63 @@
                     ],
                     'versionInfo' => [
                         '$ref' => '#/components/schemas/HttpApiVersionInfo',
+                    ],
+                    'ingressInfo' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'sourceId' => [
+                                'type' => 'string',
+                            ],
+                            'ingressClass' => [
+                                'type' => 'string',
+                            ],
+                            'watchNamespace' => [
+                                'type' => 'string',
+                            ],
+                            'environmentInfo' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'environmentId' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'k8sClusterInfo' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'clusterId' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'overrideIngressIp' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'resourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'enabelAuth' => [
+                        'type' => 'boolean',
+                    ],
+                    'authConfig' => [
+                        '$ref' => '#/components/schemas/AuthConfig',
+                    ],
+                    'gatewayId' => [
+                        'type' => 'string',
+                    ],
+                    'modelCategory' => [
+                        'type' => 'string',
+                    ],
+                    'protocols' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                     'environments' => [
                         'type' => 'array',
@@ -638,45 +692,6 @@
                             ],
                         ],
                     ],
-                    'ingressInfo' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'sourceId' => [
-                                'type' => 'string',
-                            ],
-                            'ingressClass' => [
-                                'type' => 'string',
-                            ],
-                            'watchNamespace' => [
-                                'type' => 'string',
-                            ],
-                            'environmentInfo' => [
-                                'type' => 'object',
-                                'properties' => [
-                                    'environmentId' => [
-                                        'type' => 'string',
-                                    ],
-                                ],
-                            ],
-                            'k8sClusterInfo' => [
-                                'type' => 'object',
-                                'properties' => [
-                                    'clusterId' => [
-                                        'type' => 'string',
-                                    ],
-                                ],
-                            ],
-                            'overrideIngressIp' => [
-                                'type' => 'boolean',
-                            ],
-                        ],
-                    ],
-                    'type' => [
-                        'type' => 'string',
-                    ],
-                    'resourceGroupId' => [
-                        'type' => 'string',
-                    ],
                     'aiProtocols' => [
                         'type' => 'array',
                         'items' => [
@@ -688,12 +703,6 @@
                         'items' => [
                             '$ref' => '#/components/schemas/HttpApiDeployConfig',
                         ],
-                    ],
-                    'enabelAuth' => [
-                        'type' => 'boolean',
-                    ],
-                    'authConfig' => [
-                        '$ref' => '#/components/schemas/AuthConfig',
                     ],
                     'deployCntMap' => [
                         'type' => 'object',
@@ -711,8 +720,11 @@
                             ],
                         ],
                     ],
-                    'gatewayId' => [
-                        'type' => 'string',
+                    'agentProtocols' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -1450,23 +1462,6 @@
                     'backend' => [
                         '$ref' => '#/components/schemas/Backend',
                     ],
-                    'domainInfos' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'object',
-                            'properties' => [
-                                'domainId' => [
-                                    'type' => 'string',
-                                ],
-                                'name' => [
-                                    'type' => 'string',
-                                ],
-                                'protocol' => [
-                                    'type' => 'string',
-                                ],
-                            ],
-                        ],
-                    ],
                     'environmentInfo' => [
                         'type' => 'object',
                         'properties' => [
@@ -1551,11 +1546,31 @@
                             ],
                         ],
                     ],
+                    'domainInfos' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'domainId' => [
+                                    'type' => 'string',
+                                ],
+                                'name' => [
+                                    'type' => 'string',
+                                ],
+                                'protocol' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
                     'gatewayStatus' => [
                         'type' => 'object',
                         'additionalProperties' => [
                             'type' => 'string',
                         ],
+                    ],
+                    'builtin' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -3476,6 +3491,10 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'createFromType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -3619,6 +3638,10 @@
                                     'SSE',
                                     'StreamableHTTP',
                                 ],
+                            ],
+                            'createFromType' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],

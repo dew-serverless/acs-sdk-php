@@ -108,6 +108,56 @@
                     ],
                 ],
             ],
+            'SinkApiDestinationParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'HeaderParameters' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'BodyParameters' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'QueryStringParameters' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'SinkBaiLianParameters' => [
                 'type' => 'object',
                 'properties' => [
@@ -199,6 +249,57 @@
                 'type' => 'object',
                 'properties' => [
                     'Enable' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'SinkHttpsParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'URL' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'Method' => [
+                        'type' => 'string',
+                    ],
+                    'Body' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'Token' => [
+                        'type' => 'string',
+                    ],
+                    'NetworkType' => [
+                        'type' => 'string',
+                    ],
+                    'VpcId' => [
+                        'type' => 'string',
+                    ],
+                    'VSwitchIds' => [
+                        'type' => 'string',
+                    ],
+                    'SecurityGroupId' => [
                         'type' => 'string',
                     ],
                 ],
@@ -5050,6 +5151,14 @@
                                 '$ref' => '#/components/schemas/SinkDataWorksTriggerParameters',
                                 'required' => false,
                             ],
+                            'SinkHttpsParameters' => [
+                                '$ref' => '#/components/schemas/SinkHttpsParameters',
+                                'required' => false,
+                            ],
+                            'SinkApiDestinationParameters' => [
+                                '$ref' => '#/components/schemas/SinkApiDestinationParameters',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -7945,6 +8054,14 @@
                                 '$ref' => '#/components/schemas/SinkDataWorksTriggerParameters',
                                 'required' => false,
                             ],
+                            'SinkHttpsParameters' => [
+                                '$ref' => '#/components/schemas/SinkHttpsParameters',
+                                'required' => false,
+                            ],
+                            'SinkApiDestinationParameters' => [
+                                '$ref' => '#/components/schemas/SinkApiDestinationParameters',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -9356,6 +9473,10 @@
                                 'required' => false,
                             ],
                             'SecurityGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AllowedCIDRs' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

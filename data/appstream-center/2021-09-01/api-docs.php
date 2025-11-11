@@ -2741,6 +2741,14 @@
                     ],
                 ],
                 [
+                    'name' => 'EnvironmentConfig',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'AppInstanceGroupIdList',
                     'in' => 'formData',
                     'style' => 'repeatList',
@@ -3708,6 +3716,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SavingPlanId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListWuyingServer' => [
@@ -4225,6 +4241,15 @@
                             ],
                             'Html5FileTransfer' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'NoOperationDisconnect' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'NoOperationDisconnectTime' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                                 'required' => false,
                             ],
                         ],

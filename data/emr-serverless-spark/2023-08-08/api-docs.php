@@ -3160,6 +3160,13 @@
                     'AK' => [],
                 ],
             ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'body',
@@ -3178,6 +3185,11 @@
                                 'required' => false,
                                 'properties' => [
                                     'cu' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'maxCu' => [
                                         'type' => 'integer',
                                         'format' => 'int64',
                                         'required' => false,

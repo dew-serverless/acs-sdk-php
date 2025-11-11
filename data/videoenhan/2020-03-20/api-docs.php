@@ -903,31 +903,6 @@
                 ],
             ],
         ],
-        'ReduceVideoNoise' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'VideoUrl',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'EnhancePortraitVideo' => [
             'methods' => [
                 'post',

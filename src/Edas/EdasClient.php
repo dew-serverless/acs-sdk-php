@@ -325,6 +325,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listSwimmingLaneGroupAsync($arguments = [])
  * @method \Dew\Acs\Result listSwimmingLane(array $arguments = [])
  * @method \Http\Promise\Promise listSwimmingLaneAsync($arguments = [])
+ * @method \Dew\Acs\Result describeLocalitySetting(array $arguments = [])
+ * @method \Http\Promise\Promise describeLocalitySettingAsync($arguments = [])
  */
 final class EdasClient extends AcsClient
 {

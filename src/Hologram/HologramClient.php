@@ -7,6 +7,20 @@ namespace Dew\Acs\Hologram;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result revokeTablePermission(array $arguments = [])
+ * @method \Http\Promise\Promise revokeTablePermissionAsync($arguments = [])
+ * @method \Dew\Acs\Result revokeSchemaPermission(array $arguments = [])
+ * @method \Http\Promise\Promise revokeSchemaPermissionAsync($arguments = [])
+ * @method \Dew\Acs\Result revokeDatabasePermission(array $arguments = [])
+ * @method \Http\Promise\Promise revokeDatabasePermissionAsync($arguments = [])
+ * @method \Dew\Acs\Result listDatabases(array $arguments = [])
+ * @method \Http\Promise\Promise listDatabasesAsync($arguments = [])
+ * @method \Dew\Acs\Result grantTablePermission(array $arguments = [])
+ * @method \Http\Promise\Promise grantTablePermissionAsync($arguments = [])
+ * @method \Dew\Acs\Result grantSchemaPermission(array $arguments = [])
+ * @method \Http\Promise\Promise grantSchemaPermissionAsync($arguments = [])
+ * @method \Dew\Acs\Result grantDatabasePermission(array $arguments = [])
+ * @method \Http\Promise\Promise grantDatabasePermissionAsync($arguments = [])
  * @method \Dew\Acs\Result createInstance(array $arguments = [])
  * @method \Http\Promise\Promise createInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteInstance(array $arguments = [])

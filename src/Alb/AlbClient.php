@@ -173,6 +173,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteAScriptsAsync($arguments = [])
  * @method \Dew\Acs\Result listAScripts(array $arguments = [])
  * @method \Http\Promise\Promise listAScriptsAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyCapacityReservation(array $arguments = [])
+ * @method \Http\Promise\Promise modifyCapacityReservationAsync($arguments = [])
  */
 final class AlbClient extends AcsClient
 {

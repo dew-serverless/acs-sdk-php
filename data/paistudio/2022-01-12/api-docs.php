@@ -345,6 +345,23 @@
                     ],
                 ],
             ],
+            'ClusterSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'ClusterType' => [
+                        'type' => 'string',
+                    ],
+                    'Image' => [
+                        'type' => 'string',
+                    ],
+                    'DataSources' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DataSource',
+                        ],
+                    ],
+                ],
+            ],
             'ComponentSpec' => [
                 'type' => 'object',
                 'properties' => [
@@ -413,6 +430,20 @@
                         'items' => [
                             'type' => 'string',
                         ],
+                    ],
+                ],
+            ],
+            'DataSource' => [
+                'type' => 'object',
+                'properties' => [
+                    'DataSourceId' => [
+                        'type' => 'string',
+                    ],
+                    'MountPath' => [
+                        'type' => 'string',
+                    ],
+                    'Uri' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -955,6 +986,25 @@
                     'SystemReservedMemory' => [
                         'type' => 'string',
                     ],
+                    'AncestorQuotaWorkloadNum' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SelfQuotaWorkloadNum' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DescendantQuotaWorkloadNum' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DiskPL' => [
+                        'type' => 'string',
+                    ],
+                    'DiskCapacity' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                 ],
             ],
             'NodeGPUMetric' => [
@@ -1118,6 +1168,9 @@
                     ],
                     'BindingPolicy' => [
                         '$ref' => '#/components/schemas/BindingPolicy',
+                    ],
+                    'HyperType' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1440,6 +1493,35 @@
                         'items' => [
                             'type' => 'string',
                         ],
+                    ],
+                    'QuotaCluster' => [
+                        '$ref' => '#/components/schemas/QuotaCluster',
+                    ],
+                ],
+            ],
+            'QuotaCluster' => [
+                'type' => 'object',
+                'properties' => [
+                    'ClusterType' => [
+                        'type' => 'string',
+                    ],
+                    'Image' => [
+                        'type' => 'string',
+                    ],
+                    'DataSources' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DataSource',
+                        ],
+                    ],
+                    'Endpoints' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'Status' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -5219,6 +5301,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'ClusterSpec' => [
+                                '$ref' => '#/components/schemas/ClusterSpec',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -5370,6 +5456,14 @@
                 ],
                 [
                     'name' => 'Versions',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClusterType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5967,6 +6061,14 @@
                 ],
                 [
                     'name' => 'OrderInstanceIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

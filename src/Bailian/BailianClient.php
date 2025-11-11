@@ -93,6 +93,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getAlipayTransferStatusAsync($arguments = [])
  * @method \Dew\Acs\Result getAlipayUrl(array $arguments = [])
  * @method \Http\Promise\Promise getAlipayUrlAsync($arguments = [])
+ * @method \Dew\Acs\Result applyTempStorageLease(array $arguments = [])
+ * @method \Http\Promise\Promise applyTempStorageLeaseAsync($arguments = [])
  */
 final class BailianClient extends AcsClient
 {

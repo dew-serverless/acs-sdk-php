@@ -4874,6 +4874,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -8214,6 +8215,14 @@
                 ],
                 [
                     'name' => 'SwitchTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetMinorVersion',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -20535,6 +20544,22 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ScheduledRule',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AcuType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

@@ -6173,7 +6173,7 @@
                                 ],
                             ],
                         ],
-                        'maxItems' => 100,
+                        'maxItems' => 1000,
                     ],
                 ],
                 [
@@ -6225,7 +6225,7 @@
                                 ],
                             ],
                         ],
-                        'maxItems' => 100,
+                        'maxItems' => 1000,
                     ],
                 ],
                 [
@@ -19532,6 +19532,18 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'IpOrigin',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'cidr',
+                            'prefix',
+                        ],
                     ],
                 ],
             ],

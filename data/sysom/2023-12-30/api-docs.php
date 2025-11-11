@@ -262,6 +262,10 @@
                                     ],
                                 ],
                             ],
+                            'k8sLabel' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -330,6 +334,10 @@
                                         ],
                                     ],
                                 ],
+                            ],
+                            'k8sLabel' => [
+                                'type' => 'boolean',
+                                'required' => false,
                             ],
                         ],
                     ],

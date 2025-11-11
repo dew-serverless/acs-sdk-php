@@ -6386,6 +6386,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RagInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateDocParserJob' => [
@@ -6436,6 +6444,14 @@
                 ],
                 [
                     'name' => 'ResultType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RagInstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -10441,6 +10457,14 @@
                 ],
                 [
                     'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RagInstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

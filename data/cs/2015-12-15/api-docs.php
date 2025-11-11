@@ -78,6 +78,25 @@
                             'type' => 'string',
                         ],
                     ],
+                    'maxConcurrentDownloads' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ignoreImageDefinedVolume' => [
+                        'type' => 'boolean',
+                    ],
+                    'limitCore' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'limitNoFile' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'limitMemLock' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                 ],
             ],
             'data_disk' => [
@@ -813,6 +832,31 @@
                         'properties' => [
                             'kubelet_configuration' => [
                                 '$ref' => '#/components/schemas/kubelet_config',
+                            ],
+                        ],
+                    ],
+                    'node_components' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'name' => [
+                                    'type' => 'string',
+                                ],
+                                'version' => [
+                                    'type' => 'string',
+                                ],
+                                'config' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'custom_config' => [
+                                            'type' => 'object',
+                                            'additionalProperties' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -3582,6 +3626,37 @@
                                     'enable' => [
                                         'type' => 'boolean',
                                         'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'node_components' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'version' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'config' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'custom_config' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'additionalProperties' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
                                     ],
                                 ],
                             ],
@@ -8597,6 +8672,61 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListOperationPlansForRegion' => [
+            'path' => '/regions/{region_id}/operation/plans',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'region_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

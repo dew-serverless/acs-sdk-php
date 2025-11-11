@@ -4248,8 +4248,8 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'public',
-            'endpoint' => 'iac.aliyuncs.com',
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'iac.cn-zhangjiakou.aliyuncs.com',
         ],
     ],
 ];

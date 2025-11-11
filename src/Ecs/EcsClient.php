@@ -179,6 +179,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise resetDiskDefaultKMSKeyIdAsync($arguments = [])
  * @method \Dew\Acs\Result disableDiskEncryptionByDefault(array $arguments = [])
  * @method \Http\Promise\Promise disableDiskEncryptionByDefaultAsync($arguments = [])
+ * @method \Dew\Acs\Result openSnapshotService(array $arguments = [])
+ * @method \Http\Promise\Promise openSnapshotServiceAsync($arguments = [])
  * @method \Dew\Acs\Result createSnapshot(array $arguments = [])
  * @method \Http\Promise\Promise createSnapshotAsync($arguments = [])
  * @method \Dew\Acs\Result describeSnapshots(array $arguments = [])

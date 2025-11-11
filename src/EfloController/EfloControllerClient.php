@@ -101,8 +101,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listMachineNetworkInfoAsync($arguments = [])
  * @method \Dew\Acs\Result describeNodeType(array $arguments = [])
  * @method \Http\Promise\Promise describeNodeTypeAsync($arguments = [])
+ * @method \Dew\Acs\Result listSyslogs(array $arguments = [])
+ * @method \Http\Promise\Promise listSyslogsAsync($arguments = [])
  * @method \Dew\Acs\Result reportNodesStatus(array $arguments = [])
  * @method \Http\Promise\Promise reportNodesStatusAsync($arguments = [])
+ * @method \Dew\Acs\Result describeNodeGroup(array $arguments = [])
+ * @method \Http\Promise\Promise describeNodeGroupAsync($arguments = [])
  * @method \Dew\Acs\Result changeNodeGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeNodeGroupAsync($arguments = [])
  * @method \Dew\Acs\Result getHyperNode(array $arguments = [])
@@ -113,6 +117,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listHyperNodesAsync($arguments = [])
  * @method \Dew\Acs\Result listFreeHyperNodes(array $arguments = [])
  * @method \Http\Promise\Promise listFreeHyperNodesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeHyperNode(array $arguments = [])
+ * @method \Http\Promise\Promise describeHyperNodeAsync($arguments = [])
+ * @method \Dew\Acs\Result changeNodeTypes(array $arguments = [])
+ * @method \Http\Promise\Promise changeNodeTypesAsync($arguments = [])
  */
 final class EfloControllerClient extends AcsClient
 {

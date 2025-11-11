@@ -567,6 +567,20 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceBootConfigurationAsync($arguments = [])
  * @method \Dew\Acs\Result importImage(array $arguments = [])
  * @method \Http\Promise\Promise importImageAsync($arguments = [])
+ * @method \Dew\Acs\Result manageAICLogin(array $arguments = [])
+ * @method \Http\Promise\Promise manageAICLoginAsync($arguments = [])
+ * @method \Dew\Acs\Result listAICPublicKeys(array $arguments = [])
+ * @method \Http\Promise\Promise listAICPublicKeysAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteAICPublicKey(array $arguments = [])
+ * @method \Http\Promise\Promise deleteAICPublicKeyAsync($arguments = [])
+ * @method \Dew\Acs\Result listAICPublicKeyDeliveries(array $arguments = [])
+ * @method \Http\Promise\Promise listAICPublicKeyDeliveriesAsync($arguments = [])
+ * @method \Dew\Acs\Result shareAICImage(array $arguments = [])
+ * @method \Http\Promise\Promise shareAICImageAsync($arguments = [])
+ * @method \Dew\Acs\Result uploadAICPublicKey(array $arguments = [])
+ * @method \Http\Promise\Promise uploadAICPublicKeyAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSDGSharedDisks(array $arguments = [])
+ * @method \Http\Promise\Promise describeSDGSharedDisksAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

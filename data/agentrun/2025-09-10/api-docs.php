@@ -53,12 +53,6 @@
                     'containerConfiguration' => [
                         '$ref' => '#/components/schemas/ContainerConfiguration',
                     ],
-                    'environmentVariables' => [
-                        'type' => 'object',
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
-                    ],
                     'networkConfiguration' => [
                         '$ref' => '#/components/schemas/NetworkConfiguration',
                     ],
@@ -89,6 +83,12 @@
                     'sessionIdleTimeoutSeconds' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -240,6 +240,53 @@
                         'items' => [
                             'type' => 'string',
                         ],
+                    ],
+                ],
+            ],
+            'ApigLLMModel' => [
+                'type' => 'object',
+                'properties' => [
+                    'modelId' => [
+                        'type' => 'string',
+                    ],
+                    'tenantId' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'provider' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'address' => [
+                        'type' => 'string',
+                    ],
+                    'apiKey' => [
+                        'type' => 'string',
+                    ],
+                    'models' => [
+                        'type' => 'string',
+                    ],
+                    'modelsWeight' => [
+                        'type' => 'string',
+                    ],
+                    'desc' => [
+                        'type' => 'string',
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                    ],
+                    'updateTime' => [
+                        'type' => 'string',
+                    ],
+                    'gatewayId' => [
+                        'type' => 'string',
+                    ],
+                    'targetId' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -464,6 +511,12 @@
                 'type' => 'object',
                 'properties' => [
                     'zipFile' => [
+                        'type' => 'string',
+                    ],
+                    'ossBucketName' => [
+                        'type' => 'string',
+                    ],
+                    'ossObjectName' => [
                         'type' => 'string',
                     ],
                     'checksum' => [
@@ -757,6 +810,35 @@
                 'properties' => [
                     'description' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'CreateApigLLMModelInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'provider' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'address' => [
+                        'type' => 'string',
+                    ],
+                    'apiKey' => [
+                        'type' => 'string',
+                    ],
+                    'desc' => [
+                        'type' => 'string',
+                    ],
+                    'models' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -2366,6 +2448,35 @@
                     ],
                 ],
             ],
+            'UpdateApigLLMModelInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'provider' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'address' => [
+                        'type' => 'string',
+                    ],
+                    'apiKey' => [
+                        'type' => 'string',
+                    ],
+                    'desc' => [
+                        'type' => 'string',
+                    ],
+                    'models' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
             'UpdateCredentialInput' => [
                 'type' => 'object',
                 'properties' => [
@@ -3346,10 +3457,6 @@
                                 'format' => 'int32',
                                 'required' => true,
                             ],
-                            'permanent' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
                             'strategy' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -3441,10 +3548,6 @@
                                 'format' => 'int32',
                                 'required' => false,
                             ],
-                            'permanent' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
                             'strategy' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -3511,7 +3614,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'namePrefix',
+                    'name' => 'pattern',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

@@ -93,6 +93,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listInstanceIpWhitelistAsync($arguments = [])
  * @method \Dew\Acs\Result getInstanceIpWhitelist(array $arguments = [])
  * @method \Http\Promise\Promise getInstanceIpWhitelistAsync($arguments = [])
+ * @method \Dew\Acs\Result listMigrations(array $arguments = [])
+ * @method \Http\Promise\Promise listMigrationsAsync($arguments = [])
  * @method \Dew\Acs\Result listMigrationOperations(array $arguments = [])
  * @method \Http\Promise\Promise listMigrationOperationsAsync($arguments = [])
  * @method \Dew\Acs\Result executeMigrationOperation(array $arguments = [])
@@ -135,14 +137,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result getConsumeTimespan(array $arguments = [])
+ * @method \Http\Promise\Promise getConsumeTimespanAsync($arguments = [])
  * @method \Dew\Acs\Result listRegions(array $arguments = [])
  * @method \Http\Promise\Promise listRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result listAvailableZones(array $arguments = [])
  * @method \Http\Promise\Promise listAvailableZonesAsync($arguments = [])
  * @method \Dew\Acs\Result listMetricMeta(array $arguments = [])
  * @method \Http\Promise\Promise listMetricMetaAsync($arguments = [])
- * @method \Dew\Acs\Result getConsumeTimespan(array $arguments = [])
- * @method \Http\Promise\Promise getConsumeTimespanAsync($arguments = [])
  */
 final class RocketMQClient extends AcsClient
 {

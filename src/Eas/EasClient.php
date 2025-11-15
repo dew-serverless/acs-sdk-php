@@ -127,6 +127,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteResourceLogAsync($arguments = [])
  * @method \Dew\Acs\Result deleteResourceInstanceLabel(array $arguments = [])
  * @method \Http\Promise\Promise deleteResourceInstanceLabelAsync($arguments = [])
+ * @method \Dew\Acs\Result migrateResourceInstance(array $arguments = [])
+ * @method \Http\Promise\Promise migrateResourceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result updateResourceInstanceLabel(array $arguments = [])
  * @method \Http\Promise\Promise updateResourceInstanceLabelAsync($arguments = [])
  * @method \Dew\Acs\Result updateResource(array $arguments = [])
@@ -205,14 +207,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result reinstallTenantAddon(array $arguments = [])
  * @method \Http\Promise\Promise reinstallTenantAddonAsync($arguments = [])
- * @method \Dew\Acs\Result listTenantAddons(array $arguments = [])
- * @method \Http\Promise\Promise listTenantAddonsAsync($arguments = [])
  * @method \Dew\Acs\Result listServiceInstanceFaultInjectionInfo(array $arguments = [])
  * @method \Http\Promise\Promise listServiceInstanceFaultInjectionInfoAsync($arguments = [])
- * @method \Dew\Acs\Result deleteFaultInjection(array $arguments = [])
- * @method \Http\Promise\Promise deleteFaultInjectionAsync($arguments = [])
  * @method \Dew\Acs\Result createFaultInjection(array $arguments = [])
  * @method \Http\Promise\Promise createFaultInjectionAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteFaultInjection(array $arguments = [])
+ * @method \Http\Promise\Promise deleteFaultInjectionAsync($arguments = [])
+ * @method \Dew\Acs\Result listTenantAddons(array $arguments = [])
+ * @method \Http\Promise\Promise listTenantAddonsAsync($arguments = [])
  */
 final class EasClient extends AcsClient
 {

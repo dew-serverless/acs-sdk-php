@@ -379,6 +379,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise asyncWritingBiddingDocAsync($arguments = [])
  * @method \Dew\Acs\Result downloadBiddingDoc(array $arguments = [])
  * @method \Http\Promise\Promise downloadBiddingDocAsync($arguments = [])
+ * @method \Dew\Acs\Result createGeneralConfig(array $arguments = [])
+ * @method \Http\Promise\Promise createGeneralConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result getGeneralConfig(array $arguments = [])
+ * @method \Http\Promise\Promise getGeneralConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result listGeneralConfigs(array $arguments = [])
+ * @method \Http\Promise\Promise listGeneralConfigsAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteGeneralConfig(array $arguments = [])
+ * @method \Http\Promise\Promise deleteGeneralConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result updateGeneralConfig(array $arguments = [])
+ * @method \Http\Promise\Promise updateGeneralConfigAsync($arguments = [])
  */
 final class AiMiaoBiClient extends AcsClient
 {

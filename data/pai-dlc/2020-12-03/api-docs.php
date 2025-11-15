@@ -95,6 +95,27 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
+                    'PodsToDelete' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'AutoscalingMetricSpec' => [
+                        '$ref' => '#/components/schemas/AutoscalingMetricSpec',
+                    ],
+                ],
+            ],
+            'AutoscalingMetricSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'MetricName' => [
+                        'type' => 'string',
+                    ],
+                    'TargetValue' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
                 ],
             ],
             'CodeSourceItem' => [
@@ -2169,6 +2190,14 @@
                             'Accessibility' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'JobSpecs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    '$ref' => '#/components/schemas/JobSpec',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],

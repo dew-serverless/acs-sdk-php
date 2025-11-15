@@ -3023,6 +3023,22 @@
                     ],
                 ],
             ],
+            'MetaQueryOpenRequest' => [
+                'type' => 'object',
+                'properties' => [
+                    'Filters' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Filter' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'MetaQueryOrder' => [
                 'type' => 'string',
                 'enum' => [
@@ -8947,6 +8963,29 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'role',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'xml',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'MetaQuery' => [
+                                '$ref' => '#/components/schemas/MetaQueryOpenRequest',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],

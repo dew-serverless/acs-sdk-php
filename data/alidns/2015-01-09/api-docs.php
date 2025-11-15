@@ -13922,6 +13922,212 @@
                 ],
             ],
         ],
+        'UpdateRspDomainServerHoldStatusOte' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OperatorType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'registry',
+                            'registryGateway',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OperatorId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DomainName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ServerHoldStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'enable',
+                            'disable',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'StatusMsg',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateRspDomainStatusOte' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OperatorType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'registry',
+                            'registryGateway',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OperatorId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DomainName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AddStatusList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Status' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'clientDeleteProhibited',
+                                        'clientHold',
+                                        'clientRenewProhibited',
+                                        'clientTransferProhibited',
+                                        'clientUpdateProhibited',
+                                        'pendingCreate',
+                                        'pendingDelete',
+                                        'pendingRenew',
+                                        'pendingTransfer',
+                                        'pendingUpdate',
+                                        'serverDeleteProhibited',
+                                        'serverRenewProhibited',
+                                        'serverTransferProhibited',
+                                        'serverUpdateProhibited',
+                                        'linked',
+                                    ],
+                                ],
+                                'StatusMsg' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'DeleteStatusList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Status' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'clientDeleteProhibited',
+                                        'clientHold',
+                                        'clientRenewProhibited',
+                                        'clientTransferProhibited',
+                                        'clientUpdateProhibited',
+                                        'pendingCreate',
+                                        'pendingDelete',
+                                        'pendingRenew',
+                                        'pendingTransfer',
+                                        'pendingUpdate',
+                                        'serverDeleteProhibited',
+                                        'serverRenewProhibited',
+                                        'serverTransferProhibited',
+                                        'serverUpdateProhibited',
+                                        'linked',
+                                    ],
+                                ],
+                                'StatusMsg' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [

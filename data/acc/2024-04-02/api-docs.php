@@ -412,5 +412,9 @@
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'acc.cn-shenzhen.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'acc.cn-hongkong.aliyuncs.com',
+        ],
     ],
 ];

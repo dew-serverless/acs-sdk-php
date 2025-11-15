@@ -1852,6 +1852,20 @@
                     ],
                 ],
                 [
+                    'name' => 'TagIdList',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int64',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'AgentKey',
                     'in' => 'query',
                     'schema' => [
@@ -1958,6 +1972,20 @@
                             'required' => false,
                         ],
                         'maxItems' => 10,
+                    ],
+                ],
+                [
+                    'name' => 'TagIdList',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int64',
+                            'required' => false,
+                        ],
                     ],
                 ],
                 [
@@ -2441,6 +2469,20 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TagIdList',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int64',
+                            'required' => false,
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteFaq' => [
@@ -2554,6 +2596,20 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TagIdList',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int64',
+                            'required' => false,
+                        ],
                     ],
                 ],
             ],

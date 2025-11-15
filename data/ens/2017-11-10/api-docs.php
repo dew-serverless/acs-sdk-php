@@ -16979,6 +16979,267 @@
                 ],
             ],
         ],
+        'ModifyInstanceNetworkAttribute' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'VSwitchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PrivateIpAddress',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
+            ],
+        ],
+        'CreateSecurityGroupPermissions' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SecurityGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Permissions',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Direction' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'egress',
+                                        'ingress',
+                                    ],
+                                ],
+                                'IpProtocol' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'TCP',
+                                        'UDP',
+                                        'ICMP',
+                                        'ALL',
+                                        'GRE',
+                                        'tcp',
+                                        'udp',
+                                        'icmp',
+                                        'all',
+                                        'gre',
+                                        'ICMPV6',
+                                        'icmpv6',
+                                    ],
+                                ],
+                                'PortRange' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'SourcePortRange' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Policy' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'Accept',
+                                        'Drop',
+                                    ],
+                                ],
+                                'DestCidrIp' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SourceCidrIp' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Description' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'maxLength' => 256,
+                                ],
+                                'Priority' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => true,
+                                    'minimum' => '1',
+                                    'maximum' => '100',
+                                ],
+                                'Ipv6SourceCidrIp' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Ipv6DestCidrIp' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 200,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSecurityGroupPermissions' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SecurityGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Permissions',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Direction' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'egress',
+                                        'ingress',
+                                    ],
+                                ],
+                                'IpProtocol' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'TCP',
+                                        'UDP',
+                                        'ICMP',
+                                        'ALL',
+                                        'GRE',
+                                        'tcp',
+                                        'udp',
+                                        'icmp',
+                                        'all',
+                                        'gre',
+                                        'icmpv6',
+                                        'ICMPV6',
+                                    ],
+                                ],
+                                'PortRange' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'SourcePortRange' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Policy' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'Accept',
+                                        'Drop',
+                                    ],
+                                ],
+                                'DestCidrIp' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SourceCidrIp' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Priority' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => true,
+                                    'minimum' => '1',
+                                    'maximum' => '100',
+                                ],
+                                'Ipv6SourceCidrIp' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Ipv6DestCidrIp' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 200,
+                    ],
+                ],
+            ],
+        ],
         'ManageAICLogin' => [
             'path' => '',
             'methods' => [

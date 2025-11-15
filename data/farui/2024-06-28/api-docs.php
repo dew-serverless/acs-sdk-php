@@ -194,6 +194,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ContractId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RunContractRuleGeneration' => [

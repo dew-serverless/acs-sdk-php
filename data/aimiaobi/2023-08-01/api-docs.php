@@ -2660,6 +2660,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'NoteId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ConfirmAndPostProcessAuditNote' => [
@@ -2726,6 +2734,13 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'NoteId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
             ],
         ],
         'DeleteAuditNote' => [
@@ -2749,6 +2764,13 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NoteId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2842,6 +2864,13 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'NoteId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
             ],
         ],
         'ListAuditTerms' => [
@@ -2881,6 +2910,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TermsName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -2942,6 +2979,13 @@
                         'items' => [
                             'type' => 'string',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'TermsName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -3084,6 +3128,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'TermsName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'FetchImportTermsTask' => [
@@ -3140,6 +3192,13 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TermsName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -3322,11 +3381,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'id' => [
+                                'url' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'url' => [
+                                'id' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -3345,16 +3404,32 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Id' => [
+                                'Url' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Url' => [
+                                'Id' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'NoteId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TermsName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -9176,6 +9251,26 @@
                                             'required' => false,
                                         ],
                                     ],
+                                    'SearchTextMinScore' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                    'SearchImageMinScore' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                    'SearchVideoMinScore' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                    'SearchAudioMinScore' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'SearchModels' => [
@@ -9201,6 +9296,14 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                            ],
+                            'ModelCustomPromptTemplate' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ModelCustomVlPromptTemplate' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -12789,6 +12892,192 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateGeneralConfig' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigValue',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetGeneralConfig' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListGeneralConfigs' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteGeneralConfig' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateGeneralConfig' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigValue',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

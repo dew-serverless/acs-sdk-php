@@ -33,6 +33,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceStorageConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceStorageConfig(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceStorageConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyInstanceConfig(array $arguments = [])
+ * @method \Http\Promise\Promise modifyInstanceConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceRAGConfig(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceRAGConfigAsync($arguments = [])
  * @method \Dew\Acs\Result describeInstanceRAGConfig(array $arguments = [])
@@ -45,8 +47,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyInstanceSSLAsync($arguments = [])
  * @method \Dew\Acs\Result describeInstanceSSL(array $arguments = [])
  * @method \Http\Promise\Promise describeInstanceSSLAsync($arguments = [])
- * @method \Dew\Acs\Result modifyInstanceConfig(array $arguments = [])
- * @method \Http\Promise\Promise modifyInstanceConfigAsync($arguments = [])
  */
 final class RdsAiClient extends AcsClient
 {

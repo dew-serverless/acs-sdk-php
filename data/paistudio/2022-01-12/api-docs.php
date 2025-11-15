@@ -164,6 +164,20 @@
                     ],
                 ],
             ],
+            'AssignNodeSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'EnableAssignNode' => [
+                        'type' => 'boolean',
+                    ],
+                    'NodeNames' => [
+                        'type' => 'string',
+                    ],
+                    'AntiAffinityNodeNames' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'BindingPolicy' => [
                 'type' => 'object',
                 'properties' => [
@@ -5504,6 +5518,14 @@
                 ],
                 [
                     'name' => 'Verbose',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WithNodeMeta',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',

@@ -747,6 +747,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise cancelIProductionJobAsync($arguments = [])
  * @method \Dew\Acs\Result submitSceneMediaSelectionJob(array $arguments = [])
  * @method \Http\Promise\Promise submitSceneMediaSelectionJobAsync($arguments = [])
+ * @method \Dew\Acs\Result submitSceneBatchEditingJob(array $arguments = [])
+ * @method \Http\Promise\Promise submitSceneBatchEditingJobAsync($arguments = [])
+ * @method \Dew\Acs\Result submitSceneTimelineOrganizationJob(array $arguments = [])
+ * @method \Http\Promise\Promise submitSceneTimelineOrganizationJobAsync($arguments = [])
  */
 final class IceClient extends AcsClient
 {

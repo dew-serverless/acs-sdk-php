@@ -109,8 +109,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeNodeGroupAsync($arguments = [])
  * @method \Dew\Acs\Result changeNodeGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeNodeGroupAsync($arguments = [])
- * @method \Dew\Acs\Result getHyperNode(array $arguments = [])
- * @method \Http\Promise\Promise getHyperNodeAsync($arguments = [])
  * @method \Dew\Acs\Result listClusterHyperNodes(array $arguments = [])
  * @method \Http\Promise\Promise listClusterHyperNodesAsync($arguments = [])
  * @method \Dew\Acs\Result listHyperNodes(array $arguments = [])
@@ -121,6 +119,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeHyperNodeAsync($arguments = [])
  * @method \Dew\Acs\Result changeNodeTypes(array $arguments = [])
  * @method \Http\Promise\Promise changeNodeTypesAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteHyperNode(array $arguments = [])
+ * @method \Http\Promise\Promise deleteHyperNodeAsync($arguments = [])
  */
 final class EfloControllerClient extends AcsClient
 {

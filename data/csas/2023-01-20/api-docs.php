@@ -702,6 +702,29 @@
                     'Description' => [
                         'type' => 'string',
                     ],
+                    'UserTags' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Aliuid' => [
+                                    'type' => 'string',
+                                ],
+                                'SaseUserId' => [
+                                    'type' => 'string',
+                                ],
+                                'TagId' => [
+                                    'type' => 'string',
+                                ],
+                                'Name' => [
+                                    'type' => 'string',
+                                ],
+                                'Description' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'OpenStructSaseUserSimple' => [

@@ -20563,6 +20563,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PasswordInherit',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyRCInstanceChargeType' => [

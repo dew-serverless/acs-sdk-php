@@ -1173,6 +1173,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => true,
                     ],
                 ],
@@ -1181,6 +1182,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => true,
                     ],
                 ],
@@ -1190,6 +1192,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'deprecated' => true,
                         'required' => true,
                     ],
                 ],

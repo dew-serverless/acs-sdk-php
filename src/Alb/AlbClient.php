@@ -165,6 +165,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise unTagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result listAsynJobs(array $arguments = [])
  * @method \Http\Promise\Promise listAsynJobsAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyCapacityReservation(array $arguments = [])
+ * @method \Http\Promise\Promise modifyCapacityReservationAsync($arguments = [])
+ * @method \Dew\Acs\Result describeCapacityReservation(array $arguments = [])
+ * @method \Http\Promise\Promise describeCapacityReservationAsync($arguments = [])
  * @method \Dew\Acs\Result updateAScripts(array $arguments = [])
  * @method \Http\Promise\Promise updateAScriptsAsync($arguments = [])
  * @method \Dew\Acs\Result createAScripts(array $arguments = [])
@@ -173,8 +177,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteAScriptsAsync($arguments = [])
  * @method \Dew\Acs\Result listAScripts(array $arguments = [])
  * @method \Http\Promise\Promise listAScriptsAsync($arguments = [])
- * @method \Dew\Acs\Result modifyCapacityReservation(array $arguments = [])
- * @method \Http\Promise\Promise modifyCapacityReservationAsync($arguments = [])
  */
 final class AlbClient extends AcsClient
 {

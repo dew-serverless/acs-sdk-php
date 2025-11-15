@@ -764,6 +764,51 @@
                     ],
                 ],
             ],
+            'IdentifyCredential' => [
+                'type' => 'object',
+                'properties' => [
+                    'UserId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'UserType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'ProjectId' => [
+                        'type' => 'string',
+                    ],
+                    'DataSource' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Role' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'UserName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Password' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'InstanceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'InstanceName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'LineageEntity' => [
                 'type' => 'object',
                 'properties' => [

@@ -117,10 +117,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getConsumerAuthorizationRuleAsync($arguments = [])
  * @method \Dew\Acs\Result listPolicies(array $arguments = [])
  * @method \Http\Promise\Promise listPoliciesAsync($arguments = [])
- * @method \Dew\Acs\Result createAndAttachPolicy(array $arguments = [])
- * @method \Http\Promise\Promise createAndAttachPolicyAsync($arguments = [])
- * @method \Dew\Acs\Result updateAndAttachPolicy(array $arguments = [])
- * @method \Http\Promise\Promise updateAndAttachPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result listPolicyClasses(array $arguments = [])
  * @method \Http\Promise\Promise listPolicyClassesAsync($arguments = [])
  * @method \Dew\Acs\Result createPolicy(array $arguments = [])
@@ -173,6 +169,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result getResourceOverview(array $arguments = [])
  * @method \Http\Promise\Promise getResourceOverviewAsync($arguments = [])
+ * @method \Dew\Acs\Result createAndAttachPolicy(array $arguments = [])
+ * @method \Http\Promise\Promise createAndAttachPolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result updateAndAttachPolicy(array $arguments = [])
+ * @method \Http\Promise\Promise updateAndAttachPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result createEnvironment(array $arguments = []) {@deprecated 2024-03-27}
  * @method \Http\Promise\Promise createEnvironmentAsync($arguments = []) {@deprecated 2024-03-27}
  * @method \Dew\Acs\Result getEnvironment(array $arguments = []) {@deprecated 2024-03-27}

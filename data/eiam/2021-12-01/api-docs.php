@@ -4956,6 +4956,190 @@
                 ],
             ],
         ],
+        'BindUserAuthnSourceMapping' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'UserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IdentityProviderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'UserExternalId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+            ],
+        ],
+        'UnbindUserAuthnSourceMapping' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'UserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IdentityProviderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'UserExternalId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+            ],
+        ],
+        'ListUserAuthnSourceMappings' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PreviousToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'UserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IdentityProviderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'UserExternalId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 64,
+                    ],
+                ],
+            ],
+        ],
         'CreateUser' => [
             'methods' => [
                 'post',
@@ -6869,6 +7053,29 @@
                                     ],
                                 ],
                             ],
+                            'PeriodicSyncConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'PeriodicSyncType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'PeriodicSyncCron' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'PeriodicSyncTimes' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -7114,6 +7321,22 @@
                                 'required' => false,
                             ],
                             'UserObjectClassCustomFilter' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PasswordSyncStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'enabled',
+                                    'disabled',
+                                ],
+                            ],
+                            'UserRdn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'OrganizationalUnitRdn' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -7697,6 +7920,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Direction',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

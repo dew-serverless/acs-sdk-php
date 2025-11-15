@@ -37,9 +37,6 @@
                     'Code' => [
                         'type' => 'string',
                     ],
-                    'Name' => [
-                        'type' => 'string',
-                    ],
                 ],
             ],
             'FirstStruct' => [
@@ -65,10 +62,13 @@
             'Sc' => [
                 'type' => 'object',
                 'properties' => [
+                    'String' => [
+                        'type' => 'string',
+                    ],
                     'Obj' => [
                         'type' => 'string',
                     ],
-                    'String' => [
+                    'Add' => [
                         'type' => 'string',
                     ],
                 ],
@@ -76,10 +76,10 @@
             'StructTest' => [
                 'type' => 'object',
                 'properties' => [
-                    'Age' => [
+                    'Name' => [
                         'type' => 'string',
                     ],
-                    'Name' => [
+                    'Age' => [
                         'type' => 'string',
                     ],
                 ],
@@ -90,7 +90,11 @@
             ],
             'UserInfo' => [
                 'type' => 'object',
-                'properties' => [],
+                'properties' => [
+                    'Namew' => [
+                        'type' => 'string',
+                    ],
+                ],
             ],
             'Vc' => [
                 'type' => 'object',
@@ -102,351 +106,6 @@
             ],
         ],
     ],
-    'apis' => [
-        'CreateAPi3' => [
-            'path' => '',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
-        'GetInstance' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'TestAPIPublish' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Name',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'One',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Two',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Three',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Four',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Five',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Names' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Ox' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'Fix' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Mix' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Six',
-                    'in' => 'formData',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'SixSon1' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'SixSon2' => [
-                                '$ref' => '#/components/schemas/UserInfo',
-                                'required' => false,
-                            ],
-                            'SixSon3' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'additionalProperties' => [
-                                    'type' => 'string',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Seven',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'additionalProperties' => [
-                            'type' => 'array',
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'TestMergeProcess' => [
-            'path' => '',
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateInstance' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ImageId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreateInstance' => [
-            'path' => '/，。。',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-                'sse',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ImageId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteInstance' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'TestModify' => [
-            'path' => '',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
-        'CreateDesc' => [
-            'path' => '',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
-    ],
+    'apis' => [],
     'endpoints' => [],
 ];

@@ -777,6 +777,17 @@
                     ],
                 ],
             ],
+            'GetPreSignedUrlForObjectResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'preSignedUrl' => [
+                        'type' => 'string',
+                    ],
+                    'jarUrl' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'HotUpdateJobFailureInfo' => [
                 'type' => 'object',
                 'properties' => [

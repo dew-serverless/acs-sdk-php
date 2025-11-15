@@ -8339,35 +8339,35 @@
             'endpoint' => 'mongodb.aliyuncs.com',
         ],
         [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'mongodb.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'mongodb.us-west-1.aliyuncs.com',
+            'regionId' => 'us-east-1',
+            'endpoint' => 'mongodb.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1',
             'endpoint' => 'mongodb.eu-west-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'mongodb.us-east-1.aliyuncs.com',
+            'regionId' => 'us-west-1',
+            'endpoint' => 'mongodb.us-west-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'mongodb.ap-south-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'me-central-1',
-            'endpoint' => 'mongodb.me-central-1.aliyuncs.com',
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'mongodb.eu-central-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-east-1',
             'endpoint' => 'mongodb.me-east-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing-finance-1',
+            'regionId' => 'me-central-1',
+            'endpoint' => 'mongodb.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'mongodb.ap-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou-finance',
             'endpoint' => 'mongodb.aliyuncs.com',
         ],
         [
@@ -8375,7 +8375,7 @@
             'endpoint' => 'mongodb.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-finance',
+            'regionId' => 'cn-beijing-finance-1',
             'endpoint' => 'mongodb.aliyuncs.com',
         ],
         [

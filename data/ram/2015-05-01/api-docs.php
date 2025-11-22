@@ -2435,10 +2435,6 @@
             'endpoint' => 'ram.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-northeast-2-pop',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'ram.aliyuncs.com',
         ],
@@ -2455,35 +2451,7 @@
             'endpoint' => 'ram.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing-finance-1',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-finance-pop',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-gov-1',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-nu16-b01',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-chengdu',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-edge-1',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-fujian',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-haidian-cm12-c01',
             'endpoint' => 'ram.aliyuncs.com',
         ],
         [
@@ -2491,39 +2459,7 @@
             'endpoint' => 'ram.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-bj-b01',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-prod-1',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-test-1',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-test-2',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-test-3',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-test-306',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-hongkong',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong-finance-pop',
             'endpoint' => 'ram.aliyuncs.com',
         ],
         [
@@ -2531,15 +2467,7 @@
             'endpoint' => 'ram.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-north-2-gov-1',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-qingdao',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao-nebula',
             'endpoint' => 'ram.aliyuncs.com',
         ],
         [
@@ -2547,55 +2475,7 @@
             'endpoint' => 'ram.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shanghai-et15-b01',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-et2-b01',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-inner',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-internal-test-1',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-shenzhen',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-inner',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-st4-d01',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-su18-b01',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wuhan',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-yushanfang',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangbei-na61-b01',
             'endpoint' => 'ram.aliyuncs.com',
         ],
         [
@@ -2603,31 +2483,7 @@
             'endpoint' => 'ram.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-zhangjiakou-na62-a01',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhengzhou-nebula-1',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1-oxs',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'me-east-1',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'rus-west-1-pop',
+            'regionId' => 'us-west-1',
             'endpoint' => 'ram.aliyuncs.com',
         ],
         [
@@ -2635,7 +2491,31 @@
             'endpoint' => 'ram.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-west-1',
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'ram.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'ram.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-east-1',
+            'endpoint' => 'ram.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'ram.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'ram.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'ram.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-finance-1',
             'endpoint' => 'ram.aliyuncs.com',
         ],
     ],

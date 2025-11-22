@@ -8458,6 +8458,15 @@
                         'maxLength' => 30,
                     ],
                 ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 100,
+                    ],
+                ],
             ],
         ],
         'RtcCancelSipInvite' => [

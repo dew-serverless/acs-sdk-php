@@ -101,8 +101,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateExplorerModuleAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result validateModule(array $arguments = [])
  * @method \Http\Promise\Promise validateModuleAsync($arguments = [])
- * @method \Dew\Acs\Result executeRegistryModule(array $arguments = [])
- * @method \Http\Promise\Promise executeRegistryModuleAsync($arguments = [])
  * @method \Dew\Acs\Result executeTerraformApply(array $arguments = [])
  * @method \Http\Promise\Promise executeTerraformApplyAsync($arguments = [])
  * @method \Dew\Acs\Result executeTerraformDestroy(array $arguments = [])
@@ -111,6 +109,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getExecuteStateAsync($arguments = [])
  * @method \Dew\Acs\Result executeTerraformPlan(array $arguments = [])
  * @method \Http\Promise\Promise executeTerraformPlanAsync($arguments = [])
+ * @method \Dew\Acs\Result executeRegistryModule(array $arguments = [])
+ * @method \Http\Promise\Promise executeRegistryModuleAsync($arguments = [])
  * @method \Dew\Acs\Result listExplorerRegistryModuleVersions(array $arguments = [])
  * @method \Http\Promise\Promise listExplorerRegistryModuleVersionsAsync($arguments = [])
  * @method \Dew\Acs\Result listExplorerRegistryModules(array $arguments = [])
@@ -141,6 +141,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise associateGroupAsync($arguments = [])
  * @method \Dew\Acs\Result dissociateGroup(array $arguments = [])
  * @method \Http\Promise\Promise dissociateGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result generateModule(array $arguments = [])
+ * @method \Http\Promise\Promise generateModuleAsync($arguments = [])
  */
 final class IaCServiceClient extends AcsClient
 {

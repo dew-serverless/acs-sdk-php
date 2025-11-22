@@ -187,6 +187,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise takeBreakAsync($arguments = [])
  * @method \Dew\Acs\Result unmuteCall(array $arguments = [])
  * @method \Http\Promise\Promise unmuteCallAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyCampaignNumbers(array $arguments = [])
+ * @method \Http\Promise\Promise modifyCampaignNumbersAsync($arguments = [])
  * @method \Dew\Acs\Result abortCampaign(array $arguments = [])
  * @method \Http\Promise\Promise abortCampaignAsync($arguments = [])
  * @method \Dew\Acs\Result addCases(array $arguments = [])
@@ -489,8 +491,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise addFeedbackAsync($arguments = [])
  * @method \Dew\Acs\Result getUploadAudioDataParams(array $arguments = [])
  * @method \Http\Promise\Promise getUploadAudioDataParamsAsync($arguments = [])
- * @method \Dew\Acs\Result modifyCampaignNumbers(array $arguments = [])
- * @method \Http\Promise\Promise modifyCampaignNumbersAsync($arguments = [])
  */
 final class CccClient extends AcsClient
 {

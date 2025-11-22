@@ -2976,8 +2976,10 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
+                            'required' => false,
                         ],
                     ],
                 ],
@@ -2986,6 +2988,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

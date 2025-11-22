@@ -14566,6 +14566,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TemplateConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'QueryVideoCognitionJob' => [
@@ -14775,6 +14783,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'TemplateConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateRecognitionEntity' => [
@@ -14977,6 +14993,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'EntityName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteRecognitionSample' => [
@@ -15115,6 +15139,14 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'LibId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

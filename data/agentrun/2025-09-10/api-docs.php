@@ -290,6 +290,17 @@
                     ],
                 ],
             ],
+            'ArmsConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'enableArms' => [
+                        'type' => 'boolean',
+                    ],
+                    'armsLicenseKey' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'AttachPolicyConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -369,6 +380,33 @@
                     ],
                     'streamStatus' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'BrowserConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'browserType' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'CHROMIUM',
+                            'FIREFOX',
+                        ],
+                    ],
+                    'viewPort' => [
+                        '$ref' => '#/components/schemas/ViewPortConfiguration',
+                    ],
+                    'userAgent' => [
+                        'type' => 'string',
+                    ],
+                    'headless' => [
+                        'type' => 'boolean',
+                    ],
+                    'enableExtension' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -755,6 +793,10 @@
                     ],
                     'credentialId' => [
                         'type' => 'string',
+                        'deprecated' => true,
+                    ],
+                    'credentialName' => [
+                        'type' => 'string',
                     ],
                     'networkConfiguration' => [
                         '$ref' => '#/components/schemas/NetworkConfiguration',
@@ -923,44 +965,85 @@
             'CreateCredentialInput' => [
                 'type' => 'object',
                 'properties' => [
-                    'name' => [
+                    'credentialName' => [
                         'type' => 'string',
+                        'required' => true,
                     ],
                     'description' => [
                         'type' => 'string',
                     ],
-                    'type' => [
+                    'credentialAuthType' => [
                         'type' => 'string',
+                        'required' => true,
                         'enum' => [
-                            'api_key',
                             'jwt',
+                            'api_key',
+                            'basic',
+                            'ak_sk',
+                            'custom_header',
                         ],
                     ],
-                    'secret' => [
+                    'credentialSourceType' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'external_llm',
+                            'external_tool',
+                            'internal',
+                        ],
+                    ],
+                    'credentialSecret' => [
                         'type' => 'string',
                     ],
-                    'config' => [
-                        'type' => 'object',
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
+                    'enabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'credentialPublicConfig' => [
+                        '$ref' => '#/components/schemas/CredentialPublicConfig',
                     ],
                 ],
             ],
             'CreateCredentialOutput' => [
                 'type' => 'object',
                 'properties' => [
-                    'id' => [
+                    'credentialId' => [
                         'type' => 'string',
                     ],
-                    'name' => [
+                    'credentialName' => [
                         'type' => 'string',
                     ],
-                    'type' => [
+                    'description' => [
                         'type' => 'string',
+                    ],
+                    'credentialAuthType' => [
+                        'type' => 'string',
+                    ],
+                    'credentialSourceType' => [
+                        'type' => 'string',
+                    ],
+                    'enabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'credentialSecret' => [
+                        'type' => 'string',
+                    ],
+                    'credentialPublicConfig' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                     'createdAt' => [
                         'type' => 'string',
+                    ],
+                    'updatedAt' => [
+                        'type' => 'string',
+                    ],
+                    'relatedResources' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/RelatedResource',
+                        ],
                     ],
                 ],
             ],
@@ -1038,6 +1121,188 @@
                     ],
                 ],
             ],
+            'CreateModelProxyInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'modelProxyName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'modelType' => [
+                        'type' => 'string',
+                    ],
+                    'proxyMode' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'proxyConfig' => [
+                        '$ref' => '#/components/schemas/ProxyConfig',
+                        'required' => true,
+                    ],
+                    'credentialName' => [
+                        'type' => 'string',
+                    ],
+                    'serviceRegionId' => [
+                        'type' => 'string',
+                    ],
+                    'litellmVersion' => [
+                        'type' => 'string',
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                    'memory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                    'networkConfiguration' => [
+                        '$ref' => '#/components/schemas/NetworkConfiguration',
+                    ],
+                    'logConfiguration' => [
+                        '$ref' => '#/components/schemas/LogConfiguration',
+                    ],
+                    'armsConfiguration' => [
+                        '$ref' => '#/components/schemas/ArmsConfiguration',
+                    ],
+                ],
+            ],
+            'CreateModelServiceInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'modelServiceName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'modelType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'provider' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'providerSettings' => [
+                        '$ref' => '#/components/schemas/ProviderSettings',
+                        'required' => true,
+                    ],
+                    'credentialName' => [
+                        'type' => 'string',
+                    ],
+                    'networkConfiguration' => [
+                        '$ref' => '#/components/schemas/NetworkConfiguration',
+                    ],
+                    'modelInfoConfigs' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ModelInfoConfig',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateSandboxInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'templateName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'sandboxIdleTimeoutSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'minimum' => '1',
+                        'maximum' => '21600',
+                    ],
+                ],
+            ],
+            'CreateTemplateInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'templateName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'templateType' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'Browser',
+                            'CodeInterpreter',
+                        ],
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                    'memory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'containerConfiguration' => [
+                        '$ref' => '#/components/schemas/ContainerConfiguration',
+                    ],
+                    'networkConfiguration' => [
+                        '$ref' => '#/components/schemas/NetworkConfiguration',
+                        'required' => true,
+                    ],
+                    'credentialConfiguration' => [
+                        '$ref' => '#/components/schemas/CredentialConfiguration',
+                    ],
+                    'logConfiguration' => [
+                        '$ref' => '#/components/schemas/LogConfiguration',
+                    ],
+                    'executionRoleArn' => [
+                        'type' => 'string',
+                    ],
+                    'sandboxIdleTimeoutInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'minimum' => '1',
+                        'maximum' => '21600',
+                    ],
+                    'sandboxTTLInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'minimum' => '1',
+                        'maximum' => '21600',
+                    ],
+                    'armsConfiguration' => [
+                        '$ref' => '#/components/schemas/ArmsConfiguration',
+                    ],
+                    'ossConfiguration' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/OssConfiguration',
+                        ],
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'templateConfiguration' => [
+                        'type' => 'object',
+                    ],
+                ],
+            ],
             'CreateToolData' => [
                 'type' => 'object',
                 'properties' => [
@@ -1108,14 +1373,35 @@
                     ],
                 ],
             ],
-            'CredentialListItem' => [
+            'Credential' => [
                 'type' => 'object',
                 'properties' => [
-                    'name' => [
+                    'credentialId' => [
                         'type' => 'string',
                     ],
-                    'type' => [
+                    'credentialName' => [
                         'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'credentialAuthType' => [
+                        'type' => 'string',
+                    ],
+                    'credentialSourceType' => [
+                        'type' => 'string',
+                    ],
+                    'enabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'credentialSecret' => [
+                        'type' => 'string',
+                    ],
+                    'credentialPublicConfig' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                     'createdAt' => [
                         'type' => 'string',
@@ -1123,14 +1409,117 @@
                     'updatedAt' => [
                         'type' => 'string',
                     ],
-                    'id' => [
-                        'type' => 'string',
-                    ],
-                    'relatedWorloads' => [
+                    'relatedResources' => [
                         'type' => 'array',
                         'items' => [
-                            '$ref' => '#/components/schemas/RelatedWorkload',
+                            '$ref' => '#/components/schemas/RelatedResource',
                         ],
+                    ],
+                ],
+            ],
+            'CredentialConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'credentialName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'CredentialListItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'credentialId' => [
+                        'type' => 'string',
+                    ],
+                    'credentialName' => [
+                        'type' => 'string',
+                    ],
+                    'credentialAuthType' => [
+                        'type' => 'string',
+                    ],
+                    'credentialSourceType' => [
+                        'type' => 'string',
+                    ],
+                    'enabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'createdAt' => [
+                        'type' => 'string',
+                    ],
+                    'updatedAt' => [
+                        'type' => 'string',
+                    ],
+                    'relatedResourceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
+            'CredentialPublicConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'headerKey' => [
+                        'type' => 'string',
+                    ],
+                    'provider' => [
+                        'type' => 'string',
+                    ],
+                    'authType' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'static_jwks',
+                            'remote_jwks',
+                        ],
+                    ],
+                    'remoteConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'uri' => [
+                                'type' => 'string',
+                            ],
+                            'timeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'ttl' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'users' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'username' => [
+                                    'type' => 'string',
+                                ],
+                                'password' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'authConfig' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'CredentialResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/Credential',
                     ],
                 ],
             ],
@@ -1208,6 +1597,71 @@
                     ],
                     'data' => [
                         '$ref' => '#/components/schemas/CodeInterpreter',
+                    ],
+                ],
+            ],
+            'DeleteModelProxyResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/ModelProxy',
+                    ],
+                ],
+            ],
+            'DeleteModelServiceResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/ModelService',
+                    ],
+                ],
+            ],
+            'DeleteSandboxResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/Sandbox',
+                    ],
+                ],
+            ],
+            'DeleteTemplateResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/Template',
+                    ],
+                ],
+            ],
+            'DeregisterServiceInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'serviceName' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -1327,26 +1781,28 @@
             'GetCredentialOutput' => [
                 'type' => 'object',
                 'properties' => [
-                    'id' => [
+                    'credentialId' => [
                         'type' => 'string',
                     ],
-                    'name' => [
+                    'credentialName' => [
                         'type' => 'string',
                     ],
                     'description' => [
                         'type' => 'string',
                     ],
-                    'type' => [
-                        'type' => 'string',
-                        'enum' => [
-                            'api_key',
-                            'jwt',
-                        ],
-                    ],
-                    'secret' => [
+                    'credentialAuthType' => [
                         'type' => 'string',
                     ],
-                    'config' => [
+                    'credentialSourceType' => [
+                        'type' => 'string',
+                    ],
+                    'enabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'credentialSecret' => [
+                        'type' => 'string',
+                    ],
+                    'credentialPublicConfig' => [
                         'type' => 'object',
                         'additionalProperties' => [
                             'type' => 'string',
@@ -1357,6 +1813,12 @@
                     ],
                     'updatedAt' => [
                         'type' => 'string',
+                    ],
+                    'relatedResources' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/RelatedResource',
+                        ],
                     ],
                 ],
             ],
@@ -1818,17 +2280,34 @@
             'ListCredentialsOutput' => [
                 'type' => 'object',
                 'properties' => [
-                    'items' => [
-                        '$ref' => '#/components/schemas/CredentialListItem',
-                    ],
                     'total' => [
                         'type' => 'string',
                     ],
                     'pageSize' => [
                         'type' => 'string',
                     ],
-                    'pageNum' => [
+                    'pageNumber' => [
                         'type' => 'string',
+                    ],
+                    'items' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/CredentialListItem',
+                        ],
+                    ],
+                ],
+            ],
+            'ListCredentialsResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/ListCredentialsOutput',
                     ],
                 ],
             ],
@@ -1869,6 +2348,150 @@
                     'total' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                    ],
+                ],
+            ],
+            'ListModelProxiesOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'pageNumber' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'pageSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'total' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'items' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ModelProxy',
+                        ],
+                    ],
+                ],
+            ],
+            'ListModelProxiesResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/ListModelProxiesOutput',
+                    ],
+                ],
+            ],
+            'ListModelServicesOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'pageNumber' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'pageSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'total' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'items' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ModelService',
+                        ],
+                    ],
+                ],
+            ],
+            'ListModelServicesResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/ListModelServicesOutput',
+                    ],
+                ],
+            ],
+            'ListSandboxesOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'items' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Sandbox',
+                        ],
+                    ],
+                    'nextToken' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ListSandboxesResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/ListSandboxesOutput',
+                    ],
+                ],
+            ],
+            'ListTemplatesOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'items' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Template',
+                        ],
+                    ],
+                    'pageNumber' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                    'pageSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                    'total' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'ListTemplatesResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/ListTemplatesOutput',
                     ],
                 ],
             ],
@@ -2057,6 +2680,219 @@
                     ],
                 ],
             ],
+            'ModelFeatures' => [
+                'type' => 'object',
+                'properties' => [
+                    'vision' => [
+                        'type' => 'boolean',
+                    ],
+                    'agentThought' => [
+                        'type' => 'boolean',
+                    ],
+                    'toolCall' => [
+                        'type' => 'boolean',
+                    ],
+                    'multiToolCall' => [
+                        'type' => 'boolean',
+                    ],
+                    'streamToolCall' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'ModelInfoConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'modelName' => [
+                        'type' => 'string',
+                    ],
+                    'modelFeatures' => [
+                        '$ref' => '#/components/schemas/ModelFeatures',
+                    ],
+                    'modelProperties' => [
+                        '$ref' => '#/components/schemas/ModelProperties',
+                    ],
+                    'modelParameterRules' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ModelParameterRule',
+                        ],
+                    ],
+                ],
+            ],
+            'ModelParameterRule' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'default' => [
+                        'type' => 'any',
+                    ],
+                    'min' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'max' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'required' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'ModelProperties' => [
+                'type' => 'object',
+                'properties' => [
+                    'contextSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
+            'ModelProxy' => [
+                'type' => 'object',
+                'properties' => [
+                    'modelProxyId' => [
+                        'type' => 'string',
+                    ],
+                    'modelProxyName' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'modelType' => [
+                        'type' => 'string',
+                    ],
+                    'proxyMode' => [
+                        'type' => 'string',
+                    ],
+                    'proxyConfig' => [
+                        '$ref' => '#/components/schemas/ProxyConfig',
+                    ],
+                    'functionName' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'credentialName' => [
+                        'type' => 'string',
+                    ],
+                    'serviceRegionId' => [
+                        'type' => 'string',
+                    ],
+                    'endpoint' => [
+                        'type' => 'string',
+                    ],
+                    'litellmVersion' => [
+                        'type' => 'string',
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'memory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'createdAt' => [
+                        'type' => 'string',
+                    ],
+                    'lastUpdatedAt' => [
+                        'type' => 'string',
+                    ],
+                    'networkConfiguration' => [
+                        '$ref' => '#/components/schemas/NetworkConfiguration',
+                    ],
+                    'statusReason' => [
+                        'type' => 'string',
+                    ],
+                    'logConfiguration' => [
+                        '$ref' => '#/components/schemas/LogConfiguration',
+                    ],
+                ],
+            ],
+            'ModelProxyResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/ModelProxy',
+                    ],
+                ],
+            ],
+            'ModelService' => [
+                'type' => 'object',
+                'properties' => [
+                    'modeServiceId' => [
+                        'type' => 'string',
+                    ],
+                    'modelServiceName' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'modelType' => [
+                        'type' => 'string',
+                    ],
+                    'provider' => [
+                        'type' => 'string',
+                    ],
+                    'providerSettings' => [
+                        '$ref' => '#/components/schemas/ProviderSettings',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'credentialName' => [
+                        'type' => 'string',
+                    ],
+                    'createdAt' => [
+                        'type' => 'string',
+                    ],
+                    'lastUpdatedAt' => [
+                        'type' => 'string',
+                    ],
+                    'networkConfiguration' => [
+                        '$ref' => '#/components/schemas/NetworkConfiguration',
+                    ],
+                    'modelInfoConfigs' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ModelInfoConfig',
+                        ],
+                    ],
+                    'statusReason' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ModelServiceResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/ModelService',
+                    ],
+                ],
+            ],
             'NetworkConfiguration' => [
                 'type' => 'object',
                 'properties' => [
@@ -2078,6 +2914,30 @@
                         'type' => 'array',
                         'items' => [
                             'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'OssConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'bucketName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'prefix' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'mountPoint' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'permission' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'READ_ONLY',
+                            'READ_WRITE',
                         ],
                     ],
                 ],
@@ -2129,24 +2989,176 @@
                     ],
                 ],
             ],
+            'ProviderSettings' => [
+                'type' => 'object',
+                'properties' => [
+                    'baseUrl' => [
+                        'type' => 'string',
+                    ],
+                    'apiKey' => [
+                        'type' => 'string',
+                    ],
+                    'modelNames' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'ProxyConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'policies' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'requestTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'numRetries' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'cache' => [
+                                'type' => 'boolean',
+                            ],
+                            'concurrencyLimit' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'fallbacks' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'modelServiceName' => [
+                                            'type' => 'string',
+                                        ],
+                                        'modelName' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'endpoints' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'modelServiceName' => [
+                                    'type' => 'string',
+                                ],
+                                'weight' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'baseUrl' => [
+                                    'type' => 'string',
+                                ],
+                                'modelNames' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'PublishRuntimeVersionInput' => [
                 'type' => 'object',
                 'properties' => [
                     'description' => [
                         'type' => 'string',
                     ],
+                    'publisher' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'RecordingConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'enabled' => [
+                        'type' => 'boolean',
+                        'required' => true,
+                    ],
+                    'ossLocation' => [
+                        '$ref' => '#/components/schemas/OssConfiguration',
+                    ],
+                ],
+            ],
+            'RegisterServiceInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'tenantId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'serviceName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'serviceType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'protocol' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'HTTP',
+                            'MCP-SSE',
+                            'MCP-STREAMABLE-HTTP',
+                        ],
+                    ],
+                    'serviceBackendEndpoint' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'resourceName' => [
+                        'type' => 'string',
+                    ],
+                    'credentialName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'RelatedResource' => [
+                'type' => 'object',
+                'properties' => [
+                    'resourceId' => [
+                        'type' => 'string',
+                    ],
+                    'resourceName' => [
+                        'type' => 'string',
+                    ],
+                    'resourceType' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'litellm',
+                            'model',
+                            'runtime',
+                            'template',
+                            'model',
+                        ],
+                    ],
                 ],
             ],
             'RelatedWorkload' => [
                 'type' => 'object',
                 'properties' => [
-                    'workloadId' => [
+                    'resourceId' => [
                         'type' => 'string',
                     ],
-                    'workloadName' => [
+                    'resourceName' => [
                         'type' => 'string',
                     ],
-                    'workloadType' => [
+                    'resourceType' => [
                         'type' => 'string',
                     ],
                 ],
@@ -2162,6 +3174,97 @@
                     ],
                 ],
             ],
+            'Sandbox' => [
+                'type' => 'object',
+                'properties' => [
+                    'sandboxId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'templateId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'templateName' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'READY',
+                            'TERMINATED',
+                        ],
+                    ],
+                    'createdAt' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'lastUpdatedAt' => [
+                        'type' => 'string',
+                    ],
+                    'sandboxIdleTimeoutSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'minimum' => '1',
+                        'maximum' => '21600',
+                    ],
+                    'endedAt' => [
+                        'type' => 'string',
+                    ],
+                    'metadata' => [
+                        'type' => 'object',
+                    ],
+                    'SandboxIdleTTLInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'sandboxArn' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'SandboxHealthCheckOut' => [
+                'type' => 'object',
+                'properties' => [
+                    'status' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'OK',
+                        ],
+                    ],
+                ],
+            ],
+            'SandboxHealthCheckResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/SandboxHealthCheckOut',
+                    ],
+                ],
+            ],
+            'SandboxResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/Sandbox',
+                        'required' => true,
+                    ],
+                ],
+            ],
             'ServiceConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -2170,6 +3273,20 @@
                     ],
                     'aiServiceConfig' => [
                         '$ref' => '#/components/schemas/AiServiceConfig',
+                    ],
+                ],
+            ],
+            'ServiceResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        'type' => 'any',
                     ],
                 ],
             ],
@@ -2277,11 +3394,127 @@
             'Template' => [
                 'type' => 'object',
                 'properties' => [
-                    'templateID' => [
+                    'templateId' => [
                         'type' => 'string',
+                        'required' => true,
+                    ],
+                    'templateName' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                     'templateVersion' => [
                         'type' => 'string',
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                    'memory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                    'templateArn' => [
+                        'type' => 'string',
+                    ],
+                    'createdAt' => [
+                        'type' => 'string',
+                    ],
+                    'lastUpdatedAt' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'statusReason' => [
+                        'type' => 'string',
+                    ],
+                    'executionRoleArn' => [
+                        'type' => 'string',
+                    ],
+                    'templateType' => [
+                        'type' => 'string',
+                    ],
+                    'containerConfiguration' => [
+                        '$ref' => '#/components/schemas/ContainerConfiguration',
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'string',
+                    ],
+                    'networkConfiguration' => [
+                        '$ref' => '#/components/schemas/NetworkConfiguration',
+                    ],
+                    'templateConfiguration' => [
+                        'type' => 'string',
+                    ],
+                    'credentialConfiguration' => [
+                        '$ref' => '#/components/schemas/CredentialConfiguration',
+                    ],
+                    'logConfiguration' => [
+                        '$ref' => '#/components/schemas/LogConfiguration',
+                    ],
+                    'sandboxIdleTimeoutInSeconds' => [
+                        'type' => 'string',
+                    ],
+                    'sandboxTTLInSeconds' => [
+                        'type' => 'string',
+                    ],
+                    'resourceName' => [
+                        'type' => 'string',
+                    ],
+                    'mcpOptions' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'transport' => [
+                                'type' => 'string',
+                            ],
+                            'enabledTools' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'mcpState' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'status' => [
+                                'type' => 'string',
+                            ],
+                            'statusReason' => [
+                                'type' => 'string',
+                            ],
+                            'accessEndpoint' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ossConfiguration' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/OssConfiguration',
+                        ],
+                    ],
+                ],
+            ],
+            'TemplateResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/Template',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -2402,6 +3635,9 @@
                     'containerConfiguration' => [
                         '$ref' => '#/components/schemas/ContainerConfiguration',
                     ],
+                    'credentialName' => [
+                        'type' => 'string',
+                    ],
                     'environmentVariables' => [
                         'type' => 'object',
                         'additionalProperties' => [
@@ -2480,44 +3716,61 @@
             'UpdateCredentialInput' => [
                 'type' => 'object',
                 'properties' => [
-                    'name' => [
+                    'credentialSecret' => [
                         'type' => 'string',
                     ],
                     'description' => [
                         'type' => 'string',
                     ],
-                    'type' => [
-                        'type' => 'string',
-                        'enum' => [
-                            'api_key',
-                            'jwt',
-                        ],
+                    'enabled' => [
+                        'type' => 'boolean',
                     ],
-                    'secret' => [
-                        'type' => 'string',
-                    ],
-                    'config' => [
-                        'type' => 'object',
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
+                    'credentialPublicConfig' => [
+                        '$ref' => '#/components/schemas/CredentialPublicConfig',
                     ],
                 ],
             ],
             'UpdateCredentialOutput' => [
                 'type' => 'object',
                 'properties' => [
-                    'id' => [
+                    'credentialId' => [
                         'type' => 'string',
                     ],
-                    'name' => [
+                    'credentialName' => [
                         'type' => 'string',
                     ],
-                    'type' => [
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'credentialAuthType' => [
+                        'type' => 'string',
+                    ],
+                    'credentialSourceType' => [
+                        'type' => 'string',
+                    ],
+                    'enabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'credentialSecret' => [
+                        'type' => 'string',
+                    ],
+                    'credentialPublicConfig' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'createdAt' => [
                         'type' => 'string',
                     ],
                     'updatedAt' => [
                         'type' => 'string',
+                    ],
+                    'relatedResources' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/RelatedResource',
+                        ],
                     ],
                 ],
             ],
@@ -2561,6 +3814,58 @@
                     ],
                 ],
             ],
+            'UpdateModelProxyInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'proxyConfig' => [
+                        '$ref' => '#/components/schemas/ProxyConfig',
+                    ],
+                    'credentialName' => [
+                        'type' => 'string',
+                    ],
+                    'networkConfiguration' => [
+                        '$ref' => '#/components/schemas/NetworkConfiguration',
+                    ],
+                    'logConfiguration' => [
+                        '$ref' => '#/components/schemas/LogConfiguration',
+                    ],
+                    'armsConfiguration' => [
+                        '$ref' => '#/components/schemas/ArmsConfiguration',
+                    ],
+                ],
+            ],
+            'UpdateModelServiceInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'credentialName' => [
+                        'type' => 'string',
+                    ],
+                    'providerSettings' => [
+                        '$ref' => '#/components/schemas/ProviderSettings',
+                    ],
+                    'networkConfiguration' => [
+                        '$ref' => '#/components/schemas/NetworkConfiguration',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'modelInfoConfigs' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ModelInfoConfig',
+                        ],
+                    ],
+                    'statusReason' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'UpdateTargetConfigurationInput' => [
                 'type' => 'object',
                 'properties' => [
@@ -2569,6 +3874,67 @@
                     ],
                     'targetConfiguration' => [
                         '$ref' => '#/components/schemas/TargetConfiguration',
+                    ],
+                ],
+            ],
+            'UpdateTemplateInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'containerConfiguration' => [
+                        '$ref' => '#/components/schemas/ContainerConfiguration',
+                    ],
+                    'credentialConfiguration' => [
+                        '$ref' => '#/components/schemas/CredentialConfiguration',
+                    ],
+                    'networkConfiguration' => [
+                        '$ref' => '#/components/schemas/NetworkConfiguration',
+                    ],
+                    'logConfiguration' => [
+                        '$ref' => '#/components/schemas/LogConfiguration',
+                    ],
+                    'executionRoleArn' => [
+                        'type' => 'string',
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'memory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'sandboxIdleTimeoutInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'minimum' => '1',
+                        'maximum' => '21600',
+                    ],
+                    'sandboxTTLInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'minimum' => '1',
+                        'maximum' => '21600',
+                    ],
+                    'armsConfiguration' => [
+                        '$ref' => '#/components/schemas/ArmsConfiguration',
+                    ],
+                    'ossConfiguration' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/OssConfiguration',
+                        ],
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'templateConfiguration' => [
+                        'type' => 'object',
                     ],
                 ],
             ],
@@ -2631,6 +3997,21 @@
                         'format' => 'float',
                         'minimum' => '0',
                         'maximum' => '1',
+                    ],
+                ],
+            ],
+            'ViewPortConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'height' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                    'width' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -2821,6 +4202,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'searchMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateAgentRuntimeEndpoint' => [
@@ -2913,6 +4302,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'searchMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -4077,6 +5474,1154 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetCredential' => [
+            'path' => '/2025-09-10/agents/credentials/{credentialName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'credentialName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateCredential' => [
+            'path' => '/2025-09-10/agents/credentials/{credentialName}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'credentialName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/UpdateCredentialInput',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListCredentials' => [
+            'path' => '/2025-09-10/agents/credentials',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'credentialAuthType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'jwt',
+                            'api_key',
+                            'basic',
+                            'ak_sk',
+                            'custom_header',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'credentialSourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'internal',
+                            'external',
+                            'external_llm',
+                            'external_tool',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'credentialName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'provider',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'enabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateCredential' => [
+            'path' => '/2025-09-10/agents/credentials',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/CreateCredentialInput',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteCredential' => [
+            'path' => '/2025-09-10/agents/credentials/{credentialName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'credentialName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetSandbox' => [
+            'path' => '/2025-09-10/sandboxes/{sandboxId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'sandboxId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ActivateTemplateMCP' => [
+            'path' => '/2025-09-10/templates/{templateName}/mcp/activate',
+            'methods' => [
+                'patch',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'enabledTools' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'transport' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'sse',
+                                    'streamable-http',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'templateName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StopTemplateMCP' => [
+            'path' => '/2025-09-10/templates/{templateName}/mcp/stop',
+            'methods' => [
+                'patch',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'templateName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteModelService' => [
+            'path' => '/2025-09-10/agents/model-services/{modelServiceName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'modelServiceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListModelServices' => [
+            'path' => '/2025-09-10/agents/model-services',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'modelType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'provider',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'providerType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateSandbox' => [
+            'path' => '/2025-09-10/sandboxes',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/CreateSandboxInput',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListSandboxes' => [
+            'path' => '/2025-09-10/sandboxes',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'templateName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'templateType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'nextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListModelProviders' => [
+            'path' => '/2025-09-10/agents/model-providers',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'modelType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'provider',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'modelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteModelProxy' => [
+            'path' => '/2025-09-10/agents/model-proxies/{modelProxyName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'modelProxyName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetModelService' => [
+            'path' => '/2025-09-10/agents/model-services/{modelServiceName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'modelServiceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetAccessToken' => [
+            'path' => '/2025-09-10/agents/accessToken',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'resourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'resourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'runtime',
+                            'litellm',
+                            'tool',
+                            'template',
+                            'sandbox',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'resourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetModelProxy' => [
+            'path' => '/2025-09-10/agents/model-proxies/{modelProxyName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'modelProxyName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateModelProxy' => [
+            'path' => '/2025-09-10/agents/model-proxies',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/CreateModelProxyInput',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListModelProxies' => [
+            'path' => '/2025-09-10/agents/model-proxies',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'proxyMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StopSandbox' => [
+            'path' => '/2025-09-10/sandboxes/{sandboxId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'sandboxId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateModelService' => [
+            'path' => '/2025-09-10/agents/model-services/{modelServiceName}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'modelServiceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/UpdateModelServiceInput',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListTemplates' => [
+            'path' => '/2025-09-10/templates',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'templateType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Browser',
+                            'CodeInterpreter',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteTemplate' => [
+            'path' => '/2025-09-10/templates/{templateName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'templateName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetTemplate' => [
+            'path' => '/2025-09-10/templates/{templateName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'templateName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateTemplate' => [
+            'path' => '/2025-09-10/templates',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/CreateTemplateInput',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateModelService' => [
+            'path' => '/2025-09-10/agents/model-services',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/CreateModelServiceInput',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateTemplate' => [
+            'path' => '/2025-09-10/templates/{templateName}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'templateName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'clientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/UpdateTemplateInput',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateModelProxy' => [
+            'path' => '/2025-09-10/agents/model-proxies/{modelProxyName}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'modelProxyName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/UpdateModelProxyInput',
                         'required' => false,
                     ],
                 ],

@@ -183,6 +183,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteEnvironmentAsync($arguments = []) {@deprecated 2024-03-27}
  * @method \Dew\Acs\Result listEnvironments(array $arguments = []) {@deprecated 2024-03-27}
  * @method \Http\Promise\Promise listEnvironmentsAsync($arguments = []) {@deprecated 2024-03-27}
+ * @method \Dew\Acs\Result listGatewayFeatures(array $arguments = [])
+ * @method \Http\Promise\Promise listGatewayFeaturesAsync($arguments = [])
  */
 final class ApigClient extends AcsClient
 {

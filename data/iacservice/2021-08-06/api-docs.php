@@ -3020,64 +3020,6 @@
                 ],
             ],
         ],
-        'ExecuteRegistryModule' => [
-            'path' => '/registryModule/{namespaceName}/{moduleName}/execution',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'namespaceName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'moduleName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'parameters' => [
-                                'type' => 'object',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
         'ExecuteTerraformApply' => [
             'path' => '/terraform/execution/apply',
             'methods' => [
@@ -3236,6 +3178,64 @@
                             ],
                             'code' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteRegistryModule' => [
+            'path' => '/registryModule/{namespaceName}/{moduleName}/execution',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'namespaceName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'moduleName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'parameters' => [
+                                'type' => 'object',
                                 'required' => false,
                             ],
                         ],
@@ -4241,6 +4241,72 @@
                             ],
                         ],
                         'minItems' => 1,
+                    ],
+                ],
+            ],
+        ],
+        'GenerateModule' => [
+            'path' => '/explorer/generate/module',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'Anonymous' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'parameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    'type' => 'any',
+                                ],
+                            ],
+                            'regionId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'syntax' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'terraformProviderVersion' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'terraformResourceType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'generateSource' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'template' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],

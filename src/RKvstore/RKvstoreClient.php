@@ -223,6 +223,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeActiveOperationTaskCountAsync($arguments = [])
  * @method \Dew\Acs\Result describeHistoryTasks(array $arguments = [])
  * @method \Http\Promise\Promise describeHistoryTasksAsync($arguments = [])
+ * @method \Dew\Acs\Result describeHistoryTasksStat(array $arguments = [])
+ * @method \Http\Promise\Promise describeHistoryTasksStatAsync($arguments = [])
  * @method \Dew\Acs\Result modifyActiveOperationTask(array $arguments = [])
  * @method \Http\Promise\Promise modifyActiveOperationTaskAsync($arguments = [])
  * @method \Dew\Acs\Result describeActiveOperationTask(array $arguments = [])

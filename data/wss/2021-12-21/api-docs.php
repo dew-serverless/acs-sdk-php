@@ -402,6 +402,10 @@
                                     'minItems' => 0,
                                     'maxItems' => 100,
                                 ],
+                                'SavingPlanPeriod' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 20,

@@ -43,8 +43,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getIfEcsTypeSupportHtConfigAsync($arguments = [])
  * @method \Dew\Acs\Result listImages(array $arguments = [])
  * @method \Http\Promise\Promise listImagesAsync($arguments = [])
- * @method \Dew\Acs\Result describeEstackImage(array $arguments = [])
- * @method \Http\Promise\Promise describeEstackImageAsync($arguments = [])
  * @method \Dew\Acs\Result listCustomImages(array $arguments = [])
  * @method \Http\Promise\Promise listCustomImagesAsync($arguments = [])
  * @method \Dew\Acs\Result listCommunityImages(array $arguments = [])
@@ -213,8 +211,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listTasksAsync($arguments = [])
  * @method \Dew\Acs\Result initializeEHPC(array $arguments = [])
  * @method \Http\Promise\Promise initializeEHPCAsync($arguments = [])
- * @method \Dew\Acs\Result pullImage(array $arguments = [])
- * @method \Http\Promise\Promise pullImageAsync($arguments = [])
  * @method \Dew\Acs\Result updateCluster(array $arguments = []) {@since 2024-07-30}
  * @method \Http\Promise\Promise updateClusterAsync($arguments = []) {@since 2024-07-30}
  * @method \Dew\Acs\Result installSoftwares(array $arguments = []) {@since 2024-07-30}

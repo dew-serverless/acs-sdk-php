@@ -251,6 +251,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getObjectAsync($arguments = [])
  * @method \Dew\Acs\Result appendObject(array $arguments = [])
  * @method \Http\Promise\Promise appendObjectAsync($arguments = [])
+ * @method \Dew\Acs\Result sealAppendObject(array $arguments = [])
+ * @method \Http\Promise\Promise sealAppendObjectAsync($arguments = [])
  * @method \Dew\Acs\Result deleteObject(array $arguments = [])
  * @method \Http\Promise\Promise deleteObjectAsync($arguments = [])
  * @method \Dew\Acs\Result headObject(array $arguments = [])

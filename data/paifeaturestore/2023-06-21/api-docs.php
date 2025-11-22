@@ -1633,6 +1633,10 @@
                                 'type' => 'string',
                                 'required' => true,
                             ],
+                            'ParentFeatureEntityId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -1737,6 +1741,14 @@
                             'type' => 'string',
                             'required' => false,
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'ParentFeatureEntityId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

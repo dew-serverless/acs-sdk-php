@@ -59,6 +59,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise transitVisaAsync($arguments = [])
  * @method \Dew\Acs\Result collectFlightLowestPrice(array $arguments = [])
  * @method \Http\Promise\Promise collectFlightLowestPriceAsync($arguments = [])
+ * @method \Dew\Acs\Result standardSearch(array $arguments = [])
+ * @method \Http\Promise\Promise standardSearchAsync($arguments = [])
  */
 final class AirticketOpenClient extends AcsClient
 {

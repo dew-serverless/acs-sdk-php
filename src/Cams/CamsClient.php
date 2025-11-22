@@ -191,6 +191,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getChatappTemplateMetricAsync($arguments = [])
  * @method \Dew\Acs\Result getPreValidatePhoneId(array $arguments = [])
  * @method \Http\Promise\Promise getPreValidatePhoneIdAsync($arguments = [])
+ * @method \Dew\Acs\Result updateContactById(array $arguments = [])
+ * @method \Http\Promise\Promise updateContactByIdAsync($arguments = [])
  */
 final class CamsClient extends AcsClient
 {

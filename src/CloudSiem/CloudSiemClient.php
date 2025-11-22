@@ -203,6 +203,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createDataSourceAsync($arguments = []) {@since 2024-12-12}
  * @method \Dew\Acs\Result updateDataSource(array $arguments = []) {@since 2024-12-12}
  * @method \Http\Promise\Promise updateDataSourceAsync($arguments = []) {@since 2024-12-12}
+ * @method \Dew\Acs\Result refreshDataSource(array $arguments = []) {@since 2024-12-12}
+ * @method \Http\Promise\Promise refreshDataSourceAsync($arguments = []) {@since 2024-12-12}
  * @method \Dew\Acs\Result listDataSources(array $arguments = []) {@since 2024-12-12}
  * @method \Http\Promise\Promise listDataSourcesAsync($arguments = []) {@since 2024-12-12}
  * @method \Dew\Acs\Result updateDataSourceTemplate(array $arguments = []) {@since 2024-12-12}

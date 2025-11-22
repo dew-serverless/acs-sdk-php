@@ -184,7 +184,8 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'deprecated' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -193,7 +194,8 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'deprecated' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -201,13 +203,22 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'deprecated' => true,
+                        'required' => false,
                         'enum' => [
                             'clb7',
                             'clb4',
                             'ecs',
                             'nlb',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'CloudResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -997,7 +1008,8 @@
                             ],
                             'ResourceProduct' => [
                                 'type' => 'string',
-                                'required' => true,
+                                'deprecated' => true,
+                                'required' => false,
                                 'enum' => [
                                     'ecs',
                                     'clb4',
@@ -1007,12 +1019,14 @@
                             ],
                             'ResourceInstanceId' => [
                                 'type' => 'string',
-                                'required' => true,
+                                'deprecated' => true,
+                                'required' => false,
                             ],
                             'Port' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
-                                'required' => true,
+                                'deprecated' => true,
+                                'required' => false,
                             ],
                             'Protocol' => [
                                 'type' => 'string',
@@ -1135,6 +1149,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'CloudResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteCloudResource' => [
@@ -1174,7 +1196,7 @@
                     'schema' => [
                         'type' => 'string',
                         'deprecated' => true,
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1183,7 +1205,7 @@
                     'schema' => [
                         'type' => 'string',
                         'deprecated' => true,
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1193,7 +1215,15 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'deprecated' => true,
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CloudResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1378,7 +1408,8 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'deprecated' => true,
+                        'required' => false,
                         'enum' => [
                             'ecs',
                             'clb4',
@@ -1391,7 +1422,8 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'deprecated' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1400,7 +1432,8 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'deprecated' => true,
+                        'required' => false,
                         'minimum' => '1',
                         'maximum' => '65534',
                     ],
@@ -1439,6 +1472,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CloudResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

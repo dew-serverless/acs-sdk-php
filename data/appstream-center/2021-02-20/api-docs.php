@@ -327,6 +327,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AreaSite',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RefreshLoginToken' => [

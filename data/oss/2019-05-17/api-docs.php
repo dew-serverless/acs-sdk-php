@@ -2247,10 +2247,6 @@
                             'ExpiredObjectDeleteMarker' => [
                                 'type' => 'boolean',
                             ],
-                            'Date' => [
-                                'type' => 'string',
-                                'format' => 'iso8601',
-                            ],
                         ],
                     ],
                     'Transition' => [
@@ -6658,6 +6654,7 @@
                     'in' => 'body',
                     'schema' => [
                         'type' => 'string',
+                        'format' => 'binary',
                         'required' => true,
                     ],
                 ],
@@ -6867,8 +6864,14 @@
                         'required' => false,
                         'properties' => [
                             'ReplicationConfiguration' => [
-                                '$ref' => '#/components/schemas/ReplicationConfiguration',
+                                'type' => 'object',
                                 'required' => false,
+                                'properties' => [
+                                    'Rule' => [
+                                        '$ref' => '#/components/schemas/ReplicationRule',
+                                        'required' => false,
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -11613,6 +11616,57 @@
                         'required' => false,
                     ],
                 ],
+            ],
+        ],
+        'SealAppendObject' => [
+            'path' => '/{key}?seal',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'key',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'position',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [],
             ],
         ],
         'DeleteObject' => [

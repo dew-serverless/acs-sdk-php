@@ -2141,7 +2141,7 @@
                             ],
                             'Size' => [
                                 'type' => 'integer',
-                                'format' => 'int32',
+                                'format' => 'int64',
                                 'required' => false,
                             ],
                             'ImageId' => [

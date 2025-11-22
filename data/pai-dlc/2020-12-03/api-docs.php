@@ -1323,6 +1323,12 @@
                     'PodIp' => [
                         'type' => 'string',
                     ],
+                    'PodIps' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/PodNetworkInterface',
+                        ],
+                    ],
                 ],
             ],
             'PodMetric' => [
@@ -1336,6 +1342,17 @@
                         'items' => [
                             '$ref' => '#/components/schemas/Metric',
                         ],
+                    ],
+                ],
+            ],
+            'PodNetworkInterface' => [
+                'type' => 'object',
+                'properties' => [
+                    'InterfaceName' => [
+                        'type' => 'string',
+                    ],
+                    'Ip' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

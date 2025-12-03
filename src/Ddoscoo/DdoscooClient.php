@@ -113,6 +113,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSchedulerRulesAsync($arguments = [])
  * @method \Dew\Acs\Result switchSchedulerRule(array $arguments = [])
  * @method \Http\Promise\Promise switchSchedulerRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result describeCdnLinkageRules(array $arguments = [])
+ * @method \Http\Promise\Promise describeCdnLinkageRulesAsync($arguments = [])
  * @method \Dew\Acs\Result addAutoCcBlacklist(array $arguments = [])
  * @method \Http\Promise\Promise addAutoCcBlacklistAsync($arguments = [])
  * @method \Dew\Acs\Result addAutoCcWhitelist(array $arguments = [])

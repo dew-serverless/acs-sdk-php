@@ -93,6 +93,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getQualificationOssInfoAsync($arguments = [])
  * @method \Dew\Acs\Result getOSSInfoForUploadFile(array $arguments = [])
  * @method \Http\Promise\Promise getOSSInfoForUploadFileAsync($arguments = [])
+ * @method \Dew\Acs\Result getSmsOcrOssInfo(array $arguments = [])
+ * @method \Http\Promise\Promise getSmsOcrOssInfoAsync($arguments = [])
  * @method \Dew\Acs\Result smsConversionIntl(array $arguments = [])
  * @method \Http\Promise\Promise smsConversionIntlAsync($arguments = [])
  * @method \Dew\Acs\Result conversionDataIntl(array $arguments = [])

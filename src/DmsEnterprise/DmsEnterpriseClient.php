@@ -599,6 +599,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise answerSqlSyntaxByMetaAgentAsync($arguments = [])
  * @method \Dew\Acs\Result listUserOwnedResources(array $arguments = [])
  * @method \Http\Promise\Promise listUserOwnedResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result checkBatchTableAccessPermission(array $arguments = [])
+ * @method \Http\Promise\Promise checkBatchTableAccessPermissionAsync($arguments = [])
+ * @method \Dew\Acs\Result chatWithDesensitize(array $arguments = [])
+ * @method \Http\Promise\Promise chatWithDesensitizeAsync($arguments = [])
+ * @method \Dew\Acs\Result chatWithDesensitizeSSE(array $arguments = [])
+ * @method \Http\Promise\Promise chatWithDesensitizeSSEAsync($arguments = [])
  */
 final class DmsEnterpriseClient extends AcsClient
 {

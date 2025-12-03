@@ -567,6 +567,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceBootConfigurationAsync($arguments = [])
  * @method \Dew\Acs\Result importImage(array $arguments = [])
  * @method \Http\Promise\Promise importImageAsync($arguments = [])
+ * @method \Dew\Acs\Result describeForwardEntryAttribute(array $arguments = [])
+ * @method \Http\Promise\Promise describeForwardEntryAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceNetworkAttribute(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceNetworkAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result createSecurityGroupPermissions(array $arguments = [])

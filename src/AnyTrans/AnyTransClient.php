@@ -31,6 +31,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise submitDocTranslateTaskAsync($arguments = [])
  * @method \Dew\Acs\Result getDocTranslateTask(array $arguments = [])
  * @method \Http\Promise\Promise getDocTranslateTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result batchTranslateForHtml(array $arguments = [])
+ * @method \Http\Promise\Promise batchTranslateForHtmlAsync($arguments = [])
  */
 final class AnyTransClient extends AcsClient
 {

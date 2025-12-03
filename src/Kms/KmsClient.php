@@ -125,8 +125,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise setSecretPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result getSecretPolicy(array $arguments = [])
  * @method \Http\Promise\Promise getSecretPolicyAsync($arguments = [])
- * @method \Dew\Acs\Result createCertificate(array $arguments = [])
- * @method \Http\Promise\Promise createCertificateAsync($arguments = [])
  * @method \Dew\Acs\Result deleteCertificate(array $arguments = [])
  * @method \Http\Promise\Promise deleteCertificateAsync($arguments = [])
  * @method \Dew\Acs\Result updateCertificateStatus(array $arguments = [])
@@ -195,6 +193,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getClientKeyAsync($arguments = [])
  * @method \Dew\Acs\Result deleteClientKey(array $arguments = [])
  * @method \Http\Promise\Promise deleteClientKeyAsync($arguments = [])
+ * @method \Dew\Acs\Result getKmsInstanceQuotaInfos(array $arguments = [])
+ * @method \Http\Promise\Promise getKmsInstanceQuotaInfosAsync($arguments = [])
  */
 final class KmsClient extends AcsClient
 {

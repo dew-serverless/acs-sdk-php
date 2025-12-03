@@ -463,10 +463,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDomainResolveStatisticsSummaryAsync($arguments = [])
  * @method \Dew\Acs\Result describeInternetDnsLogs(array $arguments = [])
  * @method \Http\Promise\Promise describeInternetDnsLogsAsync($arguments = [])
- * @method \Dew\Acs\Result updateRspDomainServerHoldStatusOte(array $arguments = [])
- * @method \Http\Promise\Promise updateRspDomainServerHoldStatusOteAsync($arguments = [])
- * @method \Dew\Acs\Result updateRspDomainStatusOte(array $arguments = [])
- * @method \Http\Promise\Promise updateRspDomainStatusOteAsync($arguments = [])
+ * @method \Dew\Acs\Result removeRspDomainServerHoldStatusForGateway(array $arguments = [])
+ * @method \Http\Promise\Promise removeRspDomainServerHoldStatusForGatewayAsync($arguments = [])
+ * @method \Dew\Acs\Result updateRspDomainServerProhibitStatusForGateway(array $arguments = [])
+ * @method \Http\Promise\Promise updateRspDomainServerProhibitStatusForGatewayAsync($arguments = [])
  */
 final class AlidnsClient extends AcsClient
 {

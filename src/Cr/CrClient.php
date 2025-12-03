@@ -227,6 +227,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listEventCenterRuleNameAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result createScanRule(array $arguments = [])
+ * @method \Http\Promise\Promise createScanRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteScanRule(array $arguments = [])
+ * @method \Http\Promise\Promise deleteScanRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result listScanRule(array $arguments = [])
+ * @method \Http\Promise\Promise listScanRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result updateScanRule(array $arguments = [])
+ * @method \Http\Promise\Promise updateScanRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result getScanRule(array $arguments = [])
+ * @method \Http\Promise\Promise getScanRuleAsync($arguments = [])
  */
 final class CrClient extends AcsClient
 {

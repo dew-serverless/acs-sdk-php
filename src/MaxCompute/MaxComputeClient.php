@@ -181,6 +181,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateProjectDefaultQuotaAsync($arguments = [])
  * @method \Dew\Acs\Result updateProjectIpWhiteList(array $arguments = [])
  * @method \Http\Promise\Promise updateProjectIpWhiteListAsync($arguments = [])
+ * @method \Dew\Acs\Result updateProjectModelTier(array $arguments = [])
+ * @method \Http\Promise\Promise updateProjectModelTierAsync($arguments = [])
  * @method \Dew\Acs\Result updateQuotaPlan(array $arguments = [])
  * @method \Http\Promise\Promise updateQuotaPlanAsync($arguments = [])
  * @method \Dew\Acs\Result updateQuotaSchedule(array $arguments = [])

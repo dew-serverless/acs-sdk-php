@@ -1069,6 +1069,20 @@
                     ],
                 ],
             ],
+            'CopyUserTagsDirective' => [
+                'type' => 'object',
+                'properties' => [
+                    'directive' => [
+                        'type' => 'string',
+                    ],
+                    'keys' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
             'CssCreateOrderParam' => [
                 'type' => 'object',
                 'properties' => [

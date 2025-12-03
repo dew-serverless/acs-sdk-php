@@ -3557,6 +3557,22 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ChargeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'InstanceTypes',
                     'in' => 'query',
                     'style' => 'simple',

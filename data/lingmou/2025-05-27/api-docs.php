@@ -7,6 +7,61 @@
     ],
     'components' => [
         'schemas' => [
+            'BroadcastTemplate' => [
+                'type' => 'object',
+                'properties' => [
+                    'createTime' => [
+                        'type' => 'string',
+                    ],
+                    'modifiedTime' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'id' => [
+                        'type' => 'string',
+                    ],
+                    'variables' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/TemplateVariable',
+                        ],
+                    ],
+                ],
+            ],
+            'BroadcastVideo' => [
+                'type' => 'object',
+                'properties' => [
+                    'id' => [
+                        'type' => 'string',
+                    ],
+                    'createTime' => [
+                        'type' => 'string',
+                    ],
+                    'modifiedTime' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'coverURL' => [
+                        'type' => 'string',
+                    ],
+                    'videoURL' => [
+                        'type' => 'string',
+                    ],
+                    'captionURL' => [
+                        'type' => 'string',
+                    ],
+                    'alignmentFileURL' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ChatSessionInfo' => [
                 'type' => 'object',
                 'properties' => [
@@ -20,6 +75,20 @@
                     'createdAt' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                ],
+            ],
+            'TemplateVariable' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'properties' => [
+                        'type' => 'any',
                     ],
                 ],
             ],
@@ -57,45 +126,6 @@
                 ],
                 [
                     'name' => 'filename',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreateChatConfig' => [
-            'path' => '/openapi/chat/createChatConfig',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'backgroundId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'avatarId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -214,6 +244,45 @@
                 ],
                 [
                     'name' => 'jwtToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateChatConfig' => [
+            'path' => '/openapi/chat/createChatConfig',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'backgroundId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'avatarId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

@@ -5407,6 +5407,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Deploy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateIngress' => [
@@ -6965,6 +6973,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SlsLogEnvTags',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteApplication' => [
@@ -8027,6 +8043,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SlsLogEnvTags',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RescaleApplicationVertically' => [
@@ -8116,6 +8140,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Deploy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

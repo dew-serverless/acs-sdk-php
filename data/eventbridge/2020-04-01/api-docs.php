@@ -304,6 +304,201 @@
                     ],
                 ],
             ],
+            'SinkOSSParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'BucketName' => [
+                        'type' => 'string',
+                    ],
+                    'RegionId' => [
+                        'type' => 'string',
+                    ],
+                    'Endpoint' => [
+                        'type' => 'string',
+                    ],
+                    'RoleArn' => [
+                        'type' => 'string',
+                    ],
+                    'RotateSizeBytes' => [
+                        'type' => 'string',
+                    ],
+                    'RotateIntervalMs' => [
+                        'type' => 'string',
+                    ],
+                    'PathFormat' => [
+                        'type' => 'string',
+                    ],
+                    'CompressionType' => [
+                        'type' => 'string',
+                    ],
+                    'TaskConcurrency' => [
+                        'type' => 'string',
+                    ],
+                    'TimeZone' => [
+                        'type' => 'string',
+                    ],
+                    'SSLEnabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'ContentTransform' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'SinkRabbitMQMetaParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'InstanceType' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'Endpoint' => [
+                        'type' => 'string',
+                    ],
+                    'VirtualHostName' => [
+                        'type' => 'string',
+                    ],
+                    'Username' => [
+                        'type' => 'string',
+                    ],
+                    'Password' => [
+                        'type' => 'string',
+                    ],
+                    'VpcId' => [
+                        'type' => 'string',
+                    ],
+                    'VSwitchIds' => [
+                        'type' => 'string',
+                    ],
+                    'SecurityGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'NetworkType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'SinkRabbitMQMsgSyncParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'InstanceType' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'Endpoint' => [
+                        'type' => 'string',
+                    ],
+                    'VirtualHostName' => [
+                        'type' => 'string',
+                    ],
+                    'Body' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'MessageId' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'Properties' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'Exchange' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'RoutingKey' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'MaxHops' => [
+                        'type' => 'string',
+                    ],
+                    'Username' => [
+                        'type' => 'string',
+                    ],
+                    'Password' => [
+                        'type' => 'string',
+                    ],
+                    'VpcId' => [
+                        'type' => 'string',
+                    ],
+                    'VSwitchIds' => [
+                        'type' => 'string',
+                    ],
+                    'SecurityGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'NetworkType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'SourceMySQLParameters' => [
                 'type' => 'object',
                 'properties' => [
@@ -345,6 +540,142 @@
                         'type' => 'string',
                     ],
                     'Password' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'SourcePostgreSQLParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'RegionId' => [
+                        'type' => 'string',
+                    ],
+                    'HostName' => [
+                        'type' => 'string',
+                    ],
+                    'Port' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'User' => [
+                        'type' => 'string',
+                    ],
+                    'Password' => [
+                        'type' => 'string',
+                    ],
+                    'DatabaseName' => [
+                        'type' => 'string',
+                    ],
+                    'SchemaName' => [
+                        'type' => 'string',
+                    ],
+                    'TableNames' => [
+                        'type' => 'string',
+                    ],
+                    'NetworkType' => [
+                        'type' => 'string',
+                    ],
+                    'VpcId' => [
+                        'type' => 'string',
+                    ],
+                    'VSwitchIds' => [
+                        'type' => 'string',
+                    ],
+                    'SecurityGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'SnapshotMode' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'SourceRabbitMQMetaParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'InstanceType' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'Endpoint' => [
+                        'type' => 'string',
+                    ],
+                    'VirtualHostName' => [
+                        'type' => 'string',
+                    ],
+                    'Regex' => [
+                        'type' => 'string',
+                    ],
+                    'Username' => [
+                        'type' => 'string',
+                    ],
+                    'Password' => [
+                        'type' => 'string',
+                    ],
+                    'VpcId' => [
+                        'type' => 'string',
+                    ],
+                    'VSwitchIds' => [
+                        'type' => 'string',
+                    ],
+                    'SecurityGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'NetworkType' => [
+                        'type' => 'string',
+                    ],
+                    'MaxHops' => [
+                        'type' => 'string',
+                    ],
+                    'OrderConsume' => [
+                        'type' => 'string',
+                    ],
+                    'InnerNameSuffix' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'SourceRabbitMQMsgSyncParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'InstanceType' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'Endpoint' => [
+                        'type' => 'string',
+                    ],
+                    'VirtualHostName' => [
+                        'type' => 'string',
+                    ],
+                    'OrderConsume' => [
+                        'type' => 'string',
+                    ],
+                    'BodyDataType' => [
+                        'type' => 'string',
+                    ],
+                    'PrefetchCount' => [
+                        'type' => 'string',
+                    ],
+                    'Username' => [
+                        'type' => 'string',
+                    ],
+                    'Password' => [
+                        'type' => 'string',
+                    ],
+                    'VpcId' => [
+                        'type' => 'string',
+                    ],
+                    'VSwitchIds' => [
+                        'type' => 'string',
+                    ],
+                    'SecurityGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'NetworkType' => [
                         'type' => 'string',
                     ],
                 ],
@@ -2972,6 +3303,18 @@
                                 '$ref' => '#/components/schemas/SourceMySQLParameters',
                                 'required' => false,
                             ],
+                            'SourcePostgreSQLParameters' => [
+                                '$ref' => '#/components/schemas/SourcePostgreSQLParameters',
+                                'required' => false,
+                            ],
+                            'SourceRabbitMQMetaParameters' => [
+                                '$ref' => '#/components/schemas/SourceRabbitMQMetaParameters',
+                                'required' => false,
+                            ],
+                            'SourceRabbitMQMsgSyncParameters' => [
+                                '$ref' => '#/components/schemas/SourceRabbitMQMsgSyncParameters',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -5157,6 +5500,18 @@
                             ],
                             'SinkApiDestinationParameters' => [
                                 '$ref' => '#/components/schemas/SinkApiDestinationParameters',
+                                'required' => false,
+                            ],
+                            'SinkOSSParameters' => [
+                                '$ref' => '#/components/schemas/SinkOSSParameters',
+                                'required' => false,
+                            ],
+                            'SinkRabbitMQMetaParameters' => [
+                                '$ref' => '#/components/schemas/SinkRabbitMQMetaParameters',
+                                'required' => false,
+                            ],
+                            'SinkRabbitMQMsgSyncParameters' => [
+                                '$ref' => '#/components/schemas/SinkRabbitMQMsgSyncParameters',
                                 'required' => false,
                             ],
                         ],
@@ -5911,6 +6266,18 @@
                                 '$ref' => '#/components/schemas/SourceMySQLParameters',
                                 'required' => false,
                             ],
+                            'SourcePostgreSQLParameters' => [
+                                '$ref' => '#/components/schemas/SourcePostgreSQLParameters',
+                                'required' => false,
+                            ],
+                            'SourceRabbitMQMetaParameters' => [
+                                '$ref' => '#/components/schemas/SourceRabbitMQMetaParameters',
+                                'required' => false,
+                            ],
+                            'SourceRabbitMQMsgSyncParameters' => [
+                                '$ref' => '#/components/schemas/SourceRabbitMQMsgSyncParameters',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -8060,6 +8427,18 @@
                             ],
                             'SinkApiDestinationParameters' => [
                                 '$ref' => '#/components/schemas/SinkApiDestinationParameters',
+                                'required' => false,
+                            ],
+                            'SinkOSSParameters' => [
+                                '$ref' => '#/components/schemas/SinkOSSParameters',
+                                'required' => false,
+                            ],
+                            'SinkRabbitMQMetaParameters' => [
+                                '$ref' => '#/components/schemas/SinkRabbitMQMetaParameters',
+                                'required' => false,
+                            ],
+                            'SinkRabbitMQMsgSyncParameters' => [
+                                '$ref' => '#/components/schemas/SinkRabbitMQMsgSyncParameters',
                                 'required' => false,
                             ],
                         ],

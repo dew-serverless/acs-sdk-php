@@ -1140,6 +1140,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Priority',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetConsoleScore' => [

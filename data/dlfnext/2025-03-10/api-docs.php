@@ -881,16 +881,19 @@
             'Permission' => [
                 'type' => 'object',
                 'properties' => [
-                    'principal' => [
+                    'resourceType' => [
                         'type' => 'string',
                     ],
                     'database' => [
                         'type' => 'string',
                     ],
-                    'view' => [
+                    'table' => [
                         'type' => 'string',
                     ],
                     'access' => [
+                        'type' => 'string',
+                    ],
+                    'principal' => [
                         'type' => 'string',
                     ],
                     'columns' => [
@@ -913,11 +916,40 @@
                     'function' => [
                         'type' => 'string',
                     ],
-                    'table' => [
+                    'view' => [
                         'type' => 'string',
                     ],
-                    'resourceType' => [
+                    'expireTime' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'PrepayResource' => [
+                'type' => 'object',
+                'properties' => [
+                    'catalogId' => [
+                        'type' => 'string',
+                    ],
+                    'instanceId' => [
+                        'type' => 'string',
+                    ],
+                    'catalogName' => [
+                        'type' => 'string',
+                    ],
+                    'instanceStatus' => [
+                        'type' => 'string',
+                    ],
+                    'cu' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'gmtCreate' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'expireTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],

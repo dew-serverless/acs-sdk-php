@@ -2662,6 +2662,34 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'selectdb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'selectdb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'selectdb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'selectdb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'selectdb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'selectdb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'selectdb.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-shanghai',
             'endpoint' => 'selectdb.aliyuncs.com',
         ],
@@ -2670,39 +2698,7 @@
             'endpoint' => 'selectdb.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'selectdb.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'selectdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'selectdb.cn-hongkong.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'selectdb.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'selectdb.us-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'selectdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'selectdb.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'selectdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao',
+            'regionId' => 'cn-wulanchabu',
             'endpoint' => 'selectdb.aliyuncs.com',
         ],
         [
@@ -2710,52 +2706,52 @@
             'endpoint' => 'selectdb.ap-northeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'selectdb.ap-southeast-5.aliyuncs.com',
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'selectdb.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'selectdb.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'selectdb.ap-southeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-huhehaote',
             'endpoint' => 'selectdb.cn-huhehaote.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'selectdb.cn-chengdu.aliyuncs.com',
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'selectdb.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-6',
+            'endpoint' => 'selectdb.ap-southeast-6.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'selectdb.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'selectdb.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1',
             'endpoint' => 'selectdb.eu-west-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'selectdb.eu-central-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'us-east-1',
             'endpoint' => 'selectdb.us-east-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'selectdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'selectdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-3',
-            'endpoint' => 'selectdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-6',
-            'endpoint' => 'selectdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'selectdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-2',
-            'endpoint' => 'selectdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-heyuan-acdr-1',
-            'endpoint' => 'selectdb.cn-heyuan-acdr-1.aliyuncs.com',
+            'regionId' => 'us-west-1',
+            'endpoint' => 'selectdb.us-west-1.aliyuncs.com',
         ],
     ],
 ];

@@ -938,36 +938,66 @@
             'File' => [
                 'type' => 'object',
                 'properties' => [
-                    'ProduceTime' => [
+                    'OwnerId' => [
                         'type' => 'string',
                     ],
-                    'Timezone' => [
+                    'ProjectName' => [
                         'type' => 'string',
                     ],
-                    'Artist' => [
+                    'DatasetName' => [
                         'type' => 'string',
                     ],
-                    'ObjectACL' => [
+                    'ObjectType' => [
+                        'type' => 'string',
+                    ],
+                    'ObjectId' => [
+                        'type' => 'string',
+                    ],
+                    'UpdateTime' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'URI' => [
+                        'type' => 'string',
+                    ],
+                    'OSSURI' => [
+                        'type' => 'string',
+                    ],
+                    'Filename' => [
+                        'type' => 'string',
+                    ],
+                    'MediaType' => [
                         'type' => 'string',
                     ],
                     'ContentType' => [
-                        'type' => 'string',
-                    ],
-                    'AccessControlRequestMethod' => [
                         'type' => 'string',
                     ],
                     'Size' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'Album' => [
+                    'FileHash' => [
                         'type' => 'string',
                     ],
-                    'ContentLanguage' => [
+                    'FileModifiedTime' => [
                         'type' => 'string',
                     ],
-                    'OSSTagging' => [
-                        'type' => 'object',
+                    'FileCreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'FileAccessTime' => [
+                        'type' => 'string',
+                    ],
+                    'ProduceTime' => [
+                        'type' => 'string',
+                    ],
+                    'LatLong' => [
+                        'type' => 'string',
+                    ],
+                    'Timezone' => [
+                        'type' => 'string',
                     ],
                     'Addresses' => [
                         'type' => 'array',
@@ -975,208 +1005,12 @@
                             '$ref' => '#/components/schemas/Address',
                         ],
                     ],
-                    'StreamCount' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'CustomLabels' => [
-                        'type' => 'object',
-                    ],
-                    'VideoHeight' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'ImageWidth' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'Subtitles' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/SubtitleStream',
-                        ],
-                    ],
-                    'OSSStorageClass' => [
+                    'TravelClusterId' => [
                         'type' => 'string',
-                    ],
-                    'MediaType' => [
-                        'type' => 'string',
-                    ],
-                    'OSSDeleteMarker' => [
-                        'type' => 'string',
-                    ],
-                    'Insights' => [
-                        '$ref' => '#/components/schemas/Insights',
-                    ],
-                    'FormatLongName' => [
-                        'type' => 'string',
-                    ],
-                    'ProgramCount' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'StartTime' => [
-                        'type' => 'number',
-                        'format' => 'double',
-                    ],
-                    'Filename' => [
-                        'type' => 'string',
-                    ],
-                    'Labels' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/Label',
-                        ],
-                    ],
-                    'Duration' => [
-                        'type' => 'number',
-                        'format' => 'double',
                     ],
                     'Orientation' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                    ],
-                    'CroppingSuggestions' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/CroppingSuggestion',
-                        ],
-                    ],
-                    'EXIF' => [
-                        'type' => 'string',
-                    ],
-                    'Performer' => [
-                        'type' => 'string',
-                    ],
-                    'ImageHeight' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'PageCount' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'FigureCount' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'ImageScore' => [
-                        '$ref' => '#/components/schemas/ImageScore',
-                    ],
-                    'ETag' => [
-                        'type' => 'string',
-                    ],
-                    'DatasetName' => [
-                        'type' => 'string',
-                    ],
-                    'FileHash' => [
-                        'type' => 'string',
-                    ],
-                    'CacheControl' => [
-                        'type' => 'string',
-                    ],
-                    'OSSVersionId' => [
-                        'type' => 'string',
-                    ],
-                    'FileAccessTime' => [
-                        'type' => 'string',
-                    ],
-                    'VideoStreams' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/VideoStream',
-                        ],
-                    ],
-                    'ProjectName' => [
-                        'type' => 'string',
-                    ],
-                    'VideoWidth' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'AudioCovers' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/Image',
-                        ],
-                    ],
-                    'ContentEncoding' => [
-                        'type' => 'string',
-                    ],
-                    'Elements' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/Element',
-                        ],
-                    ],
-                    'URI' => [
-                        'type' => 'string',
-                    ],
-                    'Reason' => [
-                        'type' => 'string',
-                    ],
-                    'AudioStreams' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/AudioStream',
-                        ],
-                    ],
-                    'ObjectStatus' => [
-                        'type' => 'string',
-                    ],
-                    'ObjectType' => [
-                        'type' => 'string',
-                    ],
-                    'SceneElements' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/SceneElement',
-                        ],
-                    ],
-                    'ServerSideEncryptionKeyId' => [
-                        'type' => 'string',
-                    ],
-                    'OwnerId' => [
-                        'type' => 'string',
-                    ],
-                    'FileModifiedTime' => [
-                        'type' => 'string',
-                    ],
-                    'Language' => [
-                        'type' => 'string',
-                    ],
-                    'FileCreateTime' => [
-                        'type' => 'string',
-                    ],
-                    'SemanticTypes' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'ServerSideEncryption' => [
-                        'type' => 'string',
-                    ],
-                    'FormatName' => [
-                        'type' => 'string',
-                    ],
-                    'Composer' => [
-                        'type' => 'string',
-                    ],
-                    'ObjectId' => [
-                        'type' => 'string',
-                    ],
-                    'CreateTime' => [
-                        'type' => 'string',
-                    ],
-                    'Title' => [
-                        'type' => 'string',
-                    ],
-                    'TravelClusterId' => [
-                        'type' => 'string',
-                    ],
-                    'OSSExpiration' => [
-                        'type' => 'string',
                     ],
                     'Figures' => [
                         'type' => 'array',
@@ -1184,33 +1018,38 @@
                             '$ref' => '#/components/schemas/Figure',
                         ],
                     ],
-                    'ServerSideEncryptionCustomerAlgorithm' => [
-                        'type' => 'string',
-                    ],
-                    'Bitrate' => [
+                    'FigureCount' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'AlbumArtist' => [
+                    'Labels' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Label',
+                        ],
+                    ],
+                    'Title' => [
                         'type' => 'string',
                     ],
-                    'ContentMd5' => [
+                    'ImageWidth' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ImageHeight' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'EXIF' => [
                         'type' => 'string',
                     ],
-                    'OCRTexts' => [
-                        'type' => 'string',
+                    'ImageScore' => [
+                        '$ref' => '#/components/schemas/ImageScore',
                     ],
-                    'ContentDisposition' => [
-                        'type' => 'string',
-                    ],
-                    'CustomId' => [
-                        'type' => 'string',
-                    ],
-                    'UpdateTime' => [
-                        'type' => 'string',
-                    ],
-                    'OSSUserMeta' => [
-                        'type' => 'object',
+                    'CroppingSuggestions' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/CroppingSuggestion',
+                        ],
                     ],
                     'OCRContents' => [
                         'type' => 'array',
@@ -1218,27 +1057,188 @@
                             '$ref' => '#/components/schemas/OCRContents',
                         ],
                     ],
-                    'AccessControlAllowOrigin' => [
-                        'type' => 'string',
-                    ],
-                    'OSSCRC64' => [
-                        'type' => 'string',
-                    ],
-                    'OSSTaggingCount' => [
+                    'VideoWidth' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'OSSURI' => [
+                    'VideoHeight' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'VideoStreams' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/VideoStream',
+                        ],
+                    ],
+                    'Subtitles' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/SubtitleStream',
+                        ],
+                    ],
+                    'AudioStreams' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/AudioStream',
+                        ],
+                    ],
+                    'Artist' => [
+                        'type' => 'string',
+                    ],
+                    'AlbumArtist' => [
+                        'type' => 'string',
+                    ],
+                    'AudioCovers' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Image',
+                        ],
+                    ],
+                    'Composer' => [
+                        'type' => 'string',
+                    ],
+                    'Performer' => [
+                        'type' => 'string',
+                    ],
+                    'Language' => [
+                        'type' => 'string',
+                    ],
+                    'Album' => [
+                        'type' => 'string',
+                    ],
+                    'PageCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ETag' => [
+                        'type' => 'string',
+                    ],
+                    'CacheControl' => [
+                        'type' => 'string',
+                    ],
+                    'ContentDisposition' => [
+                        'type' => 'string',
+                    ],
+                    'ContentEncoding' => [
+                        'type' => 'string',
+                    ],
+                    'ContentLanguage' => [
+                        'type' => 'string',
+                    ],
+                    'AccessControlAllowOrigin' => [
+                        'type' => 'string',
+                    ],
+                    'AccessControlRequestMethod' => [
+                        'type' => 'string',
+                    ],
+                    'ServerSideEncryptionCustomerAlgorithm' => [
+                        'type' => 'string',
+                    ],
+                    'ServerSideEncryption' => [
                         'type' => 'string',
                     ],
                     'ServerSideDataEncryption' => [
                         'type' => 'string',
                     ],
-                    'LatLong' => [
+                    'ServerSideEncryptionKeyId' => [
+                        'type' => 'string',
+                    ],
+                    'OSSStorageClass' => [
+                        'type' => 'string',
+                    ],
+                    'OSSCRC64' => [
+                        'type' => 'string',
+                    ],
+                    'ObjectACL' => [
+                        'type' => 'string',
+                    ],
+                    'ContentMd5' => [
+                        'type' => 'string',
+                    ],
+                    'OSSUserMeta' => [
+                        'type' => 'object',
+                    ],
+                    'OSSTaggingCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'OSSTagging' => [
+                        'type' => 'object',
+                    ],
+                    'OSSExpiration' => [
+                        'type' => 'string',
+                    ],
+                    'OSSVersionId' => [
+                        'type' => 'string',
+                    ],
+                    'OSSDeleteMarker' => [
                         'type' => 'string',
                     ],
                     'OSSObjectType' => [
                         'type' => 'string',
+                    ],
+                    'CustomId' => [
+                        'type' => 'string',
+                    ],
+                    'CustomLabels' => [
+                        'type' => 'object',
+                    ],
+                    'StreamCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ProgramCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'FormatName' => [
+                        'type' => 'string',
+                    ],
+                    'FormatLongName' => [
+                        'type' => 'string',
+                    ],
+                    'StartTime' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'Bitrate' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Duration' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'SemanticTypes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'Elements' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Element',
+                        ],
+                    ],
+                    'SceneElements' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/SceneElement',
+                        ],
+                    ],
+                    'OCRTexts' => [
+                        'type' => 'string',
+                    ],
+                    'Reason' => [
+                        'type' => 'string',
+                    ],
+                    'ObjectStatus' => [
+                        'type' => 'string',
+                    ],
+                    'Insights' => [
+                        '$ref' => '#/components/schemas/Insights',
                     ],
                 ],
             ],
@@ -2519,59 +2519,49 @@
                     'DisableVideo' => [
                         'type' => 'boolean',
                     ],
+                    'Stream' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int32',
+                        ],
+                    ],
                     'TranscodeVideo' => [
                         'type' => 'object',
                         'properties' => [
-                            'FrameRate' => [
-                                'type' => 'number',
-                                'format' => 'float',
-                            ],
-                            'FrameRateOption' => [
-                                'type' => 'string',
-                            ],
-                            'Refs' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'ScaleType' => [
-                                'type' => 'string',
-                            ],
-                            'ResolutionOption' => [
-                                'type' => 'string',
-                            ],
-                            'BFrames' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'Rotation' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'Bitrate' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'BufferSize' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
                             'Codec' => [
-                                'type' => 'string',
-                            ],
-                            'CRF' => [
-                                'type' => 'number',
-                                'format' => 'float',
-                            ],
-                            'BitrateOption' => [
                                 'type' => 'string',
                             ],
                             'PixelFormat' => [
                                 'type' => 'string',
                             ],
+                            'FrameRateOption' => [
+                                'type' => 'string',
+                            ],
+                            'FrameRate' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                            ],
+                            'ResolutionOption' => [
+                                'type' => 'string',
+                            ],
+                            'Resolution' => [
+                                'type' => 'string',
+                            ],
                             'AdaptiveResolutionDirection' => [
                                 'type' => 'boolean',
                             ],
-                            'MaxBitrate' => [
+                            'ScaleType' => [
+                                'type' => 'string',
+                            ],
+                            'Rotation' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'BitrateOption' => [
+                                'type' => 'string',
+                            ],
+                            'Bitrate' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
@@ -2579,114 +2569,40 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
-                            'Resolution' => [
-                                'type' => 'string',
+                            'CRF' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                            ],
+                            'BufferSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'MaxBitrate' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'BFrames' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'Refs' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'VideoSlim' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                             ],
                         ],
                     ],
                     'FilterVideo' => [
                         'type' => 'object',
                         'properties' => [
-                            'Delogos' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'Dx' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
-                                        ],
-                                        'Dy' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
-                                        ],
-                                        'StartTime' => [
-                                            'type' => 'number',
-                                            'format' => 'double',
-                                        ],
-                                        'Duration' => [
-                                            'type' => 'number',
-                                            'format' => 'double',
-                                        ],
-                                        'Height' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
-                                        ],
-                                        'ReferPos' => [
-                                            'type' => 'string',
-                                        ],
-                                        'Width' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'Speed' => [
-                                'type' => 'number',
-                                'format' => 'float',
-                            ],
-                            'Desensitization' => [
-                                'type' => 'object',
-                                'properties' => [
-                                    'LicensePlate' => [
-                                        'type' => 'object',
-                                        'properties' => [
-                                            'MinSize' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                            ],
-                                            'Confidence' => [
-                                                'type' => 'number',
-                                                'format' => 'float',
-                                            ],
-                                        ],
-                                    ],
-                                    'Face' => [
-                                        'type' => 'object',
-                                        'properties' => [
-                                            'MinSize' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                            ],
-                                            'Confidence' => [
-                                                'type' => 'number',
-                                                'format' => 'float',
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
                             'Watermarks' => [
                                 'type' => 'array',
                                 'items' => [
                                     'type' => 'object',
                                     'properties' => [
-                                        'StartTime' => [
-                                            'type' => 'number',
-                                            'format' => 'double',
-                                        ],
-                                        'FontColor' => [
-                                            'type' => 'string',
-                                        ],
-                                        'BorderColor' => [
-                                            'type' => 'string',
-                                        ],
-                                        'Duration' => [
-                                            'type' => 'number',
-                                            'format' => 'double',
-                                        ],
-                                        'FontApha' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
-                                        ],
-                                        'BorderWidth' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                        ],
-                                        'URI' => [
-                                            'type' => 'string',
-                                        ],
                                         'Type' => [
                                             'type' => 'string',
                                         ],
@@ -2698,15 +2614,79 @@
                                             'type' => 'number',
                                             'format' => 'float',
                                         ],
-                                        'FontSize' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
+                                        'StartTime' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                        ],
+                                        'Duration' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                        ],
+                                        'ReferPos' => [
+                                            'type' => 'string',
                                         ],
                                         'Content' => [
                                             'type' => 'string',
                                         ],
                                         'FontName' => [
                                             'type' => 'string',
+                                        ],
+                                        'FontSize' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                        ],
+                                        'FontColor' => [
+                                            'type' => 'string',
+                                        ],
+                                        'FontApha' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
+                                        ],
+                                        'BorderWidth' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                        ],
+                                        'BorderColor' => [
+                                            'type' => 'string',
+                                        ],
+                                        'URI' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Width' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
+                                        ],
+                                        'Height' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Delogos' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'StartTime' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                        ],
+                                        'Duration' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                        ],
+                                        'Dx' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
+                                        ],
+                                        'Dy' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
+                                        ],
+                                        'Width' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
                                         ],
                                         'Height' => [
                                             'type' => 'number',
@@ -2715,20 +2695,44 @@
                                         'ReferPos' => [
                                             'type' => 'string',
                                         ],
-                                        'Width' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
+                                    ],
+                                ],
+                            ],
+                            'Speed' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                            ],
+                            'Desensitization' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Face' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'Confidence' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                            ],
+                                            'MinSize' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
+                                        ],
+                                    ],
+                                    'LicensePlate' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'Confidence' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                            ],
+                                            'MinSize' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
                                         ],
                                     ],
                                 ],
                             ],
-                        ],
-                    ],
-                    'Stream' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'integer',
-                            'format' => 'int32',
                         ],
                     ],
                 ],

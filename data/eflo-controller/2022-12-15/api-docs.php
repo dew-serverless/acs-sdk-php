@@ -4120,12 +4120,16 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'eflo-controller.cn-zhangjiakou.aliyuncs.com',
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'eflo-controller.ap-southeast-7.aliyuncs.com	',
         ],
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'eflo-controller.cn-beijing.aliyuncs.com	',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'eflo-controller.cn-zhangjiakou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-wulanchabu',

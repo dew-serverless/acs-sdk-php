@@ -401,10 +401,19 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
+                        'deprecated' => true,
                         'required' => false,
                         'additionalProperties' => [
                             'type' => 'any',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'jsonApiParams',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1171,12 +1180,12 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'public',
-            'regionName' => '公网',
-            'areaId' => 'other',
-            'areaName' => '其它',
-            'public' => 'openapiexplorer.aliyuncs.com',
-            'endpoint' => 'openapiexplorer.aliyuncs.com',
+            'regionId' => 'cn-hangzhou',
+            'regionName' => '华东1（杭州）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'openapi-mcp.cn-hangzhou.aliyuncs.com',
+            'endpoint' => 'openapi-mcp.cn-hangzhou.aliyuncs.com',
             'vpc' => '',
         ],
         [
@@ -1189,12 +1198,12 @@
             'vpc' => '',
         ],
         [
-            'regionId' => 'cn-hangzhou',
-            'regionName' => '华东1（杭州）',
-            'areaId' => 'asiaPacific',
-            'areaName' => '亚太',
-            'public' => 'openapi-mcp.cn-hangzhou.aliyuncs.com',
-            'endpoint' => 'openapi-mcp.cn-hangzhou.aliyuncs.com',
+            'regionId' => 'public',
+            'regionName' => '公网',
+            'areaId' => 'other',
+            'areaName' => '其它',
+            'public' => 'openapiexplorer.aliyuncs.com',
+            'endpoint' => 'openapiexplorer.aliyuncs.com',
             'vpc' => '',
         ],
     ],

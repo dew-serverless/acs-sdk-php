@@ -108,6 +108,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'agent' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                             'sensitives' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -682,6 +686,10 @@
                                         'type' => 'boolean',
                                         'required' => false,
                                     ],
+                                    'callbackUrl' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                         ],
@@ -1228,6 +1236,173 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'BatchTranslateForHtml' => [
+            'path' => '/anytrans/translate/batchForHtml',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'sourceLanguage',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'targetLanguage',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'text',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'scene',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'appName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ext',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'examples' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'tgt' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'src' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'domainHint' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'sensitives' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'terminologies' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'tgt' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'src' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'textTransform' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'toLower' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'toUpper' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'toTitle' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'config' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'skipCsiCheck' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

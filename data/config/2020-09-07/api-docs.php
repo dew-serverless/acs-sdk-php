@@ -9361,15 +9361,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-shanghai',
-            'regionName' => '华东2（上海）',
-            'areaId' => 'asiaPacific',
-            'areaName' => '亚太',
-            'public' => 'config.cn-shanghai.aliyuncs.com',
-            'endpoint' => 'config.cn-shanghai.aliyuncs.com',
-            'vpc' => 'config-vpc.cn-shanghai.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-1',
             'regionName' => '新加坡',
             'areaId' => 'asiaPacific',
@@ -9377,6 +9368,15 @@
             'public' => 'config.ap-southeast-1.aliyuncs.com',
             'endpoint' => 'config.ap-southeast-1.aliyuncs.com',
             'vpc' => 'config-vpc.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'regionName' => '华东2（上海）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'config.cn-shanghai.aliyuncs.com',
+            'endpoint' => 'config.cn-shanghai.aliyuncs.com',
+            'vpc' => 'config-vpc.cn-shanghai.aliyuncs.com',
         ],
     ],
 ];

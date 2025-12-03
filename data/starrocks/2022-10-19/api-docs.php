@@ -1054,6 +1054,24 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Parallelism',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TerminationGracePeriodSeconds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyCuPreCheck' => [

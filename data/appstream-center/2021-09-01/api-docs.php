@@ -1377,6 +1377,20 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'UserGroupIds',
+                    'in' => 'formData',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 10,
+                    ],
+                ],
             ],
         ],
         'GetAppInstanceGroup' => [
@@ -1551,6 +1565,34 @@
                         ],
                         'minItems' => 0,
                         'maxItems' => 20,
+                    ],
+                ],
+                [
+                    'name' => 'UserGroupIds',
+                    'in' => 'formData',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 10,
+                    ],
+                ],
+                [
+                    'name' => 'ExcludedUserGroupIds',
+                    'in' => 'formData',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 10,
                     ],
                 ],
             ],

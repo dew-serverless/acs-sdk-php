@@ -614,6 +614,50 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'MultipartPartStorage' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'StandardMultipartPartCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'StandardMultipartPartStorage' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'InfrequentMultipartPartCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'InfrequentMultipartPartStorage' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ArchiveMultipartPartCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ArchiveMultipartPartStorage' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ColdArchiveMultipartPartCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ColdArchiveMultipartPartStorage' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DeepColdArchiveMultipartPartCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DeepColdArchiveMultipartPartStorage' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                 ],
             ],
             'BucketVersioningStatus' => [

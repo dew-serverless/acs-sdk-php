@@ -416,5 +416,9 @@
             'regionId' => 'cn-hongkong',
             'endpoint' => 'acc.cn-hongkong.aliyuncs.com',
         ],
+        [
+            'regionId' => 'us-southeast-1',
+            'endpoint' => 'acc.us-southeast-1.aliyuncs.com',
+        ],
     ],
 ];

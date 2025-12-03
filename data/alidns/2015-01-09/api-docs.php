@@ -13922,7 +13922,7 @@
                 ],
             ],
         ],
-        'UpdateRspDomainServerHoldStatusOte' => [
+        'RemoveRspDomainServerHoldStatusForGateway' => [
             'methods' => [
                 'post',
             ],
@@ -13938,26 +13938,6 @@
             'parameters' => [
                 [
                     'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'OperatorType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'registry',
-                            'registryGateway',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'OperatorId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -13973,18 +13953,6 @@
                     ],
                 ],
                 [
-                    'name' => 'ServerHoldStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'enable',
-                            'disable',
-                        ],
-                    ],
-                ],
-                [
                     'name' => 'StatusMsg',
                     'in' => 'query',
                     'schema' => [
@@ -13994,7 +13962,7 @@
                 ],
             ],
         ],
-        'UpdateRspDomainStatusOte' => [
+        'UpdateRspDomainServerProhibitStatusForGateway' => [
             'methods' => [
                 'post',
             ],
@@ -14010,26 +13978,6 @@
             'parameters' => [
                 [
                     'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'OperatorType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'registry',
-                            'registryGateway',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'OperatorId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -14059,21 +14007,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                     'enum' => [
-                                        'clientDeleteProhibited',
-                                        'clientHold',
-                                        'clientRenewProhibited',
-                                        'clientTransferProhibited',
-                                        'clientUpdateProhibited',
-                                        'pendingCreate',
-                                        'pendingDelete',
-                                        'pendingRenew',
-                                        'pendingTransfer',
-                                        'pendingUpdate',
                                         'serverDeleteProhibited',
                                         'serverRenewProhibited',
                                         'serverTransferProhibited',
                                         'serverUpdateProhibited',
-                                        'linked',
                                     ],
                                 ],
                                 'StatusMsg' => [
@@ -14100,21 +14037,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                     'enum' => [
-                                        'clientDeleteProhibited',
-                                        'clientHold',
-                                        'clientRenewProhibited',
-                                        'clientTransferProhibited',
-                                        'clientUpdateProhibited',
-                                        'pendingCreate',
-                                        'pendingDelete',
-                                        'pendingRenew',
-                                        'pendingTransfer',
-                                        'pendingUpdate',
                                         'serverDeleteProhibited',
                                         'serverRenewProhibited',
                                         'serverTransferProhibited',
                                         'serverUpdateProhibited',
-                                        'linked',
                                     ],
                                 ],
                                 'StatusMsg' => [

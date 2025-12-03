@@ -6394,6 +6394,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'OrderKeyType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OrderByType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'QueryServerLock' => [

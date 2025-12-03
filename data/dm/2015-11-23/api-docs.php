@@ -3136,6 +3136,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CheckGraylist',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
     ],

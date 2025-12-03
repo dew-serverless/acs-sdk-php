@@ -430,6 +430,9 @@
                             'cn-hangzhou',
                             'ap-northeast-1',
                             'cn-zhengzhou-jva',
+                            'cn-shanghai-cloudspe',
+                            'ap-southeast-6',
+                            'ap-southeast-7',
                         ],
                     ],
                 ],
@@ -5582,6 +5585,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StorageType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

@@ -6331,11 +6331,11 @@
                                     'type' => 'object',
                                     'required' => true,
                                     'properties' => [
-                                        'Content' => [
+                                        'Title' => [
                                             'type' => 'string',
                                             'required' => true,
                                         ],
-                                        'Title' => [
+                                        'Content' => [
                                             'type' => 'string',
                                             'required' => true,
                                         ],
@@ -6365,6 +6365,14 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Prompt' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
                                         'Model' => [
                                             'type' => 'string',
                                             'required' => false,
@@ -6374,10 +6382,6 @@
                                                 'qwen-max',
                                             ],
                                         ],
-                                        'Prompt' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
                                         'TransType' => [
                                             'type' => 'string',
                                             'required' => false,
@@ -6385,10 +6389,6 @@
                                                 'default',
                                                 'chat',
                                             ],
-                                        ],
-                                        'Name' => [
-                                            'type' => 'string',
-                                            'required' => true,
                                         ],
                                     ],
                                 ],
@@ -6406,6 +6406,10 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
+                            'AsrCallback' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                             'Enabled' => [
                                 'type' => 'boolean',
                                 'required' => false,

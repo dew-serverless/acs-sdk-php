@@ -14054,6 +14054,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'ExtensionName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeFirewallRules' => [

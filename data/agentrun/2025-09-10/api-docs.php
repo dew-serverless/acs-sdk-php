@@ -1221,6 +1221,9 @@
                         'minimum' => '1',
                         'maximum' => '21600',
                     ],
+                    'sandboxId' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'CreateTemplateInput' => [
@@ -1236,6 +1239,7 @@
                         'enum' => [
                             'Browser',
                             'CodeInterpreter',
+                            'AllInOnePreview',
                         ],
                     ],
                     'description' => [
@@ -2428,15 +2432,15 @@
             'ListSandboxesOutput' => [
                 'type' => 'object',
                 'properties' => [
+                    'nextToken' => [
+                        'type' => 'string',
+                    ],
                     'items' => [
                         'type' => 'array',
                         'required' => true,
                         'items' => [
                             '$ref' => '#/components/schemas/Sandbox',
                         ],
-                    ],
-                    'nextToken' => [
-                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2457,13 +2461,6 @@
             'ListTemplatesOutput' => [
                 'type' => 'object',
                 'properties' => [
-                    'items' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            '$ref' => '#/components/schemas/Template',
-                        ],
-                    ],
                     'pageNumber' => [
                         'type' => 'integer',
                         'format' => 'int32',
@@ -2478,6 +2475,13 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => true,
+                    ],
+                    'items' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Template',
+                        ],
                     ],
                 ],
             ],
@@ -2940,6 +2944,9 @@
                             'READ_WRITE',
                         ],
                     ],
+                    'region' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'PaginationInfo' => [
@@ -3212,15 +3219,15 @@
                     'endedAt' => [
                         'type' => 'string',
                     ],
-                    'metadata' => [
-                        'type' => 'object',
+                    'sandboxArn' => [
+                        'type' => 'string',
                     ],
-                    'SandboxIdleTTLInSeconds' => [
+                    'sandboxIdleTTLInSeconds' => [
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
-                    'sandboxArn' => [
-                        'type' => 'string',
+                    'metadata' => [
+                        'type' => 'object',
                     ],
                 ],
             ],
@@ -3342,6 +3349,20 @@
                     ],
                     'requestId' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'StopSandboxResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        '$ref' => '#/components/schemas/Sandbox',
                     ],
                 ],
             ],
@@ -3500,6 +3521,9 @@
                         'items' => [
                             '$ref' => '#/components/schemas/OssConfiguration',
                         ],
+                    ],
+                    'description' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -4178,6 +4202,14 @@
             'parameters' => [
                 [
                     'name' => 'agentRuntimeName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -6296,9 +6328,9 @@
             ],
         ],
         'StopSandbox' => [
-            'path' => '/2025-09-10/sandboxes/{sandboxId}',
+            'path' => '/2025-09-10/sandboxes/{sandboxId}/stop',
             'methods' => [
-                'delete',
+                'post',
             ],
             'schemes' => [
                 'https',
@@ -6412,6 +6444,22 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'templateName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -6623,6 +6671,37 @@
                     'schema' => [
                         '$ref' => '#/components/schemas/UpdateModelProxyInput',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSandbox' => [
+            'path' => '/2025-09-10/sandboxes/{sandboxId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'sandboxId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

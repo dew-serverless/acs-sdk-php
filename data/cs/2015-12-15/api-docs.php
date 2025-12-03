@@ -3477,6 +3477,10 @@
                                             ],
                                         ],
                                     ],
+                                    'system_disk_snapshot_policy_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'node_config' => [
@@ -4296,6 +4300,10 @@
                                                 ],
                                             ],
                                         ],
+                                    ],
+                                    'system_disk_snapshot_policy_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
                                     ],
                                 ],
                             ],

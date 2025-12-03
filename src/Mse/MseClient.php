@@ -499,6 +499,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getNacosMcpServerAsync($arguments = [])
  * @method \Dew\Acs\Result listNacosMcpServers(array $arguments = [])
  * @method \Http\Promise\Promise listNacosMcpServersAsync($arguments = [])
+ * @method \Dew\Acs\Result queryNacosGrayConfig(array $arguments = [])
+ * @method \Http\Promise\Promise queryNacosGrayConfigAsync($arguments = [])
  */
 final class MseClient extends AcsClient
 {

@@ -93,6 +93,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeNatFirewallPrecheckDetailAsync($arguments = [])
  * @method \Dew\Acs\Result describeFirewallVswitchResources(array $arguments = [])
  * @method \Http\Promise\Promise describeFirewallVswitchResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSecurityProxyResources(array $arguments = [])
+ * @method \Http\Promise\Promise describeSecurityProxyResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result createNatFirewallSyncTask(array $arguments = [])
  * @method \Http\Promise\Promise createNatFirewallSyncTaskAsync($arguments = [])
  * @method \Dew\Acs\Result createNatFirewallPreCheck(array $arguments = [])
@@ -125,6 +127,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeTrFirewallV2RoutePolicyListAsync($arguments = [])
  * @method \Dew\Acs\Result describeTrFirewallPolicyBackUpAssociationList(array $arguments = [])
  * @method \Http\Promise\Promise describeTrFirewallPolicyBackUpAssociationListAsync($arguments = [])
+ * @method \Dew\Acs\Result describeTransitRouterResourcesList(array $arguments = [])
+ * @method \Http\Promise\Promise describeTransitRouterResourcesListAsync($arguments = [])
  * @method \Dew\Acs\Result createTrFirewallV2(array $arguments = [])
  * @method \Http\Promise\Promise createTrFirewallV2Async($arguments = [])
  * @method \Dew\Acs\Result createTrFirewallV2RoutePolicy(array $arguments = [])
@@ -461,6 +465,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deletePrivateDnsAllDomainNameAsync($arguments = [])
  * @method \Dew\Acs\Result describeLogStoreInfo(array $arguments = [])
  * @method \Http\Promise\Promise describeLogStoreInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result describeTrafficLog(array $arguments = [])
+ * @method \Http\Promise\Promise describeTrafficLogAsync($arguments = [])
  * @method \Dew\Acs\Result describeSlsAnalyzeOpenStatus(array $arguments = [])
  * @method \Http\Promise\Promise describeSlsAnalyzeOpenStatusAsync($arguments = [])
  * @method \Dew\Acs\Result describeClearAuthInfo(array $arguments = [])
@@ -513,26 +519,26 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteAclBackupDataAsync($arguments = [])
  * @method \Dew\Acs\Result describeSecurityMode(array $arguments = [])
  * @method \Http\Promise\Promise describeSecurityModeAsync($arguments = [])
- * @method \Dew\Acs\Result describePageDocuments(array $arguments = [])
- * @method \Http\Promise\Promise describePageDocumentsAsync($arguments = [])
+ * @method \Dew\Acs\Result describePageDocuments(array $arguments = []) {@deprecated 2017-12-07}
+ * @method \Http\Promise\Promise describePageDocumentsAsync($arguments = []) {@deprecated 2017-12-07}
  * @method \Dew\Acs\Result describeDomainResolve(array $arguments = []) {@deprecated 2017-12-07}
  * @method \Http\Promise\Promise describeDomainResolveAsync($arguments = []) {@deprecated 2017-12-07}
- * @method \Dew\Acs\Result describeFirewallDropStatistics(array $arguments = [])
- * @method \Http\Promise\Promise describeFirewallDropStatisticsAsync($arguments = [])
- * @method \Dew\Acs\Result describeUserAssetIPTrafficInfo(array $arguments = [])
- * @method \Http\Promise\Promise describeUserAssetIPTrafficInfoAsync($arguments = [])
- * @method \Dew\Acs\Result describeCfwRiskLevelSummary(array $arguments = [])
- * @method \Http\Promise\Promise describeCfwRiskLevelSummaryAsync($arguments = [])
- * @method \Dew\Acs\Result describeRiskSecurityGroupDetail(array $arguments = [])
- * @method \Http\Promise\Promise describeRiskSecurityGroupDetailAsync($arguments = [])
- * @method \Dew\Acs\Result describeSecurityProxy(array $arguments = [])
- * @method \Http\Promise\Promise describeSecurityProxyAsync($arguments = [])
- * @method \Dew\Acs\Result createVpcFirewallCenManualConfigure(array $arguments = [])
- * @method \Http\Promise\Promise createVpcFirewallCenManualConfigureAsync($arguments = [])
- * @method \Dew\Acs\Result batchCopyVpcFirewallControlPolicy(array $arguments = [])
- * @method \Http\Promise\Promise batchCopyVpcFirewallControlPolicyAsync($arguments = [])
- * @method \Dew\Acs\Result modifyControlPolicyPosition(array $arguments = [])
- * @method \Http\Promise\Promise modifyControlPolicyPositionAsync($arguments = [])
+ * @method \Dew\Acs\Result describeFirewallDropStatistics(array $arguments = []) {@deprecated 2017-12-07}
+ * @method \Http\Promise\Promise describeFirewallDropStatisticsAsync($arguments = []) {@deprecated 2017-12-07}
+ * @method \Dew\Acs\Result describeUserAssetIPTrafficInfo(array $arguments = []) {@deprecated 2017-12-07}
+ * @method \Http\Promise\Promise describeUserAssetIPTrafficInfoAsync($arguments = []) {@deprecated 2017-12-07}
+ * @method \Dew\Acs\Result describeCfwRiskLevelSummary(array $arguments = []) {@deprecated 2017-12-07}
+ * @method \Http\Promise\Promise describeCfwRiskLevelSummaryAsync($arguments = []) {@deprecated 2017-12-07}
+ * @method \Dew\Acs\Result describeRiskSecurityGroupDetail(array $arguments = []) {@deprecated 2017-12-07}
+ * @method \Http\Promise\Promise describeRiskSecurityGroupDetailAsync($arguments = []) {@deprecated 2017-12-07}
+ * @method \Dew\Acs\Result describeSecurityProxy(array $arguments = []) {@deprecated 2017-12-07}
+ * @method \Http\Promise\Promise describeSecurityProxyAsync($arguments = []) {@deprecated 2017-12-07}
+ * @method \Dew\Acs\Result createVpcFirewallCenManualConfigure(array $arguments = []) {@deprecated 2017-12-07}
+ * @method \Http\Promise\Promise createVpcFirewallCenManualConfigureAsync($arguments = []) {@deprecated 2017-12-07}
+ * @method \Dew\Acs\Result batchCopyVpcFirewallControlPolicy(array $arguments = []) {@deprecated 2017-12-07}
+ * @method \Http\Promise\Promise batchCopyVpcFirewallControlPolicyAsync($arguments = []) {@deprecated 2017-12-07}
+ * @method \Dew\Acs\Result modifyControlPolicyPosition(array $arguments = []) {@deprecated 2017-12-07}
+ * @method \Http\Promise\Promise modifyControlPolicyPositionAsync($arguments = []) {@deprecated 2017-12-07}
  */
 final class CloudfwClient extends AcsClient
 {

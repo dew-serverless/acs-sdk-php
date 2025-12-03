@@ -655,6 +655,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteDataSourceSharedRuleAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result listDataSourceSharedRules(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise listDataSourceSharedRulesAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result deleteComputeResource(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise deleteComputeResourceAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result getComputeResource(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise getComputeResourceAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result updateComputeResource(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise updateComputeResourceAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result listComputeResources(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise listComputeResourcesAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result createComputeResource(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise createComputeResourceAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result createResourceGroup(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise createResourceGroupAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result deleteResourceGroup(array $arguments = []) {@since 2024-05-18}
@@ -945,6 +955,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getDataQualityScanRunLogAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result getDataQualityScanRun(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise getDataQualityScanRunAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result createIdentifyCredential(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise createIdentifyCredentialAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result createDataAssetTag(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise createDataAssetTagAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result deleteDataAssetTag(array $arguments = []) {@since 2024-05-18}

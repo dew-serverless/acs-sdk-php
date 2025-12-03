@@ -125,6 +125,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result updateModelProxy(array $arguments = [])
  * @method \Http\Promise\Promise updateModelProxyAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteSandbox(array $arguments = [])
+ * @method \Http\Promise\Promise deleteSandboxAsync($arguments = [])
  */
 final class AgentRunClient extends AcsClient
 {

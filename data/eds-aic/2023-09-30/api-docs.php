@@ -5629,7 +5629,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 50,
+                        'maxItems' => 1000,
                     ],
                 ],
                 [
@@ -5668,7 +5668,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 50,
+                        'maxItems' => 1000,
                     ],
                 ],
                 [

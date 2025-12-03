@@ -20095,16 +20095,16 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'dataworks.cn-shenzhen-finance-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'dataworks.cn-beijing.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-zhangjiakou',
             'endpoint' => 'dataworks.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'dataworks.cn-wulanchabu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
@@ -20164,19 +20164,23 @@
         ],
         [
             'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'dataworks.aliyuncs.com',
+            'endpoint' => 'dataworks-public.cn-hangzhou-finance.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai-finance-1',
             'endpoint' => 'dataworks.cn-shanghai-finance-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'me-central-1',
-            'endpoint' => 'dataworks.me-central-1.aliyuncs.com',
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'dataworks.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'dataworks.cn-wulanchabu.aliyuncs.com',
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'dataworks.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'dataworks.me-central-1.aliyuncs.com',
         ],
     ],
 ];

@@ -1843,6 +1843,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listCloudAssetSchemasAsync($arguments = [])
  * @method \Dew\Acs\Result updateMultiUserInstances(array $arguments = [])
  * @method \Http\Promise\Promise updateMultiUserInstancesAsync($arguments = [])
+ * @method \Dew\Acs\Result getInstanceAuthRange(array $arguments = [])
+ * @method \Http\Promise\Promise getInstanceAuthRangeAsync($arguments = [])
+ * @method \Dew\Acs\Result listMultiUserInstances(array $arguments = [])
+ * @method \Http\Promise\Promise listMultiUserInstancesAsync($arguments = [])
  */
 final class SasClient extends AcsClient
 {

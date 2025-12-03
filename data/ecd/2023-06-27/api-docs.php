@@ -101,8 +101,8 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'ecd.ap-southeast-5.aliyuncs.com',
+            'regionId' => 'me-central-1',
+            'endpoint' => 'ecd.me-central-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-qingdao',
@@ -155,6 +155,10 @@
         [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'ecd.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'ecd.ap-southeast-5.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-6',

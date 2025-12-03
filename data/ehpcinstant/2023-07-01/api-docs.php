@@ -1466,6 +1466,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'VpcId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

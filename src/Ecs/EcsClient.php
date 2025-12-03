@@ -209,6 +209,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createAutoSnapshotPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result describeAutoSnapshotPolicyEx(array $arguments = [])
  * @method \Http\Promise\Promise describeAutoSnapshotPolicyExAsync($arguments = [])
+ * @method \Dew\Acs\Result describeAutoSnapshotPolicyAssociations(array $arguments = [])
+ * @method \Http\Promise\Promise describeAutoSnapshotPolicyAssociationsAsync($arguments = [])
  * @method \Dew\Acs\Result modifyAutoSnapshotPolicyEx(array $arguments = [])
  * @method \Http\Promise\Promise modifyAutoSnapshotPolicyExAsync($arguments = [])
  * @method \Dew\Acs\Result applyAutoSnapshotPolicy(array $arguments = [])

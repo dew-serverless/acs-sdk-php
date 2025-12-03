@@ -465,6 +465,12 @@
                                                     'PrivateContentParameters' => [
                                                         'type' => 'string',
                                                     ],
+                                                    'IntelligentIntent' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'DeleteIntentData' => [
+                                                        'type' => 'string',
+                                                    ],
                                                 ],
                                             ],
                                             'Meizu' => [
@@ -1201,6 +1207,19 @@
                     ],
                 ],
                 [
+                    'name' => 'AndroidOppoIntentEnv',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'AndroidHuaweiReceiptId',
                     'in' => 'query',
                     'schema' => [
@@ -1593,6 +1612,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AndroidOppoIntelligentIntent',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AndroidOppoDeleteIntentData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'MassPush' => [
@@ -1946,6 +1981,15 @@
                                         '1',
                                     ],
                                 ],
+                                'AndroidOppoIntentEnv' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '0',
+                                        '1',
+                                    ],
+                                ],
                                 'AndroidHuaweiReceiptId' => [
                                     'type' => 'string',
                                     'required' => false,
@@ -2134,6 +2178,14 @@
                                     'required' => false,
                                 ],
                                 'AndroidHuaweiLiveNotificationPayload' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidOppoIntelligentIntent' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidOppoDeleteIntentData' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],

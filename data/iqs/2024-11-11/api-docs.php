@@ -534,6 +534,10 @@
                     'richMainBody' => [
                         'type' => 'string',
                     ],
+                    'websiteAuthorityScore' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
                 ],
             ],
             'SearchCredits' => [
@@ -630,6 +634,10 @@
                     ],
                     'richMainBody' => [
                         'type' => 'string',
+                    ],
+                    'websiteAuthorityScore' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                 ],
             ],

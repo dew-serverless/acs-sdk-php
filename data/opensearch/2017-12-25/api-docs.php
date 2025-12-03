@@ -3696,6 +3696,9 @@
                 [
                     'AK' => [],
                 ],
+                [
+                    'APP' => [],
+                ],
             ],
             'deprecated' => false,
             'parameters' => [

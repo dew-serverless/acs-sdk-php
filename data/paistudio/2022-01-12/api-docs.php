@@ -461,6 +461,75 @@
                     ],
                 ],
             ],
+            'EcsSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'InstanceType' => [
+                        'type' => 'string',
+                    ],
+                    'Cpu' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Gpu' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'GpuType' => [
+                        'type' => 'string',
+                    ],
+                    'GpuTypeAlias' => [
+                        'type' => 'string',
+                    ],
+                    'Memory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'SupportRDMA' => [
+                        'type' => 'boolean',
+                    ],
+                    'EriQuantity' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'SupportSetNetworkCardIndex' => [
+                        'type' => 'boolean',
+                    ],
+                    'AcceleratorType' => [
+                        'type' => 'string',
+                    ],
+                    'PlannedCpu' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'PlannedMemory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ResourceType' => [
+                        'type' => 'string',
+                    ],
+                    'EcsImageId' => [
+                        'type' => 'string',
+                    ],
+                    'GpuGUSpec' => [
+                        'type' => 'string',
+                    ],
+                    'GpuMemory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'MachineModel' => [
+                        'type' => 'string',
+                    ],
+                    'SupportGPUShare' => [
+                        'type' => 'boolean',
+                    ],
+                    'NetworkMode' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'EniCacheConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -4289,6 +4358,10 @@
                             'Priority' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'AssignNodeSpec' => [
+                                '$ref' => '#/components/schemas/AssignNodeSpec',
                                 'required' => false,
                             ],
                         ],

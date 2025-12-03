@@ -664,16 +664,11 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'dataId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
                             'id' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'name' => [
+                            'serviceType' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -681,7 +676,12 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'serviceType' => [
+                            'dataId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'name' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -808,7 +808,19 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'contentType' => [
+                            'serviceType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'dataType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'dataValue' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -817,19 +829,7 @@
                                 'format' => 'int64',
                                 'required' => false,
                             ],
-                            'dataType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'dataValue' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'name' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'serviceType' => [
+                            'contentType' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -1189,6 +1189,22 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
+                            'instanceName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'modelType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'functionType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                             'createParameters' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -1206,22 +1222,6 @@
                                         ],
                                     ],
                                 ],
-                            ],
-                            'description' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'functionType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'instanceName' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'modelType' => [
-                                'type' => 'string',
-                                'required' => true,
                             ],
                         ],
                     ],
@@ -1512,6 +1512,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'task_name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                             'data' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -1519,11 +1523,11 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
-                                        'model_answer' => [
+                                        'question' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
-                                        'question' => [
+                                        'standard_answer' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
@@ -1535,23 +1539,11 @@
                                                 'required' => false,
                                             ],
                                         ],
-                                        'standard_answer' => [
+                                        'model_answer' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
                                     ],
-                                ],
-                            ],
-                            'data_source_config' => [
-                                'type' => 'any',
-                                'required' => false,
-                            ],
-                            'emails' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
                                 ],
                             ],
                             'evaluate_config' => [
@@ -1572,10 +1564,6 @@
                                     ],
                                 ],
                             ],
-                            'has_data_source' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
                             'metrics' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -1584,8 +1572,20 @@
                                     'required' => false,
                                 ],
                             ],
-                            'task_name' => [
-                                'type' => 'string',
+                            'emails' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'has_data_source' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'data_source_config' => [
+                                'type' => 'any',
                                 'required' => false,
                             ],
                         ],

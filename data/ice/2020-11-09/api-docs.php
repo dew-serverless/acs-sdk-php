@@ -1594,70 +1594,7 @@
             'MediaConvertJob' => [
                 'type' => 'object',
                 'properties' => [
-                    'OutputDetails' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/MediaConvertOutputDetail',
-                        ],
-                    ],
                     'RequestId' => [
-                        'type' => 'string',
-                    ],
-                    'Message' => [
-                        'type' => 'string',
-                    ],
-                    'UserData' => [
-                        'type' => 'string',
-                    ],
-                    'Percent' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'Config' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'JobName' => [
-                                'type' => 'string',
-                            ],
-                            'Outputs' => [
-                                'type' => 'array',
-                                'items' => [
-                                    '$ref' => '#/components/schemas/MediaConvertOutput',
-                                ],
-                            ],
-                            'OutputGroups' => [
-                                'type' => 'array',
-                                'items' => [
-                                    '$ref' => '#/components/schemas/MediaConvertOutputGroup',
-                                ],
-                            ],
-                            'Inputs' => [
-                                'type' => 'array',
-                                'items' => [
-                                    '$ref' => '#/components/schemas/MediaConvertInput',
-                                ],
-                            ],
-                        ],
-                    ],
-                    'CreateTime' => [
-                        'type' => 'string',
-                    ],
-                    'Code' => [
-                        'type' => 'string',
-                    ],
-                    'OutputGroupDetails' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/MediaConvertOutputGroupDetail',
-                        ],
-                    ],
-                    'FinishTime' => [
-                        'type' => 'string',
-                    ],
-                    'State' => [
-                        'type' => 'string',
-                    ],
-                    'PipelineId' => [
                         'type' => 'string',
                     ],
                     'ClientToken' => [
@@ -1665,6 +1602,292 @@
                     ],
                     'JobId' => [
                         'type' => 'string',
+                    ],
+                    'Config' => [
+                        '$ref' => '#/components/schemas/MediaConvertJobConfig',
+                    ],
+                    'PipelineId' => [
+                        'type' => 'string',
+                    ],
+                    'UserData' => [
+                        'type' => 'string',
+                    ],
+                    'Code' => [
+                        'type' => 'string',
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                    ],
+                    'State' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'FinishTime' => [
+                        'type' => 'string',
+                    ],
+                    'Percent' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'OutputDetails' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/MediaConvertOutputDetail',
+                        ],
+                    ],
+                    'OutputGroupDetails' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/MediaConvertOutputGroupDetail',
+                        ],
+                    ],
+                ],
+            ],
+            'MediaConvertJobConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'JobName' => [
+                        'type' => 'string',
+                    ],
+                    'Inputs' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                ],
+                                'InputFile' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Type' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Media' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'OutputGroups' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                ],
+                                'GroupConfig' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Type' => [
+                                            'type' => 'string',
+                                        ],
+                                        'OutputFileBase' => [
+                                            'type' => 'object',
+                                            'properties' => [
+                                                'Type' => [
+                                                    'type' => 'string',
+                                                ],
+                                                'Media' => [
+                                                    'type' => 'string',
+                                                ],
+                                            ],
+                                        ],
+                                        'ManifestName' => [
+                                            'type' => 'string',
+                                        ],
+                                        'ManifestExtend' => [
+                                            'type' => 'object',
+                                            'properties' => [
+                                                'InputRef' => [
+                                                    'type' => 'string',
+                                                ],
+                                                'Excludes' => [
+                                                    'type' => 'array',
+                                                    'items' => [
+                                                        'type' => 'object',
+                                                        'properties' => [
+                                                            'language' => [
+                                                                'type' => 'string',
+                                                            ],
+                                                            'Name' => [
+                                                                'type' => 'string',
+                                                            ],
+                                                            'Type' => [
+                                                                'type' => 'string',
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'Outputs' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'Name' => [
+                                                'type' => 'string',
+                                            ],
+                                            'TemplateId' => [
+                                                'type' => 'string',
+                                            ],
+                                            'OutputFileName' => [
+                                                'type' => 'string',
+                                            ],
+                                            'Priority' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
+                                            'Features' => [
+                                                'type' => 'string',
+                                            ],
+                                            'OverrideParams' => [
+                                                'type' => 'string',
+                                            ],
+                                            'HlsGroupConfig' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'Type' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'AudioGroup' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'SubtitleGroup' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'Group' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'Language' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'IsDefault' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'Forced' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'AutoSelect' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'MediaConvertJobFeature' => [
+                'type' => 'object',
+                'properties' => [
+                    'Clip' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'TimeSpan' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Seek' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Duration' => [
+                                        'type' => 'string',
+                                    ],
+                                    'End' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'ConfigToClipFirstPart' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'Watermarks' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Type' => [
+                                    'type' => 'string',
+                                ],
+                                'TemplateId' => [
+                                    'type' => 'string',
+                                ],
+                                'X' => [
+                                    'type' => 'string',
+                                ],
+                                'Y' => [
+                                    'type' => 'string',
+                                ],
+                                'Width' => [
+                                    'type' => 'string',
+                                ],
+                                'Height' => [
+                                    'type' => 'string',
+                                ],
+                                'Content' => [
+                                    'type' => 'string',
+                                ],
+                                'FontName' => [
+                                    'type' => 'string',
+                                ],
+                                'FontSize' => [
+                                    'type' => 'string',
+                                ],
+                                'FontColor' => [
+                                    'type' => 'string',
+                                ],
+                                'FontAlpha' => [
+                                    'type' => 'string',
+                                ],
+                                'BorderWidth' => [
+                                    'type' => 'string',
+                                ],
+                                'BorderColor' => [
+                                    'type' => 'string',
+                                ],
+                                'Adaptive' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Metadata' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'MediaConvertJobOverwiteParams' => [
+                'type' => 'object',
+                'properties' => [
+                    'Subtitles' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Codec' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -2208,9 +2431,6 @@
                         'type' => 'string',
                     ],
                     'Media' => [
-                        'type' => 'string',
-                    ],
-                    'Url' => [
                         'type' => 'string',
                     ],
                 ],
@@ -11369,6 +11589,24 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Type',
                     'in' => 'query',

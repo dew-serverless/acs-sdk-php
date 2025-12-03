@@ -731,6 +731,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PlaybookParamType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeletePlaybook' => [

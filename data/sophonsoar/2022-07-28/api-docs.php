@@ -201,6 +201,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PythonVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RevertPlaybookRelease' => [

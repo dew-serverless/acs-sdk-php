@@ -9,56 +9,6 @@
         'schemas' => [],
     ],
     'apis' => [
-        'DescribeRegions' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeZones' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Language',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'CreateHiTSDBInstance' => [
             'methods' => [
                 'post',
@@ -234,48 +184,6 @@
                 ],
             ],
         ],
-        'ModifyHiTSDBInstanceClass' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceClass',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceStorage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'DescribeHiTSDBInstance' => [
             'methods' => [
                 'post',
@@ -362,6 +270,174 @@
                 ],
             ],
         ],
+        'DescribeHiTSDBInstanceSecurityIpList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRegions' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeZones' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Language',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyHiTSDBInstanceClass' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceClass',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceStorage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyHiTSDBInstanceSecurityIpList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SecurityIpList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'RenameHiTSDBInstanceAlias' => [
             'methods' => [
                 'post',
@@ -388,32 +464,6 @@
                 ],
                 [
                     'name' => 'InstanceAlias',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'RestartHiTSDBInstance' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -473,6 +523,32 @@
                 ],
             ],
         ],
+        'RestartHiTSDBInstance' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'SwitchHiTSDBInstancePublicNet' => [
             'methods' => [
                 'post',
@@ -508,295 +584,196 @@
                 ],
             ],
         ],
-        'ModifyHiTSDBInstanceSecurityIpList' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SecurityIpList',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'GroupName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeHiTSDBInstanceSecurityIpList' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'GroupName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'hitsdb.cn-qingdao.aliyuncs.com',
+            'regionId' => 'cn-wulanchabu',
+            'regionName' => '华北6（乌兰察布）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.cn-wulanchabu.aliyuncs.com',
+            'endpoint' => 'hitsdb.cn-wulanchabu.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.cn-wulanchabu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
+            'regionName' => '华北2（北京）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.cn-beijing.aliyuncs.com',
             'endpoint' => 'hitsdb.cn-beijing.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.cn-beijing.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'hitsdb.cn-hangzhou.aliyuncs.com',
+            'regionId' => 'cn-qingdao',
+            'regionName' => '华北1（青岛）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.cn-qingdao.aliyuncs.com',
+            'endpoint' => 'hitsdb.cn-qingdao.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.cn-qingdao.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',
+            'regionName' => '华东2（上海）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.cn-shanghai.aliyuncs.com',
             'endpoint' => 'hitsdb.cn-shanghai.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'hitsdb.cn-shenzhen.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.cn-shanghai.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong',
+            'regionName' => '中国香港',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.cn-hongkong.aliyuncs.com',
             'endpoint' => 'hitsdb.cn-hongkong.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'hitsdb.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'hitsdb.us-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'hitsdb.us-east-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'hitsdb.cn-shanghai-finance-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'hitsdb.cn-shenzhen-finance-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-2-pop',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-finance-pop',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-gov-1',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-nu16-b01',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'hitsdb.cn-chengdu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-edge-1',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-fujian',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-haidian-cm12-c01',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-bj-b01',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'hitsdb.cn-hangzhou-finance.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-prod-1',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-test-1',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-test-2',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-test-3',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-test-306',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong-finance-pop',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote-nebula-1',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao-nebula',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-et15-b01',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-et2-b01',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-inner',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-internal-test-1',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-inner',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-st4-d01',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-su18-b01',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wuhan',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'hitsdb.cn-wulanchabu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-yushanfang',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangbei',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangbei-na61-b01',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou-na62-a01',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhengzhou-nebula-1',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1-oxs',
-            'endpoint' => 'hitsdb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'rus-west-1-pop',
-            'endpoint' => 'hitsdb.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-zhangjiakou',
+            'regionName' => '华北3（张家口）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.cn-zhangjiakou.aliyuncs.com',
             'endpoint' => 'hitsdb.cn-zhangjiakou.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.cn-zhangjiakou.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'hitsdb.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-3',
-            'endpoint' => 'hitsdb.ap-southeast-3.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'hitsdb.ap-southeast-5.aliyuncs.com',
+            'regionId' => 'cn-shenzhen',
+            'regionName' => '华南1（深圳）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.cn-shenzhen.aliyuncs.com',
+            'endpoint' => 'hitsdb.cn-shenzhen.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.cn-shenzhen.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',
+            'regionName' => '日本（东京）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.ap-northeast-1.aliyuncs.com',
             'endpoint' => 'hitsdb.ap-northeast-1.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'regionName' => '西南1（成都）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.cn-chengdu.aliyuncs.com',
+            'endpoint' => 'hitsdb.cn-chengdu.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'regionName' => '新加坡',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.ap-southeast-1.aliyuncs.com',
+            'endpoint' => 'hitsdb.ap-southeast-1.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-3',
+            'regionName' => '马来西亚（吉隆坡）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.ap-southeast-3.aliyuncs.com',
+            'endpoint' => 'hitsdb.ap-southeast-3.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.ap-southeast-3.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'regionName' => '华北5（呼和浩特）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.cn-huhehaote.aliyuncs.com',
+            'endpoint' => 'hitsdb.cn-huhehaote.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'regionName' => '印度尼西亚（雅加达）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.ap-southeast-5.aliyuncs.com',
+            'endpoint' => 'hitsdb.ap-southeast-5.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'regionName' => '华东1（杭州）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'hitsdb.cn-hangzhou.aliyuncs.com',
+            'endpoint' => 'hitsdb.cn-hangzhou.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'regionName' => '美国（弗吉尼亚）',
+            'areaId' => 'europeAmerica',
+            'areaName' => '欧洲与美洲',
+            'public' => 'hitsdb.us-east-1.aliyuncs.com',
+            'endpoint' => 'hitsdb.us-east-1.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1',
+            'regionName' => '英国（伦敦）',
+            'areaId' => 'europeAmerica',
+            'areaName' => '欧洲与美洲',
+            'public' => 'hitsdb.eu-west-1.aliyuncs.com',
             'endpoint' => 'hitsdb.eu-west-1.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'regionName' => '美国（硅谷）',
+            'areaId' => 'europeAmerica',
+            'areaName' => '欧洲与美洲',
+            'public' => 'hitsdb.us-west-1.aliyuncs.com',
+            'endpoint' => 'hitsdb.us-west-1.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.us-west-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',
+            'regionName' => '德国（法兰克福）',
+            'areaId' => 'europeAmerica',
+            'areaName' => '欧洲与美洲',
+            'public' => 'hitsdb.eu-central-1.aliyuncs.com',
             'endpoint' => 'hitsdb.eu-central-1.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-north-2-gov-1',
-            'endpoint' => 'hitsdb.cn-north-2-gov-1.aliyuncs.com',
+            'regionId' => 'cn-hangzhou-finance',
+            'regionName' => '华东1 金融云',
+            'areaId' => 'industryCloud',
+            'areaName' => '行业云',
+            'public' => 'hitsdb.cn-hangzhou-finance.aliyuncs.com',
+            'endpoint' => 'hitsdb.cn-hangzhou-finance.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.cn-hangzhou-finance.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'regionName' => '华南1 金融云',
+            'areaId' => 'industryCloud',
+            'areaName' => '行业云',
+            'public' => 'hitsdb.cn-shenzhen-finance-1.aliyuncs.com',
+            'endpoint' => 'hitsdb.cn-shenzhen-finance-1.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.cn-shenzhen-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'regionName' => '华东2 金融云',
+            'areaId' => 'industryCloud',
+            'areaName' => '行业云',
+            'public' => 'hitsdb.cn-shanghai-finance-1.aliyuncs.com',
+            'endpoint' => 'hitsdb.cn-shanghai-finance-1.aliyuncs.com',
+            'vpc' => 'hitsdb-vpc.cn-shanghai-finance-1.aliyuncs.com',
         ],
     ],
 ];

@@ -319,40 +319,43 @@
             'ApplicationConfigurationFile' => [
                 'type' => 'object',
                 'properties' => [
-                    'ConfigFileName' => [
-                        'type' => 'string',
-                    ],
                     'ApplicationName' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
-                    'Description' => [
+                    'ConfigFileName' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                    'ConfigFilePath' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                     'ConfigFileFormat' => [
                         'type' => 'string',
                     ],
-                    'ClusterId' => [
-                        'type' => 'string',
-                    ],
-                    'ConfigFileMode' => [
-                        'type' => 'string',
-                    ],
-                    'NodeGroupId' => [
+                    'ConfigFileLink' => [
                         'type' => 'string',
                     ],
                     'ConfigFileOwner' => [
                         'type' => 'string',
                     ],
-                    'NodeId' => [
-                        'type' => 'string',
-                    ],
-                    'ConfigFilePath' => [
-                        'type' => 'string',
-                    ],
                     'ConfigFileGroup' => [
                         'type' => 'string',
                     ],
-                    'ConfigFileLink' => [
+                    'ConfigFileMode' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'NodeGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'NodeId' => [
+                        'type' => 'string',
+                    ],
+                    'ClusterId' => [
                         'type' => 'string',
                     ],
                 ],
@@ -797,6 +800,17 @@
                     ],
                     'DeletionProtection' => [
                         'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'CollationTimeZone' => [
+                'type' => 'object',
+                'properties' => [
+                    'TimeZone' => [
+                        'type' => 'string',
+                    ],
+                    'CurrentTimeOffset' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1267,6 +1281,15 @@
                             ],
                         ],
                     ],
+                    'ResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'SubscriptionConfig' => [
+                        '$ref' => '#/components/schemas/SubscriptionConfig',
+                    ],
                     'BootstrapScripts' => [
                         'type' => 'array',
                         'items' => [
@@ -1278,12 +1301,12 @@
                         'items' => [
                             'type' => 'object',
                             'properties' => [
-                                'Value' => [
-                                    'type' => 'string',
-                                ],
                                 'Key' => [
                                     'type' => 'string',
                                     'required' => true,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
                                 ],
                             ],
                         ],
@@ -1307,15 +1330,6 @@
                         'items' => [
                             '$ref' => '#/components/schemas/ApplicationConfig',
                         ],
-                    ],
-                    'ResourceGroupId' => [
-                        'type' => 'string',
-                    ],
-                    'Description' => [
-                        'type' => 'string',
-                    ],
-                    'SubscriptionConfig' => [
-                        '$ref' => '#/components/schemas/SubscriptionConfig',
                     ],
                 ],
             ],
@@ -1373,6 +1387,15 @@
                             ],
                         ],
                     ],
+                    'ResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'SubscriptionConfig' => [
+                        '$ref' => '#/components/schemas/SubscriptionConfig',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
                     'BootstrapScripts' => [
                         'type' => 'array',
                         'items' => [
@@ -1409,13 +1432,7 @@
                             '$ref' => '#/components/schemas/ScalingPolicy',
                         ],
                     ],
-                    'ResourceGroupId' => [
-                        'type' => 'string',
-                    ],
-                    'SubscriptionConfig' => [
-                        '$ref' => '#/components/schemas/SubscriptionConfig',
-                    ],
-                    'Description' => [
+                    'ScalingTimeZone' => [
                         'type' => 'string',
                     ],
                 ],
@@ -2931,12 +2948,17 @@
             'ScalingRule' => [
                 'type' => 'object',
                 'properties' => [
+                    'RuleName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
                     'TriggerType' => [
                         'type' => 'string',
                         'required' => true,
                     ],
-                    'MetricsTrigger' => [
-                        '$ref' => '#/components/schemas/MetricsTrigger',
+                    'ActivityType' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                     'AdjustmentValue' => [
                         'type' => 'integer',
@@ -2946,17 +2968,12 @@
                     'TimeTrigger' => [
                         '$ref' => '#/components/schemas/TimeTrigger',
                     ],
-                    'ActivityType' => [
-                        'type' => 'string',
-                        'required' => true,
+                    'MetricsTrigger' => [
+                        '$ref' => '#/components/schemas/MetricsTrigger',
                     ],
                     'MinAdjustmentValue' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                    ],
-                    'RuleName' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],
@@ -6563,7 +6580,7 @@
                     'style' => 'flat',
                     'schema' => [
                         'type' => 'array',
-                        'required' => true,
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
                             'required' => false,
@@ -8818,6 +8835,40 @@
                         'enum' => [
                             'MODIFICATION',
                             'ALL',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ConfigScope',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NodeGroupIds',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'NodeIds',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
                         ],
                     ],
                 ],

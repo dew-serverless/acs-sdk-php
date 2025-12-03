@@ -1176,6 +1176,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Authorize',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'Id2MetaPeriodVerifyIntl' => [

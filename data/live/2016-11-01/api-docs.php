@@ -11392,6 +11392,8 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'minLength' => 0,
+                        'maxLength' => 64,
                     ],
                 ],
                 [

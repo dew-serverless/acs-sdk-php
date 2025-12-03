@@ -6817,6 +6817,7 @@
                             'sch',
                             'qch',
                             'iqch',
+                            'tch',
                         ],
                     ],
                 ],
@@ -6987,6 +6988,7 @@
                             'sch',
                             'qch',
                             'iqch',
+                            'tch',
                         ],
                     ],
                 ],
@@ -7181,6 +7183,7 @@
                             'wlc',
                             'rr',
                             'sch',
+                            'tch',
                         ],
                     ],
                 ],
@@ -7382,6 +7385,7 @@
                             'wlc',
                             'rr',
                             'sch',
+                            'tch',
                         ],
                     ],
                 ],
@@ -16975,6 +16979,32 @@
                             'Aliyun',
                             'BYOL',
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'DescribeForwardEntryAttribute' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ForwardEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

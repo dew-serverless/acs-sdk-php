@@ -1464,6 +1464,14 @@
         'defaultVersion' => '2023-06-21',
     ],
     [
+        'code' => 'PAICopilot',
+        'style' => 'RPC',
+        'versions' => [
+            '2025-07-31',
+        ],
+        'defaultVersion' => '2025-07-31',
+    ],
+    [
         'code' => 'OpenSearch',
         'style' => 'ROA',
         'versions' => [

@@ -1204,6 +1204,41 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'pipelineCommercialType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'enterprise',
+                            'standard',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'pipelineCommercialCu',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '200',
+                    ],
+                ],
+                [
+                    'name' => 'pipelineRetrieveRateLimitStrategy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'downgrade',
+                            'limit',
+                        ],
+                    ],
+                ],
             ],
         ],
         'GetIndexJobStatus' => [

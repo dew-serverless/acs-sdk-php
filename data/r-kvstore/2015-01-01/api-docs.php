@@ -8963,11 +8963,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -8981,6 +8981,26 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VNodeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'fixed',
+                            'elastic',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ElasticTimeRange',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -9542,7 +9562,7 @@
         ],
         [
             'regionId' => 'cn-beijing-finance-1',
-            'endpoint' => 'r-kvstore.aliyuncs.com',
+            'endpoint' => 'r-kvstore.cn-beijing-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',

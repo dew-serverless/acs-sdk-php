@@ -244,6 +244,19 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'publicAccess' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'on',
+                                    'off',
+                                    'follow',
+                                ],
+                            ],
+                            'enableCustomVpcWhitelist' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                             'terraformTools' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -278,19 +291,6 @@
                                         ],
                                     ],
                                 ],
-                            ],
-                            'publicAccess' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'enum' => [
-                                    'on',
-                                    'off',
-                                    'follow',
-                                ],
-                            ],
-                            'enableCustomVpcWhitelist' => [
-                                'type' => 'boolean',
-                                'required' => false,
                             ],
                             'vpcWhitelists' => [
                                 'type' => 'array',
@@ -1071,6 +1071,19 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'publicAccess' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'on',
+                                    'off',
+                                    'follow',
+                                ],
+                            ],
+                            'enableCustomVpcWhitelist' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                             'terraformTools' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -1105,19 +1118,6 @@
                                         ],
                                     ],
                                 ],
-                            ],
-                            'publicAccess' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'enum' => [
-                                    'on',
-                                    'off',
-                                    'follow',
-                                ],
-                            ],
-                            'enableCustomVpcWhitelist' => [
-                                'type' => 'boolean',
-                                'required' => false,
                             ],
                             'vpcWhitelists' => [
                                 'type' => 'array',

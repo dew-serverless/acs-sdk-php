@@ -2448,9 +2448,31 @@
                 [
                     'name' => 'body',
                     'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'object',
                         'required' => false,
+                        'properties' => [
+                            'paymentInfo' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'duration' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'pricingCycle' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'paymentType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -5718,9 +5740,19 @@
                 [
                     'name' => 'body',
                     'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'object',
                         'required' => false,
+                        'properties' => [
+                            'esConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
                 [
@@ -10970,7 +11002,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'clientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -11060,6 +11100,14 @@
                     ],
                 ],
                 [
+                    'name' => 'clientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'body',
                     'in' => 'body',
                     'style' => 'json',
@@ -11069,7 +11117,7 @@
                         'properties' => [
                             'endpointName' => [
                                 'type' => 'string',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'securityGroups' => [
                                 'type' => 'array',
@@ -11081,25 +11129,25 @@
                             ],
                             'vSwitchIdsZone' => [
                                 'type' => 'array',
-                                'required' => true,
+                                'required' => false,
                                 'items' => [
                                     'type' => 'object',
-                                    'required' => true,
+                                    'required' => false,
                                     'properties' => [
                                         'vswitchId' => [
                                             'type' => 'string',
-                                            'required' => true,
+                                            'required' => false,
                                         ],
                                         'zoneId' => [
                                             'type' => 'string',
-                                            'required' => true,
+                                            'required' => false,
                                         ],
                                     ],
                                 ],
                             ],
                             'vpcId' => [
                                 'type' => 'string',
-                                'required' => true,
+                                'required' => false,
                             ],
                         ],
                     ],

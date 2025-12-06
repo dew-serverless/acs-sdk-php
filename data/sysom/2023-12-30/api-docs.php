@@ -3620,6 +3620,123 @@
                 ],
             ],
         ],
+        'CreateVmcoreDiagnosisTask' => [
+            'path' => '/api/v1/crashAgent/diagnosis/createDiagnosisTask',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'taskType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'vmcoreUrl' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'debuginfoUrl' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'debuginfoCommonUrl' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'dmesgUrl' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetVmcoreDiagnosisTask' => [
+            'path' => '/api/v1/crashAgent/diagnosis/queryTask',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListVmcoreDiagnosisTask' => [
+            'path' => '/api/v1/crashAgent/diagnosis/queryTaskList',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'days',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [

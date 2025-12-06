@@ -88,6 +88,23 @@
                     ],
                 ],
             ],
+            'DeviceGroupDynamicRule' => [
+                'type' => 'object',
+                'properties' => [
+                    'Key' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Operator' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Args' => [
+                        'type' => 'any',
+                        'required' => false,
+                    ],
+                ],
+            ],
             'DisposalContent' => [
                 'type' => 'object',
                 'properties' => [
@@ -171,12 +188,6 @@
             'IdpConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'IdaasConfig' => [
-                        '$ref' => '#/components/schemas/IdpIdaas2SubConfig',
-                    ],
-                    'Description' => [
-                        'type' => 'string',
-                    ],
                     'SyncStatus' => [
                         'type' => 'string',
                         'enum' => [
@@ -186,11 +197,8 @@
                             'failed',
                         ],
                     ],
-                    'Enabled' => [
-                        'type' => 'boolean',
-                    ],
-                    'SyncConfig' => [
-                        '$ref' => '#/components/schemas/IdpSyncConfig',
+                    'Description' => [
+                        'type' => 'string',
                     ],
                     'IdpConfigId' => [
                         'type' => 'string',
@@ -204,13 +212,6 @@
                     'Type' => [
                         'type' => 'string',
                     ],
-                    'AttrMapConfig' => [
-                        '$ref' => '#/components/schemas/IdpAttrMapConfig',
-                    ],
-                    'LastSyncTimeUnix' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
                     'LoginConfig' => [
                         '$ref' => '#/components/schemas/IdpLoginConfig',
                     ],
@@ -220,14 +221,33 @@
                     'ConnectConfig' => [
                         '$ref' => '#/components/schemas/IdpConnectConfig',
                     ],
-                    'WuyingConfig' => [
-                        '$ref' => '#/components/schemas/OpenStructIdpWuyingSubConfig',
+                    'DingtalkConfig' => [
+                        '$ref' => '#/components/schemas/IdpDingtalkSubConfig',
+                    ],
+                    'SyncConfig' => [
+                        '$ref' => '#/components/schemas/IdpSyncConfig',
+                    ],
+                    'AttrMapConfig' => [
+                        '$ref' => '#/components/schemas/IdpAttrMapConfig',
+                    ],
+                    'LastSyncTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Enabled' => [
+                        'type' => 'boolean',
                     ],
                     'WeixinConfig' => [
                         '$ref' => '#/components/schemas/IdpWeixin2SubConfig',
                     ],
-                    'DingtalkConfig' => [
-                        '$ref' => '#/components/schemas/IdpDingtalkSubConfig',
+                    'IdaasConfig' => [
+                        '$ref' => '#/components/schemas/IdpIdaas2SubConfig',
+                    ],
+                    'WuyingConfig' => [
+                        '$ref' => '#/components/schemas/OpenStructIdpWuyingSubConfig',
+                    ],
+                    'LogoDirectory' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -7009,6 +7029,32 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'ValidFrom',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ValidUntil',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ValidTimeStatus',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeletePrivateAccessPolicy' => [
@@ -7237,6 +7283,32 @@
                 ],
                 [
                     'name' => 'TrustedProcessStatus',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ValidFrom',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ValidUntil',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ValidTimeStatus',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

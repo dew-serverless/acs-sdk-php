@@ -538,6 +538,10 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
+                    'correlationTag' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
                 ],
             ],
             'SearchCredits' => [
@@ -636,6 +640,10 @@
                         'type' => 'string',
                     ],
                     'websiteAuthorityScore' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'correlationTag' => [
                         'type' => 'integer',
                         'format' => 'int32',
                     ],

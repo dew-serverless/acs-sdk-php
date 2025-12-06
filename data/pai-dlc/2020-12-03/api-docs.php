@@ -62,6 +62,18 @@
                     'AntiAffinityNodeNames' => [
                         'type' => 'string',
                     ],
+                    'HyperNodes' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/HyperNodeSpec',
+                        ],
+                    ],
+                    'AntiAffinityHyperNodes' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/HyperNodeSpec',
+                        ],
+                    ],
                 ],
             ],
             'AssumeUserInfo' => [
@@ -638,6 +650,17 @@
                         'type' => 'string',
                     ],
                     'GPUTypeFullName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'HyperNodeSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'HyperNodeName' => [
+                        'type' => 'string',
+                    ],
+                    'NodeNames' => [
                         'type' => 'string',
                     ],
                 ],

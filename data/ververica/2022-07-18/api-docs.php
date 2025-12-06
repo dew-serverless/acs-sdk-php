@@ -47,6 +47,7 @@
                     ],
                     'kind' => [
                         'type' => 'string',
+                        'required' => false,
                         'enum' => [
                             'SQLSCRIPT',
                             'JAR',
@@ -72,6 +73,23 @@
                     ],
                     'message' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'AsyncDraftValidateResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'ticketStatus' => [
+                        'type' => 'string',
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'message' => [
+                        'type' => 'string',
+                    ],
+                    'draftValidationDetail' => [
+                        '$ref' => '#/components/schemas/DraftValidationDetail',
                     ],
                 ],
             ],
@@ -508,6 +526,45 @@
                     ],
                     'artifactValidationDetail' => [
                         '$ref' => '#/components/schemas/ValidateStatementResult',
+                    ],
+                ],
+            ],
+            'DraftMetaInfoErrorDetail' => [
+                'type' => 'object',
+                'properties' => [
+                    'message' => [
+                        'type' => 'string',
+                    ],
+                    'reason' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DraftValidateParams' => [
+                'type' => 'object',
+                'properties' => [
+                    'deploymentDraftId' => [
+                        'type' => 'string',
+                    ],
+                    'deploymentTargetName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DraftValidationDetail' => [
+                'type' => 'object',
+                'properties' => [
+                    'draftMetaInfoErrorDetails' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DraftMetaInfoErrorDetail',
+                        ],
+                    ],
+                    'sqlValidationResult' => [
+                        'type' => 'string',
+                    ],
+                    'sqlErrorDetail' => [
+                        '$ref' => '#/components/schemas/ValidationErrorDetails',
                     ],
                 ],
             ],
@@ -2643,6 +2700,101 @@
                 ],
             ],
         ],
+        'ValidateDeploymentDraftAsync' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts/async-validate',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/DraftValidateParams',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetValidateDeploymentDraftResult' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts/tickets/{ticketId}/async-validate',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ticketId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'CreateDeploymentDraft' => [
             'path' => '/api/v2/namespaces/{namespace}/deployment-drafts',
             'methods' => [
@@ -3937,6 +4089,227 @@
                 ],
             ],
         ],
+        'GetDeploymentsByName' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployments/name/{deploymentName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'deploymentName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ignoreJobSummary',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ignoreResourceSetting',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetDeploymentsByLabel' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployments/getDeployments/byLabel',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'labelKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'labelValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ignoreJobSummary',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ignoreResourceSetting',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetDeploymentsByIp' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployments/getDeployments/byIp',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'srcIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'srcPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'dstIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'dstPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ignoreJobSummary',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ignoreResourceSetting',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'CreateDeployment' => [
             'path' => '/api/v2/namespaces/{namespace}/deployments',
             'methods' => [
@@ -4463,6 +4836,19 @@
                             'gmt_create',
                             'job_id',
                             'status',
+                            'gmt_modified',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'sortOrder',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'asc',
+                            'desc',
                         ],
                     ],
                 ],

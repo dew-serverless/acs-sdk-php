@@ -111,6 +111,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise restartWuyingServerAsync($arguments = [])
  * @method \Dew\Acs\Result modifyWuyingServerAttribute(array $arguments = [])
  * @method \Http\Promise\Promise modifyWuyingServerAttributeAsync($arguments = [])
+ * @method \Dew\Acs\Result updateWuyingServerImage(array $arguments = [])
+ * @method \Http\Promise\Promise updateWuyingServerImageAsync($arguments = [])
  * @method \Dew\Acs\Result renewWuyingServer(array $arguments = [])
  * @method \Http\Promise\Promise renewWuyingServerAsync($arguments = [])
  * @method \Dew\Acs\Result deleteWuyingServer(array $arguments = [])

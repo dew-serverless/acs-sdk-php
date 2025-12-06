@@ -8908,7 +8908,7 @@
         ],
         [
             'regionId' => 'cn-shenzhen',
-            'endpoint' => 'adb.aliyuncs.com',
+            'endpoint' => 'adb.cn-shenzhen.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',
@@ -8916,7 +8916,7 @@
         ],
         [
             'regionId' => 'cn-north-2-gov-1',
-            'endpoint' => 'adb.aliyuncs.com',
+            'endpoint' => 'adb.cn-north-2-gov-1.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',

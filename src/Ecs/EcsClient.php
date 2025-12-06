@@ -719,6 +719,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeTagsAsync($arguments = []) {@deprecated 2014-05-26}
  * @method \Dew\Acs\Result removeTags(array $arguments = []) {@deprecated 2014-05-26}
  * @method \Http\Promise\Promise removeTagsAsync($arguments = []) {@deprecated 2014-05-26}
+ * @method \Dew\Acs\Result enableNetworkInterfaceQoS(array $arguments = [])
+ * @method \Http\Promise\Promise enableNetworkInterfaceQoSAsync($arguments = [])
+ * @method \Dew\Acs\Result disableNetworkInterfaceQoS(array $arguments = [])
+ * @method \Http\Promise\Promise disableNetworkInterfaceQoSAsync($arguments = [])
  */
 final class EcsClient extends AcsClient
 {

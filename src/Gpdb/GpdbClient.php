@@ -475,6 +475,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listDatabaseExtensionsAsync($arguments = [])
  * @method \Dew\Acs\Result listInstanceDatabases(array $arguments = [])
  * @method \Http\Promise\Promise listInstanceDatabasesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeZonesPrivateRAGService(array $arguments = [])
+ * @method \Http\Promise\Promise describeZonesPrivateRAGServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result deletePrivateRAGService(array $arguments = [])
+ * @method \Http\Promise\Promise deletePrivateRAGServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result describePrivateRAGService(array $arguments = [])
+ * @method \Http\Promise\Promise describePrivateRAGServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result deployPrivateRAGService(array $arguments = [])
+ * @method \Http\Promise\Promise deployPrivateRAGServiceAsync($arguments = [])
  */
 final class GpdbClient extends AcsClient
 {

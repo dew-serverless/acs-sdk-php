@@ -301,6 +301,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise batchRestartApplicationsAsync($arguments = [])
  * @method \Dew\Acs\Result updateNamespaceSlsConfigs(array $arguments = [])
  * @method \Http\Promise\Promise updateNamespaceSlsConfigsAsync($arguments = [])
+ * @method \Dew\Acs\Result disableArms(array $arguments = [])
+ * @method \Http\Promise\Promise disableArmsAsync($arguments = [])
  */
 final class SaeClient extends AcsClient
 {

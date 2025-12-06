@@ -121,6 +121,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listSharedReportsAsync($arguments = [])
  * @method \Dew\Acs\Result listUserGroupsByUserId(array $arguments = [])
  * @method \Http\Promise\Promise listUserGroupsByUserIdAsync($arguments = [])
+ * @method \Dew\Acs\Result listWhitePortalMenu(array $arguments = [])
+ * @method \Http\Promise\Promise listWhitePortalMenuAsync($arguments = [])
  * @method \Dew\Acs\Result listWorkspaceRoleUsers(array $arguments = [])
  * @method \Http\Promise\Promise listWorkspaceRoleUsersAsync($arguments = [])
  * @method \Dew\Acs\Result listWorkspaceRoles(array $arguments = [])

@@ -105,6 +105,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise recoverCallInConfigAsync($arguments = [])
  * @method \Dew\Acs\Result stopCallInConfig(array $arguments = [])
  * @method \Http\Promise\Promise stopCallInConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result cancelCall(array $arguments = [])
+ * @method \Http\Promise\Promise cancelCallAsync($arguments = [])
+ * @method \Dew\Acs\Result queryVmsVirtualNumberRelationByPage(array $arguments = [])
+ * @method \Http\Promise\Promise queryVmsVirtualNumberRelationByPageAsync($arguments = [])
+ * @method \Dew\Acs\Result queryVmsRealNumberCallConnectionRateInfo(array $arguments = [])
+ * @method \Http\Promise\Promise queryVmsRealNumberCallConnectionRateInfoAsync($arguments = [])
  */
 final class DyvmsapiClient extends AcsClient
 {

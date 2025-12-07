@@ -796,6 +796,9 @@
                     'log_reduce' => [
                         'type' => 'boolean',
                     ],
+                    'scan_index' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'IndexJsonKey' => [
@@ -1100,6 +1103,9 @@
                     ],
                     'processorId' => [
                         'type' => 'string',
+                    ],
+                    'shardingPolicy' => [
+                        '$ref' => '#/components/schemas/ShardingPolicy',
                     ],
                 ],
             ],
@@ -2314,6 +2320,55 @@
                     ],
                 ],
             ],
+            'ShardingPolicy' => [
+                'type' => 'object',
+                'properties' => [
+                    'shardGroup' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'keys' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'groupCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                    'shardHash' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'keys' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'maxHashCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                                'enum' => [
+                                    '1',
+                                    '2',
+                                    '4',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'queryActiveTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
             'SinkAlerthubConfiguration' => [
                 'type' => 'object',
                 'required' => false,
@@ -3318,6 +3373,9 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'shardingPolicy' => [
+                                '$ref' => '#/components/schemas/ShardingPolicy',
+                            ],
                         ],
                     ],
                 ],
@@ -3698,6 +3756,9 @@
                             ],
                             'appendMeta' => [
                                 'type' => 'boolean',
+                            ],
+                            'shardingPolicy' => [
+                                '$ref' => '#/components/schemas/ShardingPolicy',
                             ],
                         ],
                     ],
@@ -10929,6 +10990,9 @@
                                 'format' => 'int32',
                                 'required' => false,
                             ],
+                            'shardingPolicy' => [
+                                '$ref' => '#/components/schemas/ShardingPolicy',
+                            ],
                         ],
                     ],
                 ],
@@ -11582,6 +11646,9 @@
                             ],
                             'appendMeta' => [
                                 'type' => 'boolean',
+                            ],
+                            'shardingPolicy' => [
+                                '$ref' => '#/components/schemas/ShardingPolicy',
                             ],
                         ],
                     ],
@@ -12523,15 +12590,6 @@
             'public' => 'us-west-1.log.aliyuncs.com',
             'endpoint' => 'us-west-1.log.aliyuncs.com',
             'vpc' => 'us-west-1-intranet.log.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-southeast-1',
-            'regionName' => '美国（亚特兰大）',
-            'areaId' => 'europeAmerica',
-            'areaName' => '欧洲与美洲',
-            'public' => 'us-southeast-1.log.aliyuncs.com',
-            'endpoint' => 'us-southeast-1.log.aliyuncs.com',
-            'vpc' => '',
         ],
         [
             'regionId' => 'us-east-1',

@@ -382,6 +382,26 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'LinkedRamUserName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DlfCatalogName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DlfCatalogType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PrincipalType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RamUserId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

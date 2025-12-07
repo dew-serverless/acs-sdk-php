@@ -868,6 +868,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Date',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListEvaluationResults' => [

@@ -557,6 +557,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeOperationLogMonitoringAsync($arguments = [])
  * @method \Dew\Acs\Result describeVersionPageList(array $arguments = [])
  * @method \Http\Promise\Promise describeVersionPageListAsync($arguments = [])
+ * @method \Dew\Acs\Result compareRule(array $arguments = [])
+ * @method \Http\Promise\Promise compareRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result describeExpressionVariableVersionDetail(array $arguments = [])
+ * @method \Http\Promise\Promise describeExpressionVariableVersionDetailAsync($arguments = [])
+ * @method \Dew\Acs\Result describeVariableVersionDetail(array $arguments = [])
+ * @method \Http\Promise\Promise describeVariableVersionDetailAsync($arguments = [])
  */
 final class XteeClient extends AcsClient
 {

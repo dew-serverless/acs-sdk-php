@@ -2986,6 +2986,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
+                        'required' => false,
                         'properties' => [
                             'TemplateId' => [
                                 'type' => 'string',
@@ -2993,6 +2994,7 @@
                             ],
                             'TemplateData' => [
                                 'type' => 'object',
+                                'required' => false,
                                 'additionalProperties' => [
                                     'type' => 'string',
                                 ],

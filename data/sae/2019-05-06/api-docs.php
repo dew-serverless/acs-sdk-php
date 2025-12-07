@@ -10593,6 +10593,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'NewSaeVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'QueryResourceStatics' => [
@@ -14187,6 +14195,32 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DisableArms' => [
+            'path' => '/pop/v1/arms/disableArms',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

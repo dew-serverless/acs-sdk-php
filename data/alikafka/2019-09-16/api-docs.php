@@ -3796,12 +3796,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'enum' => [
-                            'Topic',
-                            'Group',
-                            'Cluster',
-                            'TransactionalId',
-                        ],
+                        'enum' => [],
                     ],
                 ],
                 [
@@ -3911,12 +3906,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'enum' => [
-                            'Topic',
-                            'Group',
-                            'Cluster',
-                            'TransactionalId',
-                        ],
+                        'enum' => [],
                     ],
                 ],
                 [
@@ -4027,12 +4017,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'enum' => [
-                            'Topic',
-                            'Group',
-                            'Cluster',
-                            'TransactionalId',
-                        ],
+                        'enum' => [],
                     ],
                 ],
                 [

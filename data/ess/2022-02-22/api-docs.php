@@ -7153,6 +7153,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Override',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ApplyEciScalingConfiguration' => [
@@ -8580,6 +8588,10 @@
                                     'required' => false,
                                 ],
                             ],
+                            'LifecycleHookResult' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -8802,6 +8814,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                            ],
+                            'LifecycleHookResult' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],

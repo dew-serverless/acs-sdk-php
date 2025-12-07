@@ -5644,6 +5644,10 @@
                                     'required' => false,
                                 ],
                             ],
+                            'LifecycleHookResult' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -10453,6 +10457,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Override',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ScaleWithAdjustment' => [
@@ -10624,6 +10636,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                            ],
+                            'LifecycleHookResult' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],

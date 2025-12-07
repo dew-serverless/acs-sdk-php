@@ -6788,6 +6788,14 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'custom_updated_at' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'custom_created_at' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

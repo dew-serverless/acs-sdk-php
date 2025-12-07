@@ -319,6 +319,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise openAcceleratorServiceAsync($arguments = [])
  * @method \Dew\Acs\Result listEndpointGroupIpAddressCidrBlocks(array $arguments = [])
  * @method \Http\Promise\Promise listEndpointGroupIpAddressCidrBlocksAsync($arguments = [])
+ * @method \Dew\Acs\Result getGlobalAcceleratorResources(array $arguments = [])
+ * @method \Http\Promise\Promise getGlobalAcceleratorResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result disassociateResources(array $arguments = [])
+ * @method \Http\Promise\Promise disassociateResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result associateResources(array $arguments = [])
+ * @method \Http\Promise\Promise associateResourcesAsync($arguments = [])
  */
 final class GaClient extends AcsClient
 {

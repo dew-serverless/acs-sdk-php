@@ -177,6 +177,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listSaasInfoAsync($arguments = [])
  * @method \Dew\Acs\Result listSaasPermissionGroupInfos(array $arguments = [])
  * @method \Http\Promise\Promise listSaasPermissionGroupInfosAsync($arguments = [])
+ * @method \Dew\Acs\Result cancelChat(array $arguments = [])
+ * @method \Http\Promise\Promise cancelChatAsync($arguments = [])
  */
 final class ChatbotClient extends AcsClient
 {

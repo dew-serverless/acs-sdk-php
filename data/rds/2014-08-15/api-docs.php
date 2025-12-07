@@ -9179,6 +9179,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'RWAddressType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CalculateDBInstanceWeight' => [

@@ -764,6 +764,117 @@
                     ],
                 ],
             ],
+            'Dataset' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Comment' => [
+                        'type' => 'string',
+                    ],
+                    'ProjectId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Origin' => [
+                        'type' => 'string',
+                    ],
+                    'DataType' => [
+                        'type' => 'string',
+                    ],
+                    'StorageType' => [
+                        'type' => 'string',
+                    ],
+                    'CreatorId' => [
+                        'type' => 'string',
+                    ],
+                    'Readme' => [
+                        'type' => 'string',
+                    ],
+                    'LatestVersion' => [
+                        '$ref' => '#/components/schemas/DatasetVersion',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ModifyTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Labels' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DatasetLabel',
+                        ],
+                    ],
+                ],
+            ],
+            'DatasetLabel' => [
+                'type' => 'object',
+                'properties' => [
+                    'Key' => [
+                        'type' => 'string',
+                    ],
+                    'Value' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DatasetVersion' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'DatasetId' => [
+                        'type' => 'string',
+                    ],
+                    'Comment' => [
+                        'type' => 'string',
+                    ],
+                    'CreatorId' => [
+                        'type' => 'string',
+                    ],
+                    'VersionNumber' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'StorageType' => [
+                        'type' => 'string',
+                    ],
+                    'Url' => [
+                        'type' => 'string',
+                    ],
+                    'MountPath' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ModifyTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Labels' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DatasetLabel',
+                        ],
+                    ],
+                    'ImportInfo' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
             'IdentifyCredential' => [
                 'type' => 'object',
                 'properties' => [
@@ -10306,6 +10417,578 @@
                 ],
             ],
         ],
+        'ListDatasets' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Origin',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DataTypeList',
+                    'in' => 'formData',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'minItems' => 0,
+                        'maxItems' => 10,
+                    ],
+                ],
+                [
+                    'name' => 'StorageTypeList',
+                    'in' => 'formData',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'minItems' => 0,
+                        'maxItems' => 10,
+                    ],
+                ],
+                [
+                    'name' => 'CreatorId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Name',
+                            'CreateTime',
+                            'ModifyTime',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Asc',
+                            'Desc',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'GetDataset' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateDataset' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Origin',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DataType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StorageType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InitVersion',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Comment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Url' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ImportInfo' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'MountPath' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateDataset' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Readme',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteDataset' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListDatasetVersions' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DatasetId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CreatorId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'CreateTime',
+                            'ModifyTime',
+                            'VersionNumber',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Asc',
+                            'Desc',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'GetDatasetVersion' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateDatasetVersion' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DatasetId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Url',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MountPath',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ImportInfo',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateDatasetVersion' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteDatasetVersion' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'PreviewDatasetVersion' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'ListPartitions' => [
             'methods' => [
                 'get',
@@ -16486,6 +17169,15 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Filter',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
                     ],
                 ],
             ],

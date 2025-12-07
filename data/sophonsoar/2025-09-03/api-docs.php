@@ -832,7 +832,7 @@
                 [
                     'name' => 'PlaybookInputConfigs',
                     'in' => 'formData',
-                    'style' => 'flat',
+                    'style' => 'json',
                     'schema' => [
                         'type' => 'array',
                         'required' => false,
@@ -845,7 +845,7 @@
                 [
                     'name' => 'PlaybookOutputConfigs',
                     'in' => 'formData',
-                    'style' => 'flat',
+                    'style' => 'json',
                     'schema' => [
                         'type' => 'array',
                         'required' => false,

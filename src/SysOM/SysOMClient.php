@@ -127,6 +127,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise startAIDiffAnalysisAsync($arguments = [])
  * @method \Dew\Acs\Result describeMetricList(array $arguments = [])
  * @method \Http\Promise\Promise describeMetricListAsync($arguments = [])
+ * @method \Dew\Acs\Result createVmcoreDiagnosisTask(array $arguments = [])
+ * @method \Http\Promise\Promise createVmcoreDiagnosisTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getVmcoreDiagnosisTask(array $arguments = [])
+ * @method \Http\Promise\Promise getVmcoreDiagnosisTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result listVmcoreDiagnosisTask(array $arguments = [])
+ * @method \Http\Promise\Promise listVmcoreDiagnosisTaskAsync($arguments = [])
  */
 final class SysOMClient extends AcsClient
 {

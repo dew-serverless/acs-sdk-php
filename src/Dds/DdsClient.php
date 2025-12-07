@@ -251,6 +251,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifySrvNetworkAddressAsync($arguments = [])
  * @method \Dew\Acs\Result cancelActiveOperationTasks(array $arguments = [])
  * @method \Http\Promise\Promise cancelActiveOperationTasksAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyActiveOperationMaintenanceConfig(array $arguments = [])
+ * @method \Http\Promise\Promise modifyActiveOperationMaintenanceConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyBackupExpireTime(array $arguments = [])
+ * @method \Http\Promise\Promise modifyBackupExpireTimeAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteBackup(array $arguments = [])
+ * @method \Http\Promise\Promise deleteBackupAsync($arguments = [])
  */
 final class DdsClient extends AcsClient
 {

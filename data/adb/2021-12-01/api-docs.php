@@ -2444,6 +2444,39 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'GpuElasticPlan',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'Rules' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'StartCronExpression' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'EndCronExpression' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeDBResourceGroup' => [
@@ -2816,6 +2849,39 @@
                                             'required' => false,
                                         ],
                                         'MountPath' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'GpuElasticPlan',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'Rules' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'StartCronExpression' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'EndCronExpression' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
@@ -14403,6 +14469,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DataFormatType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ConfigureResultExport' => [
@@ -16114,7 +16188,7 @@
         ],
         [
             'regionId' => 'cn-shenzhen',
-            'endpoint' => 'adb.aliyuncs.com',
+            'endpoint' => 'adb.cn-shenzhen.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',
@@ -16122,7 +16196,7 @@
         ],
         [
             'regionId' => 'cn-north-2-gov-1',
-            'endpoint' => 'adb.aliyuncs.com',
+            'endpoint' => 'adb.cn-north-2-gov-1.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',

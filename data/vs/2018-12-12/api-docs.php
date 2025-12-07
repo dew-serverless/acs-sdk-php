@@ -125,8 +125,6 @@
                         'required' => false,
                         'enum' => [
                             'Hour',
-                            'Month',
-                            'Year',
                         ],
                     ],
                 ],

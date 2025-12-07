@@ -109,6 +109,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise manualTriggerMaskingProcessAsync($arguments = [])
  * @method \Dew\Acs\Result describeIdentifyTaskStatus(array $arguments = [])
  * @method \Http\Promise\Promise describeIdentifyTaskStatusAsync($arguments = [])
+ * @method \Dew\Acs\Result restoreOssImage(array $arguments = [])
+ * @method \Http\Promise\Promise restoreOssImageAsync($arguments = [])
+ * @method \Dew\Acs\Result maskOssImage(array $arguments = [])
+ * @method \Http\Promise\Promise maskOssImageAsync($arguments = [])
  */
 final class SddpClient extends AcsClient
 {

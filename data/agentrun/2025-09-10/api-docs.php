@@ -748,6 +748,17 @@
                             'type' => 'string',
                         ],
                     ],
+                    'imageRegistryType' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'ACR',
+                            'ACREE',
+                            'CUSTOM',
+                        ],
+                    ],
+                    'acrInstanceId' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'CreateAgentRuntimeEndpointInput' => [
@@ -2839,9 +2850,6 @@
             'ModelService' => [
                 'type' => 'object',
                 'properties' => [
-                    'modeServiceId' => [
-                        'type' => 'string',
-                    ],
                     'modelServiceName' => [
                         'type' => 'string',
                     ],
@@ -2872,13 +2880,16 @@
                     'networkConfiguration' => [
                         '$ref' => '#/components/schemas/NetworkConfiguration',
                     ],
+                    'statusReason' => [
+                        'type' => 'string',
+                    ],
                     'modelInfoConfigs' => [
                         'type' => 'array',
                         'items' => [
                             '$ref' => '#/components/schemas/ModelInfoConfig',
                         ],
                     ],
-                    'statusReason' => [
+                    'modelServiceId' => [
                         'type' => 'string',
                     ],
                 ],

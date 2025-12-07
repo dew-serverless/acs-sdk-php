@@ -2486,6 +2486,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Owner',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeWafScope' => [

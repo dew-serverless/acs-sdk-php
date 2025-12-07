@@ -467,6 +467,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise removeRspDomainServerHoldStatusForGatewayAsync($arguments = [])
  * @method \Dew\Acs\Result updateRspDomainServerProhibitStatusForGateway(array $arguments = [])
  * @method \Http\Promise\Promise updateRspDomainServerProhibitStatusForGatewayAsync($arguments = [])
+ * @method \Dew\Acs\Result addRspDomainServerHoldStatusForGateway(array $arguments = [])
+ * @method \Http\Promise\Promise addRspDomainServerHoldStatusForGatewayAsync($arguments = [])
  */
 final class AlidnsClient extends AcsClient
 {

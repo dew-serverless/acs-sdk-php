@@ -496,14 +496,6 @@
                     ],
                 ],
                 [
-                    'name' => 'MonitorEnabled',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'ArgoCDHAEnabled',
                     'in' => 'query',
                     'schema' => [

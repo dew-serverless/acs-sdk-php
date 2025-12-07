@@ -7692,6 +7692,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'DingtalkLoginVersion' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

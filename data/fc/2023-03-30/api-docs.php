@@ -312,6 +312,9 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'disableSessionIdReuse' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'CreateAliasInput' => [
@@ -582,6 +585,14 @@
                     ],
                     'nasConfig' => [
                         '$ref' => '#/components/schemas/NASConfig',
+                    ],
+                    'sessionId' => [
+                        'type' => 'string',
+                        'minLength' => 0,
+                        'maxLength' => 64,
+                    ],
+                    'disableSessionIdReuse' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],
@@ -1415,6 +1426,9 @@
                     'affinityHeaderFieldName' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                    'disableSessionIdReuse' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],
@@ -2339,6 +2353,9 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'enableOnDemandScaling' => [
+                        'type' => 'boolean',
+                    ],
                     'scheduledPolicies' => [
                         'type' => 'array',
                         'items' => [
@@ -2447,7 +2464,35 @@
             'ResidentResourceAllocation' => [
                 'type' => 'object',
                 'properties' => [
+                    'functionName' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'qualifier' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'instanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalCpuCores' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
                     'totalMemorySize' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalGpuMemorySize' => [
                         'type' => 'number',
                         'format' => 'double',
                         'deprecated' => false,
@@ -2459,33 +2504,8 @@
                         'deprecated' => false,
                         'pattern' => '',
                     ],
-                    'functionName' => [
+                    'instanceType' => [
                         'type' => 'string',
-                        'deprecated' => false,
-                        'pattern' => '',
-                    ],
-                    'instanceCount' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'deprecated' => false,
-                        'pattern' => '',
-                    ],
-                    'qualifier' => [
-                        'type' => 'string',
-                        'deprecated' => false,
-                        'pattern' => '',
-                    ],
-                    'totalGpuMemorySize' => [
-                        'type' => 'number',
-                        'format' => 'double',
-                        'deprecated' => false,
-                        'pattern' => '',
-                    ],
-                    'totalCpuCores' => [
-                        'type' => 'number',
-                        'format' => 'double',
-                        'deprecated' => false,
-                        'pattern' => '',
                     ],
                 ],
             ],
@@ -2737,6 +2757,13 @@
                     'currentError' => [
                         'type' => 'string',
                     ],
+                    'targetInstances' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'enableOnDemandScaling' => [
+                        'type' => 'boolean',
+                    ],
                     'scheduledPolicies' => [
                         'type' => 'array',
                         'items' => [
@@ -2748,10 +2775,6 @@
                         'items' => [
                             '$ref' => '#/components/schemas/ScalingPolicy',
                         ],
-                    ],
-                    'targetInstances' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -2889,6 +2912,9 @@
                     ],
                     'nasConfig' => [
                         '$ref' => '#/components/schemas/NASConfig',
+                    ],
+                    'disableSessionIdReuse' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],
@@ -3561,6 +3587,9 @@
                     'sessionIdleTimeoutInSeconds' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'disableSessionIdReuse' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],

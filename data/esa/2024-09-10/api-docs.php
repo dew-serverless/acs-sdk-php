@@ -10561,6 +10561,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PostCache',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PostBodySizeLimit',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PostBodyCacheKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateCacheRule' => [
@@ -10785,6 +10809,30 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PostCache',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PostBodySizeLimit',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PostBodyCacheKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

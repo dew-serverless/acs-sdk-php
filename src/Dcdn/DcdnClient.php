@@ -117,8 +117,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDcdnDomainRealTimeReqHitRateDataAsync($arguments = [])
  * @method \Dew\Acs\Result describeDcdnDomainRealTimeHttpCodeData(array $arguments = [])
  * @method \Http\Promise\Promise describeDcdnDomainRealTimeHttpCodeDataAsync($arguments = [])
- * @method \Dew\Acs\Result describeDcdnDomainRealTimeDetailData(array $arguments = [])
- * @method \Http\Promise\Promise describeDcdnDomainRealTimeDetailDataAsync($arguments = [])
  * @method \Dew\Acs\Result describeDcdnDomainRealTimeSrcBpsData(array $arguments = [])
  * @method \Http\Promise\Promise describeDcdnDomainRealTimeSrcBpsDataAsync($arguments = [])
  * @method \Dew\Acs\Result describeDcdnDomainRealTimeSrcTrafficData(array $arguments = [])
@@ -459,6 +457,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise putDcdnKvWithHighCapacityAsync($arguments = [])
  * @method \Dew\Acs\Result describeKvRealTimeQpsData(array $arguments = [])
  * @method \Http\Promise\Promise describeKvRealTimeQpsDataAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDcdnDomainRealTimeDetailData(array $arguments = [])
+ * @method \Http\Promise\Promise describeDcdnDomainRealTimeDetailDataAsync($arguments = [])
  */
 final class DcdnClient extends AcsClient
 {

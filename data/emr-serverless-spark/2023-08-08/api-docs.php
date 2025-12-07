@@ -5487,20 +5487,20 @@
             'endpoint' => 'emr-serverless-spark.ap-southeast-5.aliyuncs.com',
         ],
         [
-            'regionId' => 'na-south-1',
-            'endpoint' => 'emr-serverless-spark.na-south-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'emr-serverless-spark.eu-central-1.aliyuncs.com',
+            'regionId' => 'us-east-1',
+            'endpoint' => 'emr-serverless-spark.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',
             'endpoint' => 'emr-serverless-spark.us-west-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'emr-serverless-spark.us-east-1.aliyuncs.com',
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'emr-serverless-spark.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'emr-serverless-spark.na-south-1.aliyuncs.com',
         ],
     ],
 ];

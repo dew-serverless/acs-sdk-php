@@ -41,6 +41,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise hangupOperateAsync($arguments = []) {@since 2019-10-15}
  * @method \Dew\Acs\Result listAvailableTts(array $arguments = []) {@since 2019-10-15}
  * @method \Http\Promise\Promise listAvailableTtsAsync($arguments = []) {@since 2019-10-15}
+ * @method \Dew\Acs\Result getCallDialogContent(array $arguments = []) {@since 2019-10-15}
+ * @method \Http\Promise\Promise getCallDialogContentAsync($arguments = []) {@since 2019-10-15}
  * @method \Dew\Acs\Result getHotlineServiceStatistics(array $arguments = []) {@since 2019-10-15}
  * @method \Http\Promise\Promise getHotlineServiceStatisticsAsync($arguments = []) {@since 2019-10-15}
  * @method \Dew\Acs\Result getSkillGroupAndAgentStatusSummary(array $arguments = []) {@since 2019-10-15}

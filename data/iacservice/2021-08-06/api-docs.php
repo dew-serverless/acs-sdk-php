@@ -1163,6 +1163,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'jobType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetJob' => [

@@ -314,6 +314,13 @@
                     'ContentType' => [
                         'type' => 'string',
                     ],
+                    'Status' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'ACTIVE',
+                            'DELETED',
+                        ],
+                    ],
                 ],
             ],
             'DatasetFileMetaConentUpdate' => [
@@ -481,6 +488,13 @@
                         'type' => 'string',
                         'format' => 'iso8601',
                     ],
+                    'Status' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'ACTIVE',
+                            'DELETED',
+                        ],
+                    ],
                 ],
             ],
             'DatasetFileMetaResponse' => [
@@ -622,13 +636,6 @@
                         'type' => 'string',
                         'required' => false,
                     ],
-                    'AllowedMountAccessLevels' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                    ],
                     'IsSecureMode' => [
                         'type' => 'boolean',
                         'required' => false,
@@ -637,6 +644,16 @@
                         'type' => 'string',
                     ],
                     'ExpiresAt' => [
+                        'type' => 'string',
+                    ],
+                    'AllowedMountAccessLevels' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'Extra' => [
                         'type' => 'string',
                     ],
                 ],
@@ -5169,6 +5186,19 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'ACTIVE',
+                            'ALL',
+                            'DELETED',
+                        ],
                     ],
                 ],
             ],

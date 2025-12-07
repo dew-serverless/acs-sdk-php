@@ -255,6 +255,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ReferenceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RefreshUploadVideo' => [
@@ -277,7 +285,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReferenceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -850,7 +866,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -942,6 +958,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ReferenceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetVideoPlayAuth' => [
@@ -965,7 +989,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -979,6 +1003,14 @@
                 ],
                 [
                     'name' => 'ApiVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReferenceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1358,7 +1390,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReferenceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1384,7 +1424,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReferenceIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1472,6 +1520,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ReferenceIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetMezzanineInfo' => [
@@ -1495,7 +1551,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1517,6 +1573,14 @@
                 ],
                 [
                     'name' => 'AdditionType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReferenceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1546,7 +1610,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1592,6 +1656,14 @@
                 ],
                 [
                     'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReferenceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1647,7 +1719,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1655,6 +1727,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReferenceIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -1689,7 +1769,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReferenceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1715,7 +1803,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReferenceIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1742,6 +1838,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ReferenceIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2255,6 +2359,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ReferenceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SubmitSnapshotJob' => [
@@ -2359,6 +2471,14 @@
                             'format' => 'int64',
                             'required' => false,
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'ReferenceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -8556,6 +8676,66 @@
                             'on',
                             'off',
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'GetAppPlayKey' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SetAppPlayKey' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PlayKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

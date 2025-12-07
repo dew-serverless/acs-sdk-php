@@ -3203,6 +3203,10 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'SslTruststoreCertificates' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'SourceOSSParameters' => [
@@ -3708,6 +3712,10 @@
                                             ],
                                         ],
                                     ],
+                                    'CompressionType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                     'Topic' => [
                                         'type' => 'object',
                                         'required' => false,
@@ -3852,6 +3860,10 @@
                                             ],
                                         ],
                                     ],
+                                    'CompressionType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                     'SecurityProtocol' => [
                                         'type' => 'string',
                                         'required' => false,
@@ -3955,6 +3967,10 @@
                                         ],
                                     ],
                                     'SaslPassword' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SslTruststoreCertificates' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],
@@ -6166,6 +6182,10 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'SslTruststoreCertificates' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'SourceOSSParameters' => [
@@ -6629,6 +6649,10 @@
                                             ],
                                         ],
                                     ],
+                                    'CompressionType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'SinkApacheKafkaParameters' => [
@@ -6710,6 +6734,14 @@
                                         'required' => false,
                                     ],
                                     'SaslUser' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SslTruststoreCertificates' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'CompressionType' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],

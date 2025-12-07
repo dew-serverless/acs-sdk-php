@@ -11705,7 +11705,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],

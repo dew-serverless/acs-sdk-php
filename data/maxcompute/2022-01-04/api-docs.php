@@ -5750,6 +5750,15 @@
             'vpc' => 'maxcompute-vpc.eu-central-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'me-east-1',
+            'regionName' => '阿联酋（迪拜）',
+            'areaId' => 'middleEast',
+            'areaName' => '中东与印度',
+            'public' => 'maxcompute.aliyuncs.com',
+            'endpoint' => 'maxcompute.aliyuncs.com',
+            'vpc' => 'maxcompute-vpc.me-east-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'me-central-1',
             'regionName' => '沙特（利雅得）',
             'areaId' => 'middleEast',
@@ -5757,15 +5766,6 @@
             'public' => 'maxcompute.me-central-1.aliyuncs.com',
             'endpoint' => 'maxcompute.me-central-1.aliyuncs.com',
             'vpc' => 'maxcompute-vpc.me-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'me-east-1',
-            'regionName' => '阿联酋（迪拜）',
-            'areaId' => 'middleEast',
-            'areaName' => '中东与印度',
-            'public' => 'maxcompute.aliyuncs.com',
-            'endpoint' => 'maxcompute.aliyuncs.com',
-            'vpc' => '',
         ],
         [
             'regionId' => 'cn-hangzhou-finance',

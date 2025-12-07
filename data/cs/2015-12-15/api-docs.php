@@ -5057,6 +5057,10 @@
                                 'format' => 'int64',
                                 'required' => false,
                             ],
+                            'one_time_token' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

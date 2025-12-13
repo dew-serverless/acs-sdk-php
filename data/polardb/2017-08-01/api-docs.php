@@ -65,6 +65,22 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'AutoUseCoupon',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeAutoRenewAttribute' => [
@@ -506,6 +522,22 @@
                 ],
                 [
                     'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoUseCoupon',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1055,6 +1087,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AutoUseCoupon',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDBCluster' => [
@@ -1073,6 +1121,14 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'CloudProvider',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DBClusterId',
                     'in' => 'query',
@@ -2089,6 +2145,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AutoUseCoupon',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ManuallyStartDBCluster' => [
@@ -2188,6 +2260,22 @@
                 ],
                 [
                     'name' => 'ModifyType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoUseCoupon',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2487,6 +2575,22 @@
                 ],
                 [
                     'name' => 'StandbyAZ',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoUseCoupon',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3485,6 +3589,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AutoUseCoupon',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDBNodes' => [
@@ -3647,6 +3767,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AutoUseCoupon',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyDBNodesClass' => [
@@ -3748,6 +3884,22 @@
                 ],
                 [
                     'name' => 'CloudProvider',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoUseCoupon',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3934,6 +4086,22 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AutoUseCoupon',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -6300,6 +6468,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TargetDBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SwitchOverGlobalDatabaseNetwork' => [
@@ -7085,19 +7261,23 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
+                                'PolicyId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'ActionType' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'OnlyPreserveOneEachHour' => [
-                                    'type' => 'boolean',
+                                'RetentionType' => [
+                                    'type' => 'string',
                                     'required' => false,
                                 ],
                                 'RetentionValue' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'BakType' => [
+                                'FilterType' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -7109,24 +7289,28 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'DestType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'FilterType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                                 'SrcRegion' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'AutoCreated' => [
+                                'SrcType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DestRegion' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DestType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OnlyPreserveOneEachHour' => [
                                     'type' => 'boolean',
                                     'required' => false,
                                 ],
-                                'SrcType' => [
-                                    'type' => 'string',
+                                'AutoCreated' => [
+                                    'type' => 'boolean',
                                     'required' => false,
                                 ],
                                 'OnlyPreserveOneEachDay' => [
@@ -7137,15 +7321,7 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'PolicyId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'DestRegion' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RetentionType' => [
+                                'BakType' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -9418,6 +9594,22 @@
                 ],
                 [
                     'name' => 'VpcId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoUseCoupon',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -16435,6 +16627,92 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteAINodes' => [
+            'path' => '',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DBNodeId',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+            ],
+        ],
+        'CreateAINodes' => [
+            'path' => '',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DBNodes',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'DBNodeClass' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
             ],

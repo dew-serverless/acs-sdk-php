@@ -5303,13 +5303,13 @@
                                     'type' => 'string',
                                     'required' => true,
                                 ],
-                                'VideoExtraInfo' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                                 'VideoUrl' => [
                                     'type' => 'string',
                                     'required' => true,
+                                ],
+                                'VideoExtraInfo' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -5360,6 +5360,73 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VideoRoles',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RoleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RoleInfo' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RoleUrls' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'RoleFileName' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'RoleFileUrl' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'FaceIdentitySimilarityMinScore',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VideoShotFaceIdentityCount',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RemoveSubtitle',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -5448,6 +5515,10 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
+                                'Content' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'TimelineIn' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
@@ -5458,19 +5529,6 @@
                                     'format' => 'int32',
                                     'required' => false,
                                 ],
-                                'FontSize' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'Content' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'EffectColorStyle' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                                 'X' => [
                                     'type' => 'number',
                                     'format' => 'float',
@@ -5479,6 +5537,15 @@
                                 'Y' => [
                                     'type' => 'number',
                                     'format' => 'float',
+                                    'required' => false,
+                                ],
+                                'FontSize' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'EffectColorStyle' => [
+                                    'type' => 'string',
                                     'required' => false,
                                 ],
                             ],
@@ -5536,6 +5603,101 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CloseVoice',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CloseMusic',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CloseSubtitle',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CustomVoiceUrl',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CustomVoiceVolume',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Stickers',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Url' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'TimelineIn' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Duration' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'X' => [
+                                    'type' => 'number',
+                                    'format' => 'float',
+                                    'required' => false,
+                                ],
+                                'Y' => [
+                                    'type' => 'number',
+                                    'format' => 'float',
+                                    'required' => false,
+                                ],
+                                'Width' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Height' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'DyncFrames' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -6105,7 +6267,7 @@
                 ],
                 [
                     'name' => 'ContentType',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -6113,7 +6275,7 @@
                 ],
                 [
                     'name' => 'SubContentType',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -6121,7 +6283,7 @@
                 ],
                 [
                     'name' => 'Region',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -6129,7 +6291,7 @@
                 ],
                 [
                     'name' => 'Source',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -6137,7 +6299,7 @@
                 ],
                 [
                     'name' => 'StartDate',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -6145,7 +6307,7 @@
                 ],
                 [
                     'name' => 'EndDate',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -6153,7 +6315,7 @@
                 ],
                 [
                     'name' => 'Office',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -6161,7 +6323,7 @@
                 ],
                 [
                     'name' => 'WordSize',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -6169,7 +6331,15 @@
                 ],
                 [
                     'name' => 'ElementScope',
-                    'in' => 'query',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SubjectClassify',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

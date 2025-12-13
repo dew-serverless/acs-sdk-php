@@ -4360,6 +4360,47 @@
                 ],
             ],
         ],
+        'GetRunConfiguration' => [
+            'path' => '/api/v1/workspaces/{workspaceId}/runs/{runId}/action/getRunConfiguration',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'runId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'StartProcessInstance' => [
             'path' => '/dolphinscheduler/projects/{bizId}/executors/start-process-instance',
             'methods' => [

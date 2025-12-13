@@ -83,6 +83,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getNotebookAndSubmitTaskAsync($arguments = [])
  * @method \Dew\Acs\Result getNotebookTaskStatus(array $arguments = [])
  * @method \Http\Promise\Promise getNotebookTaskStatusAsync($arguments = [])
+ * @method \Dew\Acs\Result getChatContent(array $arguments = [])
+ * @method \Http\Promise\Promise getChatContentAsync($arguments = [])
+ * @method \Dew\Acs\Result sendChatMessage(array $arguments = [])
+ * @method \Http\Promise\Promise sendChatMessageAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDataAgentSession(array $arguments = [])
+ * @method \Http\Promise\Promise describeDataAgentSessionAsync($arguments = [])
+ * @method \Dew\Acs\Result createDataAgentSession(array $arguments = [])
+ * @method \Http\Promise\Promise createDataAgentSessionAsync($arguments = [])
  */
 final class DmsClient extends AcsClient
 {

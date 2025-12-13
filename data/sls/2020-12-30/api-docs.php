@@ -206,6 +206,74 @@
                     ],
                 ],
             ],
+            'AsyncSqlResponseData' => [
+                'type' => 'object',
+                'properties' => [
+                    'id' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'state' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'AsyncSqlMetaPB' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'result_rows' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'processed_rows' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'elapsed_milli' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'cpu_sec' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'cpu_cores' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'progress' => [
+                                'type' => 'string',
+                            ],
+                            'keys' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'rows' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'array',
+                            'items' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'error_code' => [
+                        'type' => 'string',
+                    ],
+                    'error_message' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'chart' => [
                 'type' => 'object',
                 'properties' => [
@@ -2419,6 +2487,41 @@
                     ],
                     'query' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'SubmitAsyncSqlParams' => [
+                'type' => 'object',
+                'properties' => [
+                    'logstore' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'query' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'from' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                    'to' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                    'extensions' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'maxRunTime' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'powerSql' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -5798,6 +5901,59 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetAsyncSql' => [
+            'path' => '/asyncsql/{queryId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'queryId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'line',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -10342,6 +10498,58 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'SubmitAsyncSql' => [
+            'path' => '/asyncsql',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Accept',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Accept-Encoding',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/SubmitAsyncSqlParams',
+                        'required' => false,
                     ],
                 ],
             ],

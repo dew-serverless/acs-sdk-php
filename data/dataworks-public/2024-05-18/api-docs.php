@@ -20087,5 +20087,9 @@
             'regionId' => 'me-central-1',
             'endpoint' => 'dataworks.me-central-1.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-north-2-gov-1',
+            'endpoint' => 'dataworks.cn-north-2-gov-1.aliyuncs.com',
+        ],
     ],
 ];

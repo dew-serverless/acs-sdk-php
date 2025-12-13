@@ -139,6 +139,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listPcaCaCertificateAsync($arguments = []) {@since 2020-06-30}
  * @method \Dew\Acs\Result uploadPcaCertToCas(array $arguments = []) {@since 2020-06-30}
  * @method \Http\Promise\Promise uploadPcaCertToCasAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result untagResources(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise untagResourcesAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result listTagResources(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise listTagResourcesAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result tagResources(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise tagResourcesAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result updatePcaCertificate(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise updatePcaCertificateAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result assignCertificateCount(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise assignCertificateCountAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result listAllEndEntityInstance(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise listAllEndEntityInstanceAsync($arguments = []) {@since 2020-06-30}
  */
 final class CasClient extends AcsClient
 {

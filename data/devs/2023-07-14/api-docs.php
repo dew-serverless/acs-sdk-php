@@ -3926,6 +3926,73 @@
                     ],
                 ],
             ],
+            'MCPGatewayConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'routes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'backends' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'name' => [
+                                                'type' => 'string',
+                                                'enum' => [
+                                                    'MCP',
+                                                    'OpenAPI',
+                                                    'Toolset',
+                                                ],
+                                            ],
+                                            'type' => [
+                                                'type' => 'string',
+                                                'enum' => [
+                                                    'OpenAPI',
+                                                    'MCP',
+                                                    'Toolset',
+                                                ],
+                                            ],
+                                            'details' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'mcpInstallation' => [
+                                                        '$ref' => '#/components/schemas/MCPServerInstallationConfig',
+                                                    ],
+                                                    'toolsetSelector' => [
+                                                        'type' => 'object',
+                                                        'properties' => [
+                                                            'toolsetName' => [
+                                                                'type' => 'string',
+                                                            ],
+                                                            'toolName' => [
+                                                                'type' => 'string',
+                                                            ],
+                                                        ],
+                                                    ],
+                                                    'openAPISchema' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'policies' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'authorization' => [
+                                            '$ref' => '#/components/schemas/Authorization',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'MCPInstallationConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -5666,11 +5733,26 @@
             'ToolsetSchema' => [
                 'type' => 'object',
                 'properties' => [
-                    'detail' => [
-                        'type' => 'string',
-                    ],
                     'type' => [
                         'type' => 'string',
+                    ],
+                    'detail' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                    ],
+                    'config' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'mcpInstallation' => [
+                                '$ref' => '#/components/schemas/MCPInstallationConfig',
+                            ],
+                            'openAPISchema' => [
+                                'type' => 'string',
+                            ],
+                            'mcpGateway' => [
+                                '$ref' => '#/components/schemas/MCPGatewayConfig',
+                            ],
+                        ],
                     ],
                 ],
             ],

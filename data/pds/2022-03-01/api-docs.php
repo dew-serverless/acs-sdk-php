@@ -1975,6 +1975,20 @@
                     ],
                 ],
             ],
+            'FileIDInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'drive_id' => [
+                        'type' => 'string',
+                    ],
+                    'file_id' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'FileLogDetail' => [
                 'type' => 'object',
                 'properties' => [
@@ -2067,6 +2081,23 @@
                         'items' => [
                             '$ref' => '#/components/schemas/UploadPartInfo',
                         ],
+                    ],
+                ],
+            ],
+            'FileTaskResultResponse' => [
+                'type' => 'object',
+                'properties' => [
+                    'src_file' => [
+                        '$ref' => '#/components/schemas/FileIDInfo',
+                    ],
+                    'rst_file' => [
+                        '$ref' => '#/components/schemas/FileIDInfo',
+                    ],
+                    'err_code' => [
+                        'type' => 'string',
+                    ],
+                    'message' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

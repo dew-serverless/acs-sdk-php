@@ -3324,6 +3324,10 @@
                                 'type' => 'string',
                                 'required' => true,
                             ],
+                            'sceneCode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

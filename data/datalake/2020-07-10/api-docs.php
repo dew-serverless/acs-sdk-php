@@ -6447,6 +6447,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
             ],
         ],
         'GetServiceStatus' => [
@@ -6465,6 +6473,14 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
                 [
                     'name' => 'RegionId',
                     'in' => 'query',

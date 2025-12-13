@@ -7,6 +7,16 @@ namespace Dew\Acs\Cams;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result addCustomAudienceUser(array $arguments = [])
+ * @method \Http\Promise\Promise addCustomAudienceUserAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteMessageCampaign(array $arguments = [])
+ * @method \Http\Promise\Promise deleteMessageCampaignAsync($arguments = [])
+ * @method \Dew\Acs\Result getMessageCampaignInsights(array $arguments = [])
+ * @method \Http\Promise\Promise getMessageCampaignInsightsAsync($arguments = [])
+ * @method \Dew\Acs\Result listCustomAudience(array $arguments = [])
+ * @method \Http\Promise\Promise listCustomAudienceAsync($arguments = [])
+ * @method \Dew\Acs\Result syncMessengerSubscriptionToken(array $arguments = [])
+ * @method \Http\Promise\Promise syncMessengerSubscriptionTokenAsync($arguments = [])
  * @method \Dew\Acs\Result triggerChatFlow(array $arguments = [])
  * @method \Http\Promise\Promise triggerChatFlowAsync($arguments = [])
  * @method \Dew\Acs\Result publishFlow(array $arguments = [])
@@ -175,6 +185,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateContactByIdAsync($arguments = [])
  * @method \Dew\Acs\Result updateFlowVersion(array $arguments = [])
  * @method \Http\Promise\Promise updateFlowVersionAsync($arguments = [])
+ * @method \Dew\Acs\Result createInstance(array $arguments = [])
+ * @method \Http\Promise\Promise createInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteInstance(array $arguments = [])
+ * @method \Http\Promise\Promise deleteInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result getChatFlowMetric(array $arguments = [])
  * @method \Http\Promise\Promise getChatFlowMetricAsync($arguments = [])
  * @method \Dew\Acs\Result modifyChatappTemplateProperties(array $arguments = [])

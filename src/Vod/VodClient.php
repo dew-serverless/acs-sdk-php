@@ -355,6 +355,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listAppPoliciesForIdentityAsync($arguments = [])
  * @method \Dew\Acs\Result moveAppResource(array $arguments = [])
  * @method \Http\Promise\Promise moveAppResourceAsync($arguments = [])
+ * @method \Dew\Acs\Result getAppPlayKey(array $arguments = [])
+ * @method \Http\Promise\Promise getAppPlayKeyAsync($arguments = [])
+ * @method \Dew\Acs\Result setAppPlayKey(array $arguments = [])
+ * @method \Http\Promise\Promise setAppPlayKeyAsync($arguments = [])
  * @method \Dew\Acs\Result setCrossdomainContent(array $arguments = [])
  * @method \Http\Promise\Promise setCrossdomainContentAsync($arguments = [])
  * @method \Dew\Acs\Result deleteMessageCallback(array $arguments = [])
@@ -375,10 +379,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeVodEditingUsageDataAsync($arguments = [])
  * @method \Dew\Acs\Result describeVodUserVipsByDomain(array $arguments = [])
  * @method \Http\Promise\Promise describeVodUserVipsByDomainAsync($arguments = [])
- * @method \Dew\Acs\Result getAppPlayKey(array $arguments = [])
- * @method \Http\Promise\Promise getAppPlayKeyAsync($arguments = [])
- * @method \Dew\Acs\Result setAppPlayKey(array $arguments = [])
- * @method \Http\Promise\Promise setAppPlayKeyAsync($arguments = [])
  */
 final class VodClient extends AcsClient
 {

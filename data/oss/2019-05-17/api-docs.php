@@ -54,9 +54,6 @@
                     'Status' => [
                         '$ref' => '#/components/schemas/AccessMonitorStatus',
                     ],
-                    'AllowCopy' => [
-                        'type' => 'boolean',
-                    ],
                 ],
             ],
             'AccessMonitorStatus' => [
@@ -3499,6 +3496,42 @@
                     ],
                     'EnablePayloadCrc' => [
                         'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'OverwriteConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'Rule' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'ID' => [
+                                    'type' => 'string',
+                                ],
+                                'Action' => [
+                                    'type' => 'string',
+                                ],
+                                'Prefix' => [
+                                    'type' => 'string',
+                                ],
+                                'Suffix' => [
+                                    'type' => 'string',
+                                ],
+                                'Principals' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Principal' => [
+                                            'type' => 'array',
+                                            'items' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -11071,6 +11104,132 @@
                                 'required' => false,
                             ],
                         ],
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [],
+            ],
+        ],
+        'PutBucketOverwriteConfig' => [
+            'path' => '/?overwriteConfig',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'xml',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'OverwriteConfiguration' => [
+                                '$ref' => '#/components/schemas/OverwriteConfiguration',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [],
+            ],
+        ],
+        'GetBucketOverwriteConfig' => [
+            'path' => '/?overwriteConfig',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'OverwriteConfiguration' => [
+                                '$ref' => '#/components/schemas/OverwriteConfiguration',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteBucketOverwriteConfig' => [
+            'path' => '/?overwriteConfig',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

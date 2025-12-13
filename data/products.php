@@ -2536,6 +2536,14 @@
         'defaultVersion' => '2025-07-07',
     ],
     [
+        'code' => 'ADBAI',
+        'style' => 'RPC',
+        'versions' => [
+            '2025-08-12',
+        ],
+        'defaultVersion' => '2025-08-12',
+    ],
+    [
         'code' => 'MultimodalDialog',
         'style' => 'RPC',
         'versions' => [

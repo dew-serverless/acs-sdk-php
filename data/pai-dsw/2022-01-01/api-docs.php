@@ -247,6 +247,20 @@
                     ],
                 ],
             ],
+            'PodIp' => [
+                'type' => 'object',
+                'properties' => [
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'Ip' => [
+                        'type' => 'string',
+                    ],
+                    'InterfaceName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ServiceConfig' => [
                 'type' => 'object',
                 'properties' => [

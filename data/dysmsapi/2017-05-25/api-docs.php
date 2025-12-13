@@ -908,6 +908,24 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TrademarkId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppIcpRecordId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetSmsSign' => [
@@ -1074,6 +1092,24 @@
                 ],
                 [
                     'name' => 'AuthorizationLetterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TrademarkId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppIcpRecordId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',

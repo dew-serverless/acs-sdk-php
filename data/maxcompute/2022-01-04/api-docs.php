@@ -207,6 +207,25 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'dbName' => [
+                                'type' => 'string',
+                            ],
+                            'tableNames' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'CreateMmsJob' => [

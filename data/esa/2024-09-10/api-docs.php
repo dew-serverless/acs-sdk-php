@@ -21665,6 +21665,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PlanNameEn',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListInstanceQuotas' => [

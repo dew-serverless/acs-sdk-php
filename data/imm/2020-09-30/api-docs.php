@@ -4405,6 +4405,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'SourceURI',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'FuzzyQuery' => [

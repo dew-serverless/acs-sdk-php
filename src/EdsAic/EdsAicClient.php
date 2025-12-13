@@ -181,6 +181,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyDisplayConfigAsync($arguments = [])
  * @method \Dew\Acs\Result describeDisplayConfig(array $arguments = [])
  * @method \Http\Promise\Promise describeDisplayConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result importImage(array $arguments = [])
+ * @method \Http\Promise\Promise importImageAsync($arguments = [])
  */
 final class EdsAicClient extends AcsClient
 {

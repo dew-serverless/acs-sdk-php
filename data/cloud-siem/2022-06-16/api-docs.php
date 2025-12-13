@@ -1986,6 +1986,20 @@
                     ],
                 ],
                 [
+                    'name' => 'AlertStatus',
+                    'in' => 'formData',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
                     'name' => 'StartTime',
                     'in' => 'formData',
                     'schema' => [

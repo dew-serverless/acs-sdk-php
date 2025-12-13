@@ -2276,10 +2276,6 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'NextHopType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                                 'NextHopId' => [
                                     'type' => 'string',
                                     'required' => false,
@@ -2287,6 +2283,10 @@
                                 'Weight' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'NextHopType' => [
+                                    'type' => 'string',
                                     'required' => false,
                                 ],
                             ],
@@ -26200,6 +26200,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -27128,7 +27129,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [

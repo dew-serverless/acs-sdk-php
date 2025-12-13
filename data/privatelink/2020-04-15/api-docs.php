@@ -1556,6 +1556,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ResetPolicy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListVpcEndpoints' => [
@@ -1927,6 +1935,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'TrafficControlMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateVpcEndpointConnectionAttribute' => [
@@ -2001,6 +2017,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TrafficControlMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

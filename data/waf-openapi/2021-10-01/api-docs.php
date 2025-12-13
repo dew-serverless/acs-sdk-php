@@ -822,6 +822,10 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'ResourceRegionId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -1806,6 +1810,17 @@
                                 'minimum' => '2',
                                 'maximum' => '10',
                             ],
+                            'Http2Origin' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'Http2OriginMaxConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '1',
+                                'maximum' => '512',
+                            ],
                             'BackendPorts' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -2147,6 +2162,24 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'MaxBodySize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '2',
+                                'maximum' => '10',
+                            ],
+                            'Http2Origin' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'Http2OriginMaxConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '1',
+                                'maximum' => '512',
+                            ],
                             'BackendPorts' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -2170,13 +2203,6 @@
                                         ],
                                     ],
                                 ],
-                            ],
-                            'MaxBodySize' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                                'minimum' => '2',
-                                'maximum' => '10',
                             ],
                         ],
                     ],
@@ -6784,6 +6810,86 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeBotRuleLabels' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SubScene',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'web',
+                            'app',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ResourceManagerResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LabelType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                        'exclusiveMinimum' => true,
+                        'maximum' => '200',
                     ],
                 ],
             ],
@@ -14897,6 +15003,7 @@
         'DescribeHybridCloudSdkServers' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',

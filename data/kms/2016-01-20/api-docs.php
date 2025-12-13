@@ -90,6 +90,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Filters',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ConnectKmsInstance' => [
@@ -4021,6 +4029,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4028,6 +4037,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

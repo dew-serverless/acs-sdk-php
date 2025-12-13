@@ -1097,6 +1097,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'InstanceMemberId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetHost' => [
@@ -1614,6 +1623,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceMemberId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],

@@ -1872,6 +1872,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'BandWidthBurst',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyInstanceAttribute' => [

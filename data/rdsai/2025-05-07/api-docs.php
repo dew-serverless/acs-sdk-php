@@ -1546,8 +1546,8 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'rdsai.ap-southeast-5.aliyuncs.com',
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'rdsai.ap-northeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
@@ -1584,6 +1584,10 @@
         [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'rdsai.ap-southeast-3.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'rdsai.ap-southeast-5.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',

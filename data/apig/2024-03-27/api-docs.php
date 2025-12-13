@@ -3495,6 +3495,66 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'grayMcpServerConfigs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'routeId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'match' => [
+                                            '$ref' => '#/components/schemas/HttpRouteMatch',
+                                            'required' => false,
+                                        ],
+                                        'backendConfig' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'scene' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'services' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'protocol' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'port' => [
+                                                                'type' => 'integer',
+                                                                'format' => 'int32',
+                                                                'required' => false,
+                                                            ],
+                                                            'weight' => [
+                                                                'type' => 'integer',
+                                                                'format' => 'int32',
+                                                                'required' => false,
+                                                            ],
+                                                            'serviceId' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'version' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -3642,6 +3702,66 @@
                             'createFromType' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'grayMcpServerConfigs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'routeId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'match' => [
+                                            '$ref' => '#/components/schemas/HttpRouteMatch',
+                                            'required' => false,
+                                        ],
+                                        'backendConfig' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'scene' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'services' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'protocol' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'port' => [
+                                                                'type' => 'integer',
+                                                                'format' => 'int32',
+                                                                'required' => false,
+                                                            ],
+                                                            'weight' => [
+                                                                'type' => 'integer',
+                                                                'format' => 'int32',
+                                                                'required' => false,
+                                                            ],
+                                                            'serviceId' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'version' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -4599,6 +4719,325 @@
                 ],
             ],
         ],
+        'CreateServiceVersion' => [
+            'path' => '/v1/services/{serviceId}/versions',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'serviceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'labels' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'key' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateServiceVersion' => [
+            'path' => '/v1/services/{serviceId}/versions/{name}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'serviceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'labels' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'key' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteServiceVersion' => [
+            'path' => '/v1/services/{serviceId}/versions/{name}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'serviceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateSource' => [
+            'path' => '/v1/sources',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'gatewayId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'k8sSourceConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'clusterId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'authorizeSecurityGroupRules' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'securityGroupId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'portRanges' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                                'description' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'nacosSourceConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'instanceId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'resourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetSource' => [
+            'path' => '/v1/sources/{sourceId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'sourceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSource' => [
+            'path' => '/v1/sources/{sourceId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'sourceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'CreateGateway' => [
             'path' => '/v1/gateways',
             'methods' => [
@@ -5168,6 +5607,37 @@
             'path' => '/v1/gateways/{gatewayId}/restart',
             'methods' => [
                 'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'gatewayId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListGatewayFeatures' => [
+            'path' => '/v1/gateways/{gatewayId}/gateway-features',
+            'methods' => [
+                'get',
             ],
             'schemes' => [
                 'https',
@@ -7629,37 +8099,6 @@
                 [
                     'name' => 'gatewayType',
                     'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListGatewayFeatures' => [
-            'path' => '/v1/gateways/{gatewayId}/gateway-features',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'gatewayId',
-                    'in' => 'path',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

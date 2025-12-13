@@ -7521,6 +7521,30 @@
                         'maxItems' => 10,
                     ],
                 ],
+                [
+                    'name' => 'CloudAssetQueryData',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Data' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Operator' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 1,
+                    ],
+                ],
             ],
         ],
         'DescribeImageInfoList' => [
@@ -26737,6 +26761,15 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'ResourceDirectoryAccountId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyCreateVulWhitelist' => [
@@ -27156,6 +27189,15 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceDirectoryAccountId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -49689,6 +49731,40 @@
                 ],
                 [
                     'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeCloudVendorProductTemplateConfig' => [
+            'path' => '',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Vendor',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Lang',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

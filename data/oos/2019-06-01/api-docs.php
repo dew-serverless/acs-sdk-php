@@ -6105,6 +6105,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'BindType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListGitRepositories' => [

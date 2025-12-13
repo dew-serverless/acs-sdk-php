@@ -166,6 +166,10 @@
                                     ],
                                 ],
                             ],
+                            'prefix' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

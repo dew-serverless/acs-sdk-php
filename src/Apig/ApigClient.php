@@ -67,6 +67,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listServicesAsync($arguments = [])
  * @method \Dew\Acs\Result deleteService(array $arguments = [])
  * @method \Http\Promise\Promise deleteServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result createServiceVersion(array $arguments = [])
+ * @method \Http\Promise\Promise createServiceVersionAsync($arguments = [])
+ * @method \Dew\Acs\Result updateServiceVersion(array $arguments = [])
+ * @method \Http\Promise\Promise updateServiceVersionAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteServiceVersion(array $arguments = [])
+ * @method \Http\Promise\Promise deleteServiceVersionAsync($arguments = [])
+ * @method \Dew\Acs\Result createSource(array $arguments = [])
+ * @method \Http\Promise\Promise createSourceAsync($arguments = [])
+ * @method \Dew\Acs\Result getSource(array $arguments = [])
+ * @method \Http\Promise\Promise getSourceAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteSource(array $arguments = [])
+ * @method \Http\Promise\Promise deleteSourceAsync($arguments = [])
  * @method \Dew\Acs\Result createGateway(array $arguments = [])
  * @method \Http\Promise\Promise createGatewayAsync($arguments = [])
  * @method \Dew\Acs\Result updateGatewayName(array $arguments = [])
@@ -89,6 +101,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listZonesAsync($arguments = [])
  * @method \Dew\Acs\Result restartGateway(array $arguments = [])
  * @method \Http\Promise\Promise restartGatewayAsync($arguments = [])
+ * @method \Dew\Acs\Result listGatewayFeatures(array $arguments = [])
+ * @method \Http\Promise\Promise listGatewayFeaturesAsync($arguments = [])
  * @method \Dew\Acs\Result removeConsumerAuthorizationRule(array $arguments = [])
  * @method \Http\Promise\Promise removeConsumerAuthorizationRuleAsync($arguments = [])
  * @method \Dew\Acs\Result queryConsumerAuthorizationRules(array $arguments = [])
@@ -183,8 +197,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteEnvironmentAsync($arguments = []) {@deprecated 2024-03-27}
  * @method \Dew\Acs\Result listEnvironments(array $arguments = []) {@deprecated 2024-03-27}
  * @method \Http\Promise\Promise listEnvironmentsAsync($arguments = []) {@deprecated 2024-03-27}
- * @method \Dew\Acs\Result listGatewayFeatures(array $arguments = [])
- * @method \Http\Promise\Promise listGatewayFeaturesAsync($arguments = [])
  */
 final class ApigClient extends AcsClient
 {

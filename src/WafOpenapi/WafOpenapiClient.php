@@ -235,6 +235,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDefenseRuleStatisticsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeBaseSystemRules(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeBaseSystemRulesAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeBotRuleLabels(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeBotRuleLabelsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result createMajorProtectionBlackIp(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise createMajorProtectionBlackIpAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyMajorProtectionBlackIp(array $arguments = []) {@since 2021-10-01}

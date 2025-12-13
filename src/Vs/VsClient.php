@@ -27,6 +27,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyRenderingInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result rebootRenderingInstance(array $arguments = [])
  * @method \Http\Promise\Promise rebootRenderingInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result rebootRenderingServer(array $arguments = [])
+ * @method \Http\Promise\Promise rebootRenderingServerAsync($arguments = [])
  * @method \Dew\Acs\Result resetRenderingInstance(array $arguments = [])
  * @method \Http\Promise\Promise resetRenderingInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result modifyRenderingInstanceBandwidth(array $arguments = [])

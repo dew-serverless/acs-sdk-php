@@ -11,6 +11,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getAuthCodeAsync($arguments = []) {@since 2021-02-18}
  * @method \Dew\Acs\Result expireLoginToken(array $arguments = []) {@since 2021-02-18}
  * @method \Http\Promise\Promise expireLoginTokenAsync($arguments = []) {@since 2021-02-18}
+ * @method \Dew\Acs\Result clientUserLogout(array $arguments = []) {@since 2021-02-20}
+ * @method \Http\Promise\Promise clientUserLogoutAsync($arguments = []) {@since 2021-02-20}
  * @method \Dew\Acs\Result getLoginToken(array $arguments = []) {@since 2021-02-20}
  * @method \Http\Promise\Promise getLoginTokenAsync($arguments = []) {@since 2021-02-20}
  * @method \Dew\Acs\Result refreshLoginToken(array $arguments = []) {@since 2021-02-20}

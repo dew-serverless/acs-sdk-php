@@ -43,6 +43,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listJobExecutorsAsync($arguments = [])
  * @method \Dew\Acs\Result listExecutors(array $arguments = [])
  * @method \Http\Promise\Promise listExecutorsAsync($arguments = [])
+ * @method \Dew\Acs\Result listExecutorEvents(array $arguments = [])
+ * @method \Http\Promise\Promise listExecutorEventsAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteJobRecords(array $arguments = [])
+ * @method \Http\Promise\Promise deleteJobRecordsAsync($arguments = [])
  * @method \Dew\Acs\Result describeJobMetricData(array $arguments = [])
  * @method \Http\Promise\Promise describeJobMetricDataAsync($arguments = [])
  * @method \Dew\Acs\Result describeJobMetricLast(array $arguments = [])
@@ -63,8 +67,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listPoolsAsync($arguments = [])
  * @method \Dew\Acs\Result deletePool(array $arguments = [])
  * @method \Http\Promise\Promise deletePoolAsync($arguments = [])
- * @method \Dew\Acs\Result deleteJobRecords(array $arguments = [])
- * @method \Http\Promise\Promise deleteJobRecordsAsync($arguments = [])
  */
 final class EhpcInstantClient extends AcsClient
 {

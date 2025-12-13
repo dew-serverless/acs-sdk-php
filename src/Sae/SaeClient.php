@@ -303,6 +303,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateNamespaceSlsConfigsAsync($arguments = [])
  * @method \Dew\Acs\Result disableArms(array $arguments = [])
  * @method \Http\Promise\Promise disableArmsAsync($arguments = [])
+ * @method \Dew\Acs\Result resumeTraffic(array $arguments = [])
+ * @method \Http\Promise\Promise resumeTrafficAsync($arguments = [])
+ * @method \Dew\Acs\Result suspendTraffic(array $arguments = [])
+ * @method \Http\Promise\Promise suspendTrafficAsync($arguments = [])
  */
 final class SaeClient extends AcsClient
 {

@@ -561,6 +561,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise resetAccountPasswordAsync($arguments = [])
  * @method \Dew\Acs\Result updateExtensions(array $arguments = [])
  * @method \Http\Promise\Promise updateExtensionsAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteAINodes(array $arguments = [])
+ * @method \Http\Promise\Promise deleteAINodesAsync($arguments = [])
+ * @method \Dew\Acs\Result createAINodes(array $arguments = [])
+ * @method \Http\Promise\Promise createAINodesAsync($arguments = [])
  */
 final class PolardbClient extends AcsClient
 {

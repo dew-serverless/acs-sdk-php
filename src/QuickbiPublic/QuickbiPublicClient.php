@@ -85,6 +85,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteUserTagMetaAsync($arguments = [])
  * @method \Dew\Acs\Result getDataSourceConnectionInfo(array $arguments = [])
  * @method \Http\Promise\Promise getDataSourceConnectionInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result getMailTaskList(array $arguments = [])
+ * @method \Http\Promise\Promise getMailTaskListAsync($arguments = [])
  * @method \Dew\Acs\Result getMailTaskStatus(array $arguments = [])
  * @method \Http\Promise\Promise getMailTaskStatusAsync($arguments = [])
  * @method \Dew\Acs\Result getUserGroupInfo(array $arguments = [])

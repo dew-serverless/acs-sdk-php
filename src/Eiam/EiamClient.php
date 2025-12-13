@@ -415,6 +415,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listEiamInstancesAsync($arguments = [])
  * @method \Dew\Acs\Result listApplicationSupportedProvisionProtocolTypes(array $arguments = [])
  * @method \Http\Promise\Promise listApplicationSupportedProvisionProtocolTypesAsync($arguments = [])
+ * @method \Dew\Acs\Result updateApplicationSsoFormParams(array $arguments = [])
+ * @method \Http\Promise\Promise updateApplicationSsoFormParamsAsync($arguments = [])
  */
 final class EiamClient extends AcsClient
 {

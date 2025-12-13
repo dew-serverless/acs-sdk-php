@@ -111,6 +111,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getJobRunAsync($arguments = [])
  * @method \Dew\Acs\Result startJobRun(array $arguments = [])
  * @method \Http\Promise\Promise startJobRunAsync($arguments = [])
+ * @method \Dew\Acs\Result getRunConfiguration(array $arguments = [])
+ * @method \Http\Promise\Promise getRunConfigurationAsync($arguments = [])
  * @method \Dew\Acs\Result startProcessInstance(array $arguments = [])
  * @method \Http\Promise\Promise startProcessInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result updateProcessDefinitionWithSchedule(array $arguments = [])

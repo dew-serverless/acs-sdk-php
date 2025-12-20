@@ -639,6 +639,10 @@
                                     ],
                                 ],
                             ],
+                            'MigrationOptions' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -997,6 +1001,14 @@
                                 ],
                             ],
                             'StartInstance' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'MigrationOptions' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'DisassociateMigrationOptions' => [
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
@@ -2631,6 +2643,99 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetSanityCheckTask' => [
+            'path' => '/api/v2/sanitychecks/{CheckType}/{TaskId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'CheckType',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Verbose',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateSanityCheckTask' => [
+            'path' => '/api/v2/sanitychecks/{CheckType}',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'CheckType',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'InstanceId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
                     ],
                 ],
             ],

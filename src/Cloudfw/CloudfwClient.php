@@ -539,6 +539,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise batchCopyVpcFirewallControlPolicyAsync($arguments = []) {@deprecated 2017-12-07}
  * @method \Dew\Acs\Result modifyControlPolicyPosition(array $arguments = []) {@deprecated 2017-12-07}
  * @method \Http\Promise\Promise modifyControlPolicyPositionAsync($arguments = []) {@deprecated 2017-12-07}
+ * @method \Dew\Acs\Result modifyCfwInstance(array $arguments = [])
+ * @method \Http\Promise\Promise modifyCfwInstanceAsync($arguments = [])
  */
 final class CloudfwClient extends AcsClient
 {

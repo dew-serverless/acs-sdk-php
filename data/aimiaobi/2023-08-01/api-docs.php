@@ -5702,346 +5702,6 @@
                 ],
             ],
         ],
-        'SubmitSmartClipTask' => [
-            'path' => '',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InputConfig',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => true,
-                        'properties' => [
-                            'VideoIds' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'Type' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'Id' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'Titles' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'BackgroundMusics' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'Type' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'Id' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'Stickers' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'X' => [
-                                            'type' => 'number',
-                                            'format' => 'double',
-                                            'required' => true,
-                                        ],
-                                        'Y' => [
-                                            'type' => 'number',
-                                            'format' => 'double',
-                                            'required' => true,
-                                        ],
-                                        'Width' => [
-                                            'type' => 'number',
-                                            'format' => 'double',
-                                            'required' => true,
-                                        ],
-                                        'Height' => [
-                                            'type' => 'number',
-                                            'format' => 'double',
-                                            'required' => true,
-                                        ],
-                                        'StickerId' => [
-                                            'type' => 'object',
-                                            'required' => true,
-                                            'properties' => [
-                                                'Type' => [
-                                                    'type' => 'string',
-                                                    'required' => true,
-                                                ],
-                                                'Id' => [
-                                                    'type' => 'string',
-                                                    'required' => true,
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'SpeechTexts' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'OutputConfig',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'FileName' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'pattern' => '.*\\{index\\}.*',
-                            ],
-                            'Width' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Height' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Count' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'MaxDuration' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'SaveToGeneratedContent' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'EditingConfig',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'TitleConfig' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'X' => [
-                                        'type' => 'number',
-                                        'format' => 'float',
-                                        'required' => false,
-                                    ],
-                                    'Y' => [
-                                        'type' => 'number',
-                                        'format' => 'float',
-                                        'required' => false,
-                                    ],
-                                    'TimelineIn' => [
-                                        'type' => 'number',
-                                        'format' => 'float',
-                                        'required' => false,
-                                    ],
-                                    'TimelineOut' => [
-                                        'type' => 'number',
-                                        'format' => 'float',
-                                        'required' => false,
-                                    ],
-                                    'Alignment' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                            'MediaConfig' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'Volume' => [
-                                        'type' => 'number',
-                                        'format' => 'double',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                            'SpeechConfig' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'Volume' => [
-                                        'type' => 'number',
-                                        'format' => 'double',
-                                        'required' => false,
-                                    ],
-                                    'Voice' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'Style' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'SpeechRate' => [
-                                        'type' => 'number',
-                                        'format' => 'double',
-                                        'required' => false,
-                                    ],
-                                    'AsrConfig' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'X' => [
-                                                'type' => 'number',
-                                                'format' => 'float',
-                                                'required' => false,
-                                            ],
-                                            'Y' => [
-                                                'type' => 'number',
-                                                'format' => 'float',
-                                                'required' => false,
-                                            ],
-                                            'Alignment' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Font' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'FontColor' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'FontSize' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Spacing' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'BackgroundMusicConfig' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'Volume' => [
-                                        'type' => 'number',
-                                        'format' => 'double',
-                                        'required' => false,
-                                    ],
-                                    'Style' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'ExtendParam',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetSmartClipTask' => [
-            'path' => '',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'TaskId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'SubmitCustomSourceTopicAnalysis' => [
             'methods' => [
                 'post',
@@ -9343,6 +9003,64 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'Metadata' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'VideoShots' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'StartTime' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'EndTime' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'Text' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'AsrSentences' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'StartTime' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'EndTime' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'Text' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'Text' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -9402,6 +9120,19 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IncludeFields',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
                     ],
                 ],
             ],
@@ -13249,6 +12980,346 @@
                             '$ref' => '#/components/schemas/TopicSelection',
                             'required' => false,
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'GetSmartClipTask' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'SubmitSmartClipTask' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InputConfig',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'VideoIds' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Type' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Id' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Titles' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'BackgroundMusics' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Type' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Id' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Stickers' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'X' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                            'required' => true,
+                                        ],
+                                        'Y' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                            'required' => true,
+                                        ],
+                                        'Width' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                            'required' => true,
+                                        ],
+                                        'Height' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                            'required' => true,
+                                        ],
+                                        'StickerId' => [
+                                            'type' => 'object',
+                                            'required' => true,
+                                            'properties' => [
+                                                'Type' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'Id' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SpeechTexts' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OutputConfig',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'FileName' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'pattern' => '.*\\{index\\}.*',
+                            ],
+                            'Width' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Height' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Count' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'MaxDuration' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'SaveToGeneratedContent' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'EditingConfig',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'TitleConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'X' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'Y' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'TimelineIn' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'TimelineOut' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'Alignment' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'MediaConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Volume' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'SpeechConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Volume' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                    'Voice' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Style' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SpeechRate' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                    'AsrConfig' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'X' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Y' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Alignment' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Font' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'FontColor' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'FontSize' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Spacing' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'BackgroundMusicConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Volume' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                    'Style' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ExtendParam',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

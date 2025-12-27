@@ -5002,12 +5002,16 @@
             'endpoint' => 'dlfnext.cn-hangzhou.aliyuncs.com',
         ],
         [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'dlfnext.us-west-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'eu-central-1',
             'endpoint' => 'dlfnext.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'dlfnext.us-west-1.aliyuncs.com',
+            'regionId' => 'us-east-1',
+            'endpoint' => 'dlfnext.us-east-1.aliyuncs.com',
         ],
     ],
 ];

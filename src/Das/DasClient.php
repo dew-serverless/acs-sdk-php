@@ -225,6 +225,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteCloudBenchTaskAsync($arguments = [])
  * @method \Dew\Acs\Result deleteStopGateway(array $arguments = [])
  * @method \Http\Promise\Promise deleteStopGatewayAsync($arguments = [])
+ * @method \Dew\Acs\Result getInstanceGroupInspectReportDetail(array $arguments = [])
+ * @method \Http\Promise\Promise getInstanceGroupInspectReportDetailAsync($arguments = [])
+ * @method \Dew\Acs\Result getInstanceGroupInspectReportList(array $arguments = [])
+ * @method \Http\Promise\Promise getInstanceGroupInspectReportListAsync($arguments = [])
  */
 final class DasClient extends AcsClient
 {

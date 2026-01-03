@@ -91,6 +91,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDataAgentSessionAsync($arguments = [])
  * @method \Dew\Acs\Result createDataAgentSession(array $arguments = [])
  * @method \Http\Promise\Promise createDataAgentSessionAsync($arguments = [])
+ * @method \Dew\Acs\Result listFileUpload(array $arguments = [])
+ * @method \Http\Promise\Promise listFileUploadAsync($arguments = [])
  */
 final class DmsClient extends AcsClient
 {

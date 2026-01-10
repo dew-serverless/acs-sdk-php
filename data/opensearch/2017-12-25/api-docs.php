@@ -1387,6 +1387,42 @@
                                         'format' => 'int32',
                                         'required' => false,
                                     ],
+                                    'textSparseEmbeddingModel' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'textEmbeddingModel' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'chunkModels' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'imageContentRecognizerModels' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'graphRag' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                    ],
+                                    'vectorIndexConfigs' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                        ],
+                                    ],
                                 ],
                             ],
                             'domain' => [
@@ -1405,6 +1441,34 @@
                                         'type' => 'object',
                                         'required' => false,
                                     ],
+                                ],
+                            ],
+                            'realtimeShared' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'interpretations' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                ],
+                            ],
+                            'prompts' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                ],
+                            ],
+                            'configItems' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
                                 ],
                             ],
                         ],

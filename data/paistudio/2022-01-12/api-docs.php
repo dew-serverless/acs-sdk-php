@@ -1088,6 +1088,12 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'SubNodes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
                 ],
             ],
             'NodeGPUMetric' => [
@@ -6382,6 +6388,54 @@
                 ],
                 [
                     'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HealthRate',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'operation' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'value' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HealthCount',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'operation' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'value' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LayoutMode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

@@ -37,6 +37,9 @@
                     'executionRoleArn' => [
                         'type' => 'string',
                     ],
+                    'credentialName' => [
+                        'type' => 'string',
+                    ],
                     'agentRuntimeVersion' => [
                         'type' => 'string',
                     ],
@@ -1180,6 +1183,9 @@
                     ],
                     'armsConfiguration' => [
                         '$ref' => '#/components/schemas/ArmsConfiguration',
+                    ],
+                    'executionRoleArn' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2836,6 +2842,9 @@
                     'logConfiguration' => [
                         '$ref' => '#/components/schemas/LogConfiguration',
                     ],
+                    'executionRoleArn' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'ModelProxyResult' => [
@@ -3061,6 +3070,60 @@
                                         'modelName' => [
                                             'type' => 'string',
                                         ],
+                                    ],
+                                ],
+                            ],
+                            'tokenRateLimiter' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'tps' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'tpm' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'tph' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'tpd' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                ],
+                            ],
+                            'aiGuardrailConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'checkRequest' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'checkResponse' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'level' => [
+                                        'type' => 'string',
+                                    ],
+                                    'maxTextLength' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'blockOnContentModeration' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'blockOnSensitiveData' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'blockOnPromptAttack' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'blockOnMaliciousUrl' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'blockOnModelHallucination' => [
+                                        'type' => 'boolean',
                                     ],
                                 ],
                             ],
@@ -3881,6 +3944,9 @@
                     ],
                     'armsConfiguration' => [
                         '$ref' => '#/components/schemas/ArmsConfiguration',
+                    ],
+                    'executionRoleArn' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -6739,6 +6805,22 @@
         [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'agentrun.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'agentrun.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'agentrun.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'agentrun.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'agentrun.ap-southeast-1.aliyuncs.com',
         ],
     ],
 ];

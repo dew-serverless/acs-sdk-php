@@ -73,6 +73,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateLindormInstanceAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result updateLindormV2Instance(array $arguments = [])
  * @method \Http\Promise\Promise updateLindormV2InstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result updateLindormV2WhiteIpList(array $arguments = [])
+ * @method \Http\Promise\Promise updateLindormV2WhiteIpListAsync($arguments = [])
  * @method \Dew\Acs\Result upgradeLindormInstance(array $arguments = [])
  * @method \Http\Promise\Promise upgradeLindormInstanceAsync($arguments = [])
  */

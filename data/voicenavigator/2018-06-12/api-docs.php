@@ -199,6 +199,13 @@
                     ],
                 ],
                 [
+                    'name' => 'PitchRate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
                     'name' => 'NlsServiceType',
                     'in' => 'query',
                     'schema' => [

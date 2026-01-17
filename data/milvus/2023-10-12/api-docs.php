@@ -7,6 +7,70 @@
     ],
     'components' => [
         'schemas' => [
+            'DBVersionDetail' => [
+                'type' => 'object',
+                'properties' => [
+                    'version' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'specs' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'zoneMode' => [
+                                    'type' => 'string',
+                                ],
+                                'isStandalone' => [
+                                    'type' => 'boolean',
+                                ],
+                                'isHA' => [
+                                    'type' => 'boolean',
+                                ],
+                                'componentSpecs' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'name' => [
+                                                'type' => 'string',
+                                            ],
+                                            'type' => [
+                                                'type' => 'string',
+                                            ],
+                                            'specs' => [
+                                                'type' => 'array',
+                                                'items' => [
+                                                    'type' => 'string',
+                                                ],
+                                            ],
+                                            'minReplicas' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
+                                            'maxReplicas' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
+                                            'step' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
+                                            'defaultReplicas' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'InstanceDetail' => [
                 'type' => 'object',
                 'properties' => [
@@ -128,6 +192,125 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+            ],
+            'MigrationSource' => [
+                'type' => 'object',
+                'properties' => [
+                    'endpoint' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'endpoint' => [
+                                'type' => 'string',
+                            ],
+                            'port' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'database' => [
+                        'type' => 'string',
+                    ],
+                    'authInfo' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'token' => [
+                                'type' => 'string',
+                            ],
+                            'username' => [
+                                'type' => 'string',
+                            ],
+                            'password' => [
+                                'type' => 'string',
+                            ],
+                            'authType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'PriceInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'currency' => [
+                        'type' => 'string',
+                    ],
+                    'originalAmount' => [
+                        'type' => 'string',
+                    ],
+                    'tradeAmount' => [
+                        'type' => 'string',
+                    ],
+                    'discountAmount' => [
+                        'type' => 'string',
+                    ],
+                    'taxAmount' => [
+                        'type' => 'string',
+                    ],
+                    'optionalPromotions' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/PromotionInfo',
+                        ],
+                    ],
+                    'priceModules' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'type' => [
+                                    'type' => 'string',
+                                ],
+                                'originalAmount' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'rules' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'ruleId' => [
+                                    'type' => 'string',
+                                ],
+                                'amount' => [
+                                    'type' => 'string',
+                                ],
+                                'name' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'PromotionInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'promotionOptionCode' => [
+                        'type' => 'string',
+                    ],
+                    'promotionOptionNo' => [
+                        'type' => 'string',
+                    ],
+                    'promotionName' => [
+                        'type' => 'string',
+                    ],
+                    'promotionDesc' => [
+                        'type' => 'string',
+                    ],
+                    'canPromFee' => [
+                        'type' => 'string',
+                    ],
+                    'isSelected' => [
+                        'type' => 'boolean',
+                    ],
+                    'selected' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],

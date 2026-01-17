@@ -12800,6 +12800,15 @@
             'vpc' => 'us-west-1-intranet.log.aliyuncs.com',
         ],
         [
+            'regionId' => 'us-southeast-1',
+            'regionName' => '美国（亚特兰大）',
+            'areaId' => 'europeAmerica',
+            'areaName' => '欧洲与美洲',
+            'public' => 'us-southeast-1.log.aliyuncs.com',
+            'endpoint' => 'us-southeast-1.log.aliyuncs.com',
+            'vpc' => '',
+        ],
+        [
             'regionId' => 'us-east-1',
             'regionName' => '美国（弗吉尼亚）',
             'areaId' => 'europeAmerica',

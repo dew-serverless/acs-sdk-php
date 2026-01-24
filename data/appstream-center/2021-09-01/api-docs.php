@@ -3760,7 +3760,15 @@
                 ],
                 [
                     'name' => 'SavingPlanId',
-                    'in' => 'query',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HostName',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

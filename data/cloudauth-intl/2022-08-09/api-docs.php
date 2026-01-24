@@ -1138,7 +1138,7 @@
                 ],
                 [
                     'name' => 'SourceAFacePicture',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1154,7 +1154,7 @@
                 ],
                 [
                     'name' => 'SourceBFacePicture',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1170,7 +1170,7 @@
                 ],
                 [
                     'name' => 'SourceCFacePicture',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

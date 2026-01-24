@@ -171,10 +171,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyAutoRenewAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result describeUserEncryptionKeyList(array $arguments = [])
  * @method \Http\Promise\Promise describeUserEncryptionKeyListAsync($arguments = [])
+ * @method \Dew\Acs\Result electZookeeperLeader(array $arguments = [])
+ * @method \Http\Promise\Promise electZookeeperLeaderAsync($arguments = [])
  * @method \Dew\Acs\Result describeDBClusterNodeInfos(array $arguments = [])
  * @method \Http\Promise\Promise describeDBClusterNodeInfosAsync($arguments = [])
  * @method \Dew\Acs\Result cancelAppointmentElectZookeeperLeader(array $arguments = [])
  * @method \Http\Promise\Promise cancelAppointmentElectZookeeperLeaderAsync($arguments = [])
+ * @method \Dew\Acs\Result restartInstanceNodeList(array $arguments = [])
+ * @method \Http\Promise\Promise restartInstanceNodeListAsync($arguments = [])
  * @method \Dew\Acs\Result cancelAppointmentRestartInstanceNodeList(array $arguments = [])
  * @method \Http\Promise\Promise cancelAppointmentRestartInstanceNodeListAsync($arguments = [])
  * @method \Dew\Acs\Result deleteDBInstance(array $arguments = []) {@since 2023-05-22}
@@ -217,6 +221,20 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDBInstanceConfigChangeLogAsync($arguments = []) {@since 2023-05-22}
  * @method \Dew\Acs\Result describeDBInstanceConfig(array $arguments = []) {@since 2023-05-22}
  * @method \Http\Promise\Promise describeDBInstanceConfigAsync($arguments = []) {@since 2023-05-22}
+ * @method \Dew\Acs\Result deleteWhitelistTemplate(array $arguments = []) {@since 2023-05-22}
+ * @method \Http\Promise\Promise deleteWhitelistTemplateAsync($arguments = []) {@since 2023-05-22}
+ * @method \Dew\Acs\Result detachWhitelistTemplateToInstance(array $arguments = []) {@since 2023-05-22}
+ * @method \Http\Promise\Promise detachWhitelistTemplateToInstanceAsync($arguments = []) {@since 2023-05-22}
+ * @method \Dew\Acs\Result updateWhitelistTemplate(array $arguments = []) {@since 2023-05-22}
+ * @method \Http\Promise\Promise updateWhitelistTemplateAsync($arguments = []) {@since 2023-05-22}
+ * @method \Dew\Acs\Result getWhitelistTemplate(array $arguments = []) {@since 2023-05-22}
+ * @method \Http\Promise\Promise getWhitelistTemplateAsync($arguments = []) {@since 2023-05-22}
+ * @method \Dew\Acs\Result attachWhitelistTemplateToInstance(array $arguments = []) {@since 2023-05-22}
+ * @method \Http\Promise\Promise attachWhitelistTemplateToInstanceAsync($arguments = []) {@since 2023-05-22}
+ * @method \Dew\Acs\Result listWhitelistTemplates(array $arguments = []) {@since 2023-05-22}
+ * @method \Http\Promise\Promise listWhitelistTemplatesAsync($arguments = []) {@since 2023-05-22}
+ * @method \Dew\Acs\Result listInstanceLinkedWhitelistTemplates(array $arguments = []) {@since 2023-05-22}
+ * @method \Http\Promise\Promise listInstanceLinkedWhitelistTemplatesAsync($arguments = []) {@since 2023-05-22}
  */
 final class ClickhouseClient extends AcsClient
 {

@@ -2484,17 +2484,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'enum' => [
-                            'Wrr',
-                            'Wlc',
-                            'rr',
-                            'RR',
-                            'WLC',
-                            'WRR',
-                            'wrr',
-                            'wlc',
-                            'Rr',
-                        ],
                     ],
                 ],
                 [

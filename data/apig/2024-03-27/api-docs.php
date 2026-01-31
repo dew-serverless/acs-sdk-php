@@ -1910,6 +1910,113 @@
                     ],
                 ],
             ],
+            'RiskCheckResults' => [
+                'type' => 'object',
+                'properties' => [
+                    'gatewayId' => [
+                        'type' => 'string',
+                    ],
+                    'metadata' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'clusterType' => [
+                                'type' => 'string',
+                            ],
+                            'version' => [
+                                'type' => 'string',
+                            ],
+                            'spec' => [
+                                'type' => 'string',
+                            ],
+                            'replica' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'SUCCESS',
+                            'FAIL',
+                            'RUNNING',
+                        ],
+                    ],
+                    'score' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'minimum' => '0',
+                        'maximum' => '100',
+                    ],
+                    'riskLevel' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'LOW',
+                            'MEDIUM',
+                            'HIGH',
+                        ],
+                    ],
+                    'totalRisk' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'checkTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'snapshotTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'riskDetails' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'riskCode' => [
+                                    'type' => 'string',
+                                ],
+                                'riskType' => [
+                                    'type' => 'string',
+                                ],
+                                'riskName' => [
+                                    'type' => 'string',
+                                ],
+                                'riskLevel' => [
+                                    'type' => 'string',
+                                    'enum' => [
+                                        'CRITICAL',
+                                        'HIGH',
+                                        'MEDIUM',
+                                        'LOW',
+                                    ],
+                                ],
+                                'description' => [
+                                    'type' => 'string',
+                                ],
+                                'situation' => [
+                                    'type' => 'string',
+                                ],
+                                'suggestion' => [
+                                    'type' => 'string',
+                                ],
+                                'isNoticeMute' => [
+                                    'type' => 'boolean',
+                                ],
+                                'checkModule' => [
+                                    'type' => 'string',
+                                ],
+                                'data' => [
+                                    'type' => 'object',
+                                    'additionalProperties' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'Service' => [
                 'type' => 'object',
                 'properties' => [
@@ -4684,6 +4791,184 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateService' => [
+            'path' => '/v1/services/{serviceId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'serviceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'addresses' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'healthCheckConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'enable' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'protocol' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'timeout' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'interval' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'healthyThreshold' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'unhealthyThreshold' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'httpPath' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'httpHost' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'expectedStatuses' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'protocol' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'aiServiceConfig' => [
+                                '$ref' => '#/components/schemas/AiServiceConfig',
+                                'required' => false,
+                            ],
+                            'agentServiceConfig' => [
+                                '$ref' => '#/components/schemas/AgentServiceConfig',
+                                'required' => false,
+                            ],
+                            'dnsServers' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'ports' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'port' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'protocol' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'healthyPanicThreshold' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'outlierDetectionConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'enable' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'baseEjectionTime' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'failurePercentageThreshold' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'failurePercentageMinimumHosts' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'interval' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

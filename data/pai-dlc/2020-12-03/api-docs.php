@@ -275,6 +275,12 @@
                             'config',
                         ],
                     ],
+                    'EnableResourceEstimation' => [
+                        'type' => 'boolean',
+                    ],
+                    'ResourceLimit' => [
+                        '$ref' => '#/components/schemas/ResourceLimit',
+                    ],
                 ],
             ],
             'DataSourceItem' => [
@@ -1037,6 +1043,16 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
+                    'EstimatedPodCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'EstimatedAutoScalingSpec' => [
+                        '$ref' => '#/components/schemas/AutoScalingSpec',
+                    ],
+                    'EstimatedResourceConfig' => [
+                        '$ref' => '#/components/schemas/ResourceConfig',
+                    ],
                 ],
             ],
             'JobSettings' => [
@@ -1178,6 +1194,12 @@
                     ],
                     'SystemDisk' => [
                         '$ref' => '#/components/schemas/SystemDisk',
+                    ],
+                    'StartupDependencies' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/StartupDependency',
+                        ],
                     ],
                 ],
             ],
@@ -1481,6 +1503,20 @@
                     ],
                 ],
             ],
+            'ResourceLimit' => [
+                'type' => 'object',
+                'properties' => [
+                    'CPU' => [
+                        'type' => 'string',
+                    ],
+                    'Memory' => [
+                        'type' => 'string',
+                    ],
+                    'GPU' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ResourceRequirements' => [
                 'type' => 'object',
                 'properties' => [
@@ -1703,6 +1739,23 @@
                     'SpotPriceLimit' => [
                         'type' => 'number',
                         'format' => 'float',
+                    ],
+                ],
+            ],
+            'StartupDependency' => [
+                'type' => 'object',
+                'properties' => [
+                    'Type' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'OnPhase' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'MinReplicas' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

@@ -69,17 +69,23 @@
             'GenericSearchResult' => [
                 'type' => 'object',
                 'properties' => [
-                    'requestId' => [
-                        'type' => 'string',
-                    ],
-                    'queryContext' => [
-                        '$ref' => '#/components/schemas/QueryContext',
-                    ],
                     'pageItems' => [
                         'type' => 'array',
                         'items' => [
                             '$ref' => '#/components/schemas/ScorePageItem',
                         ],
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'weiboItems' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/WeiboItem',
+                        ],
+                    ],
+                    'searchInformation' => [
+                        '$ref' => '#/components/schemas/SearchInformation',
                     ],
                     'sceneItems' => [
                         'type' => 'array',
@@ -87,14 +93,8 @@
                             '$ref' => '#/components/schemas/SceneItem',
                         ],
                     ],
-                    'searchInformation' => [
-                        '$ref' => '#/components/schemas/SearchInformation',
-                    ],
-                    'weiboItems' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/WeiboItem',
-                        ],
+                    'queryContext' => [
+                        '$ref' => '#/components/schemas/QueryContext',
                     ],
                 ],
             ],
@@ -254,6 +254,17 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                    ],
+                ],
+            ],
+            'LocationInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'ip' => [
+                        'type' => 'string',
+                    ],
+                    'city' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -729,6 +740,9 @@
                     ],
                     'advancedParams' => [
                         'type' => 'object',
+                    ],
+                    'locationInfo' => [
+                        '$ref' => '#/components/schemas/LocationInfo',
                     ],
                 ],
             ],

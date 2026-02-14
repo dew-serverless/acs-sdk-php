@@ -457,6 +457,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeGlobalDesktopRecordsAsync($arguments = [])
  * @method \Dew\Acs\Result batchModifyEntitlement(array $arguments = [])
  * @method \Http\Promise\Promise batchModifyEntitlementAsync($arguments = [])
+ * @method \Dew\Acs\Result describeGlobalTimerBatches(array $arguments = [])
+ * @method \Http\Promise\Promise describeGlobalTimerBatchesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeGlobalTimerRecords(array $arguments = [])
+ * @method \Http\Promise\Promise describeGlobalTimerRecordsAsync($arguments = [])
  * @method \Dew\Acs\Result describeGlobalDesktops(array $arguments = []) {@since 2020-10-02}
  * @method \Http\Promise\Promise describeGlobalDesktopsAsync($arguments = []) {@since 2020-10-02}
  * @method \Dew\Acs\Result describeUserResources(array $arguments = []) {@since 2020-10-02}

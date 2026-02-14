@@ -607,6 +607,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeViewJobsAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeMvRecommendSubTasks(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise describeMvRecommendSubTasksAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeAutoRenewalAttribute(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeAutoRenewalAttributeAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result modifyAutoRenewalAttribute(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise modifyAutoRenewalAttributeAsync($arguments = []) {@since 2021-12-01}
  */
 final class AdbClient extends AcsClient
 {

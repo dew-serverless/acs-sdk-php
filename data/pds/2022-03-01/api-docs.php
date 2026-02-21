@@ -2945,6 +2945,22 @@
                             ],
                         ],
                     ],
+                    'bool_equals' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'is_share_link' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
+                    'bool_not_equals' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'is_share_link' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'PersonalRightsInfoResponse' => [
@@ -9620,6 +9636,10 @@
                             'file_id' => [
                                 'type' => 'string',
                                 'required' => true,
+                            ],
+                            'custom_trashed_at' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],

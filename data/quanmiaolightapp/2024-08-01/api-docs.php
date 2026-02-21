@@ -838,6 +838,40 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'addDocumentParam',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'datasetId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'datasetName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'document' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'title' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'docId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'GetVideoAnalysisTask' => [
@@ -1381,6 +1415,40 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'addDocumentParam',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'datasetId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'datasetName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'document' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'title' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'docId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

@@ -65,6 +65,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createServiceAsync($arguments = [])
  * @method \Dew\Acs\Result listServices(array $arguments = [])
  * @method \Http\Promise\Promise listServicesAsync($arguments = [])
+ * @method \Dew\Acs\Result updateService(array $arguments = [])
+ * @method \Http\Promise\Promise updateServiceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteService(array $arguments = [])
  * @method \Http\Promise\Promise deleteServiceAsync($arguments = [])
  * @method \Dew\Acs\Result createServiceVersion(array $arguments = [])

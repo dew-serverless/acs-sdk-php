@@ -4543,6 +4543,17 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Module',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'sla',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribePortAutoCcStatus' => [

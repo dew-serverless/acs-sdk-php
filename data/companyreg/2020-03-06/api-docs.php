@@ -1569,11 +1569,19 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
                     'name' => 'Remark',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EmployeeCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1620,11 +1628,19 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
                     'name' => 'Remark',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EmployeeCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

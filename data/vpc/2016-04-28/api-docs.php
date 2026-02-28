@@ -11745,6 +11745,14 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'OpticalModuleModel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ApplyPhysicalConnectionLOA' => [
@@ -12335,6 +12343,10 @@
                                     'required' => false,
                                 ],
                                 'CircuitCode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OpticalModuleModel' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],

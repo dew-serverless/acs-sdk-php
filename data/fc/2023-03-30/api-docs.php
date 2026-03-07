@@ -1481,25 +1481,28 @@
             'InstanceInfo' => [
                 'type' => 'object',
                 'properties' => [
-                    'versionId' => [
-                        'type' => 'string',
-                    ],
                     'instanceId' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                    'versionId' => [
+                        'type' => 'string',
+                    ],
+                    'qualifier' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
                     ],
                     'createdTimeMs' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'qualifier' => [
-                        'type' => 'string',
-                    ],
                     'destroyedTimeMs' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'status' => [
+                    'resourceType' => [
                         'type' => 'string',
                     ],
                 ],
@@ -2368,6 +2371,12 @@
                             '$ref' => '#/components/schemas/ScalingPolicy',
                         ],
                     ],
+                    'enableMixMode' => [
+                        'type' => 'boolean',
+                    ],
+                    'requestDispatchPolicy' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'PutScalingConfigOutput' => [
@@ -2775,6 +2784,12 @@
                         'items' => [
                             '$ref' => '#/components/schemas/ScalingPolicy',
                         ],
+                    ],
+                    'enableMixMode' => [
+                        'type' => 'boolean',
+                    ],
+                    'requestDispatchPolicy' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

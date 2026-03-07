@@ -1233,6 +1233,7 @@
                         'enum' => [
                             'android',
                             'win',
+                            'android_appmarket',
                         ],
                     ],
                 ],
@@ -1243,6 +1244,24 @@
                         'type' => 'string',
                         'required' => false,
                         'maxLength' => 255,
+                    ],
+                ],
+                [
+                    'name' => 'PkgLabels',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'enum' => [
+                                'app',
+                                'game',
+                                'hot',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -1295,6 +1314,7 @@
                         'enum' => [
                             'android',
                             'win',
+                            'android_appmarket',
                         ],
                     ],
                 ],
@@ -1329,6 +1349,30 @@
                 ],
                 [
                     'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LatestVersionOnly',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PkgLabel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1379,7 +1423,7 @@
                 ],
                 [
                     'name' => 'Patch',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
@@ -1399,6 +1443,37 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'PkgFormat' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'tar',
+                                    'tar.gz',
+                                    'zip',
+                                    'rar',
+                                ],
+                            ],
+                            'RenderingInstanceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AsStablePatch' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PkgLabels',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
                         ],
                     ],
                 ],

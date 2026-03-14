@@ -256,6 +256,31 @@
                     'ActualValue' => [
                         'type' => 'string',
                     ],
+                    'ExpressionMetaDesc' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'LeftFieldType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'LeftOperand' => [
+                                'type' => 'string',
+                            ],
+                            'Operator' => [
+                                'type' => 'string',
+                            ],
+                            'RightFieldType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'RightOperand' => [
+                                'type' => 'string',
+                            ],
+                            'RoundingMode' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'NextNodeSituations' => [

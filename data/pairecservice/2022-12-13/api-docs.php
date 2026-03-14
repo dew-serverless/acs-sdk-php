@@ -5974,5 +5974,29 @@
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'pairecservice.cn-shenzhen.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'pairecservice.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'pairecservice.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'pairecservice.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'pairecservice.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'pairecservice.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'pairecservice.eu-central-1.aliyuncs.com',
+        ],
     ],
 ];

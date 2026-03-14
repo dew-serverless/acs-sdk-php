@@ -73,6 +73,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getUserCommandAsync($arguments = [])
  * @method \Dew\Acs\Result listSystemLogs(array $arguments = [])
  * @method \Http\Promise\Promise listSystemLogsAsync($arguments = [])
+ * @method \Dew\Acs\Result getSanityCheckTask(array $arguments = [])
+ * @method \Http\Promise\Promise getSanityCheckTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result createSanityCheckTask(array $arguments = [])
+ * @method \Http\Promise\Promise createSanityCheckTaskAsync($arguments = [])
  */
 final class PaiDswClient extends AcsClient
 {

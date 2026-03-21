@@ -9,303 +9,8 @@
         'schemas' => [],
     ],
     'apis' => [
-        'CreateRootCACertificate' => [
+        'AssignCertificateCount' => [
             'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'CommonName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'OrganizationUnit',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Organization',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Locality',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'State',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CountryCode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Algorithm',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Years',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Tags',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreateSubCACertificate' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ParentIdentifier',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CommonName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'OrganizationUnit',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Organization',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Locality',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'State',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CountryCode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Algorithm',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Years',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PathLenConstraint',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ExtendedKeyUsages',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-                [
-                    'name' => 'EnableCrl',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CrlDay',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Tags',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreateExternalCACertificate' => [
-            'methods' => [
-                'get',
                 'post',
             ],
             'schemes' => [
@@ -319,518 +24,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Csr',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Validity',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ApiPassthrough',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'Subject' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'Country' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'State' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'Locality' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'Organization' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'OrganizationUnit' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'CommonName' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                            'Extensions' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'PathLenConstraint' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                    'ExtendedKeyUsages' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Tags',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetCAInstanceStatus' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Identifier',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeCACertificateCount' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
-        'DescribeCACertificateList' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'CurrentPage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ShowSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Identifier',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CertType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CaStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ValidStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IssuerType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeCACertificate' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Identifier',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCACertificateStatus' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Identifier',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreateCustomCertificate' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ParentIdentifier',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Csr',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Validity',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ApiPassthrough',
-                    'in' => 'query',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'Subject' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'Country' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'State' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'Locality' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'Organization' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'OrganizationUnit' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'CommonName' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'CustomAttributes' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'ObjectIdentifier' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'Value' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'Extensions' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'KeyUsage' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'DigitalSignature' => [
-                                                'type' => 'boolean',
-                                                'required' => false,
-                                            ],
-                                            'ContentCommitment' => [
-                                                'type' => 'boolean',
-                                                'required' => false,
-                                            ],
-                                            'NonRepudiation' => [
-                                                'type' => 'boolean',
-                                                'required' => false,
-                                            ],
-                                            'KeyEncipherment' => [
-                                                'type' => 'boolean',
-                                                'required' => false,
-                                            ],
-                                            'DataEncipherment' => [
-                                                'type' => 'boolean',
-                                                'required' => false,
-                                            ],
-                                            'KeyAgreement' => [
-                                                'type' => 'boolean',
-                                                'required' => false,
-                                            ],
-                                            'EncipherOnly' => [
-                                                'type' => 'boolean',
-                                                'required' => false,
-                                            ],
-                                            'DecipherOnly' => [
-                                                'type' => 'boolean',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                    ],
-                                    'ExtendedKeyUsages' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                    'SubjectAlternativeNames' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'Type' => [
-                                                    'type' => 'string',
-                                                    'required' => true,
-                                                ],
-                                                'Value' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                    'Criticals' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'SerialNumber' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Immediately',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnableCrl',
+                    'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -839,34 +33,11 @@
                     ],
                 ],
                 [
-                    'name' => 'Tags',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceGroupId',
+                    'name' => 'CertTotalCount',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -1231,6 +402,521 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateCustomCertificate' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ParentIdentifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Csr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Validity',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ApiPassthrough',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Subject' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Country' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'State' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Locality' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Organization' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'OrganizationUnit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'CommonName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'CustomAttributes' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'ObjectIdentifier' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Value' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Extensions' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'KeyUsage' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'DigitalSignature' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'ContentCommitment' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'NonRepudiation' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'KeyEncipherment' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'DataEncipherment' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'KeyAgreement' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'EncipherOnly' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'DecipherOnly' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'ExtendedKeyUsages' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'SubjectAlternativeNames' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Type' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'Value' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'Criticals' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SerialNumber' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Immediately',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableCrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateExternalCACertificate' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Csr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Validity',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ApiPassthrough',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Subject' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Country' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'State' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Locality' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Organization' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'OrganizationUnit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'CommonName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'Extensions' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'PathLenConstraint' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'ExtendedKeyUsages' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateRevokeClientCertificate' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Identifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateRootCACertificate' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'CommonName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'OrganizationUnit',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Organization',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Locality',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'State',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CountryCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Algorithm',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Years',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -1646,7 +1332,7 @@
                 ],
             ],
         ],
-        'CreateRevokeClientCertificate' => [
+        'CreateSubCACertificate' => [
             'methods' => [
                 'post',
                 'get',
@@ -1663,11 +1349,156 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Identifier',
+                    'name' => 'ParentIdentifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CommonName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'OrganizationUnit',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Organization',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Locality',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'State',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CountryCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Algorithm',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Years',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PathLenConstraint',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExtendedKeyUsages',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'EnableCrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CrlDay',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1694,6 +1525,133 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeCACertificate' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Identifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeCACertificateCount' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'DescribeCACertificateList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'CurrentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ShowSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Identifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CertType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CaStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ValidStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IssuerType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1730,6 +1688,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeClientCertificate' => [
@@ -1750,6 +1716,32 @@
             'parameters' => [
                 [
                     'name' => 'Identifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeClientCertificateForSerialNumber' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'SerialNumber',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1784,7 +1776,7 @@
                 ],
             ],
         ],
-        'ListClientCertificate' => [
+        'DescribeClientCertificateStatusForSerialNumber' => [
             'methods' => [
                 'post',
                 'get',
@@ -1801,6 +1793,32 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'SerialNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribePcaAndExternalCACertificateList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
                     'name' => 'CurrentPage',
                     'in' => 'query',
                     'schema' => [
@@ -1815,6 +1833,32 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetCAInstanceStatus' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -1826,23 +1870,14 @@
                         'required' => false,
                     ],
                 ],
-                [
-                    'name' => 'ResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
             ],
         ],
-        'ListRevokeCertificate' => [
+        'ListAllEndEntityInstance' => [
             'methods' => [
-                'post',
                 'get',
+                'post',
             ],
             'schemes' => [
-                'http',
                 'https',
             ],
             'security' => [
@@ -1852,6 +1887,24 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'ParentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RecursiveChildren',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CurrentPage',
                     'in' => 'query',
@@ -1870,14 +1923,34 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '1000',
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
-        'ListPcaCaCertificate' => [
+        'ListCACertificateLog' => [
             'methods' => [
-                'get',
                 'post',
+                'get',
             ],
             'schemes' => [
+                'http',
                 'https',
             ],
             'security' => [
@@ -1888,20 +1961,11 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'NextToken',
+                    'name' => 'Identifier',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MaxResults',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -1998,36 +2062,13 @@
                 ],
             ],
         ],
-        'UploadPcaCertToCas' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Ids',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UntagResources' => [
+        'ListClientCertificate' => [
             'methods' => [
                 'post',
                 'get',
             ],
             'schemes' => [
+                'http',
                 'https',
             ],
             'security' => [
@@ -2038,80 +2079,29 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'RegionId',
+                    'name' => 'CurrentPage',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'All',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'ResourceId',
+                    'name' => 'ShowSize',
                     'in' => 'query',
-                    'style' => 'repeatList',
                     'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 50,
-                    ],
-                ],
-                [
-                    'name' => 'TagKey',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 21,
                     ],
                 ],
-            ],
-        ],
-        'MoveResourceGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
                 [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ResourceId',
+                    'name' => 'Identifier',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -2119,22 +2109,76 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
+            ],
+        ],
+        'ListPcaCaCertificate' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
                 [
-                    'name' => 'ResourceType',
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NextToken',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'MaxResults',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListRevokeCertificate' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'CurrentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ShowSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -2230,6 +2274,55 @@
                 ],
             ],
         ],
+        'MoveResourceGroup' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'TagResources' => [
             'methods' => [
                 'post',
@@ -2299,6 +2392,117 @@
                             ],
                         ],
                         'maxItems' => 20,
+                    ],
+                ],
+            ],
+        ],
+        'UntagResources' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'All',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 50,
+                    ],
+                ],
+                [
+                    'name' => 'TagKey',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateCACertificateStatus' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Identifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2375,7 +2579,7 @@
                 ],
             ],
         ],
-        'AssignCertificateCount' => [
+        'UploadPcaCertToCas' => [
             'methods' => [
                 'post',
             ],
@@ -2390,93 +2594,11 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Id',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CertTotalCount',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListAllEndEntityInstance' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ParentId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecursiveChildren',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CurrentPage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ShowSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MaxResults',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '0',
-                        'maximum' => '1000',
-                    ],
-                ],
-                [
-                    'name' => 'NextToken',
+                    'name' => 'Ids',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -2484,44 +2606,94 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'cas.aliyuncs.com',
+            'regionId' => 'ap-southeast-2',
+            'regionName' => '澳大利亚（悉尼）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'cas.ap-southeast-2.aliyuncs.com',
+            'endpoint' => 'cas.ap-southeast-2.aliyuncs.com',
+            'vpc' => '',
         ],
         [
             'regionId' => 'cn-hongkong',
+            'regionName' => '中国香港',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'cas.cn-hongkong.aliyuncs.com',
             'endpoint' => 'cas.cn-hongkong.aliyuncs.com',
+            'vpc' => 'cas.vpc-proxy.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',
+            'regionName' => '日本（东京）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'cas.ap-northeast-1.aliyuncs.com',
             'endpoint' => 'cas.ap-northeast-1.aliyuncs.com',
+            'vpc' => 'cas.vpc-proxy.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',
+            'regionName' => '新加坡',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'cas.ap-southeast-1.aliyuncs.com',
             'endpoint' => 'cas.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'cas.ap-southeast-2.aliyuncs.com',
+            'vpc' => 'cas.vpc-proxy.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-3',
+            'regionName' => '马来西亚（吉隆坡）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'cas.ap-southeast-3.aliyuncs.com',
             'endpoint' => 'cas.ap-southeast-3.aliyuncs.com',
+            'vpc' => 'cas.vpc-proxy.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-5',
+            'regionName' => '印度尼西亚（雅加达）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'cas.ap-southeast-5.aliyuncs.com',
             'endpoint' => 'cas.ap-southeast-5.aliyuncs.com',
+            'vpc' => 'cas.vpc-proxy.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'regionName' => '华东1（杭州）',
+            'areaId' => 'asiaPacific',
+            'areaName' => '亚太',
+            'public' => 'cas.aliyuncs.com',
+            'endpoint' => 'cas.aliyuncs.com',
+            'vpc' => 'cas.vpc-proxy.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',
+            'regionName' => '德国（法兰克福）',
+            'areaId' => 'europeAmerica',
+            'areaName' => '欧洲与美洲',
+            'public' => 'cas.eu-central-1.aliyuncs.com',
             'endpoint' => 'cas.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'cas.ap-south-1.aliyuncs.com',
+            'vpc' => 'cas.vpc-proxy.aliyuncs.com',
         ],
         [
             'regionId' => 'me-east-1',
+            'regionName' => '阿联酋（迪拜）',
+            'areaId' => 'middleEast',
+            'areaName' => '中东与印度',
+            'public' => 'cas.me-east-1.aliyuncs.com',
             'endpoint' => 'cas.me-east-1.aliyuncs.com',
+            'vpc' => '',
+        ],
+        [
+            'regionId' => 'ap-south-1',
+            'regionName' => '印度（孟买）',
+            'areaId' => 'middleEast',
+            'areaName' => '中东与印度',
+            'public' => 'cas.ap-south-1.aliyuncs.com',
+            'endpoint' => 'cas.ap-south-1.aliyuncs.com',
+            'vpc' => '',
         ],
     ],
 ];

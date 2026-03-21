@@ -19,6 +19,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise runSearchLawQueryAsync($arguments = [])
  * @method \Dew\Acs\Result runSearchCaseFullText(array $arguments = [])
  * @method \Http\Promise\Promise runSearchCaseFullTextAsync($arguments = [])
+ * @method \Dew\Acs\Result runContractExtract(array $arguments = [])
+ * @method \Http\Promise\Promise runContractExtractAsync($arguments = [])
  */
 final class FaRuiClient extends AcsClient
 {

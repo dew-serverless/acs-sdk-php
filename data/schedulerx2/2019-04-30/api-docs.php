@@ -542,6 +542,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EnableLog',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListGroups' => [

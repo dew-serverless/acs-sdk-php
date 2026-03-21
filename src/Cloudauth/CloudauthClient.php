@@ -201,6 +201,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInfoCheckExportRecordAsync($arguments = [])
  * @method \Dew\Acs\Result describeOssStatusV2(array $arguments = [])
  * @method \Http\Promise\Promise describeOssStatusV2Async($arguments = [])
+ * @method \Dew\Acs\Result describeAuthVerify(array $arguments = [])
+ * @method \Http\Promise\Promise describeAuthVerifyAsync($arguments = [])
+ * @method \Dew\Acs\Result initAuthVerify(array $arguments = [])
+ * @method \Http\Promise\Promise initAuthVerifyAsync($arguments = [])
  * @method \Dew\Acs\Result entVerify(array $arguments = []) {@since 2022-11-25}
  * @method \Http\Promise\Promise entVerifyAsync($arguments = []) {@since 2022-11-25}
  * @method \Dew\Acs\Result entElementVerify(array $arguments = []) {@since 2022-11-25}

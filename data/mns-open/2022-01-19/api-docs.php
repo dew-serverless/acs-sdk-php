@@ -1486,7 +1486,7 @@
                                 '$ref' => '#/components/schemas/EventMatchRule',
                                 'required' => false,
                             ],
-                            'maxItems' => 5,
+                            'maxItems' => 6,
                         ],
                         'maxItems' => 10,
                     ],

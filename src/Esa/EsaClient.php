@@ -705,6 +705,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listInstanceQuotasAsync($arguments = [])
  * @method \Dew\Acs\Result listInstanceQuotasWithUsage(array $arguments = [])
  * @method \Http\Promise\Promise listInstanceQuotasWithUsageAsync($arguments = [])
+ * @method \Dew\Acs\Result getEdgeContainerAppResourceCapacity(array $arguments = [])
+ * @method \Http\Promise\Promise getEdgeContainerAppResourceCapacityAsync($arguments = [])
+ * @method \Dew\Acs\Result listEdgeContainerAppImageSecrets(array $arguments = [])
+ * @method \Http\Promise\Promise listEdgeContainerAppImageSecretsAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteEdgeContainerAppImageSecret(array $arguments = [])
+ * @method \Http\Promise\Promise deleteEdgeContainerAppImageSecretAsync($arguments = [])
+ * @method \Dew\Acs\Result createEdgeContainerAppImageSecret(array $arguments = [])
+ * @method \Http\Promise\Promise createEdgeContainerAppImageSecretAsync($arguments = [])
  */
 final class EsaClient extends AcsClient
 {

@@ -35,6 +35,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deployDeploymentDraftAsyncAsync($arguments = [])
  * @method \Dew\Acs\Result getDeployDeploymentDraftResult(array $arguments = [])
  * @method \Http\Promise\Promise getDeployDeploymentDraftResultAsync($arguments = [])
+ * @method \Dew\Acs\Result validateSqlStatement(array $arguments = [])
+ * @method \Http\Promise\Promise validateSqlStatementAsync($arguments = [])
  * @method \Dew\Acs\Result createUdfArtifact(array $arguments = [])
  * @method \Http\Promise\Promise createUdfArtifactAsync($arguments = [])
  * @method \Dew\Acs\Result updateUdfArtifact(array $arguments = [])
@@ -103,6 +105,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getHotUpdateJobResultAsync($arguments = [])
  * @method \Dew\Acs\Result getLatestJobStartLog(array $arguments = [])
  * @method \Http\Promise\Promise getLatestJobStartLogAsync($arguments = [])
+ * @method \Dew\Acs\Result getJobDiagnosis(array $arguments = [])
+ * @method \Http\Promise\Promise getJobDiagnosisAsync($arguments = [])
  * @method \Dew\Acs\Result startJob(array $arguments = []) {@deprecated 2022-07-18}
  * @method \Http\Promise\Promise startJobAsync($arguments = []) {@deprecated 2022-07-18}
  * @method \Dew\Acs\Result createScheduledPlan(array $arguments = [])
@@ -143,6 +147,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteDeploymentTargetAsync($arguments = [])
  * @method \Dew\Acs\Result listDeploymentTargets(array $arguments = [])
  * @method \Http\Promise\Promise listDeploymentTargetsAsync($arguments = [])
+ * @method \Dew\Acs\Result updateDeploymentTargetV2(array $arguments = [])
+ * @method \Http\Promise\Promise updateDeploymentTargetV2Async($arguments = [])
+ * @method \Dew\Acs\Result createDeploymentTargetV2(array $arguments = [])
+ * @method \Http\Promise\Promise createDeploymentTargetV2Async($arguments = [])
  * @method \Dew\Acs\Result createMember(array $arguments = [])
  * @method \Http\Promise\Promise createMemberAsync($arguments = [])
  * @method \Dew\Acs\Result updateMember(array $arguments = [])
@@ -161,12 +169,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteVariableAsync($arguments = [])
  * @method \Dew\Acs\Result listVariables(array $arguments = [])
  * @method \Http\Promise\Promise listVariablesAsync($arguments = [])
- * @method \Dew\Acs\Result getJobDiagnosis(array $arguments = [])
- * @method \Http\Promise\Promise getJobDiagnosisAsync($arguments = [])
  * @method \Dew\Acs\Result listEngineVersionMetadata(array $arguments = [])
  * @method \Http\Promise\Promise listEngineVersionMetadataAsync($arguments = [])
- * @method \Dew\Acs\Result validateSqlStatement(array $arguments = [])
- * @method \Http\Promise\Promise validateSqlStatementAsync($arguments = [])
  * @method \Dew\Acs\Result generateResourcePlanWithFlinkConfAsync(array $arguments = [])
  * @method \Http\Promise\Promise generateResourcePlanWithFlinkConfAsyncAsync($arguments = [])
  * @method \Dew\Acs\Result getGenerateResourcePlanResult(array $arguments = [])
@@ -175,10 +179,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise flinkApiProxyAsync($arguments = [])
  * @method \Dew\Acs\Result getLineageInfo(array $arguments = [])
  * @method \Http\Promise\Promise getLineageInfoAsync($arguments = [])
- * @method \Dew\Acs\Result createDeploymentTargetV2(array $arguments = [])
- * @method \Http\Promise\Promise createDeploymentTargetV2Async($arguments = [])
- * @method \Dew\Acs\Result updateDeploymentTargetV2(array $arguments = [])
- * @method \Http\Promise\Promise updateDeploymentTargetV2Async($arguments = [])
  */
 final class VervericaClient extends AcsClient
 {
